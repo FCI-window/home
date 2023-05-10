@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>notice_1MTY</title>
+    <style>
+      /* 이서윤체 폰트 적용을 위한 코드 */
+      @font-face {
+        font-family: "LeeSeoyun";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff")
+          format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      /* body태그 자체에 css 요소 부여 */
+      body {
+        font-family: "LeeSeoyun";
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        /* background-image: url("./background.png"); */
+      }
+
+      .container {
+        width: 390px;
+        background-color: #6c6ed0;
+        height: 100%;
+      }
+
+      .photos {
+        margin-top: 30px;
+      }
+
+      .photo-frame {
+        background-color: white;
+        margin: 15px 20px;
+        height: 200px;
+        background-size: cover;
+        position: relative;
+      }
+
+      /* 하단 영역 스타일링 */
+      .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .h-title {
+        font-size: 16px;
+        font-weight: 500;
+        color: white;
+        margin-left : 30px;
+      }
+      .f-title {
+        font-size: 20px;
+        font-weight: 500;
+        color: white;
+      }
+      .f-title2 {
+        font-size: 18px;
+        font-weight: 500;
+        color: white;
+        margin-left : 20px;
+        margin-right : 20px;
+      }
+      .f-date {
+        font-size: 15px;
+        font-weight: 500;
+        color: white;
+      }
+
+      #image1 {
+        background-image: url("./image/1MTYtoROHD1.png");
+      }
+
+      #image2 {
+        background-image: url("./image/1MTYtoROHD2.png");
+      }
+
+      #image3 {
+        background-image: url("./image/1MTYtoROHD3.png");
+      }
+
+      #image4 {
+        background-image: url("./image/1MTYtoROHD4.png");
+      }
+      #image5 {
+        background-image: url("./image/1MTYtoROHD5.png");
+      }
+
+
+      .photo-description {
+        color: white;
+        background-color: black;
+        width: fit-content;
+        padding: 0 20px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        position: absolute;
+        bottom: 0;
+        transform: translate(-50%);
+        left: 50%;
+      }
+      .photo-description11 {
+        color: white;
+        background-color: #201A31;
+        width: fit-content;
+        padding: 0 10px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        position: absolute;
+        bottom: 0;
+        transform: translate(-5%);
+        left: 10%;
+      }
+      .photo-description12 {
+        color: white;
+        background-color: #201A31;
+        width: fit-content;
+        padding: 0 5px;
+        margin-bottom: 0px;
+        border-radius: 10px;
+        position: absolute;
+        bottom: 0;
+        transform: translate(-5%);
+        left: 10%;
+        font-size: 13px;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <h3 class="h-title">
+            [ROHD:100일의 기록]은 <br/>
+            [1MTY]개발자가 만든 앱입니다.<br/><br>
+            [1MTY]는 일상의 기록으로 남기는 것이고,<br/>
+            [ROHD]는 하루 한장의 사진으로, 100일의 기록을 <br/>
+            동영상으로 만들어 주는 앱입니다.
+        </h3>
+      <div class="photos">
+        <div id="image1" class="photo-frame">
+          <span id="desc1" class="photo-description12">
+            1. [1MTY]의 일일 리포트를 모아서,<br/>
+            [ROHD 100일의 기록]에서 동영상으로 만들어보세요
+          </span>
+        </div>
+        <div id="image2" class="photo-frame">
+            <span id="desc1" class="photo-description12">
+                2. 우선 구글플레이나, 앱스토어에서 [ROHD]를 검색하여 설치하세요.
+                그리고, 새로운 프로젝트를 만들어 주세요.
+              </span>
+        </div>
+        <div id="image3" class="photo-frame">
+            <span id="desc1" class="photo-description12">
+                3. 감사일기 리포트의 ROHD버튼을 누르시면, 자동으로 일일 보고서가 [ROHD]로 전달되므로, 
+                해당 프로젝트를 선택하신 후, 저장 버튼을 누르시면 됩니다.
+              </span>
+        </div>
+        <div id="image4" class="photo-frame">
+            <span id="desc1" class="photo-description12">
+                4. 4가지 포맷을 고르신 후, 동영상 버튼을 눌러서 만들어 보시기 바랍니다.
+                여러분의 일독 상황을 눈으로 보실 수 있을 것입니다.
+              </span>
+        </div>
+        <div id="image5" class="photo-frame">
+            <span id="desc1" class="photo-description12">
+                5. 매일 올려야 하는데, 혹시 놓치셨다면, [1MTY]에서 일일리포트를 저장 한 후, 
+                [ROHD]에서 읽어 오시면 됩니다.
+              </span>
+        </div>
+      </div>
+      <div class="footer">
+        <!-- <p class="f-title2">
+            [1MTY]는 일상의 기록으로 남기는 것이고,<br/>
+            [ROHD]는 100일의 프로젝트로 진행하는 것입니다.<br/>
+            두가지 모두 사용하시면, 보람이 배가 될 것입니다.</p> -->
+        <p class="f-date">FCI Inc.  2023.05</p>
+      </div>
+    </div>
+  </body>
+</html>
