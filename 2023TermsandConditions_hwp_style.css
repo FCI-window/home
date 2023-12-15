@@ -1,0 +1,22 @@
+﻿* {margin:0;padding:0;position:absolute;}
+[onclick] {cursor:pointer;}
+.pg {position:relative;padding:0;overflow:hidden;margin-left:2mm;margin-right:0mm;margin-bottom:2mm;margin-top:0mm;border:1px black solid;box-shadow:1mm 1mm 0 #AAAAAA;}
+pg::after {content:'';position:absolute;margin:0;padding:0;left:0;right:0;top:0;bottom:0;background-color:white;z-index:-2;}
+.pa {clear:both;}
+.cm {overflow:hidden;}
+.cl {overflow:hidden;}
+.tbx {overflow:hidden;}
+.rn
+.bc {border:1px solid black;}
+.cs5 {font-size:9pt;height:4.08854mm;color:#000000;opacity:1;font-family:"맑은 고딕";}
+.cs5 > c {font-size:inherit;font-family:inherit;font-style:inherit;font-weight:inherit;}
+.cs0 {font-size:16pt;height:7.49566mm;color:#000000;opacity:1;font-family:"맑은 고딕";font-weight:bold;}
+.cs0 > c {font-size:inherit;font-family:inherit;font-style:inherit;font-weight:inherit;}
+.cs2 {font-size:9pt;height:4.08854mm;color:#000000;opacity:1;font-family:"맑은 고딕";}
+.cs2 > c {font-size:inherit;font-family:inherit;font-style:inherit;font-weight:inherit;}
+.cs1 {font-size:12pt;height:5.45139mm;color:#000000;opacity:1;font-family:"맑은 고딕";font-weight:bold;}
+.cs1 > c {font-size:inherit;font-family:inherit;font-style:inherit;font-weight:inherit;}
+.cs3 {font-size:9pt;height:4.08854mm;color:#000000;opacity:1;font-family:"맑은 고딕";}
+.cs3 > c {font-size:inherit;font-family:inherit;font-style:inherit;font-weight:inherit;}
+.cs4 {font-size:9pt;height:4.08854mm;color:#000000;opacity:1;font-family:"맑은 고딕";}
+.cs4 > c {font-size:inherit;font-family:inherit;font-style:inherit;font-weight:inherit;}
