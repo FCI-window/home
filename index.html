@@ -1,364 +1,215 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
-  <link rel="shortcut icon" href="./images/favicon_FCILOGO_W.ico" type="image/x-icon">
-
-  <meta property="og:image" content="https://fciapp.com/images/FCILOGOwithText.png" /> 
-  <!-- <meta property="og:title" content="FCI(Factory of Creative Imagination)" /> 
-  <meta property="og:description" content="'더 나은 삶'을 위한 애플리케이션들을 만들어 갑니다." />  -->
-
-  <!-- <link rel="icon" href="/favicon_FCILOGO_W.ico" type="image/x-icon"> -->
-
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="shortcut icon" href="./images/favicon_FCILOGO_W.ico" type="image/x-icon">
+  <meta property="og:image" content="https://fciapp.com/images/FCILOGOwithText.png" />
+  <title>FCI | Factory of Creative Imagination</title>
 
-  <!-- JS -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-
-  <!-- 구글폰트 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Noto+Sans+KR:wght@300;500&family=Sunflower:wght@500&display=swap" rel="stylesheet">  <!-- <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700&display=swap" rel="stylesheet">
 
-  <title>FCI</title>
-  <script>
-    function openClose0() {
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-    }
-    function openClose1() {
-      if ($("#post-box1").css("display") == "block") {
-        $("#post-box1").hide();
-      } else {
-        $("#post-box1").show();
-      }
-    }
-    function openClose2() {
-      if ($("#post-box2").css("display") == "block") {
-        $("#post-box2").hide();
-      } else {
-        $("#post-box2").show();
-      }
-    }
-    function openClose3() {
-      if ($("#post-box3").css("display") == "block") {
-        $("#post-box3").hide();
-      } else {
-        $("#post-box3").show();
-      }
-    }
-    function openClose4() {
-      if ($("#post-box4").css("display") == "block") {
-        $("#post-box4").hide();
-      } else {
-        $("#post-box4").show();
-      }
-    }
-  </script>
   <style>
-        * {
-      /* font-family: 'Cute Font', cursive; */
-      font-size : 18px;
+    :root {
+      --bg-color: #1a1625;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --accent-color: #7f5af0;
+      --text-main: #fffffe;
+      --text-sub: #94a1b2;
+    }
+
+    body {
+      background-color: var(--bg-color);
       font-family: 'Noto Sans KR', sans-serif;
-      /* font-family: 'Sunflower', sans-serif; */
-
-    }
-    .headtext {
-      font-family: 'Noto Sans KR', sans-serif;
-    }
-    .tap1 {
-      margin-left: 10%
+      color: var(--text-main);
+      word-break: keep-all;
     }
 
-    .tap05 {
-      margin-left: 5%
+    /* Header & Logo */
+    .header-section {
+      padding: 60px 0 40px;
+      text-align: center;
     }
 
-    .right_align {
-      margin-left: auto;
-      margin-right: 0px
+    .brand-logo {
+      width: 140px;
+      margin-bottom: 20px;
     }
 
-    .col-item {
-      margin-bottom: 1rem;
-      margin-right: 1rem;
-      border-radius: 0.5rem;
-      padding-left: 1rem;
+    .header-title {
+      font-weight: 700;
+      font-size: 1.5rem;
+      line-height: 1.4;
+      color: var(--text-main);
     }
 
-    .list-unstyled {
-      padding-left: 0;
-      list-style: none;
-      padding-top: 1rem;
+    /* App Cards */
+    .app-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
 
-    .media-body {
-      -ms-flex: 1;
-      flex: 1;
+    .app-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-3px);
+      border-color: var(--accent-color);
+    }
+
+    .app-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      object-fit: cover;
+    }
+
+    .app-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .app-summary {
+      font-size: 0.95rem;
+      color: var(--text-sub);
+      line-height: 1.5;
+    }
+
+    /* Toggle Content */
+    .detail-box {
+      display: none;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 15px;
+      margin-top: 15px;
       font-size: 0.9rem;
-      padding-left: 1rem;
+      color: var(--text-sub);
     }
+
+    .download-buttons {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .download-buttons img {
+      height: 38px;
+      transition: opacity 0.2s;
+    }
+
+    .download-buttons img:hover {
+      opacity: 0.8;
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      opacity: 0.6;
+      font-size: 0.8rem;
+    }
+
+    a { color: var(--accent-color); text-decoration: none; }
+    a:hover { color: var(--text-main); }
   </style>
 </head>
 
-<body style="background-color: #201A31;">
+<body>
 
-  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-white">
-    <div class="container">
-      <div><img src="./images/FCILOGOwithText.png" width="130" height="60" alt="FCI Logo" /></div>
-      <div style="margin-top:10px">
-        <h6 style="font-size : 16px; line-height : 1.3; "> <b>삶에 도움이 되는 <br>애플리케이션들을 <br>만들어 갑니다.</b></h6>
-      </div>
-    </div>
-  </nav> -->
-  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-white">
-    <div class="container">
-      <div>
-
-        <div class="btn-group btn-group-toggle btn-group-sm" data-toggle="buttons">
-          <label class="btn btn-secondary  active" onClick="location.href='./index.html'">
-
-            <input type="radio" name="options" id="option1" autocomplete="off"> Why
-          </label>
-          <label class="btn btn-outline-secondary " onClick="location.href='./fci_policy_privacy.html'">
-            <input type="radio" name="options" id="option2" autocomplete="off" checked> What
-          </label>
-        </div>
-      </div>
-    </div>
-  </nav> -->
-  <section>
-    <div class="jumbotron " style="background-color: #201A31; ">
-      <!-- <div class="row"> -->
-      <div style="width :100%  ;">
-          <div class=" col-12 col-item" style="margin-left: -30px;margin-top : -30px" onClick="openClose0()">
-            <ul class="list-unstyled">
-              <li class="media" style="margin-right: -40px">
-                <div class="media-body text-white">
-                  <h5 style="font-size : 16px; line-height : 1.2; "> <b>일상을 위한<br>애플리케이션들을 <br>만들어 갑니다.</b></h5>
-                  <!-- <p style="font-family:'Noto Sans KR' ;"><b>"더 나은 삶"을 위한<br>애플리케이션들을 <br>만들어 갑니다.</b></p> -->
-                </div>
-                <img class="align-self-center" style="justify-content: center;margin-top:-5px"  src="./images/FCILOGOwithTextWhite.png" width="120" height="60" alt="RAB Logo" />
-              </li>
-            </ul>
-          </div>
-
-
-        <div class=" col-12 border bg-white col-item" onClick="openClose1()">
-          <ul class="list-unstyled">
-            <li class="media">
-              <img class="align-self-center" src="./images/Logo_RAB.png" width="60" height="60" alt="RAB Logo" />
-              <div class="media-body">
-                <p style="font-size : 16px;">원래 성경은 "귀로 듣거나 눈으로 보는"것이 아니라,<br>"입으로 소리내어 읽는"것이 아니었을까요?</p>
-                <p style="font-size : 16px;">특허 제 10-2322160호</p>                
-                <!-- 직접 소리내어 읽어보세요.</p> -->
-              </div>
-            </li>
-            <h6 class="mt-0 mb-1"><b  style="font-size: 17px">성경낭독녹음(Record Aloud Bible)</b></h6>
-          </ul>
-        </div>
-
-        <div id="post-box1" class="tap1 text-white" style="display:none">
-          <div class="container">
-            <div class="row">
-              <div class="col-12 text-white" style="font-size: 15px;">
-                한절 한절 손으로 집어가면서<br>
-                "삐빅"소리에 맞추어,<br>
-                내용에 집중하면서, <br>
-                소리내어 성경을 읽어 보세요.<br>
-                당신의 목소리로 된 성경낭독파일을<br>
-                남겨 드립니다. <br><br>
-              </div>
-            </div>
-          </div>
-          *개역개정성경 버전
-          <div class="sc-23b2f6b5-13 krrXXg" >
-            <a href="https://apps.apple.com/kr/app/%EC%84%B1%EA%B2%BD%EB%82%AD%EB%8F%85%EB%85%B9%EC%9D%8C/id1554443046"
-              target="_blank" rel="noopener" class="sc-23b2f6b5-14 sc-23b2f6b5-15 dGNipg eOUZae">
-
-              <img src="./images/Download_apple.png" height="35" width="100" /></a>
-
-            <a href="https://play.google.com/store/apps/details?id=life.fci.recordaloudbible&hl=ko" target="_blank"
-              rel="noopener" class="sc-23b2f6b5-14 sc-23b2f6b5-16 dGNipg cJYFwM">
-              <img src="./images/Download_google.png" height="35" width="110"></a>
-            <!-- <a href="https://recordaloudbible.tistory.com/" target="_blank" rel="noopener"
-              class="sc-23b2f6b5-14 sc-23b2f6b5-16 dGNipg cJYFwM">
-              <img src="./images/Download_howtouse.png" height="35" width="110"></a> -->
-          </div>
-          <br>
-          *개역한글성경 버전
-          <div>
-            <a href="https://apps.apple.com/kr/app/%EA%B0%9C%EC%97%AD%ED%95%9C%EA%B8%80-%EC%84%B1%EA%B2%BD%EB%82%AD%EB%8F%85%EB%85%B9%EC%9D%8C/id1562856114"
-              target="_blank" rel="noopener" class="sc-23b2f6b5-14 sc-23b2f6b5-15 dGNipg eOUZae">
-              <img src="./images/Download_apple.png" height="35" width="100" />
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=life.fci.recordaloudbibleglobal" target="_blank"
-              rel="noopener" class="sc-23b2f6b5-14 sc-23b2f6b5-16 dGNipg cJYFwM">
-              <img src="./images/Download_google.png" height="35" width="110"></a>
-          </div>
-          <br><br>
-          <p style="font-size : 13px">※ 성경낭독녹음의 기능은 기독교복음방송(GOOD TV)의 "바이블애플(다번역성경찬송)"에 적용되었습니다.</p>
-        </div>
-
-        <!-- <div class="col-12 border bg-white col-item" onClick="openClose3()">
-          <ul class="list-unstyled">
-            <li class="media">
-              <img class="align-self-center" src="./images/APP_LOGO_d4h.png" width="60" height="60" alt="1MTY Logo" />
-              <div class="media-body">
-                <p style="font-size : 16px;">독서와 운동, 일기 그리고 루틴<br>이미 이 습관들을 가지고 계신가요?<br>간단한 기록을 남기는 것만으로,<br>당신의 습관으로 만들어 보세요.</p>
-              </div>
-            </li>
-            <h6 class="mt-0 mb-1"><b style="font-size: 17px">4Habits:오늘을 소중하게 만드는 4가지습관</b></h6>
-          </ul>
-        </div>
-
-        <div id="post-box3" class="tap1" style="display:none">
-          <div class="container">
-            <div class="row">
-              <div class="col-12 text-white" style="font-size: 15px;">
-                  가장 간단하고 직관적인 방법으로<br>
-                  하루를 대표하는 사진위에 감사일기를 쓰고,<br>
-                  운동을 하거나 책을 읽으면서<br>
-                  꼭 필요한 내용만을 바로바로 간단히 <br>
-                  기록할 수 있는 도구입니다.<br><br>
-                  하루 하루 기록이 쌓일수록, <br>
-                  좋은 습관으로 남을 것입니다.<br><br>
-              </div>
-            </div>
-          </div>
-          <div class="sc-23b2f6b5-13 krrXXg">
-            <a href="https://apps.apple.com/app/id6443653562" target="_blank" rel="noopener"
-              class="sc-23b2f6b5-14 sc-23b2f6b5-15 dGNipg eOUZae">
-              <img src="./images/Download_apple.png" alt="Google Play" height="35" width="100"></a>
-            <a href="https://play.google.com/store/apps/details?id=life.fci.OMTY" target="_blank" rel="noopener"
-              class="sc-23b2f6b5-14 sc-23b2f6b5-16 dGNipg cJYFwM">
-              <img src="./images/Download_google.png" alt="Google Play" height="35" width="110"></a>
-          </div>
-          <br><br>
-        </div> -->
-
-        <div class="col-12 border bg-white col-item" onClick="openClose2()">
-          <ul class="list-unstyled">
-            <li class="media">
-              <img class="align-self-center" src="./images/Logo_ROHD.png" width="60" height="60" alt="ROHD Logo" />
-              <div class="media-body">
-                <p style="font-size : 16px;">무언가 100일을 꾸준히 해 보신적이 있으신지요?<br>하루한장의 인증샷들을 모아 동영상으로 만들어 드립니다.</p>
-                <p style="font-size : 16px;">특허 제 10-2612589호</p>                
-              </div>
-            </li>
-            <h6 class="mt-0 mb-1"><b style="font-size: 17px">ROHD : Record of One Hundred Days</b></h6>
-          </ul>
-        </div>
-
-        <div id="post-box2" class="tap1" style="display:none">
-          <div class="container text-white">
-            <div class="row">
-              <div class="col-12" style="font-size: 15px;">
-                좋은 습관들을 내것으로 만들기 위해서<br>
-                  필요한 100일의 실행.<br>
-                  <br>
-                  그 100일의 여정을 <br>
-                  매일 한장의 인증샷으로 기록해 보세요. <br>
-                  "ROHD(100일의 기록)"은<br>
-                  100일동안의 인증샷을
-                  100일 캘린더와 함께 <br>
-                  30초 동영상으로
-                  만들어 드립니다.<br>
-              </div>
-            </div>
-          </div>
-          <div class="sc-23b2f6b5-13 krrXXg">
-            <a href="https://apps.apple.com/app/id6446820972" target="_blank" rel="noopener"
-            class="sc-23b2f6b5-14 sc-23b2f6b5-15 dGNipg eOUZae">
-            <img src="./images/Download_apple.png" alt="Google Play" height="35" width="100"></a>
-            <a href="https://play.google.com/store/apps/details?id=life.fci.ROHD" target="_blank" rel="noopener"
-              class="sc-23b2f6b5-14 sc-23b2f6b5-16 dGNipg cJYFwM">
-              <img src="./images/Download_google.png" alt="Google Play" height="35" width="110"></a>
-            <!-- <a href="https://rohd.tistory.com/" target="_blank" rel="noopener"
-              class="sc-23b2f6b5-14 sc-23b2f6b5-16 dGNipg cJYFwM">
-              <img src="./images/Download_howtouse.png" height="35" width="110"></a> -->
-          </div>
-          <br><br>
-
-        </div>
-
-
-        <div class="col-12 border bg-white col-item" onClick="openClose4()">
-          <ul class="list-unstyled">
-            <li class="media">
-              <img class="align-self-center" src="./images/Paran.jpg" width="60" height="60" alt="1MTY Logo" />
-              <div class="media-body">
-                <p style="font-size : 16px;">열심히 살아오신 시니어분들의<br>과거와 현재를 모아서 미래와 공유하는<br> 세대 공감 스토리 플랫폼 입니다.</p>
-                <p style="font-size : 16px;">특허 제 10-2764519호</p>                
-                <!-- <p style="font-size : 16px;">하루를 알차게 만드는 4가지 습관을 간단하게 실천해서, 오늘을 대표하는 사진과 함께 남겨 보세요.</p> -->
-              </div>
-            </li>
-            <h6 class="mt-0 mb-1"><b style="font-size: 17px"> 파란 : 그분들의 이야기 </b></h6>
-          </ul>
-        </div>
-
-        <div id="post-box4" class="tap1" style="display:none">
-          <div class="container">
-            <div class="row">
-              <div class="col-12 text-white" style="font-size: 15px;">
-                    60세가 넘으셨나요? <br>
-                    당신의 파란만장했던 삶의 이야기는 사라지면 안됩니다. <br>
-                    30대/40대/50대의 삶과, 위기/기회의 경험, <br>
-                    그리고 더 많은 이야기들을 남겨 주세요. <br>
-                    세대는 달라져도, 경험은 이어져야 합니다. <br><br>
-                    60세가 아직 안되셨나요? <br>
-                    아직 가보지 못한 길, <br>
-                    먼저 가 보신 분들의 경험에서 <br>
-                    나만의 파란 신호등을 찾아 보세요 <br><br>
-              </div>
-            </div>
-          </div>
-          <div class="sc-23b2f6b5-13 krrXXg">
-            <a href="https://apps.apple.com/app/id6443653562" target="_blank" rel="noopener"
-              class="sc-23b2f6b5-14 sc-23b2f6b5-15 dGNipg eOUZae">
-              <img src="./images/Download_apple.png" alt="Google Play" height="35" width="100"></a>
-            <a href="https://play.google.com/store/apps/details?id=com.fciapp.TMOStory" target="_blank" rel="noopener"
-              class="sc-23b2f6b5-14 sc-23b2f6b5-16 dGNipg cJYFwM">
-              <img src="./images/Download_google.png" alt="Google Play" height="35" width="110"></a>
-            <!-- <a href="https://1mty.tistory.com/" target="_blank" rel="noopener"
-              class="sc-23b2f6b5-14 sc-23b2f6b5-16 dGNipg cJYFwM">
-              <img src="./images/Download_howtouse.png" height="35" width="110"></a> -->
-          </div>
-          <br><br>
-        </div>
-
-
-      </div>
-    </div>
-  </section>
-
-</body>
-<footer class="footer text-white" style="background-color: #201A31;">
-  <hr>
   <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <p style="text-align: center;"><small>(주)에프씨아이 FCI Inc. | 사업자 등록번호 : 355-81-01970<br>
-            Copyright © FCI. All rights reserved. 
-            <a href="mailto:fci.windows@gmail.com" style="font-size: 15px;">fci.windows@gmail.com</a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-            <a href="./2026PrivatePolicy.html" style="font-size: 15px;">개인정보처리방침</a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-            <a href="./2026TermsandConditions.html" style="font-size: 15px;">이용약관</a>
-          </small></p>
-      </div>
-    </div>
-  </div>
-</footer>
+    <header class="header-section">
+      <img src="./images/FCILOGOwithTextWhite.png" alt="FCI Logo" class="brand-logo">
+      <h1 class="header-title">일상을 위한<br>애플리케이션을 만들어 갑니다.</h1>
+    </header>
 
+    <main class="row justify-content-center">
+      <div class="col-lg-7 col-md-9">
+
+        <div class="app-card" onclick="toggleDetail('rab')">
+          <div class="media align-items-center">
+            <img src="./images/Logo_RAB.png" class="app-icon mr-3" alt="RAB">
+            <div class="media-body">
+              <div class="app-title">성경낭독녹음 (RAB)</div>
+              <div class="app-summary">성경은 "눈"이 아니라 "입"으로 읽는 것. 당신의 목소리로 성경을 남겨보세요.</div>
+            </div>
+          </div>
+          <div id="rab" class="detail-box">
+            한 절 한 절 내용에 집중하며 소리 내어 읽어보세요. <br>
+            당신의 목소리로 완성된 성경 파일을 간직할 수 있습니다.
+            <div class="mt-3 small text-white-50">* 개역개정 / 개역한글 지원</div>
+            <div class="download-buttons">
+              <a href="https://apps.apple.com/kr/app/%EC%84%B1%EA%B2%BD%EB%82%AD%EB%8F%85%EB%85%B9%EC%9D%8C/id1554443046" target="_blank"><img src="./images/Download_apple.png"></a>
+              <a href="https://play.google.com/store/apps/details?id=life.fci.recordaloudbible&hl=ko" target="_blank"><img src="./images/Download_google.png"></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-card" onclick="toggleDetail('habits')">
+          <div class="media align-items-center">
+            <img src="./images/APP_LOGO_d4h.png" class="app-icon mr-3" alt="4Habits">
+            <div class="media-body">
+              <div class="app-title">4Habits</div>
+              <div class="app-summary">독서, 운동, 일기, 루틴. 오늘을 소중하게 만드는 4가지 습관 기록.</div>
+            </div>
+          </div>
+          <div id="habits" class="detail-box">
+            가장 간단하고 직관적인 방법으로 감사일기를 쓰고 기록하세요. <br>
+            하루의 대표 사진 위에 소중한 습관을 쌓아가는 가장 완벽한 도구입니다.
+            <div class="download-buttons">
+              <a href="https://apps.apple.com/app/id6443653562" target="_blank"><img src="./images/Download_apple.png"></a>
+              <a href="https://play.google.com/store/apps/details?id=life.fci.OMTY" target="_blank"><img src="./images/Download_google.png"></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-card" onclick="toggleDetail('rohd')">
+          <div class="media align-items-center">
+            <img src="./images/Logo_ROHD.png" class="app-icon mr-3" alt="ROHD">
+            <div class="media-body">
+              <div class="app-title">ROHD</div>
+              <div class="app-summary">100일의 꾸준함을 기록하세요. 인증샷을 30초 동영상으로 만들어 드립니다.</div>
+            </div>
+          </div>
+          <div id="rohd" class="detail-box">
+            습관이 내 것이 되기 위해 필요한 100일의 시간. <br>
+            매일 한 장의 인증샷을 모아 100일 캘린더와 함께 멋진 성장 영상을 제작해 보세요.
+            <div class="download-buttons">
+              <a href="https://apps.apple.com/app/id6446820972" target="_blank"><img src="./images/Download_apple.png"></a>
+              <a href="https://play.google.com/store/apps/details?id=life.fci.ROHD" target="_blank"><img src="./images/Download_google.png"></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="text-center">
+      <hr style="border-color: rgba(255,255,255,0.1);">
+      <p>
+        (주)에프씨아이 FCI Inc. | 사업자 등록번호 : 355-81-01970<br>
+        Copyright © FCI. All rights reserved.<br>
+        <a href="mailto:fci.windows@gmail.com">fci.windows@gmail.com</a> | 
+        <a href="./fci_policy_privacy.html">Privacy Policy</a>
+      </p>
+    </footer>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    function toggleDetail(id) {
+      // 선택한 것 외에 다른 박스들은 닫고 싶다면 아래 주석 해제
+      // $(".detail-box").not("#" + id).slideUp();
+      $("#" + id).slideToggle(300);
+    }
+  </script>
+</body>
 </html>
