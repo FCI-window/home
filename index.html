@@ -24,6 +24,7 @@
       --text-main: #ffffff;
       --text-sub: #b3b3b3;
       --patent-text: #8b5cf6;
+      --tistory-color: #eb5b2d; /* 티스토리 포인트 컬러 */
     }
 
     body {
@@ -113,6 +114,7 @@
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
+      align-items: center;
     }
 
     .download-group img {
@@ -123,6 +125,27 @@
 
     .download-group img:hover {
       opacity: 1;
+    }
+
+    /* Tistory Button Style */
+    .btn-tistory {
+      display: inline-flex;
+      align-items: center;
+      background-color: transparent;
+      border: 1px solid var(--tistory-color);
+      color: var(--tistory-color);
+      height: 36px;
+      padding: 0 15px;
+      border-radius: 6px;
+      font-weight: 500;
+      font-size: 0.85rem;
+      text-decoration: none !important;
+      transition: all 0.2s;
+    }
+
+    .btn-tistory:hover {
+      background-color: var(--tistory-color);
+      color: white;
     }
 
     /* Footer */
@@ -179,10 +202,16 @@
             </div>
 
             <div class="small mb-2" style="color:var(--accent-color)">* 개역한글성경 버전</div>
-            <div class="download-group">
+            <div class="download-group mb-4">
               <a href="https://apps.apple.com/kr/app/%EA%B0%9C%EC%97%AD%ED%95%9C%EA%B8%80-%EC%84%B1%EA%B2%BD%EB%82%AD%EB%8F%85%EB%85%B9%EC%9D%8C/id1562856114" target="_blank"><img src="./images/Download_apple.png"></a>
               <a href="https://play.google.com/store/apps/details?id=life.fci.recordaloudbibleglobal" target="_blank"><img src="./images/Download_google.png"></a>
             </div>
+
+            <div class="small mb-2" style="color:var(--accent-color)">* 공식 커뮤니티</div>
+            <div class="download-group">
+                <a href="https://recordaloudbible.tistory.com/" target="_blank" class="btn-tistory">Tistory 블로그 바로가기</a>
+            </div>
+
             <hr style="border-color:rgba(255,255,255,0.1)">
             <p class="small mb-0">※ 이 기능은 기독교복음방송(GOOD TV)의 "바이블애플(다번역성경찬송)"에 적용되었습니다.</p>
           </div>
@@ -202,6 +231,7 @@
             <div class="download-group">
               <a href="https://apps.apple.com/app/id6446820972" target="_blank"><img src="./images/Download_apple.png"></a>
               <a href="https://play.google.com/store/apps/details?id=life.fci.ROHD" target="_blank"><img src="./images/Download_google.png"></a>
+              <a href="https://rohd.tistory.com" target="_blank" class="btn-tistory">Tistory 블로그</a>
             </div>
           </div>
         </div>
@@ -221,6 +251,7 @@
             <div class="download-group">
               <a href="https://apps.apple.com/app/id6443653562" target="_blank"><img src="./images/Download_apple.png"></a>
               <a href="https://play.google.com/store/apps/details?id=com.fciapp.TMOStory" target="_blank"><img src="./images/Download_google.png"></a>
+              <a href="https://paranstory.tistory.com" target="_blank" class="btn-tistory">Tistory 블로그</a>
             </div>
           </div>
         </div>
