@@ -1,0 +1,897 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="파란 : 그분들의 이야기는 시니어의 삶의 경험과 오늘의 일상을 다음 세대와 나누는 세대공감 스토리 플랫폼입니다.">
+  <meta property="og:title" content="파란 : 그분들의 이야기">
+  <meta property="og:description" content="당신의 이야기는 누군가의 미래가 됩니다.">
+  <meta property="og:image" content="https://www.fciapp.com/paran/images/Paran.jpg">
+  <title>파란 : 그분들의 이야기</title>
+  <link rel="shortcut icon" href="./images/favicon_FCILOGO_W.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f9fc;
+      --surface: #ffffff;
+      --surface-blue: #eef8fd;
+      --text: #172033;
+      --muted: #64748b;
+      --line: #dbe7f1;
+      --paran: #2498d4;
+      --paran-dark: #126996;
+      --warm: #f7b267;
+      --green: #4f9d69;
+      --shadow: 0 18px 44px rgba(23, 32, 51, 0.09);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        linear-gradient(135deg, rgba(36, 152, 212, 0.13), transparent 34%),
+        linear-gradient(225deg, rgba(247, 178, 103, 0.13), transparent 28%),
+        var(--bg);
+      font-family: "Noto Sans KR", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.58;
+      word-break: keep-all;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      width: min(1120px, 100%);
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 26px 18px 36px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .fci-logo img {
+      width: 148px;
+      height: auto;
+      display: block;
+    }
+
+    .home-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.76);
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .hero {
+      display: grid;
+      gap: 24px;
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 0;
+    }
+
+    .app-icon {
+      width: 76px;
+      height: 76px;
+      border-radius: 21px;
+      box-shadow: 0 14px 28px rgba(18, 105, 150, 0.18);
+    }
+
+    .kicker {
+      display: inline-flex;
+      min-height: 26px;
+      align-items: center;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: var(--surface-blue);
+      color: var(--paran-dark);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 10px 0 0;
+      font-size: clamp(1.64rem, 4.6vw, 2.64rem);
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    .storyline {
+      display: grid;
+      gap: 9px;
+    }
+
+    .section-heading {
+      margin: 0 0 13px;
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-weight: 700;
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: 0 10px 22px rgba(23, 32, 51, 0.045);
+      overflow: hidden;
+    }
+
+    details[open] {
+      border-color: rgba(36, 152, 212, 0.42);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    summary {
+      position: relative;
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr) 30px;
+      gap: 12px;
+      align-items: center;
+      min-height: 65px;
+      padding: 12px 15px;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--surface-blue);
+      color: var(--paran-dark);
+      font-size: 0.86rem;
+      font-weight: 800;
+    }
+
+    details[open] .number {
+      background: var(--paran);
+      color: #ffffff;
+    }
+
+    summary h2 {
+      margin: 0;
+      font-size: clamp(1rem, 1.7vw, 1.14rem);
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    .toggle {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      color: var(--paran-dark);
+      font-size: 1.32rem;
+      line-height: 26px;
+      text-align: center;
+    }
+
+    details[open] .toggle {
+      background: var(--paran);
+      border-color: var(--paran);
+      color: #ffffff;
+      transform: rotate(45deg);
+    }
+
+    .answer {
+      margin: 0;
+      padding: 0 20px 18px 71px;
+      color: #42536a;
+      font-size: 0.98rem;
+    }
+
+    .answer strong {
+      font-weight: 800;
+    }
+
+    .blue-word {
+      color: var(--paran-dark);
+      font-weight: 800;
+    }
+
+    .answer-with-image {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 230px;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .answer-with-screens {
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+    }
+
+    .answer-with-image .answer {
+      padding-right: 0;
+    }
+
+    .story-image {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .zoomable {
+      cursor: zoom-in;
+    }
+
+    .story-image.keep-mobile {
+      background: transparent;
+    }
+
+    .screen-collage {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      align-items: end;
+      min-width: 0;
+    }
+
+    .screen-shot {
+      width: 100%;
+      max-height: 310px;
+      object-fit: contain;
+      display: block;
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0 10px 24px rgba(23, 32, 51, 0.08);
+      cursor: zoom-in;
+    }
+
+    .screen-shot:nth-child(2) {
+      transform: translateY(-10px);
+    }
+
+    .screen-collage.four {
+      display: flex;
+      align-items: flex-end;
+      gap: 0;
+      padding-left: 8px;
+    }
+
+    .screen-collage.four .screen-shot {
+      width: 31%;
+      max-height: 300px;
+      flex: 0 0 31%;
+      position: relative;
+    }
+
+    .screen-collage.four .screen-shot:nth-child(2) {
+      transform: translate(-15%, -10px);
+      z-index: 2;
+    }
+
+    .screen-collage.four .screen-shot:nth-child(3) {
+      transform: translate(-30%, 0);
+      z-index: 3;
+    }
+
+    .screen-collage.four .screen-shot:nth-child(4) {
+      transform: translate(-45%, -10px);
+      z-index: 4;
+    }
+
+    .future-visual {
+      position: relative;
+      min-height: 315px;
+      min-width: 0;
+    }
+
+    .future-cards {
+      position: absolute;
+      right: 0;
+      top: 8px;
+      width: 76%;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 10px 24px rgba(23, 32, 51, 0.08);
+      cursor: zoom-in;
+    }
+
+    .future-phone {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 42%;
+      max-height: 315px;
+      object-fit: contain;
+      display: block;
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0 12px 28px rgba(23, 32, 51, 0.12);
+      cursor: zoom-in;
+    }
+
+    .message-cards {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      padding: 0 20px 20px 71px;
+    }
+
+    .message-card {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0 10px 24px rgba(23, 32, 51, 0.08);
+      cursor: zoom-in;
+    }
+
+    .vision-wrap {
+      padding: 0 20px 20px 71px;
+    }
+
+    .vision-wrap .answer {
+      padding: 0;
+      margin-bottom: 16px;
+    }
+
+    .vision-cards {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .vision-card {
+      min-height: 186px;
+      padding: 16px 13px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0 10px 24px rgba(23, 32, 51, 0.06);
+    }
+
+    .vision-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--paran);
+      color: #ffffff;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .vision-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 58px;
+      height: 58px;
+      margin: 16px 0 12px;
+      border-radius: 50%;
+      background: var(--surface-blue);
+      color: var(--paran-dark);
+    }
+
+    .vision-icon svg {
+      width: 36px;
+      height: 36px;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .vision-card h3 {
+      margin: 0;
+      color: var(--paran-dark);
+      font-size: 1rem;
+      line-height: 1.34;
+      letter-spacing: 0;
+    }
+
+    .vision-card p {
+      margin: 9px 0 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.48;
+    }
+
+    .footer {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer a {
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .image-modal {
+      padding: 0;
+      margin: auto;
+      border: 0;
+      border-radius: 8px;
+      background: transparent;
+      overflow: visible;
+    }
+
+    .image-modal::backdrop {
+      background: rgba(15, 23, 42, 0.72);
+    }
+
+    .modal-inner {
+      position: relative;
+      display: grid;
+      place-items: center;
+      max-height: 92vh;
+      padding: 0;
+    }
+
+    .modal-image {
+      max-width: 92vw;
+      max-height: 92vh;
+      display: block;
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.32);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: -14px;
+      right: -14px;
+      width: 40px;
+      height: 40px;
+      border: 0;
+      border-radius: 50%;
+      background: #ffffff;
+      color: var(--text);
+      font-size: 1.5rem;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding: 20px 14px 30px;
+      }
+
+      .topbar {
+        margin-bottom: 18px;
+      }
+
+      .fci-logo img {
+        width: 122px;
+      }
+
+      .home-link {
+        min-height: 38px;
+        padding: 0 12px;
+        font-size: 0.84rem;
+      }
+
+      .brand-row {
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+
+      .app-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 18px;
+      }
+
+      summary {
+        grid-template-columns: 38px minmax(0, 1fr) 28px;
+        gap: 10px;
+        min-height: 60px;
+        padding: 11px 12px;
+      }
+
+      .number {
+        width: 36px;
+        height: 36px;
+        font-size: 0.8rem;
+      }
+
+      .answer {
+        padding: 0 16px 16px 60px;
+        font-size: 0.94rem;
+      }
+
+      .answer-with-image {
+        display: block;
+      }
+
+      .answer-with-screens {
+        display: block;
+      }
+
+      .story-image {
+        display: none;
+      }
+
+      .story-image.keep-mobile {
+        display: block;
+        width: min(100%, 300px);
+        margin: 14px auto 0;
+      }
+
+      .screen-collage {
+        display: flex;
+        gap: 12px;
+        overflow-x: auto;
+        padding: 2px 0 8px;
+        scroll-snap-type: x mandatory;
+      }
+
+      .screen-shot {
+        flex: 0 0 min(72%, 240px);
+        max-height: none;
+        scroll-snap-align: center;
+      }
+
+      .screen-shot:nth-child(2) {
+        transform: none;
+      }
+
+      .screen-collage.four .screen-shot {
+        width: 100%;
+        flex: 0 0 min(72%, 240px);
+        max-height: none;
+      }
+
+      .screen-collage.four .screen-shot:nth-child(2),
+      .screen-collage.four .screen-shot:nth-child(4) {
+        transform: none;
+      }
+
+      .screen-collage.four .screen-shot:nth-child(3) {
+        transform: none;
+      }
+
+      .future-visual {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        min-height: 0;
+        padding-top: 8px;
+      }
+
+      .future-cards,
+      .future-phone {
+        position: static;
+        width: min(100%, 300px);
+        max-height: none;
+        margin: 0 auto;
+      }
+
+      .future-cards {
+        width: min(100%, 340px);
+      }
+
+      .message-cards {
+        display: flex;
+        gap: 12px;
+        overflow-x: auto;
+        padding: 0 16px 16px 60px;
+        scroll-snap-type: x mandatory;
+      }
+
+      .message-card {
+        flex: 0 0 min(72%, 240px);
+        scroll-snap-align: center;
+      }
+
+      .vision-wrap {
+        padding: 0 16px 16px 60px;
+      }
+
+      .vision-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .vision-card {
+        min-height: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="fci-logo" href="../index.html" aria-label="FCI 홈으로 이동">
+        <img src="./images/FCILOGOwithText.png" alt="FCI Factory of Creative Imagination">
+      </a>
+      <a class="home-link" href="../index.html">FCI 홈</a>
+    </header>
+
+    <main class="hero">
+      <section class="intro" aria-label="파란 소개">
+        <div class="brand-row">
+          <img class="app-icon" src="./images/Paran.jpg" alt="파란 앱 아이콘">
+          <div>
+            <span class="kicker">Cross-generation Story Platform</span>
+            <h1>파란 : 그분들의 이야기</h1>
+          </div>
+        </div>
+      </section>
+
+      <section class="storyline" aria-label="파란 스토리라인">
+        <p class="section-heading">궁금한 제목을 눌러 8개의 질문으로 Paran을 열어보세요.</p>
+
+        <details>
+          <summary>
+            <span class="number">01</span>
+            <h2>과연 성공한 인생이란 무엇일까요?</h2>
+            <span class="toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="answer-with-image">
+            <p class="answer">많은 돈과 높은 지위, 명예가 정말 성공일까요?<br>그것만 있으면 정말 행복할까요?<br>퇴직 후 가족과 친지, 지인들과 화목하게 살아갈 수 있다면, 그것이 진짜 성공이 아닐까요?<br>그렇다면 이미 그런 일상의 성공을 이루신 분들은 과연 어떤 일을 하며 살아오셨을까요?<br>그분들의 경험을 배울 수 있다면, 우리도 그런 일상의 성공을 할 수 있지 않을까요?</p>
+            <img class="story-image" src="./images/success-question.png" alt="미래와 성공을 고민하는 젊은 세대 일러스트">
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            <span class="number">02</span>
+            <h2>우리는 세상의 다양한 삶을 얼마나 알고 있을까요?</h2>
+            <span class="toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="answer-with-image">
+            <p class="answer">우리는 세상의 삶을 얼마나 알고 있을까요?<br>우리가 아는 삶은 주변 사람들의 삶과 매체 속에 나오는 삶 정도가 아닐까요?<br>저 수많은 건물 안에서 사람들은 어떤 일을 하며 살아가고 있을까요?<br>우리는 진로와 삶의 방향을 선택할 때 얼마나 다양한 삶을 보고 결정하고 있을까요?<br>만약 더 많은 사람들의 실제 경험을 만날 수 있다면, 우리의 선택도 달라질 수 있지 않을까요?<br>다른 사람들의 삶이 우리의 작은 길잡이가 될 수 있지 않을까요?</p>
+            <img class="story-image" src="./images/many-lives-question.png" alt="다양한 삶의 길을 바라보는 젊은 세대 일러스트">
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            <span class="number">03</span>
+            <h2>[파란 : 그분들의 이야기]</h2>
+            <span class="toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="answer-with-image">
+            <p class="answer">[<span class="blue-word">파란</span> : 그분들의 이야기]는<br>시니어분들이 <span class="blue-word">파란</span>만장했던 과거의 경험을 남기고,<br>행복의 <span class="blue-word">파란</span>새인 오늘의 일상을 한 장의 사진으로 나누는 <strong>세대공감 스토리 플랫폼</strong>입니다.<br>그리고, 주니어분들이 그 속에서 자신만의 미래를 위한 <span class="blue-word">파란</span> 신호등을 찾고,<br>언젠가는 자신의 인생 경험을 이어서 남기는 <strong>경험과 지혜 축적 플랫폼</strong>입니다.</p>
+            <img class="story-image keep-mobile zoomable" src="./images/paran_cycle.png" alt="파란의 과거, 현재, 미래 순환 구조">
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            <span class="number">04</span>
+            <h2>파란만장한 그분들의 과거 경험.</h2>
+            <span class="toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="answer-with-image answer-with-screens">
+            <p class="answer">과거의 경험은 미래로 넘겨줄 수 있는 자산입니다.<br>파란에서는 30대, 40대, 50대처럼 삶의 시기별로 어떤 일을 했고, 어떻게 그 일을 하게 되었으며, 어떤 위기와 기회를 만났는지를 남길 수 있습니다.<br>삶과 경험은 5가지 카테고리로 나누어 키워드와 1,000글자 이내의 이야기로 정리할 수 있고, 텍스트 입력, AI 음성대화, 컴퓨터 작성 등 편한 방식으로 시작할 수 있습니다.<br>더 남기고 싶은 이야기는 “그리고, 더 많은 이야기”에 자유롭게 확장하고, 기존 개인 블로그를 연결할 수도 있습니다.</p>
+            <div class="screen-collage" aria-label="과거 경험을 남기는 앱 화면">
+              <img class="screen-shot zoomable" src="./images/past-story-summary.png" alt="키워드와 짧은 글로 과거 경험을 정리하는 화면">
+              <img class="screen-shot zoomable" src="./images/past-ai-interview.png" alt="AI 음성대화로 과거 경험을 작성하는 화면">
+              <img class="screen-shot zoomable" src="./images/past-more-story.png" alt="더 많은 이야기와 블로그 연결 화면">
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            <span class="number">05</span>
+            <h2>행복의 파란새인 그분들의 오늘 일상</h2>
+            <span class="toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="answer-with-image answer-with-screens">
+            <p class="answer">내일이었지만 어제가 될 오늘을, 한 장의 사진으로 나누어 보세요.<br>산책 중에 만난 거리의 꽃, 하늘의 구름, 커피 한 잔, 언덕 위의 풍경, 멋있는 석양, 맛있는 반찬처럼 특별하지 않아 보이는 일상 사진 하나.<br>행복의 파란새는 바로 그런 일상 속에 있습니다.<br>지인들과 서로의 일상 사진을 보며 간단한 안부와 공감을 나누어 보는 것은 어떨까요?</p>
+            <div class="screen-collage four" aria-label="오늘 일상을 사진으로 나누는 앱 화면">
+              <img class="screen-shot zoomable" src="./images/today-photo-post.png" alt="오늘의 일상을 사진으로 남기는 화면">
+              <img class="screen-shot zoomable" src="./images/today-photo-grid.png" alt="사진형 일상 기록을 모아보는 화면">
+              <img class="screen-shot zoomable" src="./images/today-photo-list.png" alt="사진과 짧은 글로 지난 일상을 보는 화면">
+              <img class="screen-shot zoomable" src="./images/today-friends-daily.png" alt="지인들의 일상 사진으로 안부와 공감을 나누는 화면">
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            <span class="number">06</span>
+            <h2>그 속에서 찾는 미래를 위한 파란 신호등</h2>
+            <span class="toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="answer-with-image answer-with-screens">
+            <p class="answer">내가 가보지 못한 길, 지금 고민하고 있는 길, 나와 비슷한 길을 먼저 걸어가셨던 분들의 이야기를 찾아보세요.<br>이미 그 길을 지나온 뒤, 오늘은 화목한 일상을 살아가고 계신 분들의 다양한 경험 속에서<br>당신만의 파란 신호등을 찾을 수 있습니다.</p>
+            <div class="future-visual" aria-label="미래를 위한 파란 신호등을 찾는 화면">
+              <img class="future-cards zoomable" src="./images/future-story-cards.png" alt="다양한 시니어 경험 카드 이미지">
+              <img class="future-phone zoomable" src="./images/future-search-screen.png" alt="그분들의 이야기를 검색하는 앱 화면">
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            <span class="number">07</span>
+            <h2>[파란]이 하고 싶은 이야기</h2>
+            <span class="toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="message-cards" aria-label="파란이 하고 싶은 이야기 카드">
+            <img class="message-card zoomable" src="./images/message-senior.JPG" alt="시니어에게 이야기를 남겨달라고 전하는 카드">
+            <img class="message-card zoomable" src="./images/message-parents.JPG" alt="부모님의 삶을 기록하도록 도와달라고 전하는 카드">
+            <img class="message-card zoomable" src="./images/message-junior.JPG" alt="다른 사람들의 삶을 읽어보라고 전하는 카드">
+            <img class="message-card zoomable" src="./images/message-experience.JPG" alt="과거의 실제 삶의 경험이 현재에도 도움이 된다고 전하는 카드">
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            <span class="number">08</span>
+            <h2>[파란]이 꿈꾸는 미래</h2>
+            <span class="toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="vision-wrap">
+            <p class="answer">파란은 단순한 SNS가 아닙니다. 사람들의 경험을 보존하고 세대를 연결하는 경험 아카이브 플랫폼의 표준을 목표로 합니다.</p>
+            <div class="vision-cards" aria-label="파란의 미래 비전">
+              <article class="vision-card">
+                <span class="vision-number">01</span>
+                <span class="vision-icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48">
+                    <ellipse cx="24" cy="12" rx="14" ry="5"></ellipse>
+                    <path d="M10 12v18c0 3 6 5 14 5s14-2 14-5V12"></path>
+                    <path d="M10 21c0 3 6 5 14 5s14-2 14-5"></path>
+                    <path d="M29 35c2 4 5 6 9 7"></path>
+                    <path d="M31 39c2-4 4-6 7-8"></path>
+                    <circle cx="37" cy="37" r="6"></circle>
+                  </svg>
+                </span>
+                <h3>대한민국 경험 아카이브 구축</h3>
+                <p>다양한 세대의 경험을 체계적으로 수집하고 보존합니다.</p>
+              </article>
+              <article class="vision-card">
+                <span class="vision-number">02</span>
+                <span class="vision-icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48">
+                    <circle cx="21" cy="21" r="12"></circle>
+                    <path d="M30 30l9 9"></path>
+                    <path d="M15 24l3-8 3 8"></path>
+                    <path d="M16.3 21h3.4"></path>
+                    <path d="M25 16v8"></path>
+                    <path d="M31 9h5a3 3 0 0 1 3 3v5"></path>
+                  </svg>
+                </span>
+                <h3>AI 기반 경험 검색 플랫폼</h3>
+                <p>AI가 경험을 이해하고 연결해 필요한 이야기를 찾도록 돕습니다.</p>
+              </article>
+              <article class="vision-card">
+                <span class="vision-number">03</span>
+                <span class="vision-icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48">
+                    <circle cx="24" cy="24" r="16"></circle>
+                    <path d="M8 24h32"></path>
+                    <path d="M24 8c5 5 7 10 7 16s-2 11-7 16"></path>
+                    <path d="M24 8c-5 5-7 10-7 16s2 11 7 16"></path>
+                    <circle cx="34" cy="17" r="3"></circle>
+                    <circle cx="14" cy="29" r="3"></circle>
+                    <path d="M17 29c6-1 11-5 15-10"></path>
+                  </svg>
+                </span>
+                <h3>고령사회 국가 확장</h3>
+                <p>고령사회 국가의 다양한 경험을 연결하는 기반으로 확장합니다.</p>
+              </article>
+              <article class="vision-card">
+                <span class="vision-number">04</span>
+                <span class="vision-icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48">
+                    <circle cx="24" cy="18" r="10"></circle>
+                    <path d="M14 18h20"></path>
+                    <path d="M24 8c4 4 5 7 5 10s-1 6-5 10"></path>
+                    <path d="M24 8c-4 4-5 7-5 10s1 6 5 10"></path>
+                    <circle cx="13" cy="36" r="4"></circle>
+                    <circle cx="24" cy="36" r="4"></circle>
+                    <circle cx="35" cy="36" r="4"></circle>
+                    <path d="M17 36h3"></path>
+                    <path d="M28 36h3"></path>
+                    <path d="M24 28v4"></path>
+                  </svg>
+                </span>
+                <h3>글로벌 경험 아카이브 플랫폼</h3>
+                <p>세대와 국경을 넘어 경험이 자산이 되는 플랫폼을 꿈꿉니다.</p>
+              </article>
+            </div>
+          </div>
+        </details>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© FCI. Factory of Creative Imagination.</span>
+    </footer>
+  </div>
+
+  <dialog class="image-modal" aria-label="이미지 크게 보기">
+    <div class="modal-inner">
+      <button class="modal-close" type="button" aria-label="닫기">×</button>
+      <img class="modal-image" src="" alt="">
+    </div>
+  </dialog>
+
+  <script>
+    const modal = document.querySelector(".image-modal");
+    const modalImage = document.querySelector(".modal-image");
+    const modalClose = document.querySelector(".modal-close");
+
+    document.querySelectorAll(".zoomable").forEach((image) => {
+      image.setAttribute("tabindex", "0");
+      image.setAttribute("role", "button");
+      image.addEventListener("click", () => openImageModal(image));
+      image.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openImageModal(image);
+        }
+      });
+    });
+
+    function openImageModal(image) {
+      modalImage.src = image.currentSrc || image.src;
+      modalImage.alt = image.alt;
+      modal.showModal();
+    }
+
+    modalClose.addEventListener("click", () => modal.close());
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        modal.close();
+      }
+    });
+    modal.addEventListener("close", () => {
+      modalImage.src = "";
+      modalImage.alt = "";
+    });
+  </script>
+</body>
+</html>

@@ -234,11 +234,19 @@
       min-width: 0;
     }
 
+    .label-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      min-height: 24px;
+      margin-bottom: 6px;
+    }
+
     .app-kicker {
       display: inline-flex;
       align-items: center;
       min-height: 22px;
-      margin-bottom: 6px;
       padding: 2px 8px;
       border-radius: 999px;
       background: #f1f4f9;
@@ -246,13 +254,13 @@
       color: var(--accent);
       font-size: 0.72rem;
       font-weight: 800;
+      white-space: nowrap;
     }
 
     .patent-chip {
       display: inline-flex;
       align-items: center;
       min-height: 22px;
-      margin-left: 5px;
       padding: 2px 8px;
       border-radius: 999px;
       border: 1px solid var(--line);
@@ -262,6 +270,7 @@
       font-size: 0.68rem;
       font-weight: 800;
       vertical-align: top;
+      white-space: nowrap;
     }
 
     .app-title {
@@ -297,6 +306,31 @@
 
     details[open] .more::after {
       content: "-";
+    }
+
+    .card-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .card-actions .more {
+      margin-top: 0;
+    }
+
+    .story-link {
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 800;
+      line-height: 1.2;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .story-link:hover {
+      text-decoration: underline;
     }
 
     .detail {
@@ -468,8 +502,10 @@
           <summary>
             <img class="app-icon" src="./images/Logo_RAB.png" alt="성경낭독녹음 아이콘">
             <div class="app-main">
-              <span class="app-kicker">Faith</span>
-              <span class="patent-chip">Patent</span>
+              <div class="label-row">
+                <span class="app-kicker">Faith</span>
+                <span class="patent-chip">Patent</span>
+              </div>
               <h2 class="app-title">성경낭독녹음</h2>
               <p class="app-intro">원래 성경은 입으로 소리 내어 읽는 것이 아니었을까요?</p>
               <span class="more">자세히 보기</span>
@@ -513,8 +549,10 @@
           <summary>
             <img class="app-icon" src="./images/Logo_ROHD.png" alt="ROHD 아이콘">
             <div class="app-main">
-              <span class="app-kicker">Habit</span>
-              <span class="patent-chip">Patent</span>
+              <div class="label-row">
+                <span class="app-kicker">Record</span>
+                <span class="patent-chip">Patent</span>
+              </div>
               <h2 class="app-title">ROHD : 100일의 기록</h2>
               <p class="app-intro">무언가 100일을 꾸준히 해 보신 적이 있으세요?</p>
               <span class="more">자세히 보기</span>
@@ -547,10 +585,15 @@
           <summary>
             <img class="app-icon" src="./images/DREAM_trans.png" alt="DRE&M 아이콘">
             <div class="app-main">
-              <span class="app-kicker">Daily</span>
+              <div class="label-row">
+                <span class="app-kicker">Habit</span>
+              </div>
               <h2 class="app-title">DRE&amp;M : 오늘의 완성</h2>
               <p class="app-intro">오늘 하루도 좋은 습관을 지키며 지내셨나요?</p>
-              <span class="more">자세히 보기</span>
+              <div class="card-actions">
+                <span class="more">자세히 보기</span>
+                <a class="story-link" href="./dream/index.html" onclick="event.stopPropagation()">스토리 보기 &gt;</a>
+              </div>
             </div>
           </summary>
           <div class="detail">
@@ -562,7 +605,7 @@
                 <li>7일과 30일 단위의 지속, 랭킹, 응원 구조</li>
               </ul>
               <div class="store-group">
-                <a class="store-badge" href="https://apps.apple.com/app/id6775331954" target="_blank" rel="noopener"><img src="./images/Download_apple.png" alt="App Store에서 다운로드"></a>
+                <a class="store-badge" href="https://apps.apple.com/kr/app/id6775331954" target="_blank" rel="noopener"><img src="./images/Download_apple.png" alt="App Store에서 다운로드"></a>
                 <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.fciapp.dream" target="_blank" rel="noopener"><img src="./images/Download_google.png" alt="Google Play에서 다운로드"></a>
               </div>
               <div class="link-group">
@@ -580,11 +623,16 @@
           <summary>
             <img class="app-icon" src="./images/Paran.jpg" alt="파란 아이콘">
             <div class="app-main">
-              <span class="app-kicker">Cross-generation</span>
-              <span class="patent-chip">Patent</span>
+              <div class="label-row">
+                <span class="app-kicker">Cross-generation</span>
+                <span class="patent-chip">Patent</span>
+              </div>
               <h2 class="app-title">파란 : 그분들의 이야기</h2>
-              <p class="app-intro">인생의 성공이란 정말 무엇일까요?<br>일상의 성공을 하신 분들은  어떤 일을 하며 살아오셨을까요?</p>
-              <span class="more">자세히 보기</span>
+              <p class="app-intro">성공한 시니어 분들은 어떤 일/어떤 경험을 하면서 살아 오셨을까요?</p>
+              <div class="card-actions">
+                <span class="more">자세히 보기</span>
+                <a class="story-link" href="./paran/index.html" onclick="event.stopPropagation()">스토리 보기 &gt;</a>
+              </div>
             </div>
           </summary>
           <div class="detail">
