@@ -253,10 +253,6 @@
       cursor: zoom-in;
     }
 
-    .mobile-modal-disabled .zoomable {
-      cursor: default;
-    }
-
     .story-image.keep-mobile {
       background: transparent;
     }
@@ -504,6 +500,34 @@
       box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
     }
 
+    .modal-nav {
+      position: absolute;
+      top: 50%;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--text);
+      font-size: 1.8rem;
+      line-height: 1;
+      transform: translateY(-50%);
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    .modal-nav.prev {
+      left: -58px;
+    }
+
+    .modal-nav.next {
+      right: -58px;
+    }
+
+    .modal-nav[hidden] {
+      display: none;
+    }
+
     @media (max-width: 640px) {
       .page {
         padding: 20px 14px 30px;
@@ -568,17 +592,17 @@
       }
 
       .screen-collage {
-        display: flex;
-        gap: 12px;
-        overflow-x: auto;
-        padding: 2px 0 8px;
-        scroll-snap-type: x mandatory;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+        overflow: visible;
+        padding: 4px 0 12px;
       }
 
       .screen-shot {
-        flex: 0 0 min(72%, 240px);
-        max-height: none;
-        scroll-snap-align: center;
+        width: 100%;
+        max-height: 145px;
+        object-fit: contain;
       }
 
       .screen-shot:nth-child(2) {
@@ -587,8 +611,14 @@
 
       .screen-collage.four .screen-shot {
         width: 100%;
-        flex: 0 0 min(72%, 240px);
-        max-height: none;
+        max-height: 138px;
+      }
+
+      .screen-collage.four {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 7px;
+        padding-left: 0;
       }
 
       .screen-collage.four .screen-shot:nth-child(2),
@@ -602,8 +632,8 @@
 
       .future-visual {
         display: grid;
-        grid-template-columns: 1fr;
-        gap: 12px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
         min-height: 0;
         padding-top: 8px;
       }
@@ -611,26 +641,34 @@
       .future-cards,
       .future-phone {
         position: static;
-        width: min(100%, 300px);
-        max-height: none;
+        width: 100%;
+        max-height: 155px;
+        object-fit: contain;
         margin: 0 auto;
       }
 
       .future-cards {
-        width: min(100%, 340px);
+        width: 100%;
       }
 
       .message-cards {
-        display: flex;
-        gap: 12px;
-        overflow-x: auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        overflow: visible;
         padding: 0 16px 16px 60px;
-        scroll-snap-type: x mandatory;
       }
 
       .message-card {
-        flex: 0 0 min(72%, 240px);
-        scroll-snap-align: center;
+        width: 100%;
+      }
+
+      .modal-nav.prev {
+        left: 8px;
+      }
+
+      .modal-nav.next {
+        right: 8px;
       }
 
       .vision-wrap {
@@ -856,7 +894,9 @@
   <dialog class="image-modal" aria-label="이미지 크게 보기">
     <div class="modal-inner">
       <button class="modal-close" type="button" aria-label="닫기">×</button>
+      <button class="modal-nav prev" type="button" aria-label="이전 이미지">‹</button>
       <img class="modal-image" src="" alt="">
+      <button class="modal-nav next" type="button" aria-label="다음 이미지">›</button>
     </div>
   </dialog>
 
@@ -864,17 +904,11 @@
     const modal = document.querySelector(".image-modal");
     const modalImage = document.querySelector(".modal-image");
     const modalClose = document.querySelector(".modal-close");
-    const desktopModalQuery = window.matchMedia("(min-width: 641px)");
-
-    function updateModalMode() {
-      document.body.classList.toggle("mobile-modal-disabled", !desktopModalQuery.matches);
-      if (!desktopModalQuery.matches && modal.open) {
-        modal.close();
-      }
-    }
-
-    updateModalMode();
-    desktopModalQuery.addEventListener("change", updateModalMode);
+    const modalPrev = document.querySelector(".modal-nav.prev");
+    const modalNext = document.querySelector(".modal-nav.next");
+    let activeGallery = [];
+    let activeIndex = 0;
+    let touchStartX = 0;
 
     document.querySelectorAll(".zoomable").forEach((image) => {
       image.setAttribute("tabindex", "0");
@@ -889,24 +923,71 @@
     });
 
     function openImageModal(image) {
-      if (!desktopModalQuery.matches) {
-        return;
-      }
-
-      modalImage.src = image.currentSrc || image.src;
-      modalImage.alt = image.alt;
+      const galleryRoot = image.closest(".screen-collage, .future-visual, .message-cards, .answer-with-image");
+      activeGallery = galleryRoot ? Array.from(galleryRoot.querySelectorAll(".zoomable")) : [image];
+      activeIndex = Math.max(0, activeGallery.indexOf(image));
+      renderModalImage();
       modal.showModal();
     }
 
+    function renderModalImage() {
+      const image = activeGallery[activeIndex];
+      modalImage.src = image.currentSrc || image.src;
+      modalImage.alt = image.alt;
+      const hasMultipleImages = activeGallery.length > 1;
+      modalPrev.hidden = !hasMultipleImages;
+      modalNext.hidden = !hasMultipleImages;
+    }
+
+    function moveModalImage(direction) {
+      if (activeGallery.length < 2) {
+        return;
+      }
+
+      activeIndex = (activeIndex + direction + activeGallery.length) % activeGallery.length;
+      renderModalImage();
+    }
+
     modalClose.addEventListener("click", () => modal.close());
+    modalPrev.addEventListener("click", (event) => {
+      event.stopPropagation();
+      moveModalImage(-1);
+    });
+    modalNext.addEventListener("click", (event) => {
+      event.stopPropagation();
+      moveModalImage(1);
+    });
     modal.addEventListener("click", (event) => {
       if (event.target === modal) {
         modal.close();
       }
     });
+    modal.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") {
+        moveModalImage(-1);
+      }
+
+      if (event.key === "ArrowRight") {
+        moveModalImage(1);
+      }
+    });
+    modalImage.addEventListener("touchstart", (event) => {
+      touchStartX = event.changedTouches[0].clientX;
+    }, { passive: true });
+    modalImage.addEventListener("touchend", (event) => {
+      const touchEndX = event.changedTouches[0].clientX;
+      const distance = touchEndX - touchStartX;
+
+      if (Math.abs(distance) > 45) {
+        moveModalImage(distance > 0 ? -1 : 1);
+      }
+    }, { passive: true });
     modal.addEventListener("close", () => {
       modalImage.src = "";
       modalImage.alt = "";
+      activeGallery = [];
+      activeIndex = 0;
+      touchStartX = 0;
     });
   </script>
 </body>
