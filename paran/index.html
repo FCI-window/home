@@ -253,6 +253,10 @@
       cursor: zoom-in;
     }
 
+    .mobile-modal-disabled .zoomable {
+      cursor: default;
+    }
+
     .story-image.keep-mobile {
       background: transparent;
     }
@@ -556,10 +560,7 @@
         display: block;
       }
 
-      .story-image {
-        display: none;
-      }
-
+      .story-image,
       .story-image.keep-mobile {
         display: block;
         width: min(100%, 300px);
@@ -669,7 +670,7 @@
       <section class="storyline" aria-label="파란 스토리라인">
         <p class="section-heading">궁금한 제목을 눌러 8개의 질문으로 Paran을 열어보세요.</p>
 
-        <details>
+        <details open>
           <summary>
             <span class="number">01</span>
             <h2>과연 성공한 인생이란 무엇일까요?</h2>
@@ -863,6 +864,17 @@
     const modal = document.querySelector(".image-modal");
     const modalImage = document.querySelector(".modal-image");
     const modalClose = document.querySelector(".modal-close");
+    const desktopModalQuery = window.matchMedia("(min-width: 641px)");
+
+    function updateModalMode() {
+      document.body.classList.toggle("mobile-modal-disabled", !desktopModalQuery.matches);
+      if (!desktopModalQuery.matches && modal.open) {
+        modal.close();
+      }
+    }
+
+    updateModalMode();
+    desktopModalQuery.addEventListener("change", updateModalMode);
 
     document.querySelectorAll(".zoomable").forEach((image) => {
       image.setAttribute("tabindex", "0");
@@ -877,6 +889,10 @@
     });
 
     function openImageModal(image) {
+      if (!desktopModalQuery.matches) {
+        return;
+      }
+
       modalImage.src = image.currentSrc || image.src;
       modalImage.alt = image.alt;
       modal.showModal();
