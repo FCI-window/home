@@ -1,0 +1,26 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "life.fci.recordaloudbible",
+      "sha256_cert_fingerprints": [
+        "75:67:D4:A1:A4:10:29:31:BE:87:F6:26:7A:29:0B:C2:41:34:2F:A3:3E:31:9A:6E:AA:6D:E3:D0:EE:F6:A4:2B"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.fciapp.dream",
+      "sha256_cert_fingerprints": [
+        "D8:7B:31:75:31:F6:AD:28:86:54:CB:07:D9:A7:C4:F4:13:C9:15:0B:45:BB:CC:76:07:6A:BB:AE:2F:F1:E8:F4"
+      ]
+    }
+  }
+]
