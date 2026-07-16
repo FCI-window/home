@@ -1,26 +1,98 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>RAB 앱으로 이동</title>
+  <title>Open RAB</title>
+</head>
+<body>
+  <p id="message">Redirecting to the app store...</p>
+
   <script>
-    const IOS_URL = "https://apps.apple.com/kr/app/성경낭독녹음/id1554443046";
-    const ANDROID_URL = "https://play.google.com/store/apps/details?id=life.fci.recordaloudbible&hl=ko";
-    const FALLBACK_URL = "https://fciapp.com/";
+    const IOS_BASE_URL =
+      "https://apps.apple.com/kr/app/성경낭독녹음/id1554443046";
+
+    const ANDROID_BASE_URL =
+      "https://play.google.com/store/apps/details?id=life.fci.recordaloudbible";
+
+    const FALLBACK_URL = "https://www.fciapp.com/";
+
+    const messages = {
+      en: "Redirecting to the app store...",
+      ja: "アプリストアへ移動しています…",
+      es: "Redirigiendo a la tienda de aplicaciones...",
+      "zh-Hans": "正在跳转到应用商店……",
+      "zh-Hant": "正在跳轉到應用程式商店……"
+    };
+
+    function getLanguage() {
+      const languages = navigator.languages?.length
+        ? navigator.languages
+        : [navigator.language || "en"];
+
+      for (const value of languages) {
+        const language = value.toLowerCase();
+
+        if (language.startsWith("ja")) return "ja";
+        if (language.startsWith("es")) return "es";
+
+        if (
+          language.startsWith("zh-tw") ||
+          language.startsWith("zh-hk") ||
+          language.startsWith("zh-mo") ||
+          language.includes("hant")
+        ) {
+          return "zh-Hant";
+        }
+
+        if (
+          language.startsWith("zh") ||
+          language.includes("hans")
+        ) {
+          return "zh-Hans";
+        }
+
+        if (language.startsWith("en")) return "en";
+      }
+
+      return "en";
+    }
+
+    const language = getLanguage();
+
+    document.documentElement.lang = language;
+    document.title = messages[language];
+    document.getElementById("message").textContent = messages[language];
 
     const ua = navigator.userAgent || navigator.vendor || window.opera;
 
     if (/android/i.test(ua)) {
-      window.location.replace(ANDROID_URL);
+      const storeLanguage = {
+        en: "en",
+        ja: "ja",
+        es: "es",
+        "zh-Hans": "zh-CN",
+        "zh-Hant": "zh-TW"
+      }[language];
+
+      window.location.replace(
+        `${ANDROID_BASE_URL}&hl=${storeLanguage}`
+      );
     } else if (/iPhone|iPad|iPod/i.test(ua)) {
-      window.location.replace(IOS_URL);
+      const storeLanguage = {
+        en: "en",
+        ja: "ja",
+        es: "es",
+        "zh-Hans": "zh-Hans",
+        "zh-Hant": "zh-Hant"
+      }[language];
+
+      window.location.replace(
+        `${IOS_BASE_URL}&l=${storeLanguage}`
+      );
     } else {
       window.location.replace(FALLBACK_URL);
     }
   </script>
-</head>
-<body>
-  <p>앱 스토어로 이동 중입니다...</p>
 </body>
 </html>
