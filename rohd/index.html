@@ -42,60 +42,61 @@
     .fci-logo img { width: 148px; height: auto; }
     .home-link {
       display: inline-flex; align-items: center; justify-content: center; min-height: 42px; padding: 0 16px;
-      color: var(--rohd-dark); background: rgba(255,255,255,.82); border: 1px solid var(--line);
-      border-radius: 999px; font-size: 14px; font-weight: 700; text-decoration: none;
+      color: var(--muted); background: rgba(255,255,255,.76); border: 1px solid var(--line);
+      border-radius: 999px; font-size: .92rem; font-weight: 700; text-decoration: none;
     }
     .home-link:hover, .home-link:focus-visible { border-color: var(--rohd); }
-    .hero { display: grid; gap: 22px; }
-    .intro {
-      position: relative; overflow: hidden; padding: clamp(28px, 5vw, 52px); background: rgba(255,255,255,.9);
-      border: 1px solid var(--line); border-radius: 24px; box-shadow: var(--shadow);
+    .hero { display: grid; gap: 24px; }
+    .intro { padding: 0; }
+    .brand-row { display: flex; align-items: center; gap: 15px; margin-bottom: 0; }
+    .app-icon { width: 76px; height: 76px; border-radius: 21px; box-shadow: 0 14px 28px rgba(36,76,134,.18); }
+    .kicker {
+      display: inline-flex; min-height: 26px; align-items: center; padding: 0 10px; border-radius: 999px;
+      background: #edf3fb; color: var(--rohd-dark); font-size: .82rem; font-weight: 800;
     }
-    .intro::after {
-      content: ""; position: absolute; width: 280px; height: 280px; right: -90px; top: -120px;
-      border: 46px solid rgba(36,76,134,.065); border-radius: 50%;
-    }
-    .brand-row { position: relative; z-index: 1; display: flex; align-items: center; gap: clamp(20px, 4vw, 38px); }
-    .app-icon { width: clamp(96px, 14vw, 148px); aspect-ratio: 1; border-radius: 24%; box-shadow: 0 18px 36px rgba(32,40,58,.16); }
-    .kicker { display: block; margin-bottom: 8px; color: var(--rohd); font-size: 13px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
-    h1 { margin: 0; font-size: clamp(31px, 5vw, 56px); line-height: 1.18; letter-spacing: -.04em; }
-    .hero-copy { margin: 12px 0 0; color: var(--muted); font-size: clamp(17px, 2.3vw, 22px); }
-    .english { margin: 6px 0 0; color: var(--gold); font-size: 14px; font-weight: 700; letter-spacing: .08em; }
+    h1 { margin: 10px 0 0; font-size: clamp(1.64rem, 4.6vw, 2.64rem); line-height: 1.18; letter-spacing: 0; }
+    .hero-copy { margin: 8px 0 0; color: #48556b; font-size: clamp(1rem, 2vw, 1.16rem); }
+    .english { margin: 4px 0 0; color: var(--gold); font-size: .88rem; font-weight: 700; letter-spacing: .06em; }
     .store-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
     .store-links a { border-radius: 8px; transition: transform .2s ease; }
     .store-links a:hover, .store-links a:focus-visible { transform: translateY(-2px); }
     .store-links img { height: 42px; width: auto; }
 
-    .storyline { display: grid; gap: 14px; }
-    .section-heading { margin: 8px 4px 2px; color: var(--muted); font-size: 15px; }
-    details { overflow: hidden; background: rgba(255,255,255,.92); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); }
+    .storyline { display: grid; gap: 9px; }
+    .section-heading { margin: 0 0 13px; color: var(--muted); font-size: .94rem; font-weight: 700; }
+    details { overflow: hidden; background: rgba(255,255,255,.88); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 10px 22px rgba(23,32,51,.045); }
+    details[open] { border-color: rgba(36,76,134,.42); background: var(--surface); box-shadow: var(--shadow); }
     summary {
-      display: grid; grid-template-columns: 52px 1fr 34px; gap: 14px; align-items: center;
-      padding: 23px 24px; cursor: pointer; list-style: none;
+      position: relative; display: grid; grid-template-columns: 44px minmax(0,1fr) 30px; gap: 12px; align-items: center;
+      min-height: 65px; padding: 12px 15px; cursor: pointer; list-style: none;
     }
     summary::-webkit-details-marker { display: none; }
     summary:hover { background: rgba(36,76,134,.035); }
     summary:focus-visible { outline: 3px solid rgba(36,76,134,.28); outline-offset: -3px; }
-    .number { color: var(--rohd); font-size: 16px; font-weight: 800; letter-spacing: .08em; }
-    summary h2 { margin: 0; font-size: clamp(19px, 2.4vw, 26px); line-height: 1.42; }
+    .number {
+      display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px;
+      color: var(--rohd-dark); background: #edf3fb; border-radius: 50%; font-size: .86rem; font-weight: 800;
+    }
+    details[open] .number { color: #fff; background: var(--rohd); }
+    summary h2 { margin: 0; font-size: clamp(1rem, 1.7vw, 1.14rem); line-height: 1.35; letter-spacing: 0; }
     .toggle {
-      display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px;
-      color: var(--rohd); border: 1px solid var(--line); border-radius: 50%; font-size: 22px; line-height: 1;
+      width: 30px; height: 30px; color: var(--rohd-dark); border: 1px solid var(--line);
+      border-radius: 50%; font-size: 1.32rem; line-height: 26px; text-align: center;
       transition: transform .25s ease, background .25s ease;
     }
     details[open] .toggle { color: #fff; background: var(--rohd); border-color: var(--rohd); transform: rotate(45deg); }
     .answer-with-image {
-      display: grid; grid-template-columns: minmax(0,.9fr) minmax(340px,1.1fr); gap: 32px; align-items: center;
-      padding: 4px 24px 28px 90px; border-top: 1px solid var(--line);
+      display: grid; grid-template-columns: minmax(0,1fr) 230px; gap: 18px; align-items: center;
+      border-top: 0;
     }
-    .answer { margin: 24px 0 0; color: #465066; font-size: 16px; }
+    .answer { margin: 0; padding: 0 20px 18px 71px; color: #42536a; font-size: .98rem; }
     .answer strong { color: var(--rohd-dark); }
     .meaning-note { margin-top: 20px; padding: 13px 15px; color: var(--rohd-dark); background: #edf3fb; border-left: 3px solid var(--rohd); border-radius: 0 8px 8px 0; font-size: 14px; }
     .story-image-wrap {
-      position: relative; overflow: hidden; min-height: 270px; margin-top: 24px; background: var(--surface-soft);
+      position: relative; overflow: hidden; min-height: 210px; margin: 0 18px 18px 0; background: var(--surface-soft);
       border: 1px solid var(--line); border-radius: 14px;
     }
-    .story-image { width: 100%; height: 100%; min-height: 270px; object-fit: cover; }
+    .story-image { width: 100%; height: 100%; min-height: 210px; object-fit: cover; }
     .story-image-wrap.placeholder .story-image { display: none; }
     .image-placeholder { position: absolute; inset: 0; display: none; place-items: center; padding: 28px; text-align: center; }
     .placeholder .image-placeholder { display: grid; }
@@ -120,20 +121,18 @@
       .page { padding: 18px 14px 28px; }
       .topbar { margin-bottom: 18px; }
       .fci-logo img { width: 126px; }
-      .brand-row { align-items: flex-start; }
-      .app-icon { width: 92px; border-radius: 20px; }
-      summary { grid-template-columns: 38px 1fr 30px; gap: 9px; padding: 20px 15px; }
-      .answer-with-image { grid-template-columns: 1fr; gap: 2px; padding: 0 15px 22px 52px; }
-      .story-image-wrap { min-height: 220px; }
-      .story-image { min-height: 220px; }
+      .home-link { min-height: 38px; padding: 0 12px; font-size: .84rem; }
+      .brand-row { gap: 12px; margin-bottom: 16px; }
+      .app-icon { width: 64px; height: 64px; border-radius: 18px; }
+      summary { grid-template-columns: 38px minmax(0,1fr) 28px; gap: 10px; min-height: 60px; padding: 11px 12px; }
+      .number { width: 36px; height: 36px; font-size: .8rem; }
+      .answer-with-image { display: block; }
+      .answer { padding: 0 16px 16px 60px; font-size: .94rem; }
+      .story-image-wrap { width: min(100% - 76px, 300px); min-height: 210px; margin: 0 16px 16px 60px; }
+      .story-image { min-height: 210px; }
       .download-panel { align-items: flex-start; flex-direction: column; }
     }
     @media (max-width: 480px) {
-      .intro { padding: 24px 20px; }
-      .brand-row { display: grid; }
-      h1 { font-size: 34px; }
-      .hero-copy { font-size: 18px; }
-      .answer-with-image { padding-left: 15px; }
       .store-links img { height: 38px; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
@@ -239,5 +238,4 @@
   </script>
 </body>
 </html>
-
 
