@@ -22,5 +22,17 @@
         "D8:7B:31:75:31:F6:AD:28:86:54:CB:07:D9:A7:C4:F4:13:C9:15:0B:45:BB:CC:76:07:6A:BB:AE:2F:F1:E8:F4"
       ]
     }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "life.fci.ROHD",
+      "sha256_cert_fingerprints": [
+        "75:D6:BF:A0:25:0E:CB:E0:1F:2F:94:66:36:D5:43:75:C9:CA:49:BE:26:FB:07:FD:FB:28:8A:52:00:84:F5:8C"
+      ]
+    }
   }
 ]

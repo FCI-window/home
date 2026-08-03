@@ -18,6 +18,15 @@
           "/dreamLink",
           "/dreamLink/*"
         ]
+      },
+      {
+        "appIDs": [
+          "SN244SX327.life.fci.ROHD"
+        ],
+        "paths": [
+          "/rohdLink",
+          "/rohdLink/*"
+        ]
       }
     ]
   }
