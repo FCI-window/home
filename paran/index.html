@@ -443,6 +443,26 @@
       font-size: 0.88rem;
     }
 
+    .download-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      margin-top: 8px;
+      padding: 30px;
+      color: #fff;
+      background: linear-gradient(125deg, var(--paran-dark), var(--paran));
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .download-panel h2 { margin: 0; font-size: clamp(23px, 3vw, 33px); }
+    .download-panel p { margin: 5px 0 0; color: rgba(255, 255, 255, 0.78); }
+    .store-links { display: flex; flex-wrap: wrap; gap: 10px; flex: 0 0 auto; }
+    .store-links a { border-radius: 8px; transition: transform 0.2s ease; }
+    .store-links a:hover, .store-links a:focus-visible { transform: translateY(-2px); }
+    .store-links img { display: block; width: auto; height: 42px; }
+
     .footer-links {
       display: flex;
       flex-wrap: wrap;
@@ -529,6 +549,8 @@
     }
 
     @media (max-width: 640px) {
+      .download-panel { align-items: flex-start; flex-direction: column; }
+      .store-links img { height: 38px; }
       .page {
         padding: 20px 14px 30px;
       }
@@ -706,7 +728,7 @@
       </section>
 
       <section class="storyline" aria-label="파란 스토리라인">
-        <p class="section-heading">제목을 눌러 8개의 질문으로 Paran을 열어보세요.</p>
+        <p class="section-heading">제목을 눌러 8개의 이야기로 [파란]을 열어보세요.</p>
 
         <details open>
           <summary>
@@ -883,6 +905,14 @@
             </div>
           </div>
         </details>
+
+        <section class="download-panel" aria-label="파란 다운로드">
+          <div><h2>당신의 이야기는 누군가의 미래가 됩니다.</h2><p>경험을 기록하고, 연결하고, 이어가는 [파란]</p></div>
+          <div class="store-links">
+            <a href="https://apps.apple.com/kr/app/id6760983914" target="_blank" rel="noopener"><img src="../images/Download_apple.png" alt="App Store에서 다운로드"></a>
+            <a href="https://play.google.com/store/apps/details?id=com.fciapp.TMOStory" target="_blank" rel="noopener"><img src="../images/Download_google.png" alt="Google Play에서 다운로드"></a>
+          </div>
+        </section>
       </section>
     </main>
 
