@@ -96,6 +96,23 @@
       border: 1px solid var(--line); border-radius: 14px;
     }
     .story-image { width: 100%; height: 100%; min-height: 210px; object-fit: cover; }
+    .gif-stage { aspect-ratio: 306 / 512; min-height: 0; background: #fff; }
+    .gif-stage .story-image {
+      position: absolute; inset: 0; width: 100%; height: 100%; min-height: 0; object-fit: contain;
+      opacity: 0; animation: gifCrossFade 9s linear infinite;
+    }
+    .gif-stage .story-image:first-child { opacity: 1; animation-name: gifCrossFadeA; }
+    .gif-stage .story-image:nth-child(2) { animation-name: gifCrossFadeB; }
+    @keyframes gifCrossFadeA {
+      0%, 44.4% { opacity: 1; }
+      50%, 94.4% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes gifCrossFadeB {
+      0%, 44.4% { opacity: 0; }
+      50%, 94.4% { opacity: 1; }
+      100% { opacity: 0; }
+    }
     .story-image-wrap.placeholder .story-image { display: none; }
     .image-placeholder { position: absolute; inset: 0; display: none; place-items: center; padding: 28px; text-align: center; }
     .placeholder .image-placeholder { display: grid; }
@@ -134,7 +151,13 @@
     @media (max-width: 480px) {
       .store-links img { height: 38px; }
     }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+      .gif-stage .story-image { animation: none !important; }
+      .gif-stage .story-image:first-child { opacity: 1; }
+      .gif-stage .story-image:nth-child(2) { opacity: 0; }
+    }
   </style>
 </head>
 <body>
@@ -166,7 +189,7 @@
             <div>
               <p class="answer">좋은 습관을 만들기 위한 100일,<br>우리 아기의 사랑스러운 100일,<br>반려식물의 성장, 여행의 추억, 가족의 일상까지…<br><br>우리 모두에게는 오래도록 간직하고 싶은<br><strong>100일의 이야기</strong>가 있습니다.</p>
             </div>
-            <figure class="story-image-wrap"><img class="story-image" src="./images/section-01.webp" alt="운동, 독서, 아기, 반려식물, 여행과 가족의 다양한 100일 기록" loading="lazy"><figcaption class="image-placeholder"><span><span class="image-no">IMAGE 01</span><span class="image-direction">서로 다른 100일의 따뜻한 콜라주</span><span class="image-file">images/section-01.webp</span></span></figcaption></figure>
+            <figure class="story-image-wrap"><img class="story-image" src="./images/section-01.webp" alt="Different 100-day journeys" loading="lazy"><figcaption class="image-placeholder"><span><span class="image-no">IMAGE 01</span><span class="image-direction">서로 다른 100일의 따뜻한 콜라주</span><span class="image-file">images/section-01.webp</span></span></figcaption></figure>
           </div>
         </details>
 
@@ -174,7 +197,7 @@
           <summary><span class="number">02</span><h2>그런데 그 100일은 어디에 남아 있을까요?</h2><span class="toggle" aria-hidden="true">+</span></summary>
           <div class="answer-with-image">
             <p class="answer">기억으로만 남기기보다는 사진을 남기곤 합니다.<br><br>하지만 그 사진들은 시간이 지나면서<br>스마트폰 사진첩 속에 묻혀버리고 맙니다.</p>
-            <figure class="story-image-wrap"><img class="story-image" src="./images/section-02.webp" alt="스마트폰 사진첩 속 수많은 사진 사이에 묻힌 소중한 기록" loading="lazy"><figcaption class="image-placeholder"><span><span class="image-no">IMAGE 02</span><span class="image-direction">사진첩 속에 묻힌 소중했던 순간들</span><span class="image-file">images/section-02.webp</span></span></figcaption></figure>
+            <figure class="story-image-wrap"><img class="story-image" src="./images/section-02.webp" alt="Photos buried in the gallery" loading="lazy"><figcaption class="image-placeholder"><span><span class="image-no">IMAGE 02</span><span class="image-direction">사진첩 속에 묻힌 소중했던 순간들</span><span class="image-file">images/section-02.webp</span></span></figcaption></figure>
           </div>
         </details>
 
@@ -190,7 +213,10 @@
           <summary><span class="number">04</span><h2>ROHD는 그 100일을 하나의 이야기로 만들어 드립니다.</h2><span class="toggle" aria-hidden="true">+</span></summary>
           <div class="answer-with-image">
             <p class="answer">하루 한 장의 기록이 모여<br><br>하나의 캘린더가 되고,<br>하나의 모자이크가 되고,<br>하나의 영상이 되어,<br><br><strong>하나의 이야기가 됩니다.</strong></p>
-            <figure class="story-image-wrap"><img class="story-image" src="./images/section-04.webp" alt="사진에서 100일 캘린더, 모자이크, 기록 영상과 이야기로 이어지는 ROHD 기능" loading="lazy"><figcaption class="image-placeholder"><span><span class="image-no">IMAGE 04 · PRODUCT</span><span class="image-direction">사진 → 캘린더 → 모자이크 → 영상 → 이야기</span><span class="image-file">images/section-04.webp</span></span></figcaption></figure>
+            <figure class="story-image-wrap gif-stage" aria-label="ROHD가 기록을 캘린더, 모자이크와 영상으로 만드는 과정">
+              <img class="story-image" src="./images/section-04-a.gif" alt="Running journey becoming a 100-day story" loading="lazy">
+              <img class="story-image" src="./images/section-04-b.gif" alt="Baby growth journey becoming a 100-day story" loading="lazy">
+            </figure>
           </div>
         </details>
 
@@ -198,7 +224,7 @@
           <summary><span class="number">05</span><h2>100일은 끝이 아니라 또 다른 시작입니다.</h2><span class="toggle" aria-hidden="true">+</span></summary>
           <div class="answer-with-image">
             <p class="answer">하나의 100일이 끝나면 또 다른 목표가 시작됩니다.<br><br>우리의 삶은 수많은 <strong>100일의 여정</strong>으로 이어집니다.<br><br>ROHD와 함께,<br>당신의 소중한 100일을<br><strong>하나의 이야기로 남겨보세요.</strong></p>
-            <figure class="story-image-wrap"><img class="story-image" src="./images/section-05.webp" alt="하나의 100일 여정이 끝난 후 다음 여정으로 이어지는 길" loading="lazy"><figcaption class="image-placeholder"><span><span class="image-no">IMAGE 05</span><span class="image-direction">끝에서 다시 시작되는 100일의 여정</span><span class="image-file">images/section-05.webp</span></span></figcaption></figure>
+            <figure class="story-image-wrap"><img class="story-image" src="./images/section-05.webp" alt="A new beginning after every 100-day journey" loading="lazy"><figcaption class="image-placeholder"><span><span class="image-no">IMAGE 05</span><span class="image-direction">끝에서 다시 시작되는 100일의 여정</span><span class="image-file">images/section-05.webp</span></span></figcaption></figure>
           </div>
         </details>
 
