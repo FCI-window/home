@@ -99,19 +99,6 @@
     .gif-stage { aspect-ratio: 306 / 512; min-height: 0; background: #fff; }
     .gif-stage .story-image {
       position: absolute; inset: 0; width: 100%; height: 100%; min-height: 0; object-fit: contain;
-      opacity: 0; animation: gifCrossFade 9s linear infinite;
-    }
-    .gif-stage .story-image:first-child { opacity: 1; animation-name: gifCrossFadeA; }
-    .gif-stage .story-image:nth-child(2) { animation-name: gifCrossFadeB; }
-    @keyframes gifCrossFadeA {
-      0%, 44.4% { opacity: 1; }
-      50%, 94.4% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-    @keyframes gifCrossFadeB {
-      0%, 44.4% { opacity: 0; }
-      50%, 94.4% { opacity: 1; }
-      100% { opacity: 0; }
     }
     .story-image-wrap.placeholder .story-image { display: none; }
     .image-placeholder { position: absolute; inset: 0; display: none; place-items: center; padding: 28px; text-align: center; }
@@ -154,9 +141,6 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       * { transition: none !important; }
-      .gif-stage .story-image { animation: none !important; }
-      .gif-stage .story-image:first-child { opacity: 1; }
-      .gif-stage .story-image:nth-child(2) { opacity: 0; }
     }
   </style>
 </head>
@@ -214,8 +198,9 @@
           <div class="answer-with-image">
             <p class="answer">하루 한 장의 기록이 모여<br><br>하나의 캘린더가 되고,<br>하나의 모자이크가 되고,<br>하나의 영상이 되어,<br><br><strong>하나의 이야기가 됩니다.</strong></p>
             <figure class="story-image-wrap gif-stage" aria-label="ROHD가 기록을 캘린더, 모자이크와 영상으로 만드는 과정">
-              <img class="story-image" src="./images/section-04-a.gif" alt="Running journey becoming a 100-day story" loading="lazy">
-              <img class="story-image" src="./images/section-04-b.gif" alt="Baby growth journey becoming a 100-day story" loading="lazy">
+              <img class="story-image gif-sequence" src="./images/section-04-a.gif" alt="Running journey becoming a 100-day story" loading="lazy"
+                data-running-src="./images/section-04-a.gif" data-running-alt="Running journey becoming a 100-day story"
+                data-baby-src="./images/section-04-b.gif" data-baby-alt="Baby growth journey becoming a 100-day story">
             </figure>
           </div>
         </details>
@@ -249,6 +234,29 @@
   </div>
 
   <script>
+    /* 각 10초 GIF를 처음부터 끝까지 재생한 뒤 다음 GIF를 같은 자리에서 시작합니다. */
+    const gifSequence = document.querySelector(".gif-sequence");
+    if (gifSequence) {
+      const gifSteps = [
+        { src: gifSequence.dataset.runningSrc, alt: gifSequence.dataset.runningAlt },
+        { src: gifSequence.dataset.babySrc, alt: gifSequence.dataset.babyAlt }
+      ];
+      let gifStep = 0;
+      let gifTimer;
+
+      const scheduleNextGif = () => {
+        window.clearTimeout(gifTimer);
+        gifTimer = window.setTimeout(() => {
+          gifStep = (gifStep + 1) % gifSteps.length;
+          gifSequence.alt = gifSteps[gifStep].alt;
+          gifSequence.src = gifSteps[gifStep].src;
+        }, 10000);
+      };
+
+      gifSequence.addEventListener("load", scheduleNextGif);
+      if (gifSequence.complete && gifSequence.naturalWidth) scheduleNextGif();
+    }
+
     /* 이미지가 준비되면 rohd/images에 같은 파일명으로 넣기만 하면 됩니다. */
     document.querySelectorAll(".story-image").forEach((image) => {
       const usePlaceholder = () => image.closest(".story-image-wrap").classList.add("placeholder");
