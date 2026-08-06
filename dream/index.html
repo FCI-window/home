@@ -130,6 +130,10 @@
       letter-spacing: 0;
     }
 
+    .hero-title-tagline {
+      font-size: inherit;
+    }
+
     .hero-copy {
       margin: -4px 0 0;
       max-width: 620px;
@@ -1045,6 +1049,109 @@
     @media (max-width: 640px) {
       .download-panel { align-items: flex-start; flex-direction: column; }
       .store-links img { height: 38px; }
+
+      .brand-row > div {
+        min-width: 0;
+      }
+
+      h1 {
+        white-space: nowrap;
+      }
+
+      .hero-title-tagline {
+        font-size: 0.9em;
+      }
+
+      .together-core {
+        grid-template-columns: 1fr;
+      }
+
+      .community-expansion h3 {
+        font-size: 0.82rem;
+      }
+
+      .community-expansion p {
+        font-size: 0.7rem;
+        line-height: 1.45;
+      }
+
+      .expansion-card strong {
+        font-size: 0.62rem;
+        white-space: nowrap;
+      }
+
+      .expansion-card span {
+        font-size: 0.58rem;
+      }
+
+      .expansion-card {
+        grid-template-columns: 24px minmax(0, 1fr);
+        gap: 6px;
+        padding: 9px 8px;
+      }
+
+      .expansion-icon {
+        width: 24px;
+        height: 24px;
+      }
+
+      .expansion-icon svg {
+        width: 19px;
+        height: 19px;
+      }
+
+      .vision-step strong {
+        font-size: 0.82rem;
+      }
+
+      .vision-step p {
+        font-size: 0.72rem;
+        line-height: 1.45;
+      }
+
+      .vision-quote blockquote {
+        font-size: 0.88rem;
+        line-height: 1.5;
+      }
+
+      .vision-quote p {
+        font-size: 0.72rem;
+        line-height: 1.6;
+      }
+
+      .sustainability-lead {
+        font-size: 0.82rem;
+        line-height: 1.55;
+      }
+
+      .sustainability-lead strong {
+        font-size: 1rem;
+        line-height: 1.35;
+      }
+
+      .sustainability-card strong {
+        font-size: 0.82rem;
+      }
+
+      .sustainability-card p {
+        font-size: 0.72rem;
+        line-height: 1.45;
+      }
+
+      .answer,
+      .together-lead {
+        font-size: 0.82rem;
+        line-height: 1.55;
+      }
+
+      .mini-card p,
+      .friction-card p,
+      .habit-summary p,
+      .together-card p {
+        font-size: 0.72rem;
+        line-height: 1.45;
+      }
+
       .page {
         padding: 20px 13px 30px;
       }
@@ -1174,8 +1281,7 @@
       .sustainability-grid,
       .overview-screens,
       .together-core,
-      .community-screens,
-      .expansion-grid {
+      .community-screens {
         grid-template-columns: 1fr;
       }
 
@@ -1217,7 +1323,7 @@
           <img class="app-icon" src="./images/DREAM_trans.png" alt="DRE&M 앱 아이콘">
           <div>
             <span class="kicker">Diary Reading Exercise &amp; Micro habit</span>
-            <h1>DRE&amp;M : 습관을 만드는 작은 기록</h1>
+            <h1>DRE&amp;M : <span class="hero-title-tagline">습관을 만드는 작은 기록</span></h1>
           </div>
         </div>
         <p class="hero-copy">내일의 DREAM을 위한 오늘의 DRE&amp;M</p>
