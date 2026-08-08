@@ -1,147 +1,109 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DRE&M 이용약관</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DREAM 이용약관</title>
   <style>
-    :root { --fg:#111827; --muted:#6b7280; --line:#e5e7eb; --bg:#ffffff; --card:#f9fafb; --primary:#2563eb; }
-    *{ box-sizing:border-box; }
-    body{ margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Apple SD Gothic Neo,Noto Sans KR,sans-serif; color:var(--fg); background:var(--bg); }
-    header{ padding:30px 16px 20px; border-bottom:1px solid var(--line); background:linear-gradient(180deg,#f8fbff 0%,#ffffff 100%); }
-    main{ max-width:900px; margin:0 auto; padding:20px 16px 60px; }
-    h1{ font-size:24px; margin:0 0 10px; letter-spacing:-0.02em; }
-    h2{ font-size:18px; margin:34px 0 12px; border-left:4px solid var(--primary); padding-left:10px; letter-spacing:-0.01em; }
-    p,li{ font-size:14.8px; line-height:1.8; }
-    ul{ padding-left:20px; }
-    .meta{ color:var(--muted); font-size:13px; line-height:1.7; }
-    .badge{ display:inline-block; margin-top:8px; padding:3px 9px; border:1px solid var(--line); border-radius:999px; font-size:12px; color:var(--muted); background:#fff; }
-    .box{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px; margin:14px 0; }
-    a{ color:var(--primary); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
-    footer{ border-top:1px solid var(--line); padding:18px 16px; color:var(--muted); font-size:13px; text-align:center; }
+    body{margin:0;background:#f7f8fb;color:#1f2430;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;word-break:keep-all}
+    main{max-width:860px;margin:0 auto;padding:34px 18px 64px}h1{font-size:28px;line-height:1.25;margin:0 0 10px}
+    h2{font-size:18px;margin:34px 0 10px;padding-left:10px;border-left:4px solid #7c3aed}p,li{font-size:15px}
+    .meta{color:#667085;font-size:14px}.box{background:#fff;border:1px solid #e1e6ef;border-radius:14px;padding:18px;margin:18px 0}a{color:#2f5bff}footer{margin-top:38px;color:#667085;font-size:13px}
   </style>
 </head>
 <body>
-  <header>
-    <main style="padding:0;">
-      <h1>DRE&amp;M 이용약관</h1>
-      <div class="meta">
-        본 약관은 (주)에프씨아이(이하 “회사”)가 제공하는 DRE&amp;M 서비스(이하 “서비스”)의 이용과 관련하여 회사와 이용자 간의 권리, 의무 및 책임사항을 규정합니다.<br />
-        <span class="badge">시행일: <strong>2026.06.01</strong></span>
-      </div>
-    </main>
-  </header>
-
   <main>
-    <h2>제1조 (목적)</h2>
-    <p>본 약관은 회사가 제공하는 서비스의 이용 조건 및 절차, 회사와 이용자의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.</p>
+    <h1>DREAM 이용약관</h1>
+    <p class="meta">시행일: 2026.08.08</p>
 
-    <h2>제2조 (정의)</h2>
+    <div class="box"><p>본 약관은 주식회사 에프씨아이(Factory of Creative Imagination, 이하 “회사”)가 무료로 제공하는 DREAM 서비스(이하 “서비스”)의 이용 조건과 회사 및 이용자의 권리·의무를 정합니다.</p></div>
+
+    <h2>제1조(서비스의 내용)</h2>
+    <p>서비스는 회원가입 없이 이용할 수 있으며, 습관 기록의 작성·관리, 피드, 통계, Google Drive 백업·복원, 이미지 형태의 SNS 공유 등의 기능을 제공합니다.</p>
+
+    <h2>제2조(습관 기록의 저장과 관리)</h2>
+    <ol>
+      <li>이용자가 작성한 습관 기록, 글 및 사진은 원칙적으로 이용자의 기기에 저장됩니다.</li>
+      <li>이용자는 앱 삭제, 기기 분실·고장·초기화 또는 운영체제 변경에 따른 자료 소실에 대비하여 필요한 자료를 직접 백업해야 합니다.</li>
+      <li>피드에 업로드되는 정보와 Google Drive 백업·복원에 관해서는 제3조 및 제4조가 적용됩니다.</li>
+    </ol>
+
+    <h2>제3조(피드)</h2>
+    <ol>
+      <li>이용자가 습관 기록을 입력하면 글, 사진, 닉네임, 앱 ID, 작성 시각 등 피드 제공에 필요한 정보가 Firebase에 업로드됩니다.</li>
+      <li>피드 정보는 작성 다음 날부터 이용자가 설정하거나 선택한 공개 범위에 따라 전체 이용자 또는 특정 그룹의 이용자에게 공개됩니다.</li>
+      <li>피드 정보는 공개 시작일부터 30일 후 자동 삭제됩니다. 이용자가 그 전에 해당 기록을 삭제하면 Firebase에서도 즉시 삭제되며, 삭제된 정보는 복구할 수 없습니다.</li>
+      <li>이용자는 앱에서 자신의 앱 ID를 확인할 수 있으며, 개인정보 관련 요청 시 회사가 별도로 안내하는 방법에 따라 해당 앱 ID를 확인할 수 있습니다.</li>
+      <li>앱을 삭제하거나 기기를 변경하여 앱 ID를 잃으면 기존 피드 게시물을 관리하지 못할 수 있습니다. Google Drive 백업에서 기존 앱 ID를 복원한 경우에는 기존 앱 ID를 계속 사용할 수 있습니다.</li>
+    </ol>
+
+    <h2>제4조(Google Drive 백업 및 복원)</h2>
+    <ol>
+      <li>Google Drive 백업·복원은 이용자가 Google 계정으로 로그인하고 해당 버튼을 눌렀을 때만 실행됩니다.</li>
+      <li>서비스의 Google Drive 접근 권한은 이용자의 Google Drive에 앱이 생성한 DREAM 전용 폴더와 그 안의 파일로 한정됩니다.</li>
+      <li>백업 자료는 이용자의 기기와 Google Drive 사이에서 직접 전송되며 회사 서버를 경유하지 않습니다. 회사는 백업 자료를 저장하거나 열람하지 않습니다.</li>
+      <li>백업에는 앱 ID, 습관 기록, 글 및 사진 등이 포함될 수 있으나 Firebase 피드 데이터 자체는 포함되지 않습니다.</li>
+      <li>백업 파일은 별도로 암호화되지 않습니다. 이용자는 Google 계정과 백업 파일을 안전하게 관리해야 하며, Google Drive에 저장된 자료에는 Google의 약관과 정책이 적용됩니다.</li>
+    </ol>
+
+    <h2>제5조(광고)</h2>
+    <p>서비스는 무료로 제공되며 이용 과정에서 Google AdMob을 통한 광고가 표시될 수 있습니다.</p>
+
+    <h2>제6조(SNS 공유)</h2>
+    <ol>
+      <li>이용자는 습관 기록을 이미지 형태로 SNS 등 외부 서비스에 공유할 수 있습니다.</li>
+      <li>공유 이후의 이미지 이용과 보관에는 해당 외부 서비스의 약관과 정책이 적용됩니다.</li>
+      <li>이용자는 타인의 개인정보, 저작권, 초상권 또는 그 밖의 권리를 침해하는 내용을 공유해서는 안 됩니다.</li>
+    </ol>
+
+    <h2>제7조(이용자의 의무 및 금지행위)</h2>
+    <p>이용자는 다음 행위를 해서는 안 됩니다.</p>
     <ul>
-      <li><strong>서비스</strong>: 회사가 제공하는 DRE&amp;M 모바일 애플리케이션 및 관련 서비스를 의미합니다.</li>
-      <li><strong>회원</strong>: 본 약관에 동의하고 계정을 생성하여 서비스를 이용하는 자를 의미합니다.</li>
-      <li><strong>콘텐츠</strong>: 회원이 작성하거나 업로드한 일기, 독서 기록, 운동 기록, 마이크로 습관 기록, 사진, 댓글, 좋아요 및 기타 정보를 의미합니다.</li>
-      <li><strong>그룹</strong>: 회원들이 함께 활동 기록을 공유하고 랭킹을 확인할 수 있는 서비스 내 모임을 의미합니다.</li>
+      <li>타인의 개인정보 또는 앱 ID를 도용하거나 허위 정보를 사용하는 행위</li>
+      <li>불법·음란·폭력·혐오·차별·명예훼손 또는 모욕에 해당하는 내용을 게시하는 행위</li>
+      <li>타인의 개인정보, 저작권, 초상권 또는 그 밖의 권리를 침해하는 행위</li>
+      <li>광고, 스팸, 사기성 콘텐츠를 게시하거나 비정상적인 방법으로 서비스를 이용하는 행위</li>
+      <li>서비스의 안정적인 운영을 방해하거나 관련 법령을 위반하는 행위</li>
     </ul>
 
-    <h2>제3조 (약관의 게시 및 변경)</h2>
-    <ul>
-      <li>회사는 본 약관을 앱 내 또는 홈페이지를 통해 게시합니다.</li>
-      <li>회사는 관련 법령을 위반하지 않는 범위에서 본 약관을 변경할 수 있으며, 중요한 변경사항은 시행일 7일 전부터 공지합니다.</li>
-      <li>회원이 변경된 약관에 동의하지 않는 경우 서비스 이용계약을 해지할 수 있습니다.</li>
-    </ul>
+    <h2>제8조(콘텐츠의 권리와 공개)</h2>
+    <ol>
+      <li>이용자가 작성하거나 촬영한 콘텐츠에 관한 적법한 권리는 이용자에게 귀속됩니다.</li>
+      <li>이용자는 피드 기능 제공을 위해 공개기간 동안 회사가 해당 콘텐츠를 저장·복제·전송·표시하는 데 필요한 범위의 비독점적 이용권을 회사에 부여합니다.</li>
+      <li>이용자는 피드에 게시한 콘텐츠가 선택한 공개 범위의 다른 이용자에게 공개된다는 점을 이해하고 게시해야 합니다.</li>
+    </ol>
 
-    <h2>제4조 (회원가입)</h2>
-    <ul>
-      <li>회원가입은 이용자가 약관 및 개인정보처리방침에 동의하고 회사가 이를 승인함으로써 성립합니다.</li>
-      <li>회사는 타인의 정보를 도용한 경우, 허위 정보를 입력한 경우, 법령 또는 본 약관을 위반한 경우 가입을 제한하거나 이용계약을 해지할 수 있습니다.</li>
-    </ul>
+    <h2>제9조(게시물 관리 및 이용 제한)</h2>
+    <p>회사는 이용자가 제7조를 위반하거나 타인의 권리를 침해한다고 합리적으로 판단되는 콘텐츠에 대해 삭제, 공개 제한 또는 서비스 이용 제한 등의 조치를 할 수 있습니다.</p>
 
-    <h2>제5조 (계정 관리)</h2>
-    <p>회원은 본인의 계정을 스스로 관리하여야 하며, 계정 관리 소홀로 발생한 손해에 대하여 회사는 책임을 지지 않습니다. 단, 회사의 고의 또는 중대한 과실이 있는 경우는 제외합니다.</p>
+    <h2>제10조(서비스의 변경 및 중단)</h2>
+    <p>회사는 운영·기술상 필요 또는 Google 등 외부 서비스의 정책 변경으로 서비스의 전부 또는 일부를 변경하거나 중단할 수 있습니다. 이용자에게 중대한 영향이 있는 경우 가능한 범위에서 앱 또는 웹페이지를 통해 미리 안내하며, 긴급하거나 예측하기 어려운 경우에는 사후 안내할 수 있습니다.</p>
 
-    <h2>제6조 (서비스 제공)</h2>
-    <p>회사는 회원에게 다음과 같은 서비스를 제공합니다.</p>
-    <ul>
-      <li>Diary(일기) 기록</li>
-      <li>Reading(독서) 기록</li>
-      <li>Exercise(운동) 기록</li>
-      <li>Micro Habit(마이크로 습관) 기록</li>
-      <li>개인 통계 및 분석</li>
-      <li>그룹 생성 및 참여</li>
-      <li>랭킹 서비스</li>
-      <li>좋아요 및 상호 응원 기능</li>
-      <li>카드 이미지 생성 기능</li>
-      <li>SNS 공유 기능</li>
-      <li>기타 회사가 제공하는 서비스</li>
-    </ul>
+    <h2>제11조(책임의 제한)</h2>
+    <ol>
+      <li>회사는 서비스의 안정적인 제공을 위해 노력합니다.</li>
+      <li>회사의 고의 또는 과실이 없는 기기 고장·분실·초기화, 앱 삭제, 이용자의 관리 소홀, 통신 장애 또는 Google Drive·Firebase·SNS 등 외부 서비스의 장애로 발생한 손해에 대해서는 책임을 부담하지 않습니다.</li>
+      <li>본 조는 관계 법령에 따라 제한할 수 없는 회사의 책임을 배제하지 않습니다.</li>
+    </ol>
 
-    <h2>제7조 (서비스 이용 제한)</h2>
-    <p>회사는 다음 각 호에 해당하는 경우 서비스 이용을 제한하거나 중지할 수 있습니다.</p>
-    <ul>
-      <li>법령 또는 본 약관을 위반한 경우</li>
-      <li>타인의 권리를 침해한 경우</li>
-      <li>비정상적인 방법으로 서비스를 이용한 경우</li>
-      <li>서비스의 안정적 운영을 방해한 경우</li>
-    </ul>
+    <h2>제12조(개인정보 보호)</h2>
+    <p>회사는 서비스와 관련된 개인정보를 <a href="DREAM_Privacy_Policy_KR.html">DREAM 개인정보처리방침</a>에 따라 처리합니다.</p>
 
-    <h2>제8조 (회원의 의무 및 금지행위)</h2>
-    <p>회원은 다음 행위를 해서는 안 됩니다.</p>
-    <ul>
-      <li>타인의 계정 또는 개인정보를 사용하는 행위</li>
-      <li>허위 정보를 등록하는 행위</li>
-      <li>욕설, 혐오, 차별, 명예훼손 또는 모욕적 표현을 게시하는 행위</li>
-      <li>저작권 등 타인의 권리를 침해하는 행위</li>
-      <li>광고, 스팸, 사기성 콘텐츠를 게시하는 행위</li>
-      <li>불법 콘텐츠를 게시하거나 서비스 운영을 방해하는 행위</li>
-    </ul>
+    <h2>제13조(약관의 변경)</h2>
+    <p>회사는 법령 또는 서비스 변경을 반영하기 위해 본 약관을 개정할 수 있습니다. 개정 시 적용일과 주요 변경 내용을 앱 또는 웹페이지를 통해 안내합니다.</p>
 
-    <h2>제9조 (콘텐츠의 권리)</h2>
-    <div class="box">
-      <p style="margin:0;">
-        회원이 작성한 콘텐츠의 저작권은 원칙적으로 회원에게 귀속됩니다.<br />
-        회원은 서비스 운영, 제공 및 개선을 위하여 회사가 해당 콘텐츠를 저장, 복제, 표시 및 전송할 수 있도록 비독점적 이용권을 부여합니다.<br />
-        회사는 법령 위반 또는 타인의 권리 침해가 의심되는 콘텐츠에 대해 삭제, 블라인드, 노출 제한 등의 조치를 할 수 있습니다.
-      </p>
-    </div>
+    <h2>제14조(준거법 및 분쟁 해결)</h2>
+    <p>본 약관과 서비스 이용에는 대한민국 법령이 적용됩니다. 회사와 이용자는 분쟁을 상호 협의하여 해결하도록 노력하며, 해결되지 않는 경우 관할법원은 관계 법령에 따릅니다.</p>
 
-    <h2>제10조 (그룹 및 랭킹)</h2>
-    <ul>
-      <li>회사는 회원의 활동 기록을 기반으로 그룹별 또는 전체 회원 랭킹을 제공할 수 있습니다.</li>
-      <li>랭킹 산정 방식은 서비스 정책에 따라 변경될 수 있습니다.</li>
-      <li>그룹 내 공개되는 정보의 범위는 서비스 기능 및 회원의 설정에 따라 달라질 수 있습니다.</li>
-    </ul>
+    <h2>제15조(운영자 및 문의)</h2>
+    <div class="box"><p>
+      운영자: 주식회사 에프씨아이(Factory of Creative Imagination)<br>
+      대표자: 김지환<br>
+      사업자등록번호: 355-81-01970<br>
+      이메일: <a href="mailto:fci.window@gmail.com">fci.window@gmail.com</a>
+    </p></div>
 
-    <h2>제11조 (AI 기반 콘텐츠 생성)</h2>
-    <p>회사는 회원이 작성한 기록과 업로드한 이미지를 활용하여 카드 이미지, 요약 콘텐츠 등 부가 기능을 제공할 수 있습니다. AI 기반 기능의 제공 방식과 범위는 서비스 정책에 따라 변경될 수 있습니다.</p>
-
-    <h2>제12조 (개인정보 보호)</h2>
-    <p>회사는 관련 법령 및 <a href="/privacy-dream.html">개인정보처리방침</a>에 따라 회원의 개인정보를 보호합니다.</p>
-
-    <h2>제13조 (책임의 제한)</h2>
-    <ul>
-      <li>회사는 천재지변, 불가항력, 시스템 장애, 이용자의 귀책사유로 인한 손해에 대해 책임을 지지 않습니다.</li>
-      <li>회사는 회원이 게시한 콘텐츠의 정확성, 신뢰성 또는 적법성을 보증하지 않습니다.</li>
-      <li>단, 회사의 고의 또는 중대한 과실로 인한 손해에 대해서는 관련 법령에 따릅니다.</li>
-    </ul>
-
-    <h2>제14조 (서비스 종료)</h2>
-    <p>회사는 서비스 운영상 필요에 따라 서비스를 종료할 수 있으며, 종료 시 사전에 앱 내 공지사항 또는 홈페이지를 통해 안내합니다.</p>
-
-    <h2>제15조 (분쟁 해결 및 관할)</h2>
-    <p>회사와 회원 간 분쟁이 발생한 경우 상호 성실히 협의하여 해결하며, 협의가 이루어지지 않을 경우 관할 법원은 관련 법령에 따릅니다.</p>
-
-    <h2>제16조 (고객 문의)</h2>
-    <div class="box">
-      <p style="margin:0;">이메일: <strong><a href="mailto:fci.window@gmail.com">fci.window@gmail.com</a></strong></p>
-    </div>
-
-    <h2>부칙</h2>
-    <p>본 약관은 <strong>2026년 6월 1일</strong>부터 시행합니다.</p>
+    <footer>본 약관은 2026년 8월 8일부터 시행합니다.</footer>
   </main>
-
-  <footer>© <span id="y"></span> (주)에프씨아이. All rights reserved.</footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>

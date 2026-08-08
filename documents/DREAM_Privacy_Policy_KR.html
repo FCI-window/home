@@ -1,202 +1,120 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DRE&M 개인정보처리방침</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DREAM 개인정보처리방침</title>
   <style>
-    :root { --fg:#111827; --muted:#6b7280; --line:#e5e7eb; --bg:#ffffff; --card:#f9fafb; --primary:#7c3aed; }
-    *{ box-sizing:border-box; }
-    body{ margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Apple SD Gothic Neo,Noto Sans KR,sans-serif; color:var(--fg); background:var(--bg); }
-    header{ padding:30px 16px 20px; border-bottom:1px solid var(--line); background:linear-gradient(180deg,#fbf8ff 0%,#ffffff 100%); }
-    main{ max-width:900px; margin:0 auto; padding:20px 16px 60px; }
-    h1{ font-size:24px; margin:0 0 10px; letter-spacing:-0.02em; }
-    h2{ font-size:18px; margin:38px 0 12px; border-left:4px solid var(--primary); padding-left:10px; letter-spacing:-0.01em; }
-    h3{ font-size:15.5px; margin:22px 0 8px; }
-    p,li{ font-size:14.8px; line-height:1.8; }
-    ul{ padding-left:20px; }
-    table{ width:100%; border-collapse:collapse; margin:12px 0; font-size:14px; }
-    th,td{ border:1px solid var(--line); padding:11px; vertical-align:top; line-height:1.65; }
-    th{ background:#f5f3ff; text-align:left; }
-    .intro{ font-size:15px; color:var(--primary); font-weight:700; margin-bottom:10px; }
-    .meta{ color:var(--muted); font-size:13px; line-height:1.7; }
-    .badge{ display:inline-block; margin-top:8px; padding:3px 9px; border:1px solid var(--line); border-radius:999px; font-size:12px; color:var(--muted); background:#fff; }
-    .box{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px; margin:14px 0; }
-    a{ color:var(--primary); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
-    footer{ border-top:1px solid var(--line); padding:18px 16px; color:var(--muted); font-size:13px; text-align:center; }
+    body{margin:0;background:#f7f8fb;color:#1f2430;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.75;word-break:keep-all}
+    main{max-width:860px;margin:0 auto;padding:34px 18px 64px}h1{font-size:28px;line-height:1.25;margin:0 0 10px}
+    h2{font-size:18px;margin:34px 0 10px;padding-left:10px;border-left:4px solid #7c3aed}h3{font-size:16px;margin:22px 0 8px}
+    p,li,th,td{font-size:15px}.meta{color:#667085;font-size:14px}.box{background:#fff;border:1px solid #e1e6ef;border-radius:14px;padding:18px;margin:18px 0}
+    table{width:100%;border-collapse:collapse;margin:14px 0}th,td{border:1px solid #d9dee8;padding:10px;text-align:left;vertical-align:top}th{background:#f0f2f6}
+    a{color:#2f5bff}footer{margin-top:38px;color:#667085;font-size:13px}
   </style>
 </head>
 <body>
-  <header>
-    <main style="padding:0;">
-      <div class="intro">DRE&amp;M은 삶을 풍요롭게 만드는 기록을 안전하게 보호하고, 이용자의 자기결정권을 존중합니다.</div>
-      <h1>DRE&amp;M 개인정보처리방침</h1>
-      <div class="meta">
-        DRE&amp;M 서비스(이하 “서비스”)는 이용자의 개인정보를 중요하게 생각하며, 「개인정보 보호법」 등 관련 법령을 준수합니다.<br />
-        본 방침은 서비스 이용 과정에서 수집하는 개인정보의 항목, 이용 목적, 보관 및 파기, 권리 행사 방법 등을 안내합니다.<br />
-        <span class="badge">최종 수정일: <strong>2026.06.01</strong></span>
-      </div>
-    </main>
-  </header>
-
   <main>
-    <h2>1. 수집하는 개인정보 항목</h2>
-    <p>서비스는 필요한 개인정보를 최소한으로 수집하며, 수집된 정보는 명시된 목적 외의 용도로 사용하지 않습니다.</p>
+    <h1>DREAM 개인정보처리방침</h1>
+    <p class="meta">시행일: 2026.08.08</p>
 
-    <h3>① 회원가입 및 로그인 시</h3>
-    <table>
-      <thead>
-        <tr>
-          <th style="width:22%;">구분</th>
-          <th>수집 항목</th>
-          <th style="width:38%;">수집 목적</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>필수</strong></td>
-          <td>이메일 주소, 닉네임, 로그인 제공자 정보(Google, Apple, Kakao 등), Firebase 사용자 식별자(UID)</td>
-          <td>회원 식별, 계정 관리, 로그인 기능 제공</td>
-        </tr>
-        <tr>
-          <td><strong>선택</strong></td>
-          <td>프로필 이미지</td>
-          <td>프로필 표시 및 그룹 활동 기능 제공</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h3>② 서비스 이용 시 생성되는 정보</h3>
-    <table>
-      <thead>
-        <tr>
-          <th style="width:22%;">구분</th>
-          <th>수집 항목</th>
-          <th style="width:38%;">수집 목적</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>기록 정보</strong></td>
-          <td>Diary 기록, Reading 기록, Exercise 기록, Micro Habit 기록</td>
-          <td>습관 기록 관리, 개인 통계 및 랭킹 제공</td>
-        </tr>
-        <tr>
-          <td><strong>이미지 정보</strong></td>
-          <td>업로드 이미지, 생성된 카드 이미지</td>
-          <td>카드 생성, 기록 보관, SNS 공유 지원</td>
-        </tr>
-        <tr>
-          <td><strong>활동 정보</strong></td>
-          <td>좋아요, 그룹 가입 및 활동 기록, 랭킹 정보</td>
-          <td>그룹 기능, 상호 응원 기능, 랭킹 서비스 제공</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h3>③ 자동 수집 정보</h3>
-    <ul>
-      <li>접속 기록, 서비스 이용 기록, 오류 로그, 기기 정보</li>
-      <li>부정 이용 방지 및 서비스 안정성 확보를 위한 정보</li>
-    </ul>
-
-    <h2>2. 개인정보의 수집 및 이용 목적</h2>
-    <ul>
-      <li><strong>계정 관리</strong>: 회원 식별, 로그인, 회원 탈퇴 처리</li>
-      <li><strong>서비스 제공</strong>: 일기, 독서, 운동, 마이크로 습관 기록 기능 제공</li>
-      <li><strong>그룹 기능 운영</strong>: 그룹 생성, 참여, 구성원 활동 표시</li>
-      <li><strong>랭킹 서비스 제공</strong>: 활동 점수 산정 및 그룹별/전체 랭킹 제공</li>
-      <li><strong>카드 이미지 생성 및 공유 지원</strong>: 기록 기반 카드 생성, SNS 공유 지원</li>
-      <li><strong>서비스 개선</strong>: 오류 수정, 통계 분석, 신규 기능 개발</li>
-      <li><strong>보안</strong>: 비인가 접근 차단, 부정 이용 방지, 서비스 안정성 확보</li>
-      <li><strong>고객 지원</strong>: 문의 및 요청사항 처리</li>
-    </ul>
-
-    <h2>3. 개인정보의 보유 및 이용 기간</h2>
     <div class="box">
-      <p style="margin-top:0;">서비스는 원칙적으로 회원 탈퇴 시 수집된 개인정보를 지체 없이 삭제합니다.</p>
-      <ul>
-        <li><strong>회원 탈퇴 시</strong>: 계정 정보, 프로필 정보, 기록 데이터, 업로드 이미지, 생성된 카드 이미지를 삭제합니다.</li>
-        <li><strong>삭제 후 복구</strong>: 삭제된 데이터는 복구가 불가능합니다.</li>
-        <li><strong>법령에 따른 보관</strong>: 관계 법령에 의해 보관 의무가 있는 정보는 해당 기간 동안 별도 분리 보관 후 파기합니다.</li>
-      </ul>
+      <p>주식회사 에프씨아이(Factory of Creative Imagination, 이하 “회사”)는 DREAM 서비스 이용자의 개인정보를 중요하게 생각하며, 「개인정보 보호법」 등 관계 법령을 준수합니다.</p>
+      <p>DREAM은 회원가입이나 DREAM 계정 로그인을 요구하지 않습니다. 이용자가 작성한 습관 기록은 원칙적으로 이용자의 기기에 저장됩니다. 다만 피드 제공, Google Drive 백업·복원 및 광고 제공 과정에서는 아래와 같이 정보가 처리될 수 있습니다.</p>
     </div>
 
-    <h2>4. 개인정보의 제3자 제공</h2>
-    <p>회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만, 이용자가 사전에 동의한 경우 또는 법령에 따른 요청이 있는 경우에는 예외로 합니다.</p>
+    <h2>제1조(기기 내 저장)</h2>
+    <ol>
+      <li>이용자가 작성한 습관 기록, 글 및 사진 등은 원칙적으로 이용자의 기기에 저장되며, 피드에 게시되는 정보 외에는 회사의 Firebase에 저장되지 않습니다.</li>
+      <li>앱 삭제, 기기 초기화·분실·고장 또는 운영체제 변경으로 기기 내 자료가 소실될 수 있습니다. 이용자는 필요한 경우 Google Drive 백업 기능을 직접 실행할 수 있습니다.</li>
+    </ol>
 
-    <h2>5. 개인정보 처리의 위탁</h2>
-    <p>회사는 안정적인 서비스 제공을 위해 다음 업체에 개인정보 처리 업무를 위탁합니다.</p>
+    <h2>제2조(피드 정보의 처리 및 공개)</h2>
+    <p>이용자가 습관 기록을 입력하면 해당 기록은 피드 제공을 위해 Firebase에 업로드됩니다. 피드 게시를 원하지 않는 경우 이용자는 해당 기록을 삭제해야 합니다.</p>
     <table>
-      <thead>
-        <tr>
-          <th>수탁업체</th>
-          <th>위탁 업무 내용</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Google Firebase</strong></td>
-          <td>사용자 인증, 데이터 저장, 파일 저장</td>
-        </tr>
-        <tr>
-          <td><strong>Google Analytics for Firebase</strong></td>
-          <td>서비스 이용 분석 및 앱 안정성 개선</td>
-        </tr>
-        <tr>
-          <td><strong>(주)에프씨아이</strong></td>
-          <td>서비스 운영 및 고객 지원</td>
-        </tr>
-      </tbody>
+      <thead><tr><th>처리 항목</th><th>처리 목적</th><th>공개 범위</th><th>보유기간</th></tr></thead>
+      <tbody><tr>
+        <td>습관 기록의 글과 사진, 닉네임, 앱 ID, 작성 시각 및 게시·삭제 처리에 필요한 정보</td>
+        <td>전체 또는 그룹 피드 제공, 게시물 구분·관리, 부정 이용 방지</td>
+        <td>이용자가 설정하거나 선택한 전체 공개 또는 특정 그룹 공개</td>
+        <td>작성 다음 날부터 30일간. 이용자가 먼저 삭제하면 즉시 삭제</td>
+      </tr></tbody>
     </table>
-    <p>향후 AI 서비스 제공을 위해 OpenAI 등 외부 AI 서비스가 도입되는 경우, 해당 내용을 본 방침에 추가 고지합니다.</p>
+    <ol>
+      <li>피드 정보는 작성 즉시 업로드되지만 다른 이용자에게는 작성 다음 날부터 공개됩니다.</li>
+      <li>피드 정보는 공개 시작일부터 30일이 지나면 Firebase의 데이터, 사진, 관련 캐시 및 백업에서 자동 삭제되며 복구할 수 없습니다.</li>
+      <li>이용자가 앱에서 해당 기록을 삭제하면 공개 전후를 불문하고 Firebase에서도 즉시 삭제되며 복구할 수 없습니다.</li>
+      <li>이용자는 타인의 개인정보, 저작권 또는 그 밖의 권리를 침해하는 내용을 피드에 입력해서는 안 됩니다.</li>
+    </ol>
 
-    <h2>6. 이용자의 권리와 행사 방법</h2>
-    <p>이용자는 앱 내 설정 메뉴 또는 고객 문의를 통해 다음 권리를 행사할 수 있습니다.</p>
-    <ul>
-      <li>개인정보 조회</li>
-      <li>개인정보 수정</li>
-      <li>회원 탈퇴</li>
-      <li>개인정보 처리 동의 철회</li>
-    </ul>
+    <h2>제3조(앱 ID와 닉네임)</h2>
+    <ol>
+      <li>서비스는 회원 계정 대신 앱 최초 실행 시 임의의 앱 ID를 생성하여 피드 게시물을 구분합니다. 앱 ID는 일반적인 기기 고유번호와 다르며 DREAM 서비스 안에서 이용자를 구분하기 위한 식별값입니다.</li>
+      <li>앱을 삭제하고 새로 설치하면 앱 ID가 변경됩니다. 다만 이용자가 Google Drive 백업을 복원하면 백업에 저장된 기존 앱 ID가 복원될 수 있습니다.</li>
+      <li>이용자는 앱에서 자신의 앱 ID를 확인할 수 있습니다. 개인정보 관련 요청이 접수된 경우 회사는 요청자에게 앱 ID 확인 방법을 별도로 안내할 수 있습니다.</li>
+      <li>닉네임은 피드에서 다른 이용자에게 공개됩니다.</li>
+    </ol>
 
-    <h2>7. 개인정보의 파기 절차 및 방법</h2>
-    <ul>
-      <li><strong>파기 절차</strong>: 회원 탈퇴 또는 보유기간 만료 시 해당 정보를 파기합니다.</li>
-      <li><strong>파기 방법</strong>: 전자적 파일 형태의 정보는 복구가 불가능한 방법으로 삭제하며, 출력물은 분쇄 또는 소각합니다.</li>
-    </ul>
+    <h2>제4조(Google Firebase 처리위탁)</h2>
+    <table>
+      <thead><tr><th>수탁자</th><th>위탁 업무</th><th>저장 위치</th><th>보유기간</th></tr></thead>
+      <tbody><tr>
+        <td>Google Firebase</td>
+        <td>Cloud Firestore를 통한 피드 데이터 저장 및 Firebase Storage를 통한 피드 사진 저장</td>
+        <td>대한민국 서울(asia-northeast3)</td>
+        <td>공개 시작일부터 30일. 이용자가 먼저 삭제한 경우 즉시 삭제</td>
+      </tr></tbody>
+    </table>
 
-    <h2>8. 안전성 확보 조치</h2>
-    <p>회사는 개인정보 보호를 위해 다음과 같은 조치를 시행합니다.</p>
-    <ul>
-      <li>HTTPS 암호화 통신</li>
-      <li>Firebase Authentication 기반 인증</li>
-      <li>접근 권한 최소화</li>
-      <li>정기적 보안 점검</li>
-      <li>개인정보 접근 기록 관리</li>
-    </ul>
+    <h2>제5조(Google Drive 백업 및 복원)</h2>
+    <ol>
+      <li>이용자가 Google 계정으로 로그인한 후 백업 또는 복원 버튼을 누르면, DREAM은 이용자의 Google Drive에 생성된 DREAM 전용 폴더에 접근합니다.</li>
+      <li>DREAM의 Google Drive 접근 권한은 앱이 생성한 DREAM 전용 폴더와 그 안의 파일로 한정됩니다. 기기와 이용자 본인의 Google Drive 사이에서 자료를 직접 전송하며, 해당 자료는 회사 서버를 경유하지 않고 회사가 보관하거나 열람하지 않습니다.</li>
+      <li>백업에는 앱 ID와 이용자의 기기에 저장된 습관 기록, 글 및 사진 등이 포함될 수 있습니다. Firebase 피드 데이터 자체는 백업에 포함되지 않습니다.</li>
+      <li>백업은 자동으로 실행되지 않으며 이용자가 버튼을 눌렀을 때만 실행됩니다. 백업 파일은 별도로 암호화되지 않으므로 이용자는 Google 계정과 백업 파일을 안전하게 관리해야 합니다.</li>
+      <li>이용자는 Google 계정 설정에서 DREAM의 접근 권한을 철회하거나 Google Drive에서 백업 파일을 직접 삭제할 수 있습니다. Google Drive에 저장된 자료에는 Google의 약관과 개인정보처리방침이 적용됩니다.</li>
+    </ol>
 
-    <h2>9. SNS 공유</h2>
-    <p>회원이 생성한 카드 이미지 또는 콘텐츠를 Instagram, Facebook, Threads, X 등 외부 SNS에 공유하는 경우, 해당 게시 이후의 개인정보 처리는 각 SNS 사업자의 정책에 따릅니다.</p>
+    <h2>제6조(광고 서비스)</h2>
+    <p>회사는 무료 서비스 제공을 위해 Google AdMob을 이용합니다. 광고 제공 과정에서 Google은 IP 주소, 광고식별자 또는 앱·기기 식별자, 광고 이용정보, 진단정보 및 대략적인 위치정보 등을 광고 제공, 분석 및 부정 이용 방지 목적으로 처리할 수 있습니다. 자세한 사항은 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google 개인정보처리방침</a>과 <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">Google이 파트너 앱의 정보를 이용하는 방법</a>에서 확인할 수 있습니다.</p>
 
-    <h2>10. 개인정보 보호책임자</h2>
-    <div class="box">
-      <p style="margin:0;">
-        개인정보 관련 문의는 아래 책임자에게 연락해 주시기 바랍니다.<br /><br />
-        <strong>성명: 김지환</strong><br />
-        <strong>이메일: <a href="mailto:fci.window@gmail.com">fci.window@gmail.com</a></strong>
-      </p>
-    </div>
+    <h2>제7조(제3자 제공)</h2>
+    <p>회사는 이용자의 개인정보를 제3자에게 제공하지 않습니다. 다만 이용자가 공개 범위를 선택하여 피드에 게시한 정보는 해당 범위의 다른 이용자에게 공개되며, 법령에 특별한 규정이 있는 경우에는 관계 법령에 따라 처리할 수 있습니다. Google AdMob을 통한 처리에는 제6조와 Google의 정책이 적용됩니다.</p>
 
-    <h2>11. 개인정보처리방침의 변경</h2>
-    <p>본 방침은 법령 또는 서비스 정책 변경에 따라 수정될 수 있으며, 중요한 변경 사항은 앱 내 공지사항 또는 홈페이지를 통해 안내합니다.</p>
+    <h2>제8조(파기)</h2>
+    <ol>
+      <li>피드 정보는 공개 시작일부터 30일이 지나면 자동 삭제합니다. 이용자가 앱에서 먼저 삭제하면 즉시 삭제합니다.</li>
+      <li>전자적 파일은 복구 또는 재생되지 않도록 안전한 방법으로 삭제합니다.</li>
+      <li>기기와 Google Drive에 저장된 자료는 회사가 직접 파기할 수 없으며, 이용자가 앱 또는 Google Drive에서 직접 삭제해야 합니다.</li>
+    </ol>
 
-    <h2>부칙</h2>
-    <p>본 개인정보처리방침은 <strong>2026년 6월 1일</strong>부터 시행합니다.</p>
+    <h2>제9조(이용자의 권리와 행사 방법)</h2>
+    <ol>
+      <li>이용자는 앱에서 자신의 습관 기록과 피드 게시물을 열람하거나 삭제할 수 있습니다.</li>
+      <li>앱 삭제 또는 기기 변경으로 앱 ID를 잃은 경우 기존 피드 게시물을 앱에서 관리하지 못할 수 있습니다. Google Drive 백업을 복원하면 기존 앱 ID를 다시 사용할 수 있습니다.</li>
+      <li>개인정보 관련 문의는 아래 이메일로 접수할 수 있습니다. 회사는 요청자의 권리 보호를 위해 앱 ID 등 필요한 정보의 확인 방법을 별도로 안내할 수 있으며, 확인이 완료되면 관계 법령에 따라 요청을 처리합니다.</li>
+      <li>닉네임만으로는 동일인 여부를 확인하기 어려우므로 앱 ID 등 필요한 정보를 확인할 수 없는 경우 특정 게시물의 열람·삭제 요청이 제한될 수 있습니다.</li>
+    </ol>
+
+    <h2>제10조(만 14세 미만 이용자)</h2>
+    <p>회사는 이용자의 연령을 별도로 확인하지 않습니다. 만 14세 미만 이용자가 개인정보가 포함된 피드를 이용하려는 경우 법정대리인의 동의가 필요합니다. 회사는 법정대리인의 동의가 확인되지 않은 만 14세 미만 이용자의 개인정보 처리 사실을 알게 된 경우 해당 정보를 지체 없이 삭제하는 등 필요한 조치를 취합니다.</p>
+
+    <h2>제11조(안전성 확보조치)</h2>
+    <p>회사는 개인정보의 분실·도난·유출·위조·변조 또는 훼손을 방지하기 위해 접근권한 제한, 전송구간 보호 및 개인정보 처리시스템의 점검 등 필요한 기술적·관리적 조치를 취합니다.</p>
+
+    <h2>제12조(개인정보 보호책임자 및 권익침해 구제)</h2>
+    <div class="box"><p>
+      운영자: 주식회사 에프씨아이(Factory of Creative Imagination)<br>
+      대표자 및 개인정보 보호책임자: 김지환<br>
+      사업자등록번호: 355-81-01970<br>
+      개인정보 문의 및 권리 행사: <a href="mailto:fci.window@gmail.com">fci.window@gmail.com</a>
+    </p></div>
+    <p>개인정보 침해에 관한 상담이나 구제가 필요한 경우 개인정보분쟁조정위원회(1833-6972, <a href="https://www.kopico.go.kr" target="_blank" rel="noopener noreferrer">www.kopico.go.kr</a>), 개인정보침해신고센터(국번 없이 118, <a href="https://privacy.kisa.or.kr" target="_blank" rel="noopener noreferrer">privacy.kisa.or.kr</a>) 또는 경찰청 사이버범죄 신고시스템(국번 없이 182, <a href="https://ecrm.police.go.kr" target="_blank" rel="noopener noreferrer">ecrm.police.go.kr</a>)에 문의할 수 있습니다.</p>
+
+    <h2>제13조(개인정보처리방침의 변경)</h2>
+    <p>회사는 법령 또는 서비스 변경을 반영하기 위해 본 방침을 변경할 수 있습니다. 변경 시 시행일과 주요 변경 내용을 앱 또는 웹페이지를 통해 안내합니다.</p>
+
+    <footer>본 개인정보처리방침은 2026년 8월 8일부터 시행합니다.</footer>
   </main>
-
-  <footer>© <span id="y"></span> (주)에프씨아이. All rights reserved.</footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
