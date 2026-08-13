@@ -5,9 +5,37 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Open DRE&amp;M</title>
   <meta property="og:image" content="https://www.fciapp.com/images/DREAM_trans.png" />
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem 1.25rem;
+      color: #222;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      text-align: center;
+    }
+
+    main {
+      max-width: 32rem;
+      margin: 0 auto;
+    }
+
+    .store-link {
+      display: block;
+      margin: 0.75rem auto;
+      padding: 0.85rem 1rem;
+      border-radius: 0.5rem;
+      background: #222;
+      color: #fff;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-  <p id="message">Redirecting to the app store...</p>
+  <main>
+    <h1>DRE&amp;M</h1>
+    <p id="message">Install the DRE&amp;M app to join the invited group.</p>
+    <div id="store-links"></div>
+  </main>
 
   <script>
     const IOS_BASE_URL =
@@ -19,11 +47,31 @@
     const FALLBACK_URL = "https://www.fciapp.com/dream";
 
     const messages = {
-      en: "Redirecting to the app store...",
-      ja: "アプリストアへ移動しています…",
-      es: "Redirigiendo a la tienda de aplicaciones...",
-      "zh-Hans": "正在跳转到应用商店……",
-      "zh-Hant": "正在跳轉到應用程式商店……"
+      en: {
+        text: "Install the DRE&M app to join the invited group.",
+        ios: "Install on the App Store",
+        android: "Install on Google Play"
+      },
+      ja: {
+        text: "招待されたグループに参加するには、DRE&Mアプリをインストールしてください。",
+        ios: "App Storeからインストール",
+        android: "Google Playからインストール"
+      },
+      es: {
+        text: "Instala la aplicación DRE&M para unirte al grupo invitado.",
+        ios: "Instalar desde App Store",
+        android: "Instalar desde Google Play"
+      },
+      "zh-Hans": {
+        text: "安装 DRE&M 应用即可加入受邀群组。",
+        ios: "从 App Store 安装",
+        android: "从 Google Play 安装"
+      },
+      "zh-Hant": {
+        text: "安裝 DRE&M 應用程式即可加入受邀群組。",
+        ios: "從 App Store 安裝",
+        android: "從 Google Play 安裝"
+      }
     };
 
     function getLanguage() {
@@ -62,12 +110,16 @@
     const language = getLanguage();
 
     document.documentElement.lang = language;
-    document.title = messages[language];
-    document.getElementById("message").textContent = messages[language];
+    document.title = "DRE&M";
+    document.getElementById("message").textContent = messages[language].text;
 
     const ua = navigator.userAgent || navigator.vendor || window.opera;
+    const isAndroid = /android/i.test(ua);
+    const isIOS = /iPhone|iPad|iPod/i.test(ua) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    const storeLinks = document.getElementById("store-links");
 
-    if (/android/i.test(ua)) {
+    if (isAndroid) {
       const storeLanguage = {
         en: "en",
         ja: "ja",
@@ -76,10 +128,9 @@
         "zh-Hant": "zh-TW"
       }[language];
 
-      window.location.replace(
-        `${ANDROID_BASE_URL}&hl=${storeLanguage}`
-      );
-    } else if (/iPhone|iPad|iPod/i.test(ua)) {
+      storeLinks.innerHTML =
+        `<a class="store-link" href="${ANDROID_BASE_URL}&hl=${storeLanguage}">${messages[language].android}</a>`;
+    } else if (isIOS) {
       const storeLanguage = {
         en: "en",
         ja: "ja",
@@ -88,9 +139,8 @@
         "zh-Hant": "zh-Hant"
       }[language];
 
-      window.location.replace(
-        `${IOS_BASE_URL}?l=${storeLanguage}`
-      );
+      storeLinks.innerHTML =
+        `<a class="store-link" href="${IOS_BASE_URL}?l=${storeLanguage}">${messages[language].ios}</a>`;
     } else {
       window.location.replace(FALLBACK_URL);
     }
