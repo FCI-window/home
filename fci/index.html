@@ -83,6 +83,8 @@
     .solution-list { margin: 4px 28px 20px; padding-left: 22px; color: #42536a; font-size: .98rem; }
     .solution-list li { padding: 3px 0; }
     .solution-list strong { color: var(--fci-dark); font-weight: 800; }
+    .solution-list a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(47,91,255,.28); }
+    .solution-list a:hover, .solution-list a:focus-visible { color: var(--fci); border-color: var(--fci); }
     .continuation { margin: 0 28px 28px; color: var(--fci-dark); font-weight: 800; }
     .closing { margin-top: 24px; padding: 30px 24px; border-radius: 20px; color: #fff; background: linear-gradient(125deg, var(--fci-dark), var(--fci)); box-shadow: var(--shadow); text-align: left; }
     .closing h2 { margin: 0; color: #fff; font-size: clamp(23px, 3vw, 33px); line-height: 1.25; }
@@ -155,16 +157,16 @@
           </div>
         </details>
 
-        <details>
+        <details id="solutions-story">
           <summary><span class="number">04</span><h2>‘더 나은’을 위한 솔루션을 만들어 갑니다.</h2><span class="toggle" aria-hidden="true">+</span></summary>
           <div class="story-body image-body">
             <div class="solution-copy">
               <p class="answer">그 질문들에서 하나씩 솔루션을 만들어 가고 있습니다.</p>
               <ul class="solution-list" aria-label="FCI가 만드는 애플리케이션">
-                <li><strong>“더 나은 신앙”</strong>을 위한 성경낭독녹음</li>
-                <li><strong>“더 나은 습관”</strong>을 위한 DRE&amp;M</li>
-                <li><strong>“더 나은 기억”</strong>을 위한 ROHD</li>
-                <li><strong>“더 나은 사회”</strong>를 위한 파란</li>
+                <li><strong>“더 나은 신앙”</strong>을 위한 <a href="https://www.fciapp.com/rab/index">성경낭독녹음</a></li>
+                <li><strong>“더 나은 습관”</strong>을 위한 <a href="https://www.fciapp.com/dream/index">DRE&amp;M</a></li>
+                <li><strong>“더 나은 기억”</strong>을 위한 <a href="https://www.fciapp.com/rohd/index">ROHD</a></li>
+                <li><strong>“더 나은 사회”</strong>를 위한 <a href="https://www.fciapp.com/paran/index">파란</a></li>
               </ul>
               <div class="continuation"><strong>…</strong></div>
             </div>
@@ -179,9 +181,30 @@
       </section>
     </main>
 
-    <footer>
+  <footer>
       <span>© FCI. Factory of Creative Imagination.</span>
     </footer>
   </div>
+  <script>
+    (() => {
+      const solutionsStory = document.querySelector("#solutions-story");
+      if (!solutionsStory) return;
+
+      const restoreSolutionsStory = () => {
+        if (sessionStorage.getItem("fci-solutions-story-open") === "true") {
+          solutionsStory.open = true;
+        }
+      };
+
+      solutionsStory.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          sessionStorage.setItem("fci-solutions-story-open", "true");
+        });
+      });
+
+      window.addEventListener("pageshow", restoreSolutionsStory);
+      restoreSolutionsStory();
+    })();
+  </script>
 </body>
 </html>
