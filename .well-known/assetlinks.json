@@ -19,7 +19,8 @@
       "namespace": "android_app",
       "package_name": "com.fciapp.dream",
       "sha256_cert_fingerprints": [
-        "D8:7B:31:75:31:F6:AD:28:86:54:CB:07:D9:A7:C4:F4:13:C9:15:0B:45:BB:CC:76:07:6A:BB:AE:2F:F1:E8:F4"
+        "D8:7B:31:75:31:F6:AD:28:86:54:CB:07:D9:A7:C4:F4:13:C9:15:0B:45:BB:CC:76:07:6A:BB:AE:2F:F1:E8:F4",
+        "D1:21:61:A7:DE:4F:7B:F8:9C:8F:6A:5C:02:B3:4F:07:8D:B1:71:6D:91:8E:F4:B3:34:5C:5C:75:D7:C0:B2:38"
       ]
     }
   },
