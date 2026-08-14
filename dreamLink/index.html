@@ -28,12 +28,21 @@
       color: #fff;
       text-decoration: none;
     }
+
+    .app-link {
+      background: #0b6bcb;
+    }
+
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
 <body>
   <main>
     <h1>DRE&amp;M</h1>
     <p id="message">Install the DRE&amp;M app to join the invited group.</p>
+    <a id="open-app" class="store-link app-link hidden" href="#"></a>
     <div id="store-links"></div>
   </main>
 
@@ -47,28 +56,39 @@
     const FALLBACK_URL = "https://www.fciapp.com/dream";
 
     const messages = {
+      ko: {
+        text: "초대받은 그룹에 참여하려면 DRE&M 앱을 설치하세요.",
+        openApp: "DRE&M 앱 열기",
+        ios: "App Store에서 설치",
+        android: "Google Play에서 설치"
+      },
       en: {
         text: "Install the DRE&M app to join the invited group.",
+        openApp: "Open the DRE&M app",
         ios: "Install on the App Store",
         android: "Install on Google Play"
       },
       ja: {
         text: "招待されたグループに参加するには、DRE&Mアプリをインストールしてください。",
+        openApp: "DRE&Mアプリを開く",
         ios: "App Storeからインストール",
         android: "Google Playからインストール"
       },
       es: {
         text: "Instala la aplicación DRE&M para unirte al grupo invitado.",
+        openApp: "Abrir la aplicación DRE&M",
         ios: "Instalar desde App Store",
         android: "Instalar desde Google Play"
       },
       "zh-Hans": {
         text: "安装 DRE&M 应用即可加入受邀群组。",
+        openApp: "打开 DRE&M 应用",
         ios: "从 App Store 安装",
         android: "从 Google Play 安装"
       },
       "zh-Hant": {
         text: "安裝 DRE&M 應用程式即可加入受邀群組。",
+        openApp: "開啟 DRE&M 應用程式",
         ios: "從 App Store 安裝",
         android: "從 Google Play 安裝"
       }
@@ -82,6 +102,7 @@
       for (const value of languages) {
         const language = value.toLowerCase();
 
+        if (language.startsWith("ko")) return "ko";
         if (language.startsWith("ja")) return "ja";
         if (language.startsWith("es")) return "es";
 
@@ -118,8 +139,14 @@
     const isIOS = /iPhone|iPad|iPod/i.test(ua) ||
       (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
     const storeLinks = document.getElementById("store-links");
+    const openAppLink = document.getElementById("open-app");
+    const inviteCode = new URLSearchParams(window.location.search).get("code") || "";
+
+    openAppLink.href = `dream://join${inviteCode ? `?code=${encodeURIComponent(inviteCode)}` : ""}`;
+    openAppLink.textContent = messages[language].openApp;
 
     if (isAndroid) {
+      openAppLink.classList.remove("hidden");
       const storeLanguage = {
         en: "en",
         ja: "ja",
@@ -131,6 +158,7 @@
       storeLinks.innerHTML =
         `<a class="store-link" href="${ANDROID_BASE_URL}&hl=${storeLanguage}">${messages[language].android}</a>`;
     } else if (isIOS) {
+      openAppLink.classList.remove("hidden");
       const storeLanguage = {
         en: "en",
         ja: "ja",
