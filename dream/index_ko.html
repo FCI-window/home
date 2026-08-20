@@ -59,35 +59,6 @@
       padding: 26px 18px 36px;
     }
 
-    .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      margin-bottom: 26px;
-    }
-
-    .fci-logo img {
-      width: 148px;
-      height: auto;
-      display: block;
-    }
-
-    .home-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 42px;
-      padding: 0 16px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.76);
-      color: var(--muted);
-      font-size: 0.92rem;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
     .hero {
       display: grid;
       gap: 24px;
@@ -102,6 +73,28 @@
       display: flex;
       align-items: center;
       gap: 15px;
+    }
+
+    .brand-title {
+      min-width: 0;
+      flex: 1 1 auto;
+    }
+
+    .brand-fci-home {
+      display: block;
+      flex: 0 0 auto;
+      width: 120px;
+      margin-left: auto;
+    }
+
+    .brand-fci-home img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .brand-fci-home picture {
+      display: block;
     }
 
     .app-icon {
@@ -428,6 +421,50 @@
       box-shadow: 0 12px 26px rgba(32, 36, 56, 0.07);
     }
 
+    .sustainability-visuals {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 82px;
+      gap: 10px;
+      align-items: start;
+    }
+
+    .sustainability-panel.story-image-grid {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 392px);
+    }
+
+    .sustainability-app-stack {
+      display: grid;
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      height: auto;
+      aspect-ratio: 82 / 200;
+    }
+
+    .sustainability-visuals > .story-image {
+      height: auto;
+      align-self: start;
+    }
+
+    .sustainability-app-feature {
+      margin: 0;
+      min-height: 0;
+      padding: 4px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0 10px 22px rgba(32, 36, 56, 0.06);
+    }
+
+    .sustainability-app-feature img {
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      display: block;
+      object-fit: contain;
+      background: #f8f9fc;
+      border-radius: 6px;
+    }
+
     .together-lead-wrap.story-image-grid {
       padding: 0;
     }
@@ -482,6 +519,18 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
       padding: 0 20px 20px 71px;
+    }
+
+    .poster-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 180px));
+      justify-content: center;
+      gap: 12px;
+      padding: 0 20px 20px 71px;
+    }
+
+    .poster-gallery .promo-image {
+      margin: 0;
     }
 
     .promo-image {
@@ -988,6 +1037,10 @@
     .store-links a:hover, .store-links a:focus-visible { transform: translateY(-2px); }
     .store-links img { display: block; width: auto; height: 42px; }
 
+    .download-copy {
+      min-width: 0;
+    }
+
     .zoomable {
       cursor: zoom-in;
     }
@@ -1071,6 +1124,7 @@
       .friction-grid,
       .dream-intro,
       .story-image-grid,
+      .poster-gallery,
       .vision-panel,
       .feature-grid,
       .community-grid,
@@ -1084,6 +1138,44 @@
       .dream-intro,
       .story-image-grid {
         padding-right: 15px;
+      }
+
+      .poster-gallery {
+        padding-right: 15px;
+        grid-template-columns: repeat(2, minmax(0, 140px));
+      }
+
+      .sustainability-panel.story-image-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .answer-grid .question-illustration,
+      .friction-grid .friction-illustration,
+      .dream-intro .dream-cycle {
+        width: min(240px, calc(100% - 82px));
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .sustainability-visuals {
+        width: min(100%, 332px);
+        margin-right: auto;
+        margin-left: auto;
+        grid-template-columns: minmax(0, 1fr) 25%;
+      }
+
+      .sustainability-app-stack {
+        aspect-ratio: 82 / 160;
+      }
+
+      .together-lead-wrap.story-image-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .together-lead-wrap.story-image-grid .story-image {
+        width: min(240px, calc(100% - 82px));
+        margin-right: auto;
+        margin-left: auto;
       }
 
       .dream-screens {
@@ -1105,8 +1197,28 @@
     }
 
     @media (max-width: 640px) {
-      .download-panel { align-items: flex-start; flex-direction: column; }
-      .store-links img { height: 38px; }
+      .download-panel {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 12px;
+        padding: 18px 16px;
+        border-radius: 16px;
+      }
+
+      .download-copy h2,
+      .download-copy p {
+        white-space: nowrap;
+      }
+
+      .download-panel h2 { font-size: 22px; }
+      .download-panel p { margin-top: 3px; font-size: 0.92rem; }
+      .store-links {
+        display: grid;
+        gap: 6px;
+        justify-items: end;
+      }
+      .store-links img { height: 30px; }
 
       .brand-row > div {
         min-width: 0;
@@ -1214,28 +1326,29 @@
         padding: 20px 13px 30px;
       }
 
-      .topbar {
-        margin-bottom: 22px;
-      }
-
-      .fci-logo img {
-        width: 132px;
-      }
-
-      .home-link {
-        min-height: 38px;
-        padding: 0 12px;
-        font-size: 0.84rem;
-      }
-
       .brand-row {
-        align-items: flex-start;
+        gap: 8px;
       }
 
       .app-icon {
-        width: 64px;
-        height: 64px;
-        border-radius: 18px;
+        width: 54px;
+        height: 54px;
+        border-radius: 15px;
+      }
+
+      .brand-fci-home {
+        width: 34px;
+      }
+
+      .brand-title .kicker {
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 0.62rem;
+      }
+
+      .brand-title h1 {
+        white-space: nowrap;
       }
 
       summary {
@@ -1296,6 +1409,7 @@
       .friction-grid,
       .dream-intro,
       .story-image-grid,
+      .poster-gallery,
       .sustainability-panel,
       .together-panel,
       .vision-panel,
@@ -1313,18 +1427,20 @@
         padding-right: 12px;
       }
 
+      .poster-gallery {
+        padding-right: 12px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
     }
 
     @media (max-width: 460px) {
-      .topbar {
-        align-items: flex-start;
-      }
-
       .answer,
       .answer-grid,
       .friction-grid,
       .dream-intro,
       .story-image-grid,
+      .poster-gallery,
       .sustainability-panel,
       .together-panel,
       .vision-panel,
@@ -1369,29 +1485,28 @@
 </head>
 <body>
   <div class="page">
-    <header class="topbar">
-      <a class="fci-logo" href="../index.html" aria-label="FCI 홈으로 이동">
-        <img src="./images/FCILOGOwithText.png" alt="FCI Factory of Creative Imagination">
-      </a>
-      <a class="home-link" href="../index.html">FCI 홈</a>
-    </header>
-
     <main class="hero">
       <section class="intro" aria-label="DRE&M 소개">
         <div class="brand-row">
           <img class="app-icon" src="./images/DREAM_trans.png" alt="DRE&M 앱 아이콘">
-          <div>
+          <div class="brand-title">
             <span class="kicker">Diary Reading Exercise &amp; Micro habit</span>
             <h1>DRE&amp;M : <span class="hero-title-tagline">습관을 만드는 작은 기록</span></h1>
           </div>
+          <a class="brand-fci-home" href="../ko/index.html" aria-label="FCI 홈으로 이동">
+            <picture>
+              <source media="(max-width: 640px)" srcset="./images/FCI_basic_logo.png">
+              <img src="./images/FCILOGOwithText.png" alt="FCI Factory of Creative Imagination">
+            </picture>
+          </a>
         </div>
         <p class="hero-copy">내일의 DREAM을 위한 오늘의 DRE&amp;M</p>
       </section>
 
       <section class="storyline" aria-label="DRE&M 이야기">
-        <p class="section-heading">제목을 눌러 5개의 이야기로 DRE&amp;M을 열어보세요.</p>
+        <p class="section-heading">제목을 눌러 6개의 이야기로 DRE&amp;M을 열어보세요.</p>
 
-        <details open>
+        <details>
           <summary>
             <span class="number">01</span>
             <h2>"좋은 습관"이란 무엇일까요?</h2>
@@ -1440,7 +1555,29 @@
               DRE&amp;M은 하루의 습관을 한 곳에 기록하고 이어주는 앱입니다.
               <span>감사일기, 독서, 운동, 생활 속 작은 루틴을 부담 없이 간단하게 남기며<br>오늘을 돌아보고 내일을 준비할 수 있습니다.<br class="sentence-break">또한 모임을 만들어 함께 실천하고, 선의의 경쟁을 통해 서로에게 동기를 줄 수 있습니다.<br class="sentence-break">며칠 놓쳐도 괜찮습니다. 지난 7일과 지난 30일을 기준으로 기록하기 때문에 언제든 다시 시작할 수 있습니다.<br class="sentence-break">지난 기록을 돌아보면, 앞으로의 계획을 더 크게 세우는 데에도 도움을 줄 것입니다.</span>
             </p>
-            <img class="story-image zoomable" src="./images/dream-story-reality.png" alt="네 가지 습관이 DRE&M으로 연결되고 서로 응원하며 오늘부터 다시 시작하는 모습">
+            <div class="sustainability-visuals" aria-label="DRE&M 일러스트와 앱 화면">
+              <img class="story-image zoomable" src="./images/dream-story-reality.png" alt="네 가지 습관이 DRE&M으로 연결되고 서로 응원하며 오늘부터 다시 시작하는 모습">
+              <div hidden>
+                <img class="zoomable" src="./images/dream-overview-stack.jpg" alt="DRE&M 하루 기록 화면">
+              </div>
+              <div class="sustainability-app-stack" aria-label="DRE&M 대표 앱 화면">
+                <figure class="sustainability-app-feature">
+                  <img class="zoomable" src="./images/dream-screen-diary.png" alt="DRE&M Diary 화면">
+                </figure>
+                <figure class="sustainability-app-feature">
+                  <img class="zoomable" src="./images/dream-screen-reading.png" alt="DRE&M Reading 화면">
+                </figure>
+              </div>
+              <div hidden>
+                <img class="zoomable" src="./images/dream-screen-exercise.png" alt="DRE&M Exercise 화면">
+                <img class="zoomable" src="./images/dream-screen-microhabit.png" alt="DRE&M Micro-Habit 화면">
+                <img class="zoomable" src="./images/dream-overview-grid.jpg" alt="DRE&M Overview 화면">
+                <img class="zoomable" src="./images/dream-overview-score.jpg" alt="DRE&M 점수 화면">
+                <img class="zoomable" src="./images/dream-community-create.jpg" alt="DRE&M 모임 만들기 화면">
+                <img class="zoomable" src="./images/dream-community-ranking.jpg" alt="DRE&M 랭킹 화면">
+                <img class="zoomable" src="./images/dream-community-feed.jpg" alt="DRE&M 커뮤니티 화면">
+              </div>
+            </div>
           </div>
         </details>
 
@@ -1458,11 +1595,27 @@
           </div>
         </details>
 
+        <details>
+          <summary>
+            <span class="number">06</span>
+            <h2>같이 시작해 볼까요?</h2>
+            <span class="toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="poster-gallery" aria-label="DRE&M 시작 안내 포스터">
+            <figure class="promo-image">
+              <img class="zoomable" src="./images/dream-start-100days.png" alt="오늘부터 100일, 나를 바꾸는 8가지 작은 습관">
+            </figure>
+            <figure class="promo-image">
+              <img class="zoomable" src="./images/dream-start-record.png" alt="좋은 습관은 간단한 기록에서 시작됩니다">
+            </figure>
+          </div>
+        </details>
+
         <section class="download-panel" aria-label="DRE&amp;M 다운로드">
-          <div><h2>습관을 만드는 작은 기록</h2><p>내일의 DREAM을 위한 오늘의 DRE&amp;M</p></div>
+          <div class="download-copy"><h2>습관을 만드는 작은 기록</h2><p>내일의 DREAM을 위한 오늘의 DRE&amp;M</p></div>
           <div class="store-links">
-            <a href="https://apps.apple.com/app/id6775331954" target="_blank" rel="noopener"><img src="../../images/Download_apple.png" alt="App Store에서 다운로드"></a>
-            <a href="https://play.google.com/store/apps/details?id=com.fciapp.dream" target="_blank" rel="noopener"><img src="../../images/Download_google.png" alt="Google Play에서 다운로드"></a>
+            <a href="https://apps.apple.com/app/id6775331954" target="_blank" rel="noopener"><img src="../images/Download_apple.png" alt="App Store에서 다운로드"></a>
+            <a href="https://play.google.com/store/apps/details?id=com.fciapp.dream" target="_blank" rel="noopener"><img src="../images/Download_google.png" alt="Google Play에서 다운로드"></a>
           </div>
         </section>
       </section>
@@ -1570,6 +1723,49 @@
       activeGallery = [];
       activeIndex = 0;
       touchStartX = 0;
+    });
+
+    function fitDownloadCopy() {
+      const isMobile = window.matchMedia("(max-width: 640px)").matches;
+      document.querySelectorAll(".download-copy h2, .download-copy p").forEach((element) => {
+        element.style.fontSize = "";
+        if (!isMobile) {
+          return;
+        }
+
+        let size = parseFloat(getComputedStyle(element).fontSize);
+        while (element.scrollWidth > element.clientWidth && size > 11) {
+          size -= 0.5;
+          element.style.fontSize = `${size}px`;
+        }
+      });
+    }
+
+    function fitHeroTitle() {
+      const title = document.querySelector(".brand-title h1");
+      const isMobile = window.matchMedia("(max-width: 640px)").matches;
+
+      if (!title) {
+        return;
+      }
+
+      title.style.fontSize = "";
+      if (!isMobile) {
+        return;
+      }
+
+      let size = parseFloat(getComputedStyle(title).fontSize);
+      while (title.scrollWidth > title.clientWidth && size > 8) {
+        size -= 0.5;
+        title.style.fontSize = `${size}px`;
+      }
+    }
+
+    fitDownloadCopy();
+    fitHeroTitle();
+    window.addEventListener("resize", () => {
+      fitDownloadCopy();
+      fitHeroTitle();
     });
   </script>
 </body>

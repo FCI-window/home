@@ -11,7 +11,7 @@
 
   <script>
     const IOS_BASE_URL =
-      "https://apps.apple.com/kr/app/id6760983914";
+      "https://apps.apple.com/app/id6760983914";
 
     const ANDROID_BASE_URL =
       "https://play.google.com/store/apps/details?id=com.fciapp.TMOStory";
@@ -68,29 +68,9 @@
     const ua = navigator.userAgent || navigator.vendor || window.opera;
 
     if (/android/i.test(ua)) {
-      const storeLanguage = {
-        en: "en",
-        ja: "ja",
-        es: "es",
-        "zh-Hans": "zh-CN",
-        "zh-Hant": "zh-TW"
-      }[language];
-
-      window.location.replace(
-        `${ANDROID_BASE_URL}&hl=${storeLanguage}`
-      );
+      window.location.replace(ANDROID_BASE_URL);
     } else if (/iPhone|iPad|iPod/i.test(ua)) {
-      const storeLanguage = {
-        en: "en",
-        ja: "ja",
-        es: "es",
-        "zh-Hans": "zh-Hans",
-        "zh-Hant": "zh-Hant"
-      }[language];
-
-      window.location.replace(
-        `${IOS_BASE_URL}?l=${storeLanguage}`
-      );
+      window.location.replace(IOS_BASE_URL);
     } else {
       window.location.replace(FALLBACK_URL);
     }

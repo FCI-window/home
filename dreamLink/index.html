@@ -52,7 +52,7 @@
 
   <script>
     const IOS_BASE_URL =
-      "https://apps.apple.com/kr/app/id6775331954";
+      "https://apps.apple.com/app/id6775331954";
 
     const ANDROID_BASE_URL =
       "https://play.google.com/store/apps/details?id=com.fciapp.dream";
@@ -151,28 +151,12 @@
 
     if (isAndroid) {
       openAppLink.classList.remove("hidden");
-      const storeLanguage = {
-        en: "en",
-        ja: "ja",
-        es: "es",
-        "zh-Hans": "zh-CN",
-        "zh-Hant": "zh-TW"
-      }[language];
-
       storeLinks.innerHTML =
-        `<a class="store-link" href="${ANDROID_BASE_URL}&hl=${storeLanguage}">${messages[language].android}</a>`;
+        `<a class="store-link" href="${ANDROID_BASE_URL}">${messages[language].android}</a>`;
     } else if (isIOS) {
       openAppLink.classList.remove("hidden");
-      const storeLanguage = {
-        en: "en",
-        ja: "ja",
-        es: "es",
-        "zh-Hans": "zh-Hans",
-        "zh-Hant": "zh-Hant"
-      }[language];
-
       storeLinks.innerHTML =
-        `<a class="store-link" href="${IOS_BASE_URL}?l=${storeLanguage}">${messages[language].ios}</a>`;
+        `<a class="store-link" href="${IOS_BASE_URL}">${messages[language].ios}</a>`;
     } else {
       window.location.replace(FALLBACK_URL);
     }

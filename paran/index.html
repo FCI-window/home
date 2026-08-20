@@ -58,35 +58,6 @@
       padding: 26px 18px 36px;
     }
 
-    .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      margin-bottom: 26px;
-    }
-
-    .fci-logo img {
-      width: 148px;
-      height: auto;
-      display: block;
-    }
-
-    .home-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 42px;
-      padding: 0 16px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.76);
-      color: var(--muted);
-      font-size: 0.92rem;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
     .hero {
       display: grid;
       gap: 24px;
@@ -98,6 +69,11 @@
       gap: 15px;
       margin-bottom: 0;
     }
+
+    .brand-title { min-width: 0; flex: 1 1 auto; }
+    .brand-fci-home { display: block; flex: 0 0 auto; width: 120px; margin-left: auto; }
+    .brand-fci-home picture { display: block; }
+    .brand-fci-home img { display: block; width: 100%; height: auto; }
 
     .app-icon {
       width: 76px;
@@ -548,25 +524,64 @@
       display: none;
     }
 
+    @media (max-width: 820px) {
+      .story-image,
+      .story-image.keep-mobile {
+        width: min(240px, calc(100% - 82px));
+        height: auto;
+        margin-inline: auto;
+      }
+
+      .screen-collage,
+      .future-visual {
+        width: min(100%, 332px);
+        margin-inline: auto;
+      }
+    }
+
     @media (max-width: 640px) {
-      .download-panel { align-items: flex-start; flex-direction: column; }
-      .store-links img { height: 38px; }
+      .download-panel {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 12px;
+        padding: 18px 16px;
+        border-radius: 16px;
+      }
+
+      .download-panel > div:first-child {
+        min-width: 0;
+      }
+
+      .download-panel p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .download-panel h2 {
+        font-size: clamp(11px, 4.8vw, 20px);
+        line-height: 1.25;
+        white-space: normal;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+      }
+
+      .download-panel p {
+        font-size: clamp(11px, 3.2vw, 14px);
+      }
+
+      .store-links {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 6px;
+      }
+
+      .store-links img { height: 30px; }
       .page {
         padding: 20px 14px 30px;
-      }
-
-      .topbar {
-        margin-bottom: 18px;
-      }
-
-      .fci-logo img {
-        width: 122px;
-      }
-
-      .home-link {
-        min-height: 38px;
-        padding: 0 12px;
-        font-size: 0.84rem;
       }
 
       .brand-row {
@@ -579,6 +594,9 @@
         height: 64px;
         border-radius: 18px;
       }
+
+      .brand-fci-home { width: 34px; }
+      .brand-title h1 { white-space: nowrap; }
 
       summary {
         grid-template-columns: 38px minmax(0, 1fr) 28px;
@@ -609,7 +627,6 @@
       .story-image,
       .story-image.keep-mobile {
         display: block;
-        width: min(100%, 300px);
         margin: 14px auto 0;
       }
 
@@ -709,28 +726,22 @@
 </head>
 <body>
   <div class="page">
-    <header class="topbar">
-      <a class="fci-logo" href="../index.html" aria-label="FCI 홈으로 이동">
-        <img src="./images/FCILOGOwithText.png" alt="FCI Factory of Creative Imagination">
-      </a>
-      <a class="home-link" href="../index.html">FCI 홈</a>
-    </header>
-
     <main class="hero">
       <section class="intro" aria-label="파란 소개">
         <div class="brand-row">
           <img class="app-icon" src="./images/Paran.jpg" alt="파란 앱 아이콘">
-          <div>
+          <div class="brand-title">
             <span class="kicker">Cross-generation Story Platform</span>
             <h1>파란 : 그분들의 이야기</h1>
           </div>
+          <a class="brand-fci-home" href="../index.html" aria-label="FCI 홈으로 이동"><picture><source media="(max-width: 640px)" srcset="../images/FCI_basic_logo.png"><img src="./images/FCILOGOwithText.png" alt="FCI Factory of Creative Imagination"></picture></a>
         </div>
       </section>
 
       <section class="storyline" aria-label="파란 스토리라인">
         <p class="section-heading">제목을 눌러 8개의 이야기로 [파란]을 열어보세요.</p>
 
-        <details open>
+        <details>
           <summary>
             <span class="number">01</span>
             <h2>과연 성공한 인생이란 무엇일까요?</h2>
@@ -909,7 +920,7 @@
         <section class="download-panel" aria-label="파란 다운로드">
           <div><h2>누군가의 과거가 다른 누군가의 미래를 바꿀 수 있습니다.</h2><p>경험을 기록하고, 연결하고, 이어가는 [파란]</p></div>
           <div class="store-links">
-            <a href="https://apps.apple.com/kr/app/id6760983914" target="_blank" rel="noopener"><img src="../images/Download_apple.png" alt="App Store에서 다운로드"></a>
+            <a href="https://apps.apple.com/app/id6760983914" target="_blank" rel="noopener"><img src="../images/Download_apple.png" alt="App Store에서 다운로드"></a>
             <a href="https://play.google.com/store/apps/details?id=com.fciapp.TMOStory" target="_blank" rel="noopener"><img src="../images/Download_google.png" alt="Google Play에서 다운로드"></a>
           </div>
         </section>
@@ -1019,6 +1030,20 @@
       activeIndex = 0;
       touchStartX = 0;
     });
+  </script>
+  <script>
+    function fitBrandTitle() {
+      const title = document.querySelector(".brand-title h1");
+      if (!title || !window.matchMedia("(max-width: 640px)").matches) return;
+      title.style.fontSize = "";
+      let size = parseFloat(getComputedStyle(title).fontSize);
+      while (title.scrollWidth > title.clientWidth && size > 8) {
+        size -= 0.5;
+        title.style.fontSize = `${size}px`;
+      }
+    }
+    fitBrandTitle();
+    window.addEventListener("resize", fitBrandTitle);
   </script>
 </body>
 </html>

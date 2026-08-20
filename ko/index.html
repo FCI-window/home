@@ -12,11 +12,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f7f8fb;
+      --bg: #202633;
       --surface: #ffffff;
       --surface-soft: #f1f4f9;
-      --text: #1f2430;
-      --muted: #667085;
+      --text: #edf2f8;
+      --muted: #b6c0cf;
       --line: #e1e6ef;
       --line-strong: #cfd7e6;
       --fci: #2f5bff;
@@ -24,7 +24,7 @@
       --rohd: #244c86;
       --dream: #6d5df6;
       --paran: #2d9cdb;
-      --shadow: 0 18px 45px rgba(31, 36, 48, 0.08);
+      --shadow: 0 20px 48px rgba(5, 10, 20, 0.24);
     }
 
     * {
@@ -39,8 +39,8 @@
       margin: 0;
       color: var(--text);
       background:
-        radial-gradient(circle at 0% 0%, rgba(47, 91, 255, 0.11), transparent 32rem),
-        radial-gradient(circle at 100% 8%, rgba(45, 156, 219, 0.12), transparent 28rem),
+        radial-gradient(circle at 0% 0%, rgba(63, 91, 145, 0.34), transparent 32rem),
+        radial-gradient(circle at 100% 8%, rgba(45, 76, 115, 0.3), transparent 28rem),
         var(--bg);
       font-family: "Noto Sans KR", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.55;
@@ -61,6 +61,10 @@
       display: grid;
       gap: 12px;
       padding: 14px 2px 22px;
+    }
+
+    .top-message {
+      color: #f4f7fb;
     }
 
     .brand {
@@ -84,11 +88,6 @@
       line-height: 1.24;
       letter-spacing: 0;
       font-weight: 800;
-    }
-
-    .language-row {
-      display: flex;
-      justify-content: flex-end;
     }
 
     .brand img {
@@ -121,7 +120,11 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 2px;
+      margin: 0;
+    }
+
+    .trust-row > * {
+      white-space: nowrap;
     }
 
     .trust-pill {
@@ -129,14 +132,35 @@
       align-items: center;
       min-height: 30px;
       padding: 0 11px;
-      border: 1px solid rgba(47, 91, 255, 0.2);
+      border: 1px solid rgba(201, 215, 238, 0.42);
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.7);
-      color: #344054;
+      background: rgba(255, 255, 255, 0.08);
+      color: #edf2f8;
       font-size: 0.78rem;
       font-weight: 800;
     }
 
+    .hero-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 2px;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      flex: 0 0 auto;
+    }
+
+    .language-menu {
+      position: relative;
+    }
+
+    .language-button,
     .language-link {
       display: inline-flex;
       align-items: center;
@@ -150,10 +174,48 @@
       font-size: 0.78rem;
       font-weight: 800;
       text-decoration: none;
+      white-space: nowrap;
+      cursor: pointer;
     }
 
+    .language-button:hover,
+    .language-button:focus-visible,
     .language-link:hover {
       border-color: var(--fci);
+      color: var(--fci);
+    }
+
+    .language-options {
+      position: absolute;
+      z-index: 5;
+      top: calc(100% + 6px);
+      right: 0;
+      display: grid;
+      min-width: 150px;
+      padding: 6px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .language-options[hidden] {
+      display: none;
+    }
+
+    .language-options a {
+      padding: 7px 9px;
+      border-radius: 7px;
+      color: #344054;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .language-options a:hover,
+    .language-options a:focus-visible {
+      background: #f1f4f9;
       color: var(--fci);
     }
 
@@ -169,7 +231,8 @@
       position: relative;
       overflow: hidden;
       min-height: 100%;
-      background: rgba(255, 255, 255, 0.88);
+      background: rgba(246, 248, 251, 0.96);
+      color: #1f2430;
       border: 1px solid var(--line);
       border-radius: 18px;
       box-shadow: var(--shadow);
@@ -283,7 +346,7 @@
 
     .app-intro {
       margin: 0;
-      color: var(--muted);
+      color: #667085;
       font-size: 0.89rem;
       line-height: 1.55;
     }
@@ -321,6 +384,8 @@
     }
 
     .story-link {
+      display: inline-flex;
+      align-items: center;
       color: var(--accent);
       font-size: 0.82rem;
       font-weight: 800;
@@ -331,6 +396,36 @@
 
     .story-link:hover {
       text-decoration: underline;
+    }
+
+    @media (max-width: 620px) {
+      .hero-nav {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: stretch;
+      }
+
+      .trust-row,
+    .header-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 8px;
+      }
+
+      .header-actions {
+        align-items: flex-end;
+      }
+
+      .trust-row > *,
+      .header-actions > * {
+        min-height: 30px;
+      }
+    }
+
+    .header-actions .story-link {
+      color: #f4f7fb;
     }
 
     .detail {
@@ -481,18 +576,28 @@
     <header class="hero">
       <div class="brand-row">
         <div class="brand" aria-label="FCI">
-          <img src="../images/FCILOGOwithText.png" alt="FCI Factory of Creative Imagination">
+          <img src="../images/FCILOGOwithTextWhite.png" alt="FCI Factory of Creative Imagination">
         </div>
         <p class="top-message">일상을 위한 애플리케이션을<br>만들어 갑니다.</p>
       </div>
-      <div class="language-row">
-        <a class="language-link" href="./fci/index.html">스토리 보기</a>
-        <a class="language-link" href="../en/" lang="en" onclick="localStorage.setItem('fci-language', 'en')">English</a>
-      </div>
-      <div>
+      <div class="hero-nav">
         <div class="trust-row" aria-label="FCI 서비스 특징">
           <span class="trust-pill">특허 기반 서비스</span>
           <span class="trust-pill">모바일 앱 포트폴리오</span>
+        </div>
+        <div class="header-actions">
+          <div class="language-menu">
+            <button class="language-button" type="button" aria-expanded="false" aria-controls="language-options-ko">Language</button>
+            <div class="language-options" id="language-options-ko" hidden>
+              <a href="../ko/" lang="ko" onclick="localStorage.setItem('fci-language', 'ko')">한국어</a>
+              <a href="../en/" lang="en" onclick="localStorage.setItem('fci-language', 'en')">English</a>
+              <a href="../ko/" lang="ja" onclick="localStorage.setItem('fci-language', 'ko')">日本語</a>
+              <a href="../ko/" lang="zh-CN" onclick="localStorage.setItem('fci-language', 'ko')">简体中文</a>
+              <a href="../ko/" lang="zh-TW" onclick="localStorage.setItem('fci-language', 'ko')">繁體中文</a>
+              <a href="../ko/" lang="es" onclick="localStorage.setItem('fci-language', 'ko')">Español</a>
+            </div>
+          </div>
+          <a class="story-link" href="../fci/index.html?lang=ko">FCI스토리 보기 &gt;</a>
         </div>
       </div>
     </header>
@@ -511,7 +616,7 @@
               <p class="app-intro">성경은 원래 입으로 소리 내어 읽는 것이 아니었을까요?</p>
               <div class="card-actions">
                 <span class="more">자세히 보기</span>
-                <a class="story-link" href="./rab/index.html" onclick="event.stopPropagation()">스토리 보기 &gt;</a>
+                <a class="story-link" href="../rab/index.html?lang=ko" onclick="event.stopPropagation()">스토리 보기 &gt;</a>
               </div>
             </div>
           </summary>
@@ -523,13 +628,13 @@
                 <li>낭독 녹음 파일 저장 및 반복 청취</li>
                 <li>특허 제10-2322160호 기반 서비스</li>
                 <li>GOOD TV(기독교복음방송)의 바이블애플에 탑재</li>
-                <li>2027.07 v2.0.0으로 새롭게 개정</li>
-                <li>구글드라이브로 백업과복원을 할 수 있는 기능 추가</li>
+                <li>2026.08 v2.0.0으로 새롭게 개정</li>
+                <li>구글드라이브로 백업과복원 가능</li>
               </ul>
               <div class="store-row">
                 <div class="store-group">
-                  <a class="store-badge" href="https://apps.apple.com/kr/app/%EC%84%B1%EA%B2%BD%EB%82%AD%EB%8F%85%EB%85%B9%EC%9D%8C/id1554443046" target="_blank" rel="noopener"><img src="../images/Download_apple.png" alt="App Store에서 다운로드"></a>
-                  <a class="store-badge" href="https://play.google.com/store/apps/details?id=life.fci.recordaloudbible&hl=ko" target="_blank" rel="noopener"><img src="../images/Download_google.png" alt="Google Play에서 다운로드"></a>
+                  <a class="store-badge" href="https://apps.apple.com/app/id1554443046" target="_blank" rel="noopener"><img src="../images/Download_apple.png" alt="App Store에서 다운로드"></a>
+                  <a class="store-badge" href="https://play.google.com/store/apps/details?id=life.fci.recordaloudbible" target="_blank" rel="noopener"><img src="../images/Download_google.png" alt="Google Play에서 다운로드"></a>
                 </div>
               </div>
               <div class="link-group">
@@ -555,18 +660,17 @@
               <p class="app-intro">무언가 100일을 꾸준히 해 보신 적이 있으세요?</p>
               <div class="card-actions">
                 <span class="more">자세히 보기</span>
-                <!-- ROHD 소개 페이지 완성 후 활성화
-                <a class="story-link" href="./rohd/index.html" onclick="event.stopPropagation()">스토리 보기 &gt;</a>
-                -->
+                <a class="story-link" href="../rohd/index.html?lang=ko" onclick="event.stopPropagation()">스토리 보기 &gt;</a>
               </div>
             </div>
           </summary>
           <div class="detail">
             <div class="detail-inner">
-              <p>좋은 습관을 내 것으로 만들기 위한 100일의 실행. 매일 한 장의 인증샷을 기록해 보세요. 100일 캘린더와 함께 30초 동영상으로 만들어 드립니다.</p>
+              <p>좋은 습관을 만들기 위한 100일,<br>우리 아기의 사랑스러운 100일,<br>반려식물의 성장, 여행의 추억, 가족의 일상까지…<br>간직하고 싶은 100일의 과정.<br>매일 한 장의 인증샷을 기록해 보세요.<br>100일 캘린더와 함께 30초 동영상으로 만들어 드립니다.</p>
               <ul class="feature-list">
                 <li>하루 한 장의 인증샷 기록</li>
                 <li>100일 캘린더와 30초 영상 생성</li>
+                <li>구글드라이브로 백업과복원 가능</li>
                 <li>특허 제10-2612589호 기반 서비스</li>
               </ul>
               <div class="store-group">
@@ -595,20 +699,21 @@
               <p class="app-intro">오늘 하루도 좋은 습관을 지키며 지내셨나요?</p>
               <div class="card-actions">
                 <span class="more">자세히 보기</span>
-                <a class="story-link" href="./dream/index.html" onclick="event.stopPropagation()">스토리 보기 &gt;</a>
+                <a class="story-link" href="../dream/index.html?lang=ko" onclick="event.stopPropagation()">스토리 보기 &gt;</a>
               </div>
             </div>
           </summary>
           <div class="detail">
             <div class="detail-inner">
-              <p>완벽한 하루가 아니라, 완성하는 하루를 기록하는 플랫폼입니다. Diary, Reading, Exercise and Microhabit을 한 페이지에 담습니다.</p>
+              <p>더 풍요로운 삶을 살기위한 4가지 습관을 시작해 보세요.<br>Diary, Reading, Exercise &amp; Microhabit<br>짧고 간단한 기록만으로 당신의 습관이 될 수 있습니다.</p>
               <ul class="feature-list">
                 <li>일기, 독서, 운동, 작은 습관을 한 번에 기록</li>
                 <li>사진과 한 줄 기록 중심의 간단한 사용성</li>
                 <li>7일과 30일 단위의 지속, 랭킹, 응원 구조</li>
+                <li>구글드라이브로 백업과복원 가능</li>
               </ul>
               <div class="store-group">
-                <a class="store-badge" href="https://apps.apple.com/kr/app/id6775331954" target="_blank" rel="noopener"><img src="../images/Download_apple.png" alt="App Store에서 다운로드"></a>
+                <a class="store-badge" href="https://apps.apple.com/app/id6775331954" target="_blank" rel="noopener"><img src="../images/Download_apple.png" alt="App Store에서 다운로드"></a>
                 <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.fciapp.dream" target="_blank" rel="noopener"><img src="../images/Download_google.png" alt="Google Play에서 다운로드"></a>
               </div>
               <div class="link-group">
@@ -634,7 +739,7 @@
               <p class="app-intro">성공한 시니어 분들은 어떤 일/어떤 경험을 하면서 살아 오셨을까요?</p>
               <div class="card-actions">
                 <span class="more">자세히 보기</span>
-                <a class="story-link" href="./paran/index.html" onclick="event.stopPropagation()">스토리 보기 &gt;</a>
+                <a class="story-link" href="../paran/index.html" onclick="event.stopPropagation()">스토리 보기 &gt;</a>
               </div>
             </div>
           </summary>
@@ -648,7 +753,7 @@
                 <li>특허 제10-2764519호 기반 서비스</li>
               </ul>
               <div class="store-group">
-                <a class="store-badge" href="https://apps.apple.com/kr/app/id6760983914" target="_blank" rel="noopener"><img src="../images/Download_apple.png" alt="App Store에서 다운로드"></a>
+                <a class="store-badge" href="https://apps.apple.com/app/id6760983914" target="_blank" rel="noopener"><img src="../images/Download_apple.png" alt="App Store에서 다운로드"></a>
                 <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.fciapp.TMOStory" target="_blank" rel="noopener"><img src="../images/Download_google.png" alt="Google Play에서 다운로드"></a>
               </div>
               <div class="link-group">
@@ -667,5 +772,26 @@
       <p>Copyright FCI. All rights reserved. <a href="mailto:fci.window@gmail.com">fci.window@gmail.com</a></p>
     </footer>
   </div>
+  <script>
+    (() => {
+      const menu = document.querySelector('.language-menu');
+      const button = menu?.querySelector('.language-button');
+      const options = menu?.querySelector('.language-options');
+      if (!button || !options) return;
+
+      button.addEventListener('click', () => {
+        const isOpen = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!isOpen));
+        options.hidden = isOpen;
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!menu.contains(event.target)) {
+          button.setAttribute('aria-expanded', 'false');
+          options.hidden = true;
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

@@ -7,9 +7,9 @@
   <meta property="og:title" content="ROHD : 100일의 기록">
   <meta property="og:description" content="100일의 기록을 하나의 동영상으로 만듭니다.">
   <meta property="og:image" content="https://www.fciapp.com/images/Logo_ROHD.png">
-  <meta property="og:url" content="https://www.fciapp.com/ko/rohd/index.html">
+  <meta property="og:url" content="https://www.fciapp.com/rohd/index_ko.html">
   <title>ROHD : 100일의 기록</title>
-  <link rel="shortcut icon" href="../../images/favicon_FCILOGO_W.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../images/favicon_FCILOGO_W.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -38,17 +38,13 @@
     a { color: inherit; }
     img { display: block; max-width: 100%; }
     .page { width: min(1120px, 100%); min-height: 100vh; margin: 0 auto; padding: 26px 18px 36px; }
-    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 26px; }
-    .fci-logo img { width: 148px; height: auto; }
-    .home-link {
-      display: inline-flex; align-items: center; justify-content: center; min-height: 42px; padding: 0 16px;
-      color: var(--muted); background: rgba(255,255,255,.76); border: 1px solid var(--line);
-      border-radius: 999px; font-size: .92rem; font-weight: 700; text-decoration: none;
-    }
-    .home-link:hover, .home-link:focus-visible { border-color: var(--rohd); }
     .hero { display: grid; gap: 24px; }
     .intro { padding: 0; }
     .brand-row { display: flex; align-items: center; gap: 15px; margin-bottom: 0; }
+    .brand-title { min-width: 0; flex: 1 1 auto; }
+    .brand-fci-home { display: block; flex: 0 0 auto; width: 120px; margin-left: auto; }
+    .brand-fci-home picture { display: block; }
+    .brand-fci-home img { display: block; width: 100%; height: auto; }
     .app-icon { width: 76px; height: 76px; border-radius: 21px; box-shadow: 0 14px 28px rgba(36,76,134,.18); }
     .kicker {
       display: inline-flex; min-height: 26px; align-items: center; padding: 0 10px; border-radius: 999px;
@@ -124,9 +120,6 @@
 
     @media (max-width: 820px) {
       .page { padding: 18px 14px 28px; }
-      .topbar { margin-bottom: 18px; }
-      .fci-logo img { width: 126px; }
-      .home-link { min-height: 38px; padding: 0 12px; font-size: .84rem; }
       .brand-row { gap: 12px; margin-bottom: 16px; }
       .app-icon { width: 64px; height: 64px; border-radius: 18px; }
       summary { grid-template-columns: 38px minmax(0,1fr) 28px; gap: 10px; min-height: 60px; padding: 11px 12px; }
@@ -151,6 +144,8 @@
       .download-panel p { margin: 3px 0 0; font-size: clamp(11px, 2.6vw, .88rem); white-space: nowrap; }
       .download-panel .store-links { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; margin-top: 0; }
       .download-panel .store-links img { height: 30px; width: auto; }
+      .brand-fci-home { width: 34px; }
+      .brand-title h1 { white-space: nowrap; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -160,28 +155,24 @@
 </head>
 <body>
   <div class="page">
-    <header class="topbar">
-      <a class="fci-logo" href="../index.html" aria-label="FCI 홈으로 이동"><img src="../../images/FCILOGOwithText.png" alt="FCI Factory of Creative Imagination"></a>
-      <a class="home-link" href="../index.html">FCI 홈</a>
-    </header>
-
     <main class="hero">
       <section class="intro" aria-label="ROHD 소개">
         <div class="brand-row">
-          <img class="app-icon" src="../../images/Logo_ROHD.png" alt="ROHD 앱 아이콘">
-          <div>
+          <img class="app-icon" src="../images/Logo_ROHD.png" alt="ROHD 앱 아이콘">
+          <div class="brand-title">
             <span class="kicker">100 Days Story Platform</span>
             <h1>ROHD : 100일의 기록</h1>
             <p class="hero-copy">100일의 기록을 하나의 동영상으로 만듭니다.</p>
             <p class="english">Record Of One Hundred Days</p>
           </div>
+          <a class="brand-fci-home" href="../ko/index.html" aria-label="FCI 홈으로 이동"><picture><source media="(max-width: 640px)" srcset="../images/FCI_basic_logo.png"><img src="../images/FCILOGOwithText.png" alt="FCI Factory of Creative Imagination"></picture></a>
         </div>
       </section>
 
       <section class="storyline" aria-label="ROHD 스토리">
         <p class="section-heading">제목을 눌러 5개의 이야기로 ROHD를 열어보세요.</p>
 
-        <details open>
+        <details>
           <summary><span class="number">01</span><h2>무언가 100일을 꾸준히 해 보신 적이 있으신가요?</h2><span class="toggle" aria-hidden="true">+</span></summary>
           <div class="answer-with-image">
             <div>
@@ -228,8 +219,8 @@
         <section class="download-panel" aria-label="ROHD 다운로드">
           <div><h2>100일의 기록을 하나의 이야기로.</h2><p>Record Of One Hundred Days</p></div>
           <div class="store-links">
-            <a href="https://apps.apple.com/app/id6446820972" target="_blank" rel="noopener"><img src="../../images/Download_apple.png" alt="App Store에서 다운로드"></a>
-            <a href="https://play.google.com/store/apps/details?id=life.fci.ROHD" target="_blank" rel="noopener"><img src="../../images/Download_google.png" alt="Google Play에서 다운로드"></a>
+            <a href="https://apps.apple.com/app/id6446820972" target="_blank" rel="noopener"><img src="../images/Download_apple.png" alt="App Store에서 다운로드"></a>
+            <a href="https://play.google.com/store/apps/details?id=life.fci.ROHD" target="_blank" rel="noopener"><img src="../images/Download_google.png" alt="Google Play에서 다운로드"></a>
           </div>
         </section>
       </section>
@@ -250,6 +241,20 @@
       image.addEventListener("error", usePlaceholder);
       if (image.complete && !image.naturalWidth) usePlaceholder();
     });
+  </script>
+  <script>
+    function fitBrandTitle() {
+      const title = document.querySelector(".brand-title h1");
+      if (!title || !window.matchMedia("(max-width: 640px)").matches) return;
+      title.style.fontSize = "";
+      let size = parseFloat(getComputedStyle(title).fontSize);
+      while (title.scrollWidth > title.clientWidth && size > 8) {
+        size -= 0.5;
+        title.style.fontSize = `${size}px`;
+      }
+    }
+    fitBrandTitle();
+    window.addEventListener("resize", fitBrandTitle);
   </script>
 </body>
 </html>

@@ -1,243 +1,33 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="ROHD는 기록한 100일의 사진을 캘린더, 모자이크와 영상으로 완성해 하나의 이야기로 남기는 앱입니다.">
-  <meta property="og:title" content="ROHD : 100일의 기록">
-  <meta property="og:description" content="100일의 기록을 하나의 동영상으로 만듭니다.">
-  <meta property="og:image" content="https://www.fciapp.com/images/Logo_ROHD.png">
-  <meta property="og:url" content="https://www.fciapp.com/rohd/index.html">
-  <title>ROHD : 100일의 기록</title>
-  <link rel="shortcut icon" href="../images/favicon_FCILOGO_W.ico" type="image/x-icon">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #f6f8fb;
-      --surface: #fff;
-      --surface-soft: #f2f5fa;
-      --text: #20283a;
-      --muted: #667085;
-      --line: #dfe5ee;
-      --rohd: #244c86;
-      --rohd-dark: #18355f;
-      --gold: #b48b37;
-      --shadow: 0 18px 44px rgba(31, 42, 64, .09);
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0; color: var(--text);
-      background:
-        linear-gradient(135deg, rgba(36,76,134,.12), transparent 34%),
-        linear-gradient(225deg, rgba(180,139,55,.10), transparent 28%), var(--bg);
-      font-family: "Noto Sans KR", system-ui, sans-serif; line-height: 1.62; word-break: keep-all;
-    }
-    a { color: inherit; }
-    img { display: block; max-width: 100%; }
-    .page { width: min(1120px, 100%); min-height: 100vh; margin: 0 auto; padding: 26px 18px 36px; }
-    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 26px; }
-    .fci-logo img { width: 148px; height: auto; }
-    .home-link {
-      display: inline-flex; align-items: center; justify-content: center; min-height: 42px; padding: 0 16px;
-      color: var(--muted); background: rgba(255,255,255,.76); border: 1px solid var(--line);
-      border-radius: 999px; font-size: .92rem; font-weight: 700; text-decoration: none;
-    }
-    .home-link:hover, .home-link:focus-visible { border-color: var(--rohd); }
-    .hero { display: grid; gap: 24px; }
-    .intro { padding: 0; }
-    .brand-row { display: flex; align-items: center; gap: 15px; margin-bottom: 0; }
-    .app-icon { width: 76px; height: 76px; border-radius: 21px; box-shadow: 0 14px 28px rgba(36,76,134,.18); }
-    .kicker {
-      display: inline-flex; min-height: 26px; align-items: center; padding: 0 10px; border-radius: 999px;
-      background: #edf3fb; color: var(--rohd-dark); font-size: .82rem; font-weight: 800;
-    }
-    h1 { margin: 10px 0 0; font-size: clamp(1.64rem, 4.6vw, 2.64rem); line-height: 1.18; letter-spacing: 0; }
-    .hero-copy { margin: 8px 0 0; color: #48556b; font-size: clamp(1rem, 2vw, 1.16rem); }
-    .english { margin: 4px 0 0; color: var(--gold); font-size: .88rem; font-weight: 700; letter-spacing: .06em; }
-    .store-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
-    .store-links a { border-radius: 8px; transition: transform .2s ease; }
-    .store-links a:hover, .store-links a:focus-visible { transform: translateY(-2px); }
-    .store-links img { height: 42px; width: auto; }
-
-    .storyline { display: grid; gap: 9px; }
-    .section-heading { margin: 0 0 13px; color: var(--muted); font-size: .94rem; font-weight: 700; }
-    details { overflow: hidden; background: rgba(255,255,255,.88); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 10px 22px rgba(23,32,51,.045); }
-    details[open] { border-color: rgba(36,76,134,.42); background: var(--surface); box-shadow: var(--shadow); }
-    summary {
-      position: relative; display: grid; grid-template-columns: 44px minmax(0,1fr) 30px; gap: 12px; align-items: center;
-      min-height: 65px; padding: 12px 15px; cursor: pointer; list-style: none;
-    }
-    summary::-webkit-details-marker { display: none; }
-    summary:hover { background: rgba(36,76,134,.035); }
-    summary:focus-visible { outline: 3px solid rgba(36,76,134,.28); outline-offset: -3px; }
-    .number {
-      display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px;
-      color: var(--rohd-dark); background: #edf3fb; border-radius: 50%; font-size: .86rem; font-weight: 800;
-    }
-    details[open] .number { color: #fff; background: var(--rohd); }
-    summary h2 { margin: 0; font-size: clamp(1rem, 1.7vw, 1.14rem); line-height: 1.35; letter-spacing: 0; }
-    .toggle {
-      width: 30px; height: 30px; color: var(--rohd-dark); border: 1px solid var(--line);
-      border-radius: 50%; font-size: 1.32rem; line-height: 26px; text-align: center;
-      transition: transform .25s ease, background .25s ease;
-    }
-    details[open] .toggle { color: #fff; background: var(--rohd); border-color: var(--rohd); transform: rotate(45deg); }
-    .answer-with-image {
-      display: grid; grid-template-columns: minmax(0,1fr) 230px; gap: 18px; align-items: center;
-      border-top: 0;
-    }
-    .answer { margin: 0; padding: 0 20px 18px 71px; color: #42536a; font-size: .98rem; }
-    .answer strong { color: var(--rohd-dark); }
-    .story-image-wrap {
-      position: relative; overflow: hidden; min-height: 210px; margin: 0 18px 18px 0; background: var(--surface-soft);
-      border: 1px solid var(--line); border-radius: 14px;
-    }
-    .story-image { width: 100%; height: 100%; min-height: 210px; object-fit: cover; }
-    .story-image-wrap:not(.gif-stage) { aspect-ratio: 3 / 2; min-height: 0; }
-    .story-image-wrap:not(.gif-stage) .story-image { min-height: 0; }
-    .gif-stage { aspect-ratio: 1 / 1; min-height: 0; background: #fff; }
-    .gif-stage .story-image {
-      position: absolute; inset: 0; width: 100%; height: 100%; min-height: 0; object-fit: contain;
-    }
-    .story-image-wrap.placeholder .story-image { display: none; }
-    .image-placeholder { position: absolute; inset: 0; display: none; place-items: center; padding: 28px; text-align: center; }
-    .placeholder .image-placeholder { display: grid; }
-    .image-placeholder span { display: block; }
-    .image-no { color: var(--rohd); font-weight: 800; letter-spacing: .12em; }
-    .image-direction { margin-top: 9px; color: #39465f; font-size: 18px; font-weight: 700; }
-    .image-file { margin-top: 11px; color: var(--muted); font: 12px ui-monospace, monospace; }
-
-    .download-panel {
-      display: flex; align-items: center; justify-content: space-between; gap: 30px; margin-top: 8px;
-      padding: 30px; color: #fff; background: linear-gradient(125deg, var(--rohd-dark), var(--rohd)); border-radius: 20px; box-shadow: var(--shadow);
-    }
-    .download-panel h2 { margin: 0; font-size: clamp(23px, 3vw, 33px); }
-    .download-panel p { margin: 5px 0 0; color: rgba(255,255,255,.76); }
-    .download-panel .store-links { flex: 0 0 auto; margin-top: 0; }
-    .footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; padding: 26px 4px 0; color: var(--muted); font-size: 13px; }
-    .footer-links { display: flex; flex-wrap: wrap; gap: 10px 18px; }
-    .footer a { text-decoration: none; }
-    .footer a:hover { color: var(--rohd); text-decoration: underline; }
-
-    @media (max-width: 760px) {
-      .page { padding: 18px 14px 28px; }
-      .topbar { margin-bottom: 18px; }
-      .fci-logo img { width: 126px; }
-      .home-link { min-height: 38px; padding: 0 12px; font-size: .84rem; }
-      .brand-row { gap: 12px; margin-bottom: 16px; }
-      .app-icon { width: 64px; height: 64px; border-radius: 18px; }
-      summary { grid-template-columns: 38px minmax(0,1fr) 28px; gap: 10px; min-height: 60px; padding: 11px 12px; }
-      .number { width: 36px; height: 36px; font-size: .8rem; }
-      .answer-with-image { display: block; }
-      .answer { padding: 0 16px 16px 60px; font-size: .94rem; }
-      .story-image-wrap { width: min(100% - 76px, 300px); min-height: 210px; margin: 0 16px 16px 60px; }
-      .story-image { min-height: 210px; }
-      .download-panel { align-items: flex-start; flex-direction: column; }
-    }
-    @media (max-width: 480px) {
-      .store-links img { height: 38px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      * { transition: none !important; }
-    }
-  </style>
+  <meta name="robots" content="noindex">
+  <title>ROHD | FCI</title>
 </head>
 <body>
-  <div class="page">
-    <header class="topbar">
-      <a class="fci-logo" href="../index.html" aria-label="FCI 홈으로 이동"><img src="../images/FCILOGOwithText.png" alt="FCI Factory of Creative Imagination"></a>
-      <a class="home-link" href="../index.html">FCI 홈</a>
-    </header>
-
-    <main class="hero">
-      <section class="intro" aria-label="ROHD 소개">
-        <div class="brand-row">
-          <img class="app-icon" src="../images/Logo_ROHD.png" alt="ROHD 앱 아이콘">
-          <div>
-            <span class="kicker">100 Days Story Platform</span>
-            <h1>ROHD : 100일의 기록</h1>
-            <p class="hero-copy">100일의 기록을 하나의 동영상으로 만듭니다.</p>
-            <p class="english">Record Of One Hundred Days</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="storyline" aria-label="ROHD 스토리">
-        <p class="section-heading">제목을 눌러 5개의 이야기로 ROHD를 열어보세요.</p>
-
-        <details open>
-          <summary><span class="number">01</span><h2>무언가 100일을 꾸준히 해 보신 적이 있으신가요?</h2><span class="toggle" aria-hidden="true">+</span></summary>
-          <div class="answer-with-image">
-            <div>
-              <p class="answer">좋은 습관을 만들기 위한 100일,<br>우리 아기의 사랑스러운 100일,<br>반려식물의 성장, 여행의 추억, 가족의 일상까지…<br><br>우리 모두에게는 오래도록 간직하고 싶은<br><strong>100일의 이야기</strong>가 있습니다.</p>
-            </div>
-            <figure class="story-image-wrap"><img class="story-image" src="./images/section-01.webp" alt="Different 100-day journeys" loading="lazy"><figcaption class="image-placeholder"><span><span class="image-no">IMAGE 01</span><span class="image-direction">서로 다른 100일의 따뜻한 콜라주</span><span class="image-file">images/section-01.webp</span></span></figcaption></figure>
-          </div>
-        </details>
-
-        <details>
-          <summary><span class="number">02</span><h2>그런데 그 100일은 어디에 남아 있을까요?</h2><span class="toggle" aria-hidden="true">+</span></summary>
-          <div class="answer-with-image">
-            <p class="answer">기억으로만 남기기보다는 사진을 남기곤 합니다.<br><br>하지만 그 사진들은 시간이 지나면서<br>스마트폰 사진첩 속에 묻혀버리고 맙니다.</p>
-            <figure class="story-image-wrap"><img class="story-image" src="./images/section-02.webp" alt="Photos buried in the gallery" loading="lazy"><figcaption class="image-placeholder"><span><span class="image-no">IMAGE 02</span><span class="image-direction">사진첩 속에 묻힌 소중했던 순간들</span><span class="image-file">images/section-02.webp</span></span></figcaption></figure>
-          </div>
-        </details>
-
-        <details>
-          <summary><span class="number">03</span><h2>100일은 완성보다 과정이 더 소중한 것이 아닐까요?</h2><span class="toggle" aria-hidden="true">+</span></summary>
-          <div class="answer-with-image">
-            <p class="answer">완성된 결과도 소중하지만,<br>그곳까지 걸어가는 과정의 순간들이<br><strong>더 소중하지 않을까요?</strong></p>
-            <figure class="story-image-wrap"><img class="story-image" src="./images/section-03.webp" alt="하나의 대상이 네 단계에 걸쳐 조금씩 성장하는 과정" loading="lazy"><figcaption class="image-placeholder"><span><span class="image-no">IMAGE 03</span><span class="image-direction">조금씩 달라지는 과정의 네 장면</span><span class="image-file">images/section-03.webp</span></span></figcaption></figure>
-          </div>
-        </details>
-
-        <details>
-          <summary><span class="number">04</span><h2>ROHD는 그 100일을 하나의 이야기로 만들어 드립니다.</h2><span class="toggle" aria-hidden="true">+</span></summary>
-          <div class="answer-with-image">
-            <p class="answer">하루 한 장의 기록이 모여<br><br>하나의 캘린더가 되고,<br>하나의 모자이크가 되고,<br>하나의 영상이 되어,<br><br><strong>하나의 이야기가 됩니다.</strong></p>
-            <figure class="story-image-wrap gif-stage" aria-label="ROHD가 기록을 캘린더, 모자이크와 영상으로 만드는 과정">
-              <img class="story-image" src="./images/section-04.webp" alt="Running and baby growth journeys recorded over time" loading="lazy">
-            </figure>
-          </div>
-        </details>
-
-        <details>
-          <summary><span class="number">05</span><h2>100일은 끝이 아니라 또 다른 시작입니다.</h2><span class="toggle" aria-hidden="true">+</span></summary>
-          <div class="answer-with-image">
-            <p class="answer">하나의 100일이 끝나면 또 다른 목표가 시작됩니다.<br><br>우리의 삶은 수많은 <strong>100일의 여정</strong>으로 이어집니다.<br><br>ROHD와 함께,<br>당신의 소중한 100일을<br><strong>하나의 이야기로 남겨보세요.</strong></p>
-            <figure class="story-image-wrap"><img class="story-image" src="./images/section-05.webp" alt="A new beginning after every 100-day journey" loading="lazy"><figcaption class="image-placeholder"><span><span class="image-no">IMAGE 05</span><span class="image-direction">끝에서 다시 시작되는 100일의 여정</span><span class="image-file">images/section-05.webp</span></span></figcaption></figure>
-          </div>
-        </details>
-
-        <section class="download-panel" aria-label="ROHD 다운로드">
-          <div><h2>100일의 기록을 하나의 이야기로.</h2><p>Record Of One Hundred Days</p></div>
-          <div class="store-links">
-            <a href="https://apps.apple.com/app/id6446820972" target="_blank" rel="noopener"><img src="../images/Download_apple.png" alt="App Store에서 다운로드"></a>
-            <a href="https://play.google.com/store/apps/details?id=life.fci.ROHD" target="_blank" rel="noopener"><img src="../images/Download_google.png" alt="Google Play에서 다운로드"></a>
-          </div>
-        </section>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <span>© FCI. Factory of Creative Imagination.</span>
-      <nav class="footer-links" aria-label="ROHD 정책 및 문의">
-        <a href="mailto:fci.window@gmail.com">fci.window@gmail.com</a>
-      </nav>
-    </footer>
-  </div>
-
+  <p>Loading ROHD…</p>
+  <noscript>
+    <p><a href="./index_ko.html" lang="ko">한국어</a> · <a href="./index_en.html" lang="en">English</a></p>
+  </noscript>
   <script>
-    /* 이미지가 준비되면 rohd/images에 같은 파일명으로 넣기만 하면 됩니다. */
-    document.querySelectorAll(".story-image").forEach((image) => {
-      const usePlaceholder = () => image.closest(".story-image-wrap").classList.add("placeholder");
-      image.addEventListener("error", usePlaceholder);
-      if (image.complete && !image.naturalWidth) usePlaceholder();
-    });
+    (() => {
+      const supported = ["ko", "en"];
+      const requested = new URLSearchParams(location.search).get("lang");
+      const languages = navigator.languages || [navigator.language || ""];
+      let savedLanguage = "";
+
+      try {
+        savedLanguage = localStorage.getItem("fci-language") || "";
+      } catch (_) {}
+
+      const browserLanguage = languages.some(value => /^ko(?:-|$)/i.test(value)) ? "ko" : "en";
+      const language = supported.includes(requested) ? requested :
+        supported.includes(savedLanguage) ? savedLanguage : browserLanguage;
+
+      location.replace("./index_" + language + ".html");
+    })();
   </script>
 </body>
 </html>
