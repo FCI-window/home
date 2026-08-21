@@ -102,6 +102,7 @@
       display: flex;
       align-items: center;
       gap: 15px;
+      min-width: 0;
     }
 
     .app-icon {
@@ -1231,9 +1232,7 @@
         min-width: 0;
       }
 
-      h1 {
-        white-space: nowrap;
-      }
+      h1 { white-space: normal; overflow-wrap: anywhere; }
 
       .hero-title-tagline {
         font-size: 0.9em;

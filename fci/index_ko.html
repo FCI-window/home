@@ -44,7 +44,7 @@
     .title-row { display: flex; align-items: center; gap: 16px; }
     .hero { display: grid; gap: 24px; }
     .intro { padding: 0; }
-    .brand-row { display: flex; align-items: center; gap: 15px; }
+    .brand-row { display: flex; align-items: center; gap: 15px; min-width: 0; }
     .brand-row > div { flex: 1; min-width: 0; }
     .brand-fci-logo { display: block; flex: 0 0 auto; line-height: 0; }
     .brand-fci-home {
@@ -116,7 +116,7 @@
     }
     @media (max-width: 640px) {
       .brand-fci-home { width: 38px; min-height: 34px; }
-      .brand-title h1 { white-space: nowrap; }
+      .brand-title h1 { white-space: normal; overflow-wrap: anywhere; }
     }
   </style>
 </head>
