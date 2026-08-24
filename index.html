@@ -60,17 +60,20 @@
         /^(zh)(?:-|$)/i.test(value) ||
         /^(es)(?:-|$)/i.test(value) ||
         /^(en)(?:-|$)/i.test(value)
-      ) || "en";
+      ) || "";
 
-      let language = savedLanguage;
-      if (!["ko", "en", "ja", "zh-CN", "zh-TW", "es"].includes(language)) {
+      let language = "";
+      if (browserLanguage) {
         if (/^ko(?:-|$)/i.test(browserLanguage)) language = "ko";
         else if (/^ja(?:-|$)/i.test(browserLanguage)) language = "ja";
         else if (/^zh-(?:tw|hk|mo)(?:-|$)/i.test(browserLanguage) || /^zh-hant(?:-|$)/i.test(browserLanguage)) language = "zh-TW";
         else if (/^zh(?:-|$)/i.test(browserLanguage)) language = "zh-CN";
         else if (/^es(?:-|$)/i.test(browserLanguage)) language = "es";
-        else language = "en";
       }
+      if (!language && ["ko", "en", "ja", "zh-CN", "zh-TW", "es"].includes(savedLanguage)) {
+        language = savedLanguage;
+      }
+      if (!language) language = "en";
 
       try {
         localStorage.setItem("fci-language", language);
