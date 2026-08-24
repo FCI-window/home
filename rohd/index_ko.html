@@ -51,7 +51,7 @@
       background: #edf3fb; color: var(--rohd-dark); font-size: .82rem; font-weight: 800;
     }
     h1 { margin: 10px 0 0; font-size: clamp(1.64rem, 4.6vw, 2.64rem); line-height: 1.18; letter-spacing: 0; }
-    .hero-copy { margin: 8px 0 0; color: #48556b; font-size: clamp(1rem, 2vw, 1.16rem); }
+    .hero-copy { margin: 8px 0 0; color: #48556b; font-size: clamp(1rem, 2vw, 1.16rem); font-weight: 700; }
     .english { margin: 4px 0 0; color: var(--gold); font-size: .88rem; font-weight: 700; letter-spacing: .06em; }
     .store-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
     .store-links a { border-radius: 8px; transition: transform .2s ease; }
@@ -151,7 +151,8 @@
       html { scroll-behavior: auto; }
       * { transition: none !important; }
     }
-  </style>
+  /* Shared story heading scale */ h1 { font-size: clamp(1.64rem, 4.6vw, 2.64rem); line-height: 1.18; } .hero-copy { font-size: clamp(1rem, 2vw, 1.16rem); }
+</style>
 </head>
 <body>
   <div class="page">

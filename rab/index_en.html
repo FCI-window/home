@@ -22,6 +22,7 @@
     .brand-fci-home picture { display:block; }
     .brand-fci-home img { display:block; width:100%; height:auto; }
     .app-icon { width:76px; height:76px; object-fit:cover; border-radius:21px; box-shadow:0 14px 28px rgba(74,48,16,.18); }
+    .kicker { display:inline-flex; justify-self:start; min-height:26px; align-items:center; padding:0 10px; border-radius:999px; background:rgba(225,189,112,.28); color:var(--gold-deep); font-size:.82rem; font-weight:800; }
     h1 { margin:0; font-size:clamp(1.64rem,4.6vw,2.64rem); line-height:1.18; }
     .hero-copy { margin:0; color:var(--gold-deep); font-size:clamp(1rem,2vw,1.16rem); font-weight:800; }
     .storyline { display:grid; gap:9px; }
@@ -76,7 +77,8 @@
       .story-content { padding:0 12px 16px; }
     }
     @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } * { transition:none !important; } }
-  </style>
+  /* Shared story heading scale */ h1 { font-size: clamp(1.64rem, 4.6vw, 2.64rem); line-height: 1.18; } .hero-copy { font-size: clamp(1rem, 2vw, 1.16rem); }
+</style>
 </head>
 <body>
   <div class="page">
@@ -84,7 +86,7 @@
       <section class="intro" aria-label="Record Aloud Bible introduction">
         <div class="brand-row">
           <img class="app-icon" src="../images/Logo_RAB.png" alt="Record Aloud Bible app icon">
-          <div class="brand-copy"><h1>Record Aloud Bible</h1><p class="hero-copy">Read one verse. Build one chapter.<br>Complete one book.</p></div>
+          <div class="brand-copy"><span class="kicker">A New Way to Read the Bible</span><h1>Record Aloud Bible</h1><p class="hero-copy">Read one verse. Build one chapter.<br>Complete one book.</p></div>
           <a class="brand-fci-home" href="../home/index_en.html" aria-label="Go to FCI home"><picture><source media="(max-width:640px)" srcset="../images/FCI_basic_logo.png"><img src="../images/FCILOGOwithText.png" alt="FCI Factory of Creative Imagination"></picture></a>
         </div>
       </section>

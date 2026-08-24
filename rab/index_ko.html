@@ -40,6 +40,7 @@
     .brand-fci-home picture { display: block; }
     .brand-fci-home img { display: block; width: 100%; height: auto; }
     .app-icon { width: 76px; height: 76px; object-fit: cover; border-radius: 21px; box-shadow: 0 14px 28px rgba(74, 48, 16, 0.18); }
+    .kicker { display: inline-flex; justify-self: start; min-height: 26px; align-items: center; padding: 0 10px; border-radius: 999px; background: rgba(225, 189, 112, 0.28); color: var(--gold-deep); font-size: 0.82rem; font-weight: 800; }
     h1 { margin: 0; font-size: clamp(1.64rem, 4.6vw, 2.64rem); line-height: 1.18; }
     .brand-copy { display: grid; gap: 7px; }
     .hero-copy { margin: 0; color: var(--gold-deep); font-size: clamp(1rem, 2vw, 1.16rem); font-weight: 800; word-break: keep-all; }
@@ -130,7 +131,8 @@
       .story-content { padding: 0 12px 16px; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
-  </style>
+  /* Shared story heading scale */ h1 { font-size: clamp(1.64rem, 4.6vw, 2.64rem); line-height: 1.18; } .hero-copy { font-size: clamp(1rem, 2vw, 1.16rem); }
+</style>
 </head>
 <body>
   <div class="page">
@@ -138,7 +140,7 @@
       <section class="intro" aria-label="성경낭독녹음 소개">
         <div class="brand-row">
           <img class="app-icon" src="../images/Logo_RAB.png" alt="성경낭독녹음 앱 아이콘">
-          <div class="brand-copy"><h1>성경낭독녹음</h1><p class="hero-copy">한 절씩 읽고, 한 장씩 모아, 한 권을 완성합니다.</p></div>
+          <div class="brand-copy"><span class="kicker">A New Way to Read the Bible</span><h1>성경낭독녹음</h1><p class="hero-copy">한 절씩 읽고, 한 장씩 모아, 한 권을 완성합니다.</p></div>
           <a class="brand-fci-home" href="../home/index_ko.html" aria-label="FCI 홈으로 이동"><picture><source media="(max-width: 640px)" srcset="../images/FCI_basic_logo.png"><img src="../images/FCILOGOwithText.png" alt="FCI Factory of Creative Imagination"></picture></a>
         </div>
       </section>
