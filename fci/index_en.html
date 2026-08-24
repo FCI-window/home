@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="FCI began with questions for a better life and creates applications for everyday life.">
+  <meta name="description" content="FCI began with a desire to live a better life and creates applications that make everyday life better.">
   <meta property="og:title" content="FCI Story | Factory of Creative Imagination">
-  <meta property="og:description" content="FCI creates new solutions from questions for a better life.">
+  <meta property="og:description" content="FCI creates new solutions from questions about how to live a better life.">
   <meta property="og:image" content="https://www.fciapp.com/images/FCILOGOwithText.png">
   <meta property="og:url" content="https://www.fciapp.com/fci/index_en.html">
   <title>FCI Story | Factory of Creative Imagination</title>
@@ -87,6 +87,8 @@
     .answer strong, .accent { color: var(--fci-dark); }
     .image-body { display: grid; grid-template-columns: minmax(0, 1fr) 230px; gap: 18px; align-items: center; }
     .image-body .answer { padding-right: 0; }
+    .answer-copy { min-width: 0; }
+    .tech-icon { width: 1.15em; height: 1.15em; margin: 0 .16em; vertical-align: -.2em; }
     .solution-copy { min-width: 0; }
     .solution-copy .answer { margin: 12px 0 0 12px; padding-left: 0; }
     .story-image { display: block; width: 230px; height: 154px; margin: 0 28px 18px 0; border: 1px solid var(--line); border-radius: 12px; background: #fff; object-fit: cover; box-shadow: 0 10px 22px rgba(31,64,130,.10); }
@@ -134,55 +136,55 @@
     <main class="hero">
       <section class="intro" aria-label="About FCI">
         <div class="brand-row">
-          <a class="brand-fci-logo" href="../en/index.html" aria-label="Go to the FCI home page"><img class="app-icon" src="../images/FCILOGO.png" alt="FCI 로고"></a>
+          <a class="brand-fci-logo" href="../home/index_en.html" aria-label="Go to the FCI home page"><img class="app-icon" src="../images/FCILOGO.png" alt="FCI 로고"></a>
           <div>
             <span class="kicker">Factory of Creative Imagination</span>
             <div class="title-row">
-              <h1 id="page-title">FCI: Questions for Better Everyday Life</h1>
+              <h1 id="page-title">FCI: Questions for a Better Life</h1>
             </div>
           </div>
-          <a class="brand-fci-home" href="../en/index.html" aria-label="Go to the FCI home page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7M5.5 9.5v10h13v-10M9.5 19.5v-5h5v5"></path></svg></a>
+          <a class="brand-fci-home" href="../home/index_en.html" aria-label="Go to the FCI home page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7M5.5 9.5v10h13v-10M9.5 19.5v-5h5v5"></path></svg></a>
         </div>
-        <p class="hero-copy"><strong>FCI's story began with those questions.</strong></p>
+        <p class="hero-copy"><strong>From those questions, FCI’s story began. Tap a title to explore each part of the story.</strong></p>
       </section>
 
       <section class="storyline" aria-label="The FCI story">
-        <p class="story-intro">Select a title to discover FCI's four stories.</p>
-
         <details>
           <summary><span class="number">01</span><h2>It began with a desire to live a “better” life.</h2><span class="toggle" aria-hidden="true">+</span></summary>
           <div class="story-body image-body">
-            <p class="answer">Not money, a big house, or a fast car.<br><br>It began with the question of how to live a <strong>more meaningful, rewarding, and fulfilling life</strong>.</p>
+            <p class="answer">It wasn't about having more money, a bigger house, or a faster car.<br><br>It began with a simple question: How could I live a life of <strong>greater meaning, a stronger sense of purpose, and greater fulfillment</strong>?</p>
             <img class="story-image" src="./images/fci-better-life.png" alt="An illustration of a person choosing a meaningful path among several roads toward a better life" loading="lazy">
           </div>
         </details>
 
         <details>
-          <summary><span class="number">02</span><h2>We worked in the field of wireless communication semiconductors connecting people.</h2><span class="toggle" aria-hidden="true">+</span></summary>
+          <summary><span class="number">02</span><h2>I worked in the field of wireless communication semiconductors—the technology that connects people.</h2><span class="toggle" aria-hidden="true">+</span></summary>
           <div class="story-body story-body-spaced image-body">
-            <p class="answer">We experienced everything from designing transmit-and-receive semiconductors for mobile phones to sales and marketing.<br><br>As phones that could only make calls became smartphones and moved to the center of everyday life,<br><br>we felt it was a shame that such a powerful tool was mainly used for viewing, not for input.<br><br>So we began considering how to use the smartphone as an <strong>input tool</strong>.</p>
+            <div class="answer-copy">
+              <p class="answer">I was involved in every stage of the process for the transceiver semiconductors used in mobile phones—from development through sales and marketing.<br><br>As mobile phones evolved from devices that only made calls into smartphones at the center of daily life, I felt it was a shame that such a powerful tool was used mainly as an <strong>output tool</strong>—watching videos, reading the news, or playing games.<br><br>I began exploring how to use the smartphone as an <strong>input tool</strong>—one that allows anyone to contribute something of their own and give it meaning.</p>
+              <p class="answer tech-stack">I also studied React Native Expo <img class="tech-icon" src="./images/expo.svg" alt=""> and Firebase <img class="tech-icon" src="./images/firebase.svg" alt="">.</p>
+            </div>
             <img class="story-image" src="./images/fci-wireless-chip.png" alt="An illustration of wireless communication semiconductors, phones, and smartphones connecting people and the world" loading="lazy">
           </div>
         </details>
 
         <details>
-          <summary><span class="number">03</span><h2>We create tools through repeated questions of “Why?” and “How?”.</h2><span class="toggle" aria-hidden="true">+</span></summary>
+          <summary><span class="number">03</span><h2>We create tools by repeatedly asking “Why?” and “How?”.</h2><span class="toggle" aria-hidden="true">+</span></summary>
           <div class="story-body story-body-spaced image-body">
-            <p class="answer">The company name, FCI, is short for <strong>Factory of Creative Imagination</strong>.<br>In Korean, it can be understood as a “creative imagination workshop.”<br>Our logo is shaped after the Chinese character <strong>‘문(問)’</strong>, meaning “question.”<br>We keep asking <strong>“Why?”</strong> and <strong>“How?”</strong> as we search for answers.<br>For solutions the world has not seen before...</p>
+            <p class="answer">The company name, FCI, stands for <strong>Factory of Creative Imagination</strong>.<br>Our logo is based on the Chinese character <strong>問</strong>, which means “question.”<br>By repeatedly asking <strong>“Why?”</strong> and <strong>“How?”</strong>, we search for answers.<br>And from those questions, we create solutions that did not exist before...</p>
             <img class="story-image" src="./images/fci-question-to-logo.png" alt="An illustration showing the Chinese character for question becoming the FCI logo" loading="lazy">
           </div>
         </details>
 
         <details id="solutions-story">
-          <summary><span class="number">04</span><h2>We create solutions for “better” everyday life.</h2><span class="toggle" aria-hidden="true">+</span></summary>
+          <summary><span class="number">04</span><h2>We create solutions for a better everyday life.</h2><span class="toggle" aria-hidden="true">+</span></summary>
           <div class="story-body story-body-spaced image-body">
             <div class="solution-copy">
-              <p class="answer">We are creating solutions one by one from those questions.</p>
+              <p class="answer">From those questions, we are creating solutions one by one.</p>
               <ul class="solution-list" aria-label="Applications created by FCI">
-                <li><strong>“Better faith”</strong> — <a href="../rab/index_en.html">Bible Reading Aloud</a></li>
+                <li><strong>“Deeper faith”</strong> — <a href="../rab/index_en.html">Record Aloud Bible</a></li>
                 <li><strong>“Better habits”</strong> — <a href="../dream/index_en.html">DRE&amp;M</a></li>
-                <li><strong>“Better memories”</strong> — <a href="../rohd/index_en.html">ROHD</a></li>
-                <li><strong>“A better society”</strong> — <a href="../paran/index.html">Paran</a></li>
+                <li><strong>“Better 100 Days”</strong> — <a href="../rohd/index_en.html">ROHD</a></li>
               </ul>
               <div class="continuation"><strong>…</strong></div>
             </div>
@@ -192,7 +194,7 @@
       </section>
 
       <section class="closing" aria-label="FCI's promise">
-        <h2>We create applications<br>for everyday life.</h2>
+        <h2>We create applications<br>that make everyday life better.</h2>
         <p>Factory of Creative Imagination</p>
       </section>
     </main>

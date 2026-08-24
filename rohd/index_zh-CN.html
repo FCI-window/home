@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ROHD将100天的记录汇成一个故事。">
+  <meta property="og:title" content="ROHD：100天的记录">
+  <meta property="og:description" content="ROHD将100天的记录汇成一个故事。">
+  <meta property="og:image" content="https://www.fciapp.com/images/Logo_ROHD.png">
+  <meta property="og:url" content="https://www.fciapp.com/rohd/index_zh-CN.html">
+  <title>ROHD：100天的记录</title>
+  <link rel="shortcut icon" href="../images/favicon_FCILOGO_W.ico" type="image/x-icon">
+  <style>
+    :root { --bg:#f6f8fb; --surface:#fff; --text:#20283a; --muted:#667085; --line:#dfe5ee; --rohd:#244c86; --dark:#18355f; --gold:#b48b37; --shadow:0 18px 44px rgba(31,42,64,.09); }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--text); background:linear-gradient(135deg,rgba(36,76,134,.12),transparent 34%),linear-gradient(225deg,rgba(180,139,55,.1),transparent 28%),var(--bg); font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; line-height:1.7; }
+    img { display:block; max-width:100%; } a { color:inherit; }
+    .page { width:min(1120px,100%); min-height:100vh; margin:auto; padding:26px 18px 36px; }
+    .brand-row { display:flex; align-items:center; gap:15px; } .app-icon { width:76px; height:76px; border-radius:21px; box-shadow:0 14px 28px rgba(36,76,134,.18); }
+    .brand-title { min-width:0; flex:1; } .brand-fci-home { width:120px; flex:0 0 auto; margin-left:auto; } .brand-fci-home img { width:100%; }
+    .kicker { display:inline-flex; padding:0 10px; border-radius:999px; background:#edf3fb; color:var(--dark); font-size:.82rem; font-weight:800; }
+    h1 { margin:10px 0 0; font-size:clamp(1.64rem,4.6vw,2.64rem); line-height:1.2; } .hero-copy { margin:8px 0 0; color:#48556b; font-size:clamp(1rem,2vw,1.16rem); } .english { margin:4px 0 0; color:var(--gold); font-size:.88rem; font-weight:700; letter-spacing:.06em; }
+    .storyline { display:grid; gap:9px; margin-top:24px; } .section-heading { margin:0 0 4px; color:var(--muted); font-size:.94rem; font-weight:700; }
+    details { overflow:hidden; border:1px solid var(--line); border-radius:8px; background:rgba(255,255,255,.88); box-shadow:0 10px 22px rgba(23,32,51,.045); } details[open] { border-color:rgba(36,76,134,.42); background:var(--surface); box-shadow:var(--shadow); }
+    summary { display:grid; grid-template-columns:44px minmax(0,1fr) 30px; gap:12px; align-items:center; min-height:65px; padding:12px 15px; cursor:pointer; list-style:none; } summary::-webkit-details-marker { display:none; } summary h2 { margin:0; font-size:clamp(1rem,1.7vw,1.14rem); line-height:1.4; }
+    .number { display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; background:#edf3fb; color:var(--dark); font-size:.86rem; font-weight:800; } details[open] .number { color:#fff; background:var(--rohd); }
+    .toggle { width:30px; height:30px; border:1px solid var(--line); border-radius:50%; color:var(--dark); font-size:1.32rem; line-height:26px; text-align:center; } details[open] .toggle { color:#fff; background:var(--rohd); border-color:var(--rohd); transform:rotate(45deg); }
+    .answer-with-image { display:grid; grid-template-columns:minmax(0,1fr) 230px; gap:18px; align-items:center; } .answer-with-image > * { min-width:0; } .answer { margin:0; padding:0 20px 18px 71px; color:#42536a; font-size:.98rem; } .answer strong { color:var(--dark); }
+    .story-image-wrap { overflow:hidden; width:calc(100% - 18px); min-width:0; min-height:210px; margin:0 18px 18px 0; border:1px solid var(--line); border-radius:14px; background:#f2f5fa; aspect-ratio:3/2; } .story-image { width:100%; height:100%; object-fit:cover; }
+    .gif-stage { min-height:0; aspect-ratio:1/1; background:#fff; } .gif-stage .story-image { object-fit:contain; }
+    .download-panel { display:flex; align-items:center; justify-content:space-between; gap:30px; margin-top:8px; padding:30px; border-radius:20px; color:#fff; background:linear-gradient(125deg,var(--dark),var(--rohd)); box-shadow:var(--shadow); } .download-panel h2 { margin:0; font-size:clamp(23px,3vw,33px); } .download-panel p { margin:5px 0 0; color:rgba(255,255,255,.76); } .store-links { display:flex; flex-wrap:wrap; gap:10px; } .store-links img { height:42px; width:auto; }
+    .footer { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px 24px; padding:26px 4px 0; color:var(--muted); font-size:13px; } .footer a { text-decoration:none; }
+    @media(max-width:820px) { .page { padding:18px 14px 28px; } .app-icon { width:64px; height:64px; border-radius:18px; } summary { grid-template-columns:38px minmax(0,1fr) 28px; gap:10px; min-height:60px; padding:11px 12px; } .number { width:36px; height:36px; } .answer-with-image { display:block; } .answer { padding:0 16px 16px 60px; font-size:.94rem; } .story-image-wrap { width:min(240px,calc(100% - 82px)); min-height:0; margin:0 auto 16px; } .gif-stage { width:min(160px,calc(100% - 82px)); } }
+    @media(max-width:640px) { .brand-fci-home { width:34px; } .brand-title h1 { white-space:nowrap; } .download-panel { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:12px; padding:18px 16px; border-radius:16px; } .download-panel h2 { font-size:clamp(11px,3vw,18px); white-space:nowrap; } .download-panel p { font-size:clamp(11px,2.6vw,.88rem); white-space:nowrap; } .download-panel .store-links { flex-direction:column; align-items:flex-end; gap:6px; } .download-panel .store-links img { height:30px; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <main>
+      <section aria-label="关于ROHD">
+        <div class="brand-row">
+          <img class="app-icon" src="../images/Logo_ROHD.png" alt="ROHD应用图标">
+          <div class="brand-title">
+            <span class="kicker">100天照片记录应用</span>
+            <h1>ROHD：100天的记录</h1>
+            <p class="hero-copy">把100天的记录，制作成一段视频。</p>
+            <p class="english">Record Of One Hundred Days</p>
+          </div>
+          <a class="brand-fci-home" href="../home/index_zh-CN.html" aria-label="前往FCI主页"><picture><source media="(max-width: 640px)" srcset="../images/FCI_basic_logo.png"><img src="../images/FCILOGOwithText.png" alt="FCI Factory of Creative Imagination"></picture></a>
+        </div>
+      </section>
+      <section class="storyline" aria-label="ROHD故事">
+        <p class="section-heading">点击标题，通过5个故事了解ROHD。</p>
+        <details><summary><span class="number">01</span><h2>你曾经坚持做一件事100天吗？</h2><span class="toggle" aria-hidden="true">+</span></summary><div class="answer-with-image"><p class="answer">为了养成好习惯的100天。<br>宝宝成长的100天。<br>植物的成长、旅行的回忆、家人的日常……<br><br>我们每个人都有想长久珍藏的<br><strong>100天的故事</strong>。</p><figure class="story-image-wrap"><img class="story-image" src="./images/section-01.webp" alt="值得记录的各种100天旅程"></figure></div></details>
+        <details><summary><span class="number">02</span><h2>但是，那100天会留在哪里呢？</h2><span class="toggle" aria-hidden="true">+</span></summary><div class="answer-with-image"><p class="answer">我们不会只把它留在记忆里，<br>而是会拍下照片。<br><br>但随着时间过去，<br>这些照片最终会埋没在手机相册中。</p><figure class="story-image-wrap"><img class="story-image" src="./images/section-02.webp" alt="埋在手机相册中的珍贵瞬间"></figure></div></details>
+        <details><summary><span class="number">03</span><h2>100天，比起完成，过程不是更值得珍惜吗？</h2><span class="toggle" aria-hidden="true">+</span></summary><div class="answer-with-image"><p class="answer">完成的结果当然重要，<br>但一路走来的每一个瞬间，<br><strong>难道不更加值得珍惜吗？</strong></p><figure class="story-image-wrap"><img class="story-image" src="./images/section-03.webp" alt="随着时间逐渐变化的旅程"></figure></div></details>
+        <details><summary><span class="number">04</span><h2>ROHD把这100天，变成一个故事。</h2><span class="toggle" aria-hidden="true">+</span></summary><div class="answer-with-image"><p class="answer">一天一天的记录汇集起来，<br><br>成为一份日历，<br>一幅照片拼贴，<br>一段视频，<br><br><strong>最终成为一个故事。</strong></p><figure class="story-image-wrap gif-stage"><img class="story-image" src="./images/section-04.webp" alt="按时间顺序记录的一组照片"></figure></div></details>
+        <details><summary><span class="number">05</span><h2>100天不是结束，而是新的开始。</h2><span class="toggle" aria-hidden="true">+</span></summary><div class="answer-with-image"><p class="answer">一个100天结束后，<br>另一个目标又开始了。<br><br>我们的人生由数不清的<strong>100天旅程</strong>连接而成。<br><br>和ROHD一起，<br>把你珍贵的100天<br><strong>作为一个故事留下来。</strong></p><figure class="story-image-wrap"><img class="story-image" src="./images/section-05.webp" alt="开始新的100天旅程的人们"></figure></div></details>
+        <section class="download-panel" aria-label="下载ROHD"><div><h2>把100天的记录，变成一个故事。</h2><p>Record Of One Hundred Days</p></div><div class="store-links"><a href="https://apps.apple.com/app/id6446820972" target="_blank" rel="noopener"><img src="../images/Download_apple.png" alt="在App Store下载"></a><a href="https://play.google.com/store/apps/details?id=life.fci.ROHD" target="_blank" rel="noopener"><img src="../images/Download_google.png" alt="在Google Play获取"></a></div></section>
+      </section>
+    </main>
+    <footer class="footer"><span>© FCI. Factory of Creative Imagination.</span><a href="mailto:fci.window@gmail.com">fci.window@gmail.com</a></footer>
+  </div>
+</body>
+</html>

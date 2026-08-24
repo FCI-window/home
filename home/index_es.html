@@ -1,15 +1,15 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="FCI builds applications for everyday life.">
+  <meta name="description" content="FCI crea aplicaciones para la vida cotidiana.">
   <meta property="og:image" content="https://fciapp.com/images/FCILOGOwithText.png">
   <title>FCI | Factory of Creative Imagination</title>
   <link rel="shortcut icon" href="../images/favicon_FCILOGO_W.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #202633;
@@ -36,7 +36,7 @@
         radial-gradient(circle at 0% 0%, rgba(63, 91, 145, 0.34), transparent 32rem),
         radial-gradient(circle at 100% 8%, rgba(45, 76, 115, 0.3), transparent 28rem),
         var(--bg);
-      font-family: "Noto Sans KR", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.55;
     }
 
@@ -555,102 +555,60 @@
         <div class="brand" aria-label="FCI">
           <img src="../images/FCILOGOwithTextWhite.png" alt="FCI Factory of Creative Imagination">
         </div>
-        <p class="top-message">We build applications<br>for everyday life.</p>
+        <p class="top-message">Creamos aplicaciones<br>para la vida cotidiana.</p>
       </div>
       <div class="hero-nav">
-        <div class="trust-row" aria-label="FCI service highlights">
-          <span class="trust-pill">Patent-based services</span>
-          <span class="trust-pill">Mobile app portfolio</span>
+        <div class="trust-row" aria-label="Características de FCI">
+          <span class="trust-pill">Colección de aplicaciones móviles</span>
         </div>
         <div class="header-actions">
           <div class="language-menu">
-            <button class="language-button" type="button" aria-expanded="false" aria-controls="language-options-en">Language</button>
-            <div class="language-options" id="language-options-en" hidden>
-              <a href="../ko/" lang="ko" onclick="localStorage.setItem('fci-language', 'ko')">한국어</a>
-              <a href="../en/" lang="en" onclick="localStorage.setItem('fci-language', 'en')">English</a>
-              <a href="../ko/" lang="ja" onclick="localStorage.setItem('fci-language', 'ko')">日本語</a>
-              <a href="../ko/" lang="zh-CN" onclick="localStorage.setItem('fci-language', 'ko')">简体中文</a>
-              <a href="../ko/" lang="zh-TW" onclick="localStorage.setItem('fci-language', 'ko')">繁體中文</a>
-              <a href="../ko/" lang="es" onclick="localStorage.setItem('fci-language', 'ko')">Español</a>
+            <button class="language-button" type="button" aria-expanded="false" aria-controls="language-options-es">Language</button>
+            <div class="language-options" id="language-options-es" hidden>
+              <a href="./index_es.html" lang="es" onclick="localStorage.setItem('fci-language', 'es')">Español</a>
+              <a href="./index_ko.html" lang="ko" onclick="localStorage.setItem('fci-language', 'ko')">한국어</a>
+              <a href="./index_en.html" lang="en" onclick="localStorage.setItem('fci-language', 'en')">English</a>
+              <a href="./index_ja.html" lang="ja" onclick="localStorage.setItem('fci-language', 'ja')">日本語</a>
+              <a href="./index_zh-CN.html" lang="zh-CN" onclick="localStorage.setItem('fci-language', 'zh-CN')">简体中文</a>
+              <a href="./index_zh-TW.html" lang="zh-TW" onclick="localStorage.setItem('fci-language', 'zh-TW')">繁體中文</a>
             </div>
           </div>
-          <a class="story-link" href="../fci/index_en.html">View story &gt;</a>
+          <a class="story-link" href="../fci/index_es.html">Conoce la historia de FCI &gt;</a>
         </div>
       </div>
     </header>
 
-    <main class="app-grid" aria-label="FCI applications">
-      <article class="app-card rab">
-        <details>
-          <summary>
-            <img class="app-icon" src="../images/Logo_RAB.png" alt="Record Aloud Bible icon">
-            <div class="app-main">
-              <span class="app-kicker">Faith</span>
-              <span class="patent-chip">Patent</span>
-              <h2 class="app-title">Record Aloud Bible</h2>
-              <p class="app-intro">Wasn’t Scripture originally meant to be read aloud?</p>
-              <div class="card-actions">
-                <span class="more">View details</span>
-                <a class="story-link" href="../rab/index_en.html" onclick="event.stopPropagation()">View story &gt;</a>
-              </div>
-            </div>
-          </summary>
-          <div class="detail">
-            <div class="detail-inner">
-              <p>Record Aloud Bible is a personal Bible reading app that lets you read Scripture aloud and save your own recording as a personal Bible reading archive.</p>
-              <ul class="feature-list">
-                <li>Record and replay your own Bible reading</li>
-                <li>Follow along verse by verse with a simple beep guide</li>
-                <li>Revised as v2.0.0 in August 2026</li>
-                <li>Google Drive backup and restore</li>
-                <li>Based on a patent granted in Korea (Patent No. 10-2322160)</li>
-              </ul>
-              <div class="store-row">
-                <div class="store-group">
-                  <a class="store-badge" href="https://apps.apple.com/app/id1554443046" target="_blank" rel="noopener"><img src="../images/Download_apple.png" alt="Download on the App Store"></a>
-                  <a class="store-badge" href="https://play.google.com/store/apps/details?id=life.fci.recordaloudbible" target="_blank" rel="noopener"><img src="../images/Download_google.png" alt="Get it on Google Play"></a>
-                </div>
-              </div>
-              <div class="link-group">
-                <a class="text-link" href="../documents/RAB_Privacy_Policy_EN.html">Privacy Policy</a>
-                <a class="text-link" href="../documents/RAB_TermsandConditions_EN.html">Terms</a>
-              </div>
-            </div>
-          </div>
-        </details>
-      </article>
-
+    <main class="app-grid" aria-label="Aplicaciones de FCI">
       <article class="app-card rohd">
         <details>
           <summary>
-            <img class="app-icon" src="../images/Logo_ROHD.png" alt="ROHD icon">
+            <img class="app-icon" src="../images/Logo_ROHD.png" alt="Icono de ROHD">
             <div class="app-main">
-              <span class="app-kicker">Habit</span>
-              <span class="patent-chip">Patent</span>
-              <h2 class="app-title">ROHD : A Record of 100 Days</h2>
-              <p class="app-intro">Have you ever kept something going for 100 days?</p>
+              <span class="app-kicker">Registro</span>
+              <h2 class="app-title">ROHD : 100 días de registro</h2>
+              <p class="app-intro">¿Has mantenido algo durante 100 días?</p>
               <div class="card-actions">
-                <span class="more">View details</span>
-                <a class="story-link" href="../rohd/index_en.html" onclick="event.stopPropagation()">View story &gt;</a>
+                <span class="more">Ver detalles</span>
+                <a class="story-link" href="../rohd/index_es.html" onclick="event.stopPropagation()">Ver historia &gt;</a>
               </div>
             </div>
           </summary>
           <div class="detail">
             <div class="detail-inner">
-              <p>ROHD creates a 30-second photo montage from your photos—one taken each day throughout your 100-day journey.<br><br>100 days of building a good habit,<br>100 days of your baby growing and changing,<br>the growth of a beloved plant, travel memories, everyday family moments…<br>the 100-day journey you want to keep.<br>Take one photo a day.</p>
+              <p>ROHD te ayuda a convertir una meta personal o un periodo importante en 100 registros.<br><br>Elige cuándo registrar, añade una foto o una nota breve y observa cómo crece tu historia. Los registros no tienen que hacerse en días consecutivos. Cuando completes tus 100 registros, ROHD los convierte en un video que puedes guardar y compartir.</p>
               <ul class="feature-list">
-                <li>One photo a day</li>
-                <li>100-day calendar and 30-second photo montage</li>
-                <li>Google Drive backup and restore</li>
-                <li>Based on a patent granted in Korea (Patent No. 10-2612589)</li>
+                <li>Crea un calendario para 100 registros</li>
+                <li>Añade una foto o una nota a cada registro</li>
+                <li>Crea y comparte un video con música de fondo</li>
+                <li>Haz copias de seguridad y restaura tus registros con Google Drive</li>
               </ul>
               <div class="store-group">
-                <a class="store-badge" href="https://apps.apple.com/app/id6446820972" target="_blank" rel="noopener"><img src="../images/Download_apple.png" alt="Download on the App Store"></a>
-                <a class="store-badge" href="https://play.google.com/store/apps/details?id=life.fci.ROHD" target="_blank" rel="noopener"><img src="../images/Download_google.png" alt="Get it on Google Play"></a>
+                  <a class="store-badge" href="https://apps.apple.com/app/id6446820972" target="_blank" rel="noopener"><img src="../images/Download_apple.png" alt="Descargar en el App Store"></a>
+                  <a class="store-badge" href="https://play.google.com/store/apps/details?id=life.fci.ROHD" target="_blank" rel="noopener"><img src="../images/Download_google.png" alt="Disponible en Google Play"></a>
               </div>
               <div class="link-group">
-                <a class="text-link" href="../documents/ROHD_Privacy_Policy_EN.html">Privacy Policy</a>
-                <a class="text-link" href="../documents/ROHD_TermsandConditions_EN.html">Terms</a>
+                <a class="text-link" href="../documents/ROHD_Privacy_Policy_ES.html">Política de privacidad</a>
+                <a class="text-link" href="../documents/ROHD_TermsandConditions_ES.html">Términos y condiciones</a>
               </div>
             </div>
           </div>
@@ -660,35 +618,33 @@
       <article class="app-card dream">
         <details>
           <summary>
-            <img class="app-icon" src="../images/DREAM_trans.png" alt="DRE&M icon">
+            <img class="app-icon" src="../images/DREAM_trans.png" alt="Icono de DRE&M">
             <div class="app-main">
-              <span class="app-kicker">Habit</span>
-            <h2 class="app-title">DRE&amp;M : Small Records, Lasting Habits</h2>
-              <p class="app-intro">Have you kept up your good habits today?</p>
+              <span class="app-kicker">Hábitos</span>
+            <h2 class="app-title">DRE&amp;M: Notas que crean hábitos</h2>
+              <p class="app-intro">¿Has mantenido hoy tus buenos hábitos?</p>
               <div class="card-actions">
-                <span class="more">View details</span>
-                <a class="story-link" href="../dream/index_en.html" onclick="event.stopPropagation()">View story &gt;</a>
+                <span class="more">Ver detalles</span>
+                <a class="story-link" href="../dream/index_es.html" onclick="event.stopPropagation()">Ver historia &gt;</a>
               </div>
             </div>
           </summary>
           <div class="detail">
             <div class="detail-inner">
-              <p>DRE&amp;M is a simple app for recording four parts of daily life:<br>Diary (journaling), Reading, Exercise, and Micro-habits (small daily habits).<br><br>A short, simple record each day can help you turn these activities into lasting habits.<br>Track your progress over 7 and 30 days,<br>with rankings and encouragement.</p>
+              <p>DRE&amp;M te ayuda a crear hábitos mediante pequeños registros diarios.<br><br>Guarda notas de gratitud, lectura, ejercicio y rutinas en un solo lugar. Añade una nota breve o una foto cada día, sigue tu progreso y mantén la motivación mientras tus pequeñas acciones se convierten en hábitos duraderos.</p>
               <ul class="feature-list">
-                <li>Keep a record of your important habits, all in one place</li>
-                <li>Simple daily entries with a photo or a short note</li>
-                <li>7- and 30-day progress tracking, rankings, and encouragement</li>
-                <li>Google Drive backup and restore</li>
+                <li>Registra cuatro tipos de hábitos en una sola aplicación con una nota breve o una foto cada día</li>
+                <li>Consulta tu progreso de 7 y 30 días</li>
+                <li>Consulta tus puntuaciones, grupos, clasificaciones y mensajes de ánimo</li>
+                <li>Haz copias de seguridad y restaura tus registros con Google Drive</li>
               </ul>
               <div class="store-group">
-                <a class="store-badge" href="https://apps.apple.com/app/id6775331954" target="_blank" rel="noopener"><img src="../images/Download_apple.png" alt="Download on the App Store"></a>
-                <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.fciapp.dream" target="_blank" rel="noopener"><img src="../images/Download_google.png" alt="Get it on Google Play"></a>
+                  <a class="store-badge" href="https://apps.apple.com/app/id6775331954" target="_blank" rel="noopener"><img src="../images/Download_apple.png" alt="Descargar en el App Store"></a>
+                  <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.fciapp.dream" target="_blank" rel="noopener"><img src="../images/Download_google.png" alt="Disponible en Google Play"></a>
               </div>
               <div class="link-group">
-                <!-- <a class="text-link" href="./PrivacyPolicy_DREAM.html">Privacy Policy</a>
-                <a class="text-link" href="./TermsAndConditions_DREAM.html">Terms</a> -->
-                <a class="text-link" href="../documents/DREAM_Privacy_Policy_EN.html">Privacy Policy</a>
-                <a class="text-link" href="../documents/DREAM_TermsandConditions_EN.html">Terms</a>
+                                <a class="text-link" href="../documents/DREAM_Privacy_Policy_ES.html">Política de privacidad</a>
+                <a class="text-link" href="../documents/DREAM_TermsandConditions_ES.html">Términos y condiciones</a>
               </div>
             </div>
           </div>

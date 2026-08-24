@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="一節ずつ読み、一章ずつ重ね、一冊を完成する聖書音読録音。自分の声で聖書を読み、記録します。">
+  <title>聖書音読録音 | FCI</title>
+  <link rel="icon" href="../images/favicon_FCILOGO_W.ico">
+  <style>
+    :root { --ink:#2d261d; --muted:#756a5c; --line:rgba(101,78,43,.16); --paper:rgba(255,255,255,.84); --gold:#a67424; --gold-deep:#775016; --shadow:0 20px 60px rgba(86,58,19,.12); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif; background:radial-gradient(circle at 15% 8%,rgba(225,189,112,.24),transparent 34rem),radial-gradient(circle at 90% 38%,rgba(237,216,164,.32),transparent 30rem),linear-gradient(180deg,#fffdf8 0%,#faf1df 100%); line-height:1.7; }
+    a { color:inherit; }
+    img { display:block; max-width:100%; }
+    .page { width:min(1120px,100%); min-height:100vh; margin:0 auto; padding:26px 18px 36px; }
+    .hero { display:grid; gap:24px; }
+    .intro { display:grid; gap:18px; }
+    .brand-row { display:flex; align-items:center; gap:15px; }
+    .brand-copy { min-width:0; flex:1 1 auto; display:grid; gap:7px; }
+    .brand-fci-home { display:block; flex:0 0 auto; width:120px; margin-left:auto; }
+    .brand-fci-home picture,.brand-fci-home img { display:block; width:100%; height:auto; }
+    .app-icon { width:76px; height:76px; object-fit:cover; border-radius:21px; box-shadow:0 14px 28px rgba(74,48,16,.18); }
+    h1 { margin:0; font-size:clamp(1.64rem,4.6vw,2.64rem); line-height:1.25; }
+    .hero-copy { margin:0; color:var(--gold-deep); font-size:clamp(1rem,2vw,1.16rem); font-weight:800; line-height:1.45; }
+    .storyline { display:grid; gap:9px; }
+    .section-heading { margin:0; color:var(--muted); font-size:.94rem; font-weight:700; }
+    .story-list { display:grid; gap:9px; }
+    .story-card { overflow:hidden; border:1px solid var(--line); border-radius:8px; background:var(--paper); box-shadow:0 10px 22px rgba(84,59,25,.045); }
+    .story-card[open] { border-color:rgba(166,116,36,.42); background:#fff; box-shadow:var(--shadow); }
+    .story-card summary { display:grid; grid-template-columns:44px minmax(0,1fr) 30px; gap:12px; align-items:center; min-height:65px; padding:12px 15px; cursor:pointer; list-style:none; }
+    .story-card summary::-webkit-details-marker { display:none; }
+    .story-number { display:grid; width:40px; height:40px; place-items:center; border-radius:50%; color:var(--gold-deep); background:rgba(225,189,112,.28); font-size:.78rem; font-weight:850; }
+    .story-card[open] .story-number { color:#fff; background:var(--gold); }
+    .story-title { margin:0; font-size:clamp(1rem,2vw,1.12rem); line-height:1.45; }
+    .chevron { color:var(--gold); text-align:center; font-size:1.28rem; transition:transform 180ms ease; }
+    .story-card[open] .chevron { transform:rotate(180deg); }
+    .story-content { padding:0 15px 20px; }
+    .story-layout { display:grid; grid-template-columns:minmax(0,1fr) 230px; gap:18px; align-items:center; }
+    .story-copy p { margin:0 0 13px; color:var(--muted); font-size:.94rem; line-height:1.85; }
+    .story-copy p:last-child { margin-bottom:0; }
+    .story-copy strong { color:var(--ink); }
+    .story-art-wrap { position:relative; width:230px; height:210px; overflow:hidden; border-radius:14px; background:#f7fafc; }
+    .story-art { display:block; width:100%; height:100%; object-fit:contain; border-radius:14px; background:#f7fafc; }
+    .story-art-logo { position:absolute; left:50%; top:50%; display:grid; width:64px; height:64px; place-items:center; padding:7px; border-radius:18px; background:rgba(255,255,255,.96); box-shadow:0 8px 20px rgba(23,43,77,.16); transform:translate(-50%,-50%); }
+    .story-art-logo img { display:block; width:100%; height:100%; object-fit:cover; border-radius:14px; }
+    .closing { display:flex; align-items:center; justify-content:space-between; gap:30px; margin-top:8px; padding:30px; color:#fff; background:linear-gradient(125deg,var(--gold-deep),var(--gold)); border-radius:20px; box-shadow:var(--shadow); }
+    .closing p { margin:0; color:#fff; font-size:clamp(23px,3vw,33px); font-weight:800; line-height:1.45; }
+    .closing-copy span { display:block; margin-top:5px; color:rgba(255,255,255,.78); font-size:.96rem; font-weight:600; }
+    .store-links { display:flex; flex-wrap:wrap; gap:10px; flex:0 0 auto; }
+    .store-links a { border-radius:8px; transition:transform .2s ease; }
+    .store-links a:hover,.store-links a:focus-visible { transform:translateY(-2px); }
+    .store-links img { display:block; width:auto; height:42px; }
+    footer { padding:0 20px 34px; color:var(--muted); text-align:center; font-size:12px; }
+    @media (max-width:820px) {
+      .page { padding:18px 14px 28px; }
+      .story-layout { display:block; }
+      .story-art-wrap { width:100%; height:160px; margin-inline:auto; overflow:visible; background:transparent; }
+      .story-art { display:block; width:auto; height:160px; max-width:100%; object-fit:contain; margin-inline:auto; }
+    }
+    @media (max-width:640px) {
+      .closing { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:12px; padding:18px 16px; border-radius:16px; }
+      .closing p { font-size:clamp(13px,4.2vw,20px); }
+      .closing-copy span { font-size:clamp(10px,2.8vw,.82rem); white-space:nowrap; }
+      .store-links { flex-direction:column; align-items:flex-end; gap:6px; }
+      .store-links img { height:30px; }
+      .intro { gap:12px; }
+      .brand-row { gap:12px; }
+      .app-icon { width:64px; height:64px; border-radius:18px; }
+      .brand-fci-home { width:34px; }
+      .brand-copy h1 { white-space:nowrap; }
+      .brand-copy .hero-copy { white-space:normal; }
+      .story-card summary { grid-template-columns:38px minmax(0,1fr) 28px; gap:10px; min-height:60px; padding:11px 12px; }
+      .story-number { width:36px; height:36px; }
+      .story-content { padding:0 12px 16px; }
+    }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } * { transition:none !important; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <main class="hero">
+      <section class="intro" aria-label="聖書音読録音の紹介">
+        <div class="brand-row">
+          <img class="app-icon" src="../images/Logo_RAB.png" alt="聖書音読録音アプリアイコン">
+          <div class="brand-copy"><h1>聖書音読録音</h1><p class="hero-copy">一節ずつ読み、一章ずつ積み重ね、<br>一冊を完成させます。</p></div>
+          <a class="brand-fci-home" href="../home/index_ja.html" aria-label="FCIホームへ移動"><picture><source media="(max-width:640px)" srcset="../images/FCI_basic_logo.png"><img src="../images/FCILOGOwithText.png" alt="FCI Factory of Creative Imagination"></picture></a>
+        </div>
+      </section>
+      <section class="storyline" aria-label="聖書音読録音のストーリー">
+        <p class="section-heading">下のタイトルを選んで、聖書音読録音のストーリーをご覧ください。</p>
+        <div class="story-list">
+          <details class="story-card"><summary><span class="story-number">01</span><h2 class="story-title">聖書を、読んだことがありますか？</h2><span class="chevron" aria-hidden="true">⌄</span></summary><div class="story-content"><div class="story-layout"><div class="story-copy"><p>目で読むだけでもなく、耳で聞くだけでもなく、ご自身の声で、声に出して読んだことがありますか？</p><p>聖書は、本来声に出して読むものだったのではないでしょうか。</p></div><div class="story-art-wrap"><img class="story-art" src="assets/rab-index2-01.png" alt="聖書をどう読もうか考えている人"></div></div></div></details>
+          <details class="story-card"><summary><span class="story-number">02</span><h2 class="story-title">自分の声で聖書を読むと、何が変わるでしょうか？</h2><span class="chevron" aria-hidden="true">⌄</span></summary><div class="story-content"><div class="story-layout"><div class="story-copy"><p>聖書を読んでも、読んだ気がしないことはありませんか？</p><p>御言葉が心を通り過ぎてしまうように感じたことはありませんか？</p><p>その言葉が自分の声で残るとしたら。<br>また、誰かに直接読み聞かせるように読んだとしたら。</p><p>聖書の読み方が、少し変わるかもしれません。</p></div><div class="story-art-wrap"><img class="story-art" src="assets/rab-index2-02.png" alt="聖書を声に出して読んでいる人"></div></div></div></details>
+          <details class="story-card"><summary><span class="story-number">03</span><h2 class="story-title">読んだ御言葉は、どのように残るでしょうか？</h2><span class="chevron" aria-hidden="true">⌄</span></summary><div class="story-content"><div class="story-layout"><div class="story-copy"><p>AI音声で読まれる聖書を聞いたことがありますか？少し距離を感じることもあるのではないでしょうか。</p><p>プロのナレーターや有名人の声で聞く聖書も素晴らしいものです。</p><p>でも、子どもたちや孫たちに、あなた自身の声で読んだ聖書を残せたらどうでしょうか。</p><p>今日読んだ御言葉が、あなたの声で長く残るとしたら。</p></div><div class="story-art-wrap"><img class="story-art" src="assets/rab-index2-03.png" alt="大人の声が子どもに届けられる様子"></div></div></div></details>
+          <details class="story-card"><summary><span class="story-number">04</span><h2 class="story-title">聖書音読録音を、始めてみませんか？</h2><span class="chevron" aria-hidden="true">⌄</span></summary><div class="story-content"><div class="story-layout"><div class="story-copy"><p>読んだ御言葉は、一節ずつあなた自身の声で録音されます。</p><p>一節が集まって一章になり、<br>一章が集まって一冊の聖書になります。</p><p>読んだ分だけ、聖書の進み具合を確認できます。</p><p>Google Driveに録音をバックアップ・復元できるため、機種変更をしても大切な記録を守ることができます。</p><p>教会やグループで一緒に読み、聖書通読チャレンジを開催することもできます。</p><p>聖書音読録音は、韓国で登録された特許技術を基に開発されています。<br>特許 第10-2322160号</p></div><div class="story-art-wrap"><img class="story-art" src="assets/rab-index2-04.png" alt="人々が一緒に聖書を読んでいる様子"><span class="story-art-logo"><img src="../images/Logo_RAB.png" alt="聖書音読録音のロゴ"></span></div></div></div></details>
+          <details class="story-card"><summary><span class="story-number">05</span><h2 class="story-title">今日から、一節ずつ始めましょう。</h2><span class="chevron" aria-hidden="true">⌄</span></summary><div class="story-content"><div class="story-layout"><div class="story-copy"><p>今日読んで録音した一節が、あなたのための御言葉として残ります。</p><p><strong>一節ずつ読み、一章ずつ積み重ね、一冊を完成させます。</strong></p><p>一冊の完成が、聖書全体を読み通す歩みにつながります。</p><p>聖書音読録音と一緒に、今日から一節ずつ始めましょう。</p></div><div class="story-art-wrap"><img class="story-art" src="assets/rab-index2-05.png" alt="録音から一冊の聖書へ続く歩み"></div></div></div></details>
+        </div>
+      </section>
+      <section class="closing" aria-label="聖書音読録音のダウンロード"><div class="closing-copy"><p>今日の一節を、<br>あなたの声で。</p><span>読むだけでなく、声に残す。</span></div><div class="store-links"><a href="https://apps.apple.com/app/id1554443046" target="_blank" rel="noopener"><img src="../images/Download_apple.png" alt="App Storeからダウンロード"></a><a href="https://play.google.com/store/apps/details?id=life.fci.recordaloudbible" target="_blank" rel="noopener"><img src="../images/Download_google.png" alt="Google Playで手に入れよう"></a></div></section>
+    </main>
+    <footer>Copyright FCI. All rights reserved.</footer>
+  </div>
+</body>
+</html>

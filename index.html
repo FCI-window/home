@@ -8,12 +8,42 @@
   <style>
     html, body { margin: 0; min-height: 100%; background: #202633; }
     body { color: #edf2f8; font-family: system-ui, sans-serif; }
+    .loading-screen {
+      min-height: 100vh;
+      padding: 42px 28px;
+    }
+    .loading-logo {
+      display: block;
+      width: min(158px, 42vw);
+      height: auto;
+    }
+    .loading-message {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
   </style>
 </head>
 <body>
-  <p>Loading FCI…</p>
+  <main class="loading-screen" aria-label="FCI loading">
+    <img class="loading-logo" src="./images/FCILOGOwithTextWhite.png" alt="FCI Factory of Creative Imagination">
+    <p class="loading-message">Loading FCI…</p>
+  </main>
   <noscript>
-    <p><a href="./ko/">한국어</a> · <a href="./en/">English</a></p>
+    <p>
+      <a href="./home/index_ko.html">한국어</a> ·
+      <a href="./home/index_en.html">English</a> ·
+      <a href="./home/index_ja.html">日本語</a> ·
+      <a href="./home/index_zh-CN.html">简体中文</a> ·
+      <a href="./home/index_zh-TW.html">繁體中文</a> ·
+      <a href="./home/index_es.html">Español</a>
+    </p>
   </noscript>
   <script>
     (() => {
@@ -24,10 +54,28 @@
         savedLanguage = localStorage.getItem("fci-language") || "";
       } catch (_) {}
 
-      const language = savedLanguage ||
-        (languages.some(value => /^ko(?:-|$)/i.test(value)) ? "ko" : "en");
+      const browserLanguage = languages.map(value => value.toLowerCase()).find(value =>
+        /^(ko)(?:-|$)/i.test(value) ||
+        /^(ja)(?:-|$)/i.test(value) ||
+        /^(zh)(?:-|$)/i.test(value) ||
+        /^(es)(?:-|$)/i.test(value) ||
+        /^(en)(?:-|$)/i.test(value)
+      ) || "en";
 
-      location.replace(language === "ko" ? "./ko/" : "./en/");
+      let language = savedLanguage;
+      if (!["ko", "en", "ja", "zh-CN", "zh-TW", "es"].includes(language)) {
+        if (/^ko(?:-|$)/i.test(browserLanguage)) language = "ko";
+        else if (/^ja(?:-|$)/i.test(browserLanguage)) language = "ja";
+        else if (/^zh-(?:tw|hk|mo)(?:-|$)/i.test(browserLanguage) || /^zh-hant(?:-|$)/i.test(browserLanguage)) language = "zh-TW";
+        else if (/^zh(?:-|$)/i.test(browserLanguage)) language = "zh-CN";
+        else if (/^es(?:-|$)/i.test(browserLanguage)) language = "es";
+        else language = "en";
+      }
+
+      try {
+        localStorage.setItem("fci-language", language);
+      } catch (_) {}
+      location.replace("./home/index_" + language + ".html");
     })();
   </script>
 </body>

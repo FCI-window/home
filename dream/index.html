@@ -6,18 +6,57 @@
   <meta name="robots" content="noindex">
   <title>DRE&amp;M | FCI</title>
   <style>
-    html, body { margin: 0; min-height: 100%; background: #202633; }
-    body { color: #edf2f8; font-family: system-ui, sans-serif; }
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background:
+        linear-gradient(135deg, rgba(109, 93, 246, 0.12), transparent 32%),
+        linear-gradient(225deg, rgba(36, 168, 154, 0.11), transparent 28%),
+        #f7f8fb;
+    }
+
+    body {
+      color: #202438;
+      font-family: system-ui, sans-serif;
+    }
+
+    .loading-screen {
+      min-height: 100vh;
+      padding: 32px 24px;
+      box-sizing: border-box;
+    }
+
+    .loading-logo {
+      display: block;
+      width: 64px;
+      height: 64px;
+    }
+
+    .loading-message {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
   </style>
 </head>
 <body>
-  <p>Loading DRE&M…</p>
+  <main class="loading-screen" aria-label="DRE&amp;M loading">
+    <img class="loading-logo" src="./images/DREAM_trans.png" alt="DRE&amp;M">
+    <p class="loading-message">Loading DRE&amp;M…</p>
+  </main>
   <noscript>
-    <p><a href="./index_ko.html">한국어</a> · <a href="./index_en.html">English</a></p>
+    <p><a href="./index_ko.html">한국어</a> · <a href="./index_en.html">English</a> · <a href="./index_es.html">Español</a> · <a href="./index_ja.html">日本語</a> · <a href="./index_zh.html">简体中文</a> · <a href="./index_zh-tw.html">繁體中文</a></p>
   </noscript>
   <script>
     (() => {
-      const supported = ["ko", "en"];
+      const supported = ["ko", "en", "es", "ja", "zh", "zh-tw"];
       const requested = new URLSearchParams(location.search).get("lang");
       const languages = navigator.languages || [navigator.language || ""];
       let savedLanguage = "";
@@ -26,7 +65,11 @@
         savedLanguage = localStorage.getItem("fci-language") || "";
       } catch (_) {}
 
-      const browserLanguage = languages.some(value => /^ko(?:-|$)/i.test(value)) ? "ko" : "en";
+      const browserLanguage = languages.some(value => /^ko(?:-|$)/i.test(value)) ? "ko" :
+        languages.some(value => /^es(?:-|$)/i.test(value)) ? "es" :
+        languages.some(value => /^ja(?:-|$)/i.test(value)) ? "ja" :
+        languages.some(value => /^(zh-TW|zh-HK|zh-Hant)/i.test(value)) ? "zh-tw" :
+        languages.some(value => /^zh(?:-|$)/i.test(value)) ? "zh" : "en";
       const language = supported.includes(requested) ? requested :
         supported.includes(savedLanguage) ? savedLanguage : browserLanguage;
 
