@@ -10,6 +10,7 @@
   <meta property="og:url" content="https://www.fciapp.com/fci/index_ko.html">
   <title>FCI 이야기 | Factory of Creative Imagination</title>
   <link rel="shortcut icon" href="../images/favicon_FCILOGO_W.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/fci-large-text.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -118,6 +119,46 @@
       .brand-fci-home { width: 38px; min-height: 34px; }
       .brand-title h1 { white-space: normal; overflow-wrap: anywhere; }
     }
+
+    @media (max-width: 820px) {
+      body.large-text-mode[data-large-text-level="1"] h1 {
+        font-size: calc(clamp(1.64rem, 4.6vw, 2.64rem) * var(--fci-large-text-scale-1));
+      }
+
+      body.large-text-mode[data-large-text-level="1"] .hero-copy,
+      body.large-text-mode[data-large-text-level="1"] .story-intro,
+      body.large-text-mode[data-large-text-level="1"] .answer,
+      body.large-text-mode[data-large-text-level="1"] .solution-list {
+        font-size: calc(0.94rem * var(--fci-large-text-scale-1));
+      }
+
+      body.large-text-mode[data-large-text-level="1"] h2 {
+        font-size: calc(clamp(1rem, 1.7vw, 1.14rem) * var(--fci-large-text-scale-1));
+      }
+
+      body.large-text-mode[data-large-text-level="1"] .closing h2 {
+        font-size: calc(clamp(23px, 3vw, 33px) * var(--fci-large-text-scale-1));
+      }
+
+      body.large-text-mode[data-large-text-level="2"] h1 {
+        font-size: calc(clamp(1.64rem, 4.6vw, 2.64rem) * var(--fci-large-text-scale-2));
+      }
+
+      body.large-text-mode[data-large-text-level="2"] .hero-copy,
+      body.large-text-mode[data-large-text-level="2"] .story-intro,
+      body.large-text-mode[data-large-text-level="2"] .answer,
+      body.large-text-mode[data-large-text-level="2"] .solution-list {
+        font-size: calc(0.94rem * var(--fci-large-text-scale-2));
+      }
+
+      body.large-text-mode[data-large-text-level="2"] h2 {
+        font-size: calc(clamp(1rem, 1.7vw, 1.14rem) * var(--fci-large-text-scale-2));
+      }
+
+      body.large-text-mode[data-large-text-level="2"] .closing h2 {
+        font-size: calc(clamp(23px, 3vw, 33px) * var(--fci-large-text-scale-2));
+      }
+    }
   /* Shared story heading scale */ h1 { font-size: clamp(1.64rem, 4.6vw, 2.64rem); line-height: 1.18; } .hero-copy { font-size: clamp(1rem, 2vw, 1.16rem); }
 </style>
 </head>
@@ -196,6 +237,28 @@
       <span>© FCI. Factory of Creative Imagination.</span>
     </footer>
   </div>
+  <script>
+    (() => {
+      const storageKey = 'fci-large-text-level';
+      let level = 0;
+
+      try {
+        const storedValue = localStorage.getItem(storageKey);
+        if (storedValue !== null) {
+          const storedLevel = Number(storedValue);
+          if (Number.isInteger(storedLevel) && storedLevel >= 0 && storedLevel <= 2) {
+            level = storedLevel;
+          }
+        } else if (localStorage.getItem('fci-large-text') === 'true') {
+          level = 1;
+        }
+      } catch (_) {}
+
+      document.body.classList.toggle('large-text-mode', level > 0);
+      document.body.dataset.largeTextLevel = String(level);
+    })();
+
+  </script>
   <script>
     (() => {
       const solutionsStory = document.querySelector("#solutions-story");

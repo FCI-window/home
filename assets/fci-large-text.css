@@ -1,0 +1,5 @@
+/* Shared mobile large-text scales for the FCI homepage and story pages. */
+:root {
+  --fci-large-text-scale-1: 1.3;
+  --fci-large-text-scale-2: 1.5;
+}

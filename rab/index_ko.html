@@ -6,6 +6,7 @@
   <meta name="description" content="한 절씩 읽고, 한 장씩 모아, 한 권을 완성하는 성경낭독녹음 이야기">
   <title>성경낭독녹음 | FCI</title>
   <link rel="icon" href="../images/favicon_FCILOGO_W.ico">
+  <link rel="stylesheet" href="../assets/fci-large-text.css">
   <style>
     :root {
       --ink: #2d261d;
@@ -132,6 +133,48 @@
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
   /* Shared story heading scale */ h1 { font-size: clamp(1.64rem, 4.6vw, 2.64rem); line-height: 1.18; } .hero-copy { font-size: clamp(1rem, 2vw, 1.16rem); }
+
+    @media (max-width: 820px) {
+      body.large-text-mode[data-large-text-level="1"] h1 {
+        font-size: calc(clamp(1.64rem, 4.6vw, 2.64rem) * var(--fci-large-text-scale-1));
+      }
+
+      body.large-text-mode[data-large-text-level="1"] .hero-copy,
+      body.large-text-mode[data-large-text-level="1"] .section-heading,
+      body.large-text-mode[data-large-text-level="1"] .story-copy p,
+      body.large-text-mode[data-large-text-level="1"] .video-title,
+      body.large-text-mode[data-large-text-level="1"] .closing-copy span {
+        font-size: calc(0.94rem * var(--fci-large-text-scale-1));
+      }
+
+      body.large-text-mode[data-large-text-level="1"] .story-title {
+        font-size: calc(1.02rem * var(--fci-large-text-scale-1));
+      }
+
+      body.large-text-mode[data-large-text-level="1"] .closing-copy p {
+        font-size: calc(clamp(11px, 4.4vw, 20px) * var(--fci-large-text-scale-1));
+      }
+
+      body.large-text-mode[data-large-text-level="2"] h1 {
+        font-size: calc(clamp(1.64rem, 4.6vw, 2.64rem) * var(--fci-large-text-scale-2));
+      }
+
+      body.large-text-mode[data-large-text-level="2"] .hero-copy,
+      body.large-text-mode[data-large-text-level="2"] .section-heading,
+      body.large-text-mode[data-large-text-level="2"] .story-copy p,
+      body.large-text-mode[data-large-text-level="2"] .video-title,
+      body.large-text-mode[data-large-text-level="2"] .closing-copy span {
+        font-size: calc(0.94rem * var(--fci-large-text-scale-2));
+      }
+
+      body.large-text-mode[data-large-text-level="2"] .story-title {
+        font-size: calc(1.02rem * var(--fci-large-text-scale-2));
+      }
+
+      body.large-text-mode[data-large-text-level="2"] .closing-copy p {
+        font-size: calc(clamp(11px, 4.4vw, 20px) * var(--fci-large-text-scale-2));
+      }
+    }
 </style>
 </head>
 <body>
@@ -182,6 +225,27 @@
     <footer>Copyright FCI. All rights reserved.</footer>
   </div>
   <!-- 다국어 버전 제작 시 위 영상 블록과 함께 아래 영상 재생 스크립트도 제거합니다. -->
+  <script>
+    (() => {
+      const storageKey = 'fci-large-text-level';
+      let level = 0;
+
+      try {
+        const storedValue = localStorage.getItem(storageKey);
+        if (storedValue !== null) {
+          const storedLevel = Number(storedValue);
+          if (Number.isInteger(storedLevel) && storedLevel >= 0 && storedLevel <= 2) {
+            level = storedLevel;
+          }
+        } else if (localStorage.getItem('fci-large-text') === 'true') {
+          level = 1;
+        }
+      } catch (_) {}
+
+      document.body.classList.toggle('large-text-mode', level > 0);
+      document.body.dataset.largeTextLevel = String(level);
+    })();
+  </script>
   <script>
     document.querySelectorAll(".video-poster").forEach(function (poster) {
       poster.addEventListener("click", function () {

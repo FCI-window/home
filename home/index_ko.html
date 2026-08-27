@@ -7,6 +7,7 @@
   <meta property="og:image" content="https://fciapp.com/images/FCILOGOwithText.png">
   <title>FCI | Factory of Creative Imagination</title>
   <link rel="shortcut icon" href="../images/favicon_FCILOGO_W.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/fci-large-text.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -398,11 +399,43 @@
       text-decoration: underline;
     }
 
-    @media (max-width: 620px) {
+    .font-size-toggle {
+      display: none;
+    }
+
+    .font-size-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 30px;
+      padding: 0 9px;
+      border: 1px solid rgba(201, 215, 238, 0.52);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #edf2f8;
+      font: inherit;
+      font-size: 0.72rem;
+      font-weight: 800;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .font-size-button[aria-pressed="true"] {
+      background: #edf2f8;
+      color: #202633;
+    }
+
+    @media (max-width: 800px) {
       .hero-nav {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
         align-items: stretch;
+      }
+
+      .font-size-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .trust-row,
@@ -421,6 +454,69 @@
       .trust-row > *,
       .header-actions > * {
         min-height: 30px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .hero-nav {
+        grid-template-columns: minmax(0, 1fr) auto;
+        row-gap: 6px;
+      }
+
+      .font-size-toggle {
+        grid-column: 1 / -1;
+        grid-row: 1;
+      }
+
+      .trust-row,
+      .header-actions {
+        grid-row: 2;
+      }
+    }
+
+    @media (max-width: 800px) {
+      body.large-text-mode[data-large-text-level="1"] .app-title {
+        font-size: calc(1.08rem * var(--fci-large-text-scale-1));
+      }
+
+      body.large-text-mode[data-large-text-level="1"] .app-intro {
+        font-size: calc(0.89rem * var(--fci-large-text-scale-1));
+      }
+
+      body.large-text-mode[data-large-text-level="1"] .detail p {
+        font-size: calc(0.92rem * var(--fci-large-text-scale-1));
+      }
+
+      body.large-text-mode[data-large-text-level="1"] .feature-list li {
+        font-size: calc(0.88rem * var(--fci-large-text-scale-1));
+      }
+
+      body.large-text-mode[data-large-text-level="1"] .more,
+      body.large-text-mode[data-large-text-level="1"] .card-actions .story-link,
+      body.large-text-mode[data-large-text-level="1"] .header-actions .story-link {
+        font-size: calc(0.82rem * var(--fci-large-text-scale-1));
+      }
+
+      body.large-text-mode[data-large-text-level="2"] .app-title {
+        font-size: calc(1.08rem * var(--fci-large-text-scale-2));
+      }
+
+      body.large-text-mode[data-large-text-level="2"] .app-intro {
+        font-size: calc(0.89rem * var(--fci-large-text-scale-2));
+      }
+
+      body.large-text-mode[data-large-text-level="2"] .detail p {
+        font-size: calc(0.92rem * var(--fci-large-text-scale-2));
+      }
+
+      body.large-text-mode[data-large-text-level="2"] .feature-list li {
+        font-size: calc(0.88rem * var(--fci-large-text-scale-2));
+      }
+
+      body.large-text-mode[data-large-text-level="2"] .more,
+      body.large-text-mode[data-large-text-level="2"] .card-actions .story-link,
+      body.large-text-mode[data-large-text-level="2"] .header-actions .story-link {
+        font-size: calc(0.82rem * var(--fci-large-text-scale-2));
       }
     }
 
@@ -584,6 +680,9 @@
         <div class="trust-row" aria-label="FCI 서비스 특징">
           <span class="trust-pill">특허 기반 서비스</span>
           <span class="trust-pill">모바일 앱 포트폴리오</span>
+        </div>
+        <div class="font-size-toggle">
+          <button class="font-size-button" type="button" aria-label="글씨 크기 변경" aria-pressed="false">기본 글씨</button>
         </div>
         <div class="header-actions">
           <div class="language-menu">
@@ -773,6 +872,45 @@
     </footer>
   </div>
   <script>
+    (() => {
+      const button = document.querySelector('.font-size-button');
+      if (!button) return;
+
+      const storageKey = 'fci-large-text-level';
+      const labels = ['기본 글씨', '큰 글씨 1', '큰 글씨 2'];
+      let level = 0;
+
+      try {
+        const storedValue = localStorage.getItem(storageKey);
+        if (storedValue !== null) {
+          const storedLevel = Number(storedValue);
+          if (Number.isInteger(storedLevel) && storedLevel >= 0 && storedLevel <= 2) {
+            level = storedLevel;
+          }
+        } else if (localStorage.getItem('fci-large-text') === 'true') {
+          level = 1;
+        }
+      } catch (_) {}
+
+      const applyLargeText = () => {
+        document.body.classList.toggle('large-text-mode', level > 0);
+        document.body.dataset.largeTextLevel = String(level);
+        button.setAttribute('aria-pressed', String(level > 0));
+        button.setAttribute('aria-label', `현재 ${labels[level]}. 누르면 글씨 크기가 변경됩니다.`);
+        button.textContent = labels[level];
+      };
+
+      applyLargeText();
+
+      button.addEventListener('click', () => {
+        level = (level + 1) % labels.length;
+        try {
+          localStorage.setItem(storageKey, String(level));
+        } catch (_) {}
+        applyLargeText();
+      });
+    })();
+
     (() => {
       const menu = document.querySelector('.language-menu');
       const button = menu?.querySelector('.language-button');

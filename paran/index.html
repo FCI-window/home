@@ -9,6 +9,7 @@
   <meta property="og:image" content="https://www.fciapp.com/paran/images/Paran.jpg">
   <title>파란 : 그분들의 이야기</title>
   <link rel="shortcut icon" href="./images/favicon_FCILOGO_W.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/fci-large-text.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -111,6 +112,40 @@
       color: var(--muted);
       font-size: 0.94rem;
       font-weight: 700;
+    }
+
+    .story-heading-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 13px;
+    }
+
+    .story-heading-row .section-heading {
+      margin: 0;
+    }
+
+    .story-font-size-button {
+      display: none;
+      flex: 0 0 auto;
+      min-height: 30px;
+      padding: 0 9px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.88);
+      color: var(--paran-dark);
+      font: inherit;
+      font-size: 0.72rem;
+      font-weight: 800;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .story-font-size-button[aria-pressed="true"] {
+      border-color: var(--paran);
+      background: var(--paran);
+      color: #fff;
     }
 
     details {
@@ -537,6 +572,12 @@
         width: min(100%, 332px);
         margin-inline: auto;
       }
+
+      .story-font-size-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
 
     @media (max-width: 640px) {
@@ -750,6 +791,47 @@
         margin: 6px 0 0;
       }
     }
+    @media (max-width: 820px) {
+      body.large-text-mode[data-large-text-level="1"] h1 {
+        font-size: calc(clamp(1.64rem, 4.6vw, 2.64rem) * var(--fci-large-text-scale-1));
+      }
+
+      body.large-text-mode[data-large-text-level="1"] .section-heading,
+      body.large-text-mode[data-large-text-level="1"] .answer,
+      body.large-text-mode[data-large-text-level="1"] details p,
+      body.large-text-mode[data-large-text-level="1"] .download-panel p {
+        font-size: calc(0.94rem * var(--fci-large-text-scale-1));
+      }
+
+      body.large-text-mode[data-large-text-level="1"] summary h2,
+      body.large-text-mode[data-large-text-level="1"] h3 {
+        font-size: calc(1rem * var(--fci-large-text-scale-1));
+      }
+
+      body.large-text-mode[data-large-text-level="1"] .download-panel h2 {
+        font-size: calc(clamp(11px, 4.8vw, 20px) * var(--fci-large-text-scale-1));
+      }
+
+      body.large-text-mode[data-large-text-level="2"] h1 {
+        font-size: calc(clamp(1.64rem, 4.6vw, 2.64rem) * var(--fci-large-text-scale-2));
+      }
+
+      body.large-text-mode[data-large-text-level="2"] .section-heading,
+      body.large-text-mode[data-large-text-level="2"] .answer,
+      body.large-text-mode[data-large-text-level="2"] details p,
+      body.large-text-mode[data-large-text-level="2"] .download-panel p {
+        font-size: calc(0.94rem * var(--fci-large-text-scale-2));
+      }
+
+      body.large-text-mode[data-large-text-level="2"] summary h2,
+      body.large-text-mode[data-large-text-level="2"] h3 {
+        font-size: calc(1rem * var(--fci-large-text-scale-2));
+      }
+
+      body.large-text-mode[data-large-text-level="2"] .download-panel h2 {
+        font-size: calc(clamp(11px, 4.8vw, 20px) * var(--fci-large-text-scale-2));
+      }
+    }
   </style>
 </head>
 <body>
@@ -767,7 +849,10 @@
       </section>
 
       <section class="storyline" aria-label="파란 스토리라인">
-        <p class="section-heading">제목을 눌러 9개의 이야기로 [파란]을 열어보세요.</p>
+        <div class="story-heading-row">
+          <p class="section-heading">제목을 눌러 파란의 이야기를 열어보세요.</p>
+          <button class="story-font-size-button" type="button" aria-label="글씨 크기 변경" aria-pressed="false">기본 글씨</button>
+        </div>
 
         <details>
           <summary>
@@ -964,6 +1049,45 @@
       <button class="modal-nav next" type="button" aria-label="다음 이미지">›</button>
     </div>
   </dialog>
+
+  <script>
+    (() => {
+      const storageKey = 'fci-large-text-level';
+      let level = 0;
+
+      try {
+        const storedValue = localStorage.getItem(storageKey);
+        if (storedValue !== null) {
+          const storedLevel = Number(storedValue);
+          if (Number.isInteger(storedLevel) && storedLevel >= 0 && storedLevel <= 2) {
+            level = storedLevel;
+          }
+        } else if (localStorage.getItem('fci-large-text') === 'true') {
+          level = 1;
+        }
+      } catch (_) {}
+
+      const button = document.querySelector('.story-font-size-button');
+      const labels = ['기본 글씨', '큰 글씨 1', '큰 글씨 2'];
+
+      const applyLargeText = () => {
+        document.body.classList.toggle('large-text-mode', level > 0);
+        document.body.dataset.largeTextLevel = String(level);
+        if (button) {
+          button.setAttribute('aria-pressed', String(level > 0));
+          button.setAttribute('aria-label', `현재 ${labels[level]}. 누르면 글씨 크기가 변경됩니다.`);
+          button.textContent = labels[level];
+        }
+      };
+
+      applyLargeText();
+
+      button?.addEventListener('click', () => {
+        level = (level + 1) % labels.length;
+        applyLargeText();
+      });
+    })();
+  </script>
 
   <script>
     const modal = document.querySelector(".image-modal");
