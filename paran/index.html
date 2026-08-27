@@ -123,6 +123,7 @@
     }
 
     .story-heading-row .section-heading {
+      min-width: 0;
       margin: 0;
     }
 
@@ -637,7 +638,10 @@
       }
 
       .brand-fci-home { width: 34px; }
-      .brand-title h1 { white-space: nowrap; }
+      .brand-title h1 {
+        white-space: normal;
+        overflow-wrap: anywhere;
+      }
 
       summary {
         grid-template-columns: 38px minmax(0, 1fr) 28px;
