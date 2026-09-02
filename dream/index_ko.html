@@ -431,7 +431,7 @@
     }
 
     .sustainability-panel.story-image-grid {
-      grid-template-columns: minmax(0, 1fr) minmax(0, 392px);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 300px);
     }
 
     .sustainability-app-stack {
@@ -533,6 +533,75 @@
 
     .poster-gallery .promo-image {
       margin: 0;
+    }
+
+    .manual-panel {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      align-items: start;
+      padding: 0 20px 20px 71px;
+    }
+
+    .manual-copy {
+      margin: 0;
+      color: #42536a;
+      font-size: 0.98rem;
+      line-height: 1.8;
+    }
+
+    .manual-copy > strong {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--text);
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .manual-copy section {
+      margin-top: 13px;
+    }
+
+    .manual-copy h3 {
+      margin: 0 0 3px;
+      color: var(--text);
+      font-size: 0.98rem;
+      line-height: 1.4;
+    }
+
+    .manual-copy p {
+      margin: 0;
+    }
+
+    .manual-copy p strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .manual-gallery {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 10px;
+      width: 100%;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: thin;
+    }
+
+    .manual-gallery .screen-shot {
+      flex: 0 0 74px;
+      padding: 5px;
+    }
+
+    .manual-gallery .screen-shot img {
+      height: 95px;
+    }
+
+    .manual-gallery .screen-shot figcaption {
+      margin-top: 4px;
+      font-size: 0.48rem;
+      line-height: 1.1;
+      white-space: nowrap;
     }
 
     .promo-image {
@@ -1126,6 +1195,7 @@
       .friction-grid,
       .dream-intro,
       .story-image-grid,
+      .manual-panel,
       .poster-gallery,
       .vision-panel,
       .feature-grid,
@@ -1142,6 +1212,14 @@
         padding-right: 15px;
       }
 
+      .manual-panel {
+        padding-right: 15px;
+      }
+
+      .manual-gallery {
+        width: 100%;
+      }
+
       .poster-gallery {
         padding-right: 15px;
         grid-template-columns: repeat(2, minmax(0, 140px));
@@ -1153,7 +1231,8 @@
 
       .answer-grid .question-illustration,
       .friction-grid .friction-illustration,
-      .dream-intro .dream-cycle {
+      .dream-intro .dream-cycle,
+      .sustainability-panel.story-image-grid > .story-image {
         width: min(240px, calc(100% - 82px));
         margin-right: auto;
         margin-left: auto;
@@ -1410,6 +1489,7 @@
       .friction-grid,
       .dream-intro,
       .story-image-grid,
+      .manual-panel,
       .poster-gallery,
       .sustainability-panel,
       .together-panel,
@@ -1428,6 +1508,20 @@
         padding-right: 12px;
       }
 
+      .manual-panel {
+        padding-right: 12px;
+      }
+
+      .manual-copy {
+        font-size: 0.82rem;
+        line-height: 1.55;
+      }
+
+      .manual-copy > strong,
+      .manual-copy h3 {
+        font-size: 0.88rem;
+      }
+
       .poster-gallery {
         padding-right: 12px;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1441,6 +1535,7 @@
       .friction-grid,
       .dream-intro,
       .story-image-grid,
+      .manual-panel,
       .poster-gallery,
       .sustainability-panel,
       .together-panel,
@@ -1551,7 +1646,7 @@
       </section>
 
       <section class="storyline" aria-label="DRE&M 이야기">
-        <p class="section-heading">6개의 짧은 이야기로 DRE&amp;M을 만나보세요.</p>
+        <p class="section-heading">7개의 짧은 이야기로 DRE&amp;M을 만나보세요.</p>
 
         <details>
           <summary>
@@ -1602,35 +1697,60 @@
               DRE&amp;M은 하루의 습관을 한 곳에 기록하고 이어주는 앱입니다.
               <span>감사일기, 독서, 운동, 생활 속 작은 루틴을 부담 없이 간단하게 남기며<br>오늘을 돌아보고 내일을 준비할 수 있습니다.<br class="sentence-break">또한 모임을 만들어 함께 실천하고, 선의의 경쟁을 통해 서로에게 동기를 줄 수 있습니다.<br class="sentence-break">며칠 놓쳐도 괜찮습니다. 지난 7일과 지난 30일을 기준으로 기록하기 때문에 언제든 다시 시작할 수 있습니다.<br class="sentence-break">지난 기록을 돌아보면, 앞으로의 계획을 세우는 데에도 도움이 됩니다.</span>
             </p>
-            <div class="sustainability-visuals" aria-label="DRE&M 일러스트와 앱 화면">
-              <img class="story-image zoomable" src="./images/dream-story-reality.png" alt="네 가지 습관이 DRE&M으로 연결되고 서로 응원하며 오늘부터 다시 시작하는 모습">
-              <div hidden>
-                <img class="zoomable" src="./images/dream-overview-stack.jpg" alt="DRE&M 하루 기록 화면">
-              </div>
-              <div class="sustainability-app-stack" aria-label="DRE&M 대표 앱 화면">
-                <figure class="sustainability-app-feature">
-                  <img class="zoomable" src="./images/dream-screen-diary.png" alt="DRE&M Diary 화면">
-                </figure>
-                <figure class="sustainability-app-feature">
-                  <img class="zoomable" src="./images/dream-screen-reading.png" alt="DRE&M Reading 화면">
-                </figure>
-              </div>
-              <div hidden>
-                <img class="zoomable" src="./images/dream-screen-exercise.png" alt="DRE&M Exercise 화면">
-                <img class="zoomable" src="./images/dream-screen-microhabit.png" alt="DRE&M Micro-Habit 화면">
-                <img class="zoomable" src="./images/dream-overview-grid.jpg" alt="DRE&M Overview 화면">
-                <img class="zoomable" src="./images/dream-overview-score.jpg" alt="DRE&M 점수 화면">
-                <img class="zoomable" src="./images/dream-community-create.jpg" alt="DRE&M 모임 만들기 화면">
-                <img class="zoomable" src="./images/dream-community-ranking.jpg" alt="DRE&M 랭킹 화면">
-                <img class="zoomable" src="./images/dream-community-feed.jpg" alt="DRE&M 커뮤니티 화면">
-              </div>
-            </div>
+            <img class="story-image zoomable" src="./images/dream-story-reality.png" alt="네 가지 습관이 DRE&M으로 연결되고 서로 응원하며 오늘부터 다시 시작하는 모습">
           </div>
         </details>
 
         <details>
           <summary>
             <span class="number">05</span>
+            <h2>DRE&amp;M 이렇게 사용하세요.</h2>
+            <span class="toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="manual-panel">
+            <div class="manual-copy">
+              <strong>목표는 하나입니다.<br>“조금이라도 하고, 그걸 기록하자!”</strong>
+              <section>
+                <h3>감사일기 (Diary)</h3>
+                <p>그날을 기억할 사진 한 장만 남기세요. 그리고 오늘의 감사한 일, 남기고 싶은 감정, 기억하고 싶은 일 등을 간단하게 메모하면 됩니다.</p>
+              </section>
+              <section>
+                <h3>독서 (Reading)</h3>
+                <p>딱 한 페이지만이라도 좋습니다. 일단 책을 펴고, 그 페이지를 인증 사진으로 찍고, 한 페이지라도 읽어봅시다.</p>
+              </section>
+              <section>
+                <h3>운동 (Exercise)</h3>
+                <p>앉았다 일어나기 10번만이라도 좋습니다. 일단 몸을 움직이고, 그걸 적어봅시다. 그리고 내일은 오늘보다 하나만 더 하면 됩니다.</p>
+              </section>
+              <section>
+                <h3>루틴 (Micro-habit)</h3>
+                <p>하고 싶은 작은 습관들을 미리 정해놓고, 시간이 날 때마다 하나씩 해보세요. 그리고 체크 한 번씩만 누르면 됩니다.</p>
+              </section>
+              <section>
+                <p>하루가 완성되고, 일주일과 한 달의 기록이 이어지면 좋겠지만, 하루 이틀 빠져도 괜찮아요. 그냥 오늘부터 다시 하면 됩니다. 언젠가는 100일의 기록도 완성할 수 있을 것입니다.</p>
+              </section>
+              <section>
+                <p>아직 함께하는 모임이 없어도 괜찮아요. <strong>모두의 DRE&amp;M</strong>에서 다른 사람은 어떻게 실천하고 있는지 둘러보세요.</p>
+              </section>
+            </div>
+            <div class="manual-gallery" aria-label="DRE&amp;M 앱 화면">
+              <figure class="screen-shot"><img class="zoomable" src="./images/dream-overview-stack.jpg" alt="DRE&amp;M 하루 기록 화면"><figcaption>하루 기록</figcaption></figure>
+              <figure class="screen-shot"><img class="zoomable" src="./images/dream-screen-diary.png" alt="DRE&amp;M 감사일기 화면"><figcaption>Diary</figcaption></figure>
+              <figure class="screen-shot"><img class="zoomable" src="./images/dream-screen-reading.png" alt="DRE&amp;M 독서 화면"><figcaption>Reading</figcaption></figure>
+              <figure class="screen-shot"><img class="zoomable" src="./images/dream-screen-exercise.png" alt="DRE&amp;M 운동 화면"><figcaption>Exercise</figcaption></figure>
+              <figure class="screen-shot"><img class="zoomable" src="./images/dream-screen-microhabit.png" alt="DRE&amp;M 루틴 화면"><figcaption>Micro-habit</figcaption></figure>
+              <figure class="screen-shot"><img class="zoomable" src="./images/dream-overview-grid.jpg" alt="DRE&amp;M 전체 보기 화면"><figcaption>Overview</figcaption></figure>
+              <figure class="screen-shot"><img class="zoomable" src="./images/dream-overview-score.jpg" alt="DRE&amp;M 점수 화면"><figcaption>Score</figcaption></figure>
+              <figure class="screen-shot"><img class="zoomable" src="./images/dream-community-create.jpg" alt="DRE&amp;M 모임 만들기 화면"><figcaption>모임 만들기</figcaption></figure>
+              <figure class="screen-shot"><img class="zoomable" src="./images/dream-community-ranking.jpg" alt="DRE&amp;M 랭킹 화면"><figcaption>Ranking</figcaption></figure>
+              <figure class="screen-shot"><img class="zoomable" src="./images/dream-community-feed.jpg" alt="DRE&amp;M 커뮤니티 화면"><figcaption>Community</figcaption></figure>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            <span class="number">06</span>
             <h2>오늘의 작은 기록이 내일의 나를 만듭니다.</h2>
             <span class="toggle" aria-hidden="true">+</span>
           </summary>
@@ -1644,11 +1764,11 @@
 
         <details>
           <summary>
-            <span class="number">06</span>
+            <span class="number">07</span>
             <h2>같이 시작해 볼까요?</h2>
             <span class="toggle" aria-hidden="true">+</span>
           </summary>
-          <div class="poster-gallery" aria-label="DRE&M 시작 안내 포스터">
+          <div class="poster-gallery" aria-label="DRE&amp;M 시작 안내 포스터">
             <figure class="promo-image">
               <img class="zoomable" src="./images/dream-start-100days.png" alt="오늘부터 100일, 나를 바꾸는 8가지 작은 습관">
             </figure>
