@@ -95,6 +95,14 @@
     .solution-list a[href*="../rohd/"] { color: #244c86; border-color: rgba(36,76,134,.32); }
     .solution-list a[href*="../paran/"] { color: #2498d4; border-color: rgba(36,152,212,.32); }
     .solution-link-icon { width: .9em; height: .9em; margin-left: .28em; vertical-align: -.1em; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
+    .solution-entry { display: flex; flex-wrap: wrap; align-items: center; gap: 0 .35em; padding: 3px 0; }
+    .solution-flow-toggle { display: inline-flex; align-items: center; gap: .3em; margin: 0; padding: 0; border: 0; color: inherit; background: transparent; font: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+    .solution-flow-toggle:hover, .solution-flow-toggle:focus-visible { color: var(--fci-dark); text-decoration: underline; text-underline-offset: 3px; }
+    .flow-toggle-icon { width: .9em; height: .9em; color: #1f2a44; vertical-align: -.1em; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; text-decoration: none; }
+    .solution-entry .flow-copy { flex-basis: 100%; margin: 2px 0 7px; padding: 5px 0 5px 1em; border-left: 2px solid var(--line); color: #596a80; font-size: .94rem; line-height: 1.75; }
+    .solution-list:not(.solution-flow-list) > li { display: none; }
+    .solution-list:not(.solution-flow-list) { list-style: none; padding-left: 0; margin: 0; }
+    .solution-list.solution-flow-list { margin-top: 4px; margin-left: 0; }
     .continuation { margin: 0 28px 28px; color: var(--fci-dark); font-weight: 800; }
     .closing { margin-top: 24px; padding: 30px 24px; border-radius: 20px; color: #fff; background: linear-gradient(125deg, var(--fci-dark), var(--fci)); box-shadow: var(--shadow); text-align: left; }
     .closing h2 { margin: 0; color: #fff; font-size: clamp(23px, 3vw, 33px); line-height: 1.25; }
@@ -176,6 +184,11 @@
             <div class="solution-copy">
               <p class="answer">我們正從這些問題出發，一個個創造解決方案。</p>
               <ul class="solution-list" aria-label="FCI創造的應用程式">
+              <ul class="solution-list solution-flow-list" aria-label="FCI解決方案故事">
+                <li><div class="solution-entry"><button class="solution-flow-toggle" type="button" aria-expanded="false" aria-controls="flow-rab"><strong>「更好的信仰」</strong><svg class="flow-toggle-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 14.5l5-5M8 18l-1 1a4 4 0 0 1-5.7-5.7l3-3A4 4 0 0 1 10 10M16 6l1-1a4 4 0 0 1 5.7 5.7l3-3A4 4 0 0 1 14 14"/></svg></button>——<a href="../rab/index_zh-TW.html">聖經朗讀錄音<svg class="solution-link-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 14.5l5-5M8 18l-1 1a4 4 0 0 1-5.7-5.7l3-3A4 4 0 0 1 10 10M16 6l1-1a4 4 0 0 1 5.7 5.7l3-3A4 4 0 0 1 14 14"/></svg></a><div class="flow-copy" id="flow-rab" hidden>我想讀讀聖經<br>→ 讀了卻沒有真正讀過的感覺，也沒有留下什麼<br>→ 大聲朗讀，會不會更容易集中？<br>→ 「閱讀」……聲音？……「留下」……錄音！對，就錄下來吧……<br>→ 聖經朗讀錄音</div></div></li>
+                <li><div class="solution-entry"><button class="solution-flow-toggle" type="button" aria-expanded="false" aria-controls="flow-dream"><strong>「更好的習慣」</strong><svg class="flow-toggle-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 14.5l5-5M8 18l-1 1a4 4 0 0 1-5.7-5.7l3-3A4 4 0 0 1 10 10M16 6l1-1a4 4 0 0 1 5.7 5.7l3-3A4 4 0 0 1 14 14"/></svg></button>——<a href="../dream/index_zh-tw.html">DRE&amp;M<svg class="solution-link-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 14.5l5-5M8 18l-1 1a4 4 0 0 1-5.7-5.7l3-3A4 4 0 0 1 10 10M16 6l1-1a4 4 0 0 1 5.7 5.7l3-3A4 4 0 0 1 14 14"/></svg></a><div class="flow-copy" id="flow-dream" hidden>我想養成好習慣<br>→ 感恩日記、閱讀、運動、日常習慣……還有什麼呢？<br>→ 開始最難。不能一開始就把目標定得太大……<br>→ 有沒有地方可以留下記錄？才過一、兩天，就想不起來了……<br>→ 就算每天只做一點點，也把它簡單記錄下來，做一個這樣的工具吧！<br>→ DRE&amp;M</div></div></li>
+                <li><div class="solution-entry"><button class="solution-flow-toggle" type="button" aria-expanded="false" aria-controls="flow-rohd"><strong>「更好的歷程」</strong><svg class="flow-toggle-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 14.5l5-5M8 18l-1 1a4 4 0 0 1-5.7-5.7l3-3A4 4 0 0 1 10 10M16 6l1-1a4 4 0 0 1 5.7-5.7l3-3A4 4 0 0 1 14 14"/></svg></button>——<a href="../rohd/index_zh-TW.html">ROHD<svg class="solution-link-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 14.5l5-5M8 18l-1 1a4 4 0 0 1-5.7-5.7l3-3A4 4 0 0 1 10 10M16 6l1-1a4 4 0 0 1 5.7-5.7l3-3A4 4 0 0 1 14 14"/></svg></a><div class="flow-copy" id="flow-rohd" hidden>開始跑步吧<br>→ 聽說持續100天才能養成習慣……真的能堅持下去嗎？<br>→ 每天早上都很糾結……既然已經這麼努力了，要怎樣留下這段歷程呢？<br>→ 如果每天留下一張照片，再把照片做成一張張接連播放的影片，會怎麼樣？<br>→ ROHD</div></div></li>
+              </ul>
                 <li><strong>「更好的信仰」</strong>——<a href="../rab/index_zh-TW.html">聖經朗讀錄音<svg class="solution-link-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 14.5l5-5M8 18l-1 1a4 4 0 0 1-5.7-5.7l3-3A4 4 0 0 1 10 10M16 6l1-1a4 4 0 0 1 5.7 5.7l-3 3A4 4 0 0 1 14 14"/></svg></a></li>
                 <li><strong>「更好的習慣」</strong>——<a href="../dream/index_zh-tw.html">DRE&amp;M<svg class="solution-link-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 14.5l5-5M8 18l-1 1a4 4 0 0 1-5.7-5.7l3-3A4 4 0 0 1 10 10M16 6l1-1a4 4 0 0 1 5.7 5.7l-3 3A4 4 0 0 1 14 14"/></svg></a></li>
                 <li><strong>「更好的歷程」</strong>——<a href="../rohd/index_zh-TW.html">ROHD<svg class="solution-link-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 14.5l5-5M8 18l-1 1a4 4 0 0 1-5.7-5.7l3-3A4 4 0 0 1 10 10M16 6l1-1a4 4 0 0 1 5.7 5.7l-3 3A4 4 0 0 1 14 14"/></svg></a></li>
@@ -219,6 +232,16 @@
     })();
   </script>
   <script>
+    document.querySelectorAll(".solution-flow-toggle").forEach((button) => {
+      const flow = document.getElementById(button.getAttribute("aria-controls"));
+      if (!flow) return;
+      button.addEventListener("click", () => {
+        const isOpen = button.getAttribute("aria-expanded") === "true";
+        button.setAttribute("aria-expanded", String(!isOpen));
+        flow.hidden = isOpen;
+      });
+    });
+
     function fitBrandTitle() {
       const title = document.querySelector(".brand-title h1");
       if (!title || !window.matchMedia("(max-width: 640px)").matches) return;
