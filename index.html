@@ -6,11 +6,15 @@
   <meta name="robots" content="noindex">
   <title>FCI</title>
   <style>
-    html, body { margin: 0; min-height: 100%; background: #202633; }
-    body { color: #edf2f8; font-family: system-ui, sans-serif; }
+    html, body { margin: 0; min-height: 100%; background: #f7f9fc; }
+    body { color: #172033; font-family: system-ui, sans-serif; }
     .loading-screen {
       min-height: 100vh;
       padding: 42px 28px;
+      background:
+        radial-gradient(circle at 0 0, rgba(47, 91, 255, .10), transparent 34rem),
+        radial-gradient(circle at 100% 20%, rgba(126, 87, 194, .07), transparent 28rem),
+        #f7f9fc;
     }
     .loading-logo {
       display: block;
@@ -32,7 +36,7 @@
 </head>
 <body>
   <main class="loading-screen" aria-label="FCI loading">
-    <img class="loading-logo" src="./images/FCILOGOwithTextWhite.png" alt="FCI Factory of Creative Imagination">
+    <img class="loading-logo" src="./images/FCILOGOwithText.png" alt="FCI Factory of Creative Imagination">
     <p class="loading-message">Loading FCI…</p>
   </main>
   <noscript>
