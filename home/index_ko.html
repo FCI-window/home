@@ -103,6 +103,8 @@
     .answer-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 11px; }
     .mini-button { display: inline-flex; align-items: center; min-height: 30px; padding: 0 9px; border: 1px solid var(--line); border-radius: 999px; color: var(--fci-dark); background: #fff; font-size: .7rem; font-weight: 800; text-decoration: none; }
     .mini-button:hover { border-color: var(--fci); color: var(--fci); }
+    .answer-actions .mini-button:first-child { border-color: var(--fci-dark); color: #fff; background: var(--fci-dark); box-shadow: 0 6px 12px rgba(25,57,141,.14); }
+    .answer-actions .mini-button:first-child:hover { border-color: var(--fci); background: var(--fci); }
     .status-badge { display: inline-flex; align-items: center; min-height: 30px; padding: 0 9px; border: 1px solid #dcd6ff; border-radius: 999px; color: #6d5df6; background: #f4f1ff; font-size: .7rem; font-weight: 800; }
     .developing .answer-copy p { color: #596073; }
     .manifesto { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 24px; align-items: center; margin: 30px 0 18px; padding: 20px 24px; border-radius: 18px; color: #fff; background: linear-gradient(125deg, #19398d, #2f5bff); box-shadow: 0 14px 30px rgba(25,57,141,.16); }
@@ -134,6 +136,7 @@
     @media (max-width: 760px) {
       .page { padding-top: 18px; }
       .top-link { display: none; }
+      h1 { font-size: clamp(1.7rem, 8vw, 2.1rem); }
       .hero { grid-template-columns: 1fr; gap: 18px; padding: 52px 0 44px; }
       .hero-copy { grid-column: auto; }
       .hero-note { grid-column: auto; grid-row: auto; }
@@ -149,7 +152,6 @@
       .brand { width: 102px; }
       .font-size-button { padding: 0 9px; }
       .hero { padding-top: 48px; }
-      h1 { font-size: clamp(2.3rem, 11vw, 3rem); }
       summary { grid-template-columns: 62px minmax(0,1fr) 28px; gap: 10px; padding: 13px 12px; }
       .question-number { width: 34px; height: 34px; font-size: .72rem; }
       .answer { padding-left: 56px; padding-right: 16px; }
@@ -220,13 +222,6 @@
               <summary><img class="question-icon" src="../images/Paran.jpg" alt="파란 앱 아이콘"><div><p class="question">남길 수 있는 이야기와, 찾고 싶은 이야기?</p><span class="tool-line"><span class="tool-purpose">더 나은 사회를 위한</span><span class="tool-name">파란 : 그분들의 이야기</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
               <div class="answer"><div class="answer-copy"><p>우리는 모두 인생을 처음 살아갑니다.<br>하지만, 비슷한 길을 먼저 살아본 사람들은 많습니다.<br><br>시니어에게는 남길 수 있는 삶의 이야기가 있고,<br>주니어에게는 찾고 싶은 이야기가 있습니다.<br><br>파란은 시니어의 삶과 경험을 기록하고, 주니어가 그 안에서 자신의 삶에 도움이 될 경험을 찾아볼 수 있도록 돕는 세대공감 스토리 플랫폼입니다.</p><ul><li>삶의 선택과 경험을 키워드와 이야기로 기록</li><li>텍스트·음성·컴퓨터로 편하게 작성</li><li>하루 한 장의 사진과 짧은 글로 일상을 나눔</li><li>다른 사람들의 삶과 경험을 찾아보고 공감</li><li>특허 제10-2764519호 등록</li></ul><div class="answer-actions"><a class="mini-button" href="../paran/index.html">이야기 보기</a><a class="mini-button" href="https://apps.apple.com/app/id6760983914" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=com.fciapp.TMOStory" target="_blank" rel="noopener">Google Play</a></div></div></div>
             </details>
-          </article>
-
-          <article class="teaser-card" aria-label="모두의평가">
-            <div class="teaser-card-inner">
-              <img class="question-icon" src="../peerstat/images/peerstat-app-icon.png" alt="모두의평가 앱 아이콘">
-              <div><p class="question">우리 조직의 평가는 공정한가요?</p><span class="tool-line"><span class="tool-purpose">더 나은 조직을 위한</span><span class="tool-name">모두의평가</span></span></div>
-            </div>
           </article>
 
           <article class="teaser-card" aria-label="ZioBook">
