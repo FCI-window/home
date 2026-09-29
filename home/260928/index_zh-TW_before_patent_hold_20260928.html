@@ -1,18 +1,18 @@
 <!doctype html>
-<html lang="ja">
+<html lang="zh-TW">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="FCIは、より良い日常のための問いから、新しいツールをつくっています。">
-  <meta property="og:title" content="FCI | 質問から生まれる新しいツール">
-  <meta property="og:description" content="FCIは、より良い日常のための問いから、新しいツールをつくっています。">
+  <meta name="description" content="FCI從讓日常生活變得更好的問題出發，創造新的工具。">
+  <meta property="og:title" content="FCI | 從問題出發，創造新的工具">
+  <meta property="og:description" content="FCI從讓日常生活變得更好的問題出發，創造新的工具。">
   <meta property="og:image" content="https://fciapp.com/images/FCILOGOwithText.png">
-  <title>FCI | 質問から生まれる新しいツール</title>
+  <title>FCI | 從問題出發，創造新的工具</title>
   <link rel="shortcut icon" href="../images/favicon_FCILOGO_W.ico" type="image/x-icon">
   <link rel="stylesheet" href="../assets/fci-large-text.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #f7f9fc;
@@ -34,7 +34,7 @@
         radial-gradient(circle at 0 0, rgba(47, 91, 255, .11), transparent 34rem),
         radial-gradient(circle at 100% 20%, rgba(126, 87, 194, .08), transparent 28rem),
         var(--bg);
-      font-family: "Noto Sans KR", system-ui, sans-serif;
+      font-family: "Noto Sans TC", system-ui, sans-serif;
       line-height: 1.65;
       word-break: keep-all;
     }
@@ -83,8 +83,6 @@
     summary:hover { background: rgba(47,91,255,.025); }
     .question-number { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: var(--surface-soft); color: var(--fci); font-size: .72rem; font-weight: 800; }
     details[open] .question-number { color: #fff; background: var(--fci); }
-    .question-list summary { grid-template-columns: 62px minmax(0,1fr) 28px; }
-    .question-icon { width: 42px; height: 42px; border-radius: 11px; object-fit: cover; box-shadow: 0 6px 12px rgba(25,57,141,.12); }
     .question { margin: 0; color: var(--text); font-size: 1.12rem; line-height: 1.32; letter-spacing: -.025em; }
     .tool-line { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 .28em; min-width: 0; margin-top: 3px; }
     .tool-purpose { color: var(--fci-dark); font-size: .72rem; font-weight: 700; }
@@ -149,17 +147,17 @@
 <body>
   <div class="page">
     <header class="topbar">
-      <a class="brand" href="./index_ja.html" aria-label="FCIホーム"><img src="../images/FCILOGOwithText.png" alt="FCI Factory of Creative Imagination"></a>
+      <a class="brand" href="./index_zh-TW.html" aria-label="FCI首頁"><img src="../images/FCILOGOwithText.png" alt="FCI Factory of Creative Imagination"></a>
       <div class="top-actions">
-        <a class="top-link" href="../fci/index_ja.html">FCIストーリーを見る</a>
-        <button class="font-size-button large-text-button" type="button" aria-pressed="false">文字サイズ</button>
+        <a class="top-link" href="../fci/index_zh-TW.html">了解FCI故事</a>
+        <button class="font-size-button large-text-button" type="button" aria-pressed="false">文字大小</button>
         <div class="language-menu">
-          <button class="language-button" type="button" aria-expanded="false" aria-controls="language-options">Language</button>
+            <button class="language-button" type="button" aria-expanded="false" aria-controls="language-options">語言</button>
           <div class="language-options" id="language-options" hidden>
             <a href="./index_ko.html" lang="ko">한국어</a>
             <a href="./index_en.html" lang="en">English</a>
             <a href="./index_ja.html" lang="ja">日本語</a>
-            <a href="./index_zh-CN.html" lang="zh-CN">简体中文</a>
+            <a href="./index_zh-CN.html" lang="zh-CN">簡體中文</a>
             <a href="./index_zh-TW.html" lang="zh-TW">繁體中文</a>
             <a href="./index_es.html" lang="es">Español</a>
           </div>
@@ -170,50 +168,57 @@
     <main>
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-heading">
-          <h1 id="hero-title">「より良い」のための問いから<br>新しいツールをつくります。</h1>
+          <h1 id="hero-title">我們從「如何讓生活變得<span class="hero-emphasis">更好</span>？」這個問題出發<br>創造新的工具。</h1>
         </div>
-        <p class="hero-copy">FCIは、まだ十分ではない日常を見つめて問いかけます。下のツールも、それぞれ異なる問いから生まれました。</p>
-        <a class="hero-note" href="../fci/index_ja.html" aria-label="FCIストーリーを見る">
-          <p>「なぜ？」と「どのように？」を繰り返し問いかけ、まだ世の中にない方法を、実際に使えるツールにしていきます。</p>
-          <span class="hero-note-link">FCIストーリーを見る →</span>
+        <p class="hero-copy">FCI不斷思考如何讓日常生活變得更好，並將這些問題轉化為真正可以使用的應用程式。</p>
+        <a class="hero-note" href="../fci/index_zh-TW.html" aria-label="了解FCI故事">
+          <strong>我們不是從已經知道答案開始的。</strong>
+          <p>我們不斷追問「為什麼？」和「如何做？」，並創造這個世界上還沒有的解決方案。</p>
+          <span class="hero-note-link">了解FCI故事 →</span>
         </a>
       </section>
 
       <section class="section" id="questions" aria-labelledby="questions-title">
-        <h2 id="questions-title" class="visually-hidden">問いから生まれたツール</h2>
+        <h2 id="questions-title" class="visually-hidden">從問題中誕生的工具</h2>
 
         <div class="question-list">
           <article class="question-card">
             <details>
-              <summary><img class="question-icon" src="../images/Logo_RAB.png" alt="聖書音読録音のアイコン"><div><p class="question">聖書は、本来、声に出して読むものではないでしょうか？</p><span class="tool-line"><span class="tool-purpose">より良い信仰</span><span class="tool-name">聖書音読録音</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
-              <div class="answer"><div class="answer-copy"><p>一節ずつ指で追いながら、「ピッ」という音に合わせて、聖書の言葉に集中してみてください。あなた自身の声で読んだ聖書の記録を残すことができます。</p><ul><li>聖書を一節ずつ読み上げて録音</li><li>聖書の読書進捗を記録</li><li>みんなで聖書を読む機能</li><li>Google Driveによる録音ファイルのバックアップと復元</li><li>韓国特許第10-2322160号</li></ul><div class="answer-actions"><a class="mini-button" href="../rab/index_ja.html">ストーリーを見る</a><a class="mini-button" href="https://apps.apple.com/app/id1554443046" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=life.fci.recordaloudbible" target="_blank" rel="noopener">Google Play</a></div></div></div>
+              <summary><span class="question-number">01</span><div><p class="question">聖經本來不就是要朗讀的嗎？</p><span class="tool-line"><span class="tool-purpose">更好的信仰</span><span class="tool-name">聖經朗讀錄音</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
+              <div class="answer"><div class="answer-copy"><p>一節一節地朗讀聖經，跟隨提示音專注於經文。用自己的聲音，留下今天讀到的經文。</p><ul><li>提供英文、韓文、日文和中文聖經</li><li>保存並重新聆聽自己的錄音</li><li>韓國專利第10-2322160號</li><li>使用 Google Drive 備份和復原錄音</li></ul><div class="answer-actions"><a class="mini-button" href="../rab/index_zh-TW.html">查看故事</a><a class="mini-button" href="https://apps.apple.com/app/id1554443046" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=life.fci.recordaloudbible" target="_blank" rel="noopener">Google Play</a></div></div><img class="app-icon" src="../images/Logo_RAB.png" alt="聖經朗讀錄音應用程式圖示"></div>
             </details>
           </article>
 
           <article class="question-card">
             <details>
-              <summary><img class="question-icon" src="../images/Logo_ROHD.png" alt="ROHDのアイコン"><div><p class="question">何かを100日間、続けたことはありますか？</p><span class="tool-line"><span class="tool-purpose">より良い歩み</span><span class="tool-name">ROHD：100日間の記録</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
-              <div class="answer"><div class="answer-copy"><p>良い習慣をつくるための100日間。赤ちゃんの成長、植物の変化、旅行の思い出、家族の日常まで…。残しておきたい100日間を、写真や短いメモで記録してみましょう。積み重ねた記録は、カレンダーや写真モザイクとして振り返ることができ、ひとつの動画として保存・共有できます。</p><ul><li>100件の記録スケジュールを作成</li><li>記録ごとに写真またはメモを追加</li><li>BGM付きの動画を作成して共有</li><li>Google Driveによる記録のバックアップと復元</li><li>韓国特許第10-2612589号</li></ul><div class="answer-actions"><a class="mini-button" href="../rohd/index_ja.html">ストーリーを見る</a><a class="mini-button" href="https://apps.apple.com/app/id6446820972" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=life.fci.ROHD" target="_blank" rel="noopener">Google Play</a></div></div></div>
+              <summary><span class="question-number">02</span><div><p class="question">你曾經堅持做一件事100天嗎？</p><span class="tool-line"><span class="tool-purpose">更好的歷程</span><span class="tool-name">ROHD：100天的記錄</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
+              <div class="answer"><div class="answer-copy"><p>為了養成好習慣而累積的100次記錄，寶寶成長的100次記錄，植物變化、旅行回憶和家庭日常……把想要珍藏的100天，用照片或簡短文字記錄下來，整理成日曆和影片。</p><ul><li>建立100次記錄的專屬日曆</li><li>為每次記錄新增照片或文字</li><li>使用 Google Drive 備份和復原記錄</li><li>韓國專利第10-2612589號</li></ul><div class="answer-actions"><a class="mini-button" href="../rohd/index_zh-TW.html">查看故事</a><a class="mini-button" href="https://apps.apple.com/app/id6446820972" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=life.fci.ROHD" target="_blank" rel="noopener">Google Play</a></div></div><img class="app-icon" src="../images/Logo_ROHD.png" alt="ROHD應用程式圖示"></div>
             </details>
           </article>
 
           <article class="question-card">
             <details>
-              <summary><img class="question-icon" src="../images/DREAM_trans.png" alt="DRE&amp;Mのアイコン"><div><p class="question">今日も、良い習慣を続けられましたか？</p><span class="tool-line"><span class="tool-purpose">より良い習慣</span><span class="tool-name">DRE&amp;M：習慣をつくる小さな記録</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
-              <div class="answer"><div class="answer-copy"><p>より豊かな毎日のために、4つの習慣を記録してみましょう。<br>日記、読書、運動、そして小さな習慣。<br>短いメモや写真を残すだけで、毎日の行動が少しずつ習慣になっていきます。</p><ul><li>日記・読書・運動・小さな習慣をひとつのアプリで記録</li><li>写真や短いメモで毎日の記録を作成</li><li>7日間・30日間の進捗を確認</li><li>スコア、グループ、ランキング、応援機能</li><li>Google Driveによる記録のバックアップと復元</li></ul><div class="answer-actions"><a class="mini-button" href="../dream/index_ja.html">ストーリーを見る</a><a class="mini-button" href="https://apps.apple.com/app/id6775331954" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=com.fciapp.dream" target="_blank" rel="noopener">Google Play</a></div></div></div>
+              <summary><span class="question-number">03</span><div><p class="question">今天也持續你的好習慣了嗎？</p><span class="tool-line"><span class="tool-purpose">更好的習慣</span><span class="tool-name">DRE&amp;M：養成習慣的小記錄</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
+              <div class="answer"><div class="answer-copy"><p>為了更充實的生活，記錄日常中的4種習慣：日記、閱讀、運動，以及小習慣。每天只需留下簡短的文字或照片，讓每天的行動慢慢變成習慣。</p><ul><li>在一個應用程式中記錄日記、閱讀、運動和小習慣</li><li>每天用照片或簡短文字留下記錄</li><li>查看7天和30天的進度、分數和排名</li><li>使用 Google Drive 備份和復原記錄</li></ul><div class="answer-actions"><a class="mini-button" href="../dream/index_zh-tw.html">查看故事</a><a class="mini-button" href="https://apps.apple.com/app/id6775331954" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=com.fciapp.dream" target="_blank" rel="noopener">Google Play</a></div></div><img class="app-icon" src="../images/DREAM_trans.png" alt="DRE&amp;M應用程式圖示"></div>
             </details>
           </article>
 
+          <article class="question-card">
+            <details>
+              <summary><span class="question-number">04</span><div><p class="question">我們組織的評價公平嗎？</p><span class="tool-line"><span class="tool-purpose">更好的組織</span><span class="tool-name">PeerStat：更公平評價的新方法</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
+              <div class="answer"><div class="answer-copy"><p>對任何組織來說，績效都很重要。但為了創造更好的績效，成員是否也應該得到自己能夠接受的公平評價？</p><p>PeerStat是一項互評服務，成員以助人性、積極性和工作效率為標準，為包括自己在內的所有成員排列順位。</p><ul><li>每個人都能輕鬆完成評價</li><li>個人回答保持私密</li><li>群組平均值和分布圖呈現有意義的結果</li><li>使用示範代碼000000建立群組、排列成員順位並查看結果圖表</li></ul><div class="answer-actions"><a class="mini-button" href="../peerstat/index_en.html">查看故事</a><span class="status-badge">開發中</span></div></div><img class="app-icon" src="../peerstat/images/peerstat-app-icon.png" alt="PeerStat應用程式圖示"></div>
+            </details>
+          </article>
         </div>
       </section>
 
       <section class="manifesto" aria-labelledby="manifesto-title">
-        <div><p class="section-eyebrow" style="color:#bfcfff">WHY FCI</p><h2 id="manifesto-title">問いは続きます。</h2></div>
-        <div><p>FCIは、これまでにつくってきたツールだけにとどまりません。より良いもののために何が必要かを問い続け、新しい問いが生まれるたびに、新しいツールをつくっていきます。</p></div>
+        <div><p class="section-eyebrow" style="color:#bfcfff">WHY FCI</p><h2 id="manifesto-title">問題還在繼續。</h2></div>
+        <div><p>FCI不會停留在已經完成的產品上。為了讓生活變得更好，我們持續追問還需要什麼；每當新的問題出現，我們就創造新的工具。</p></div>
       </section>
     </main>
 
-    <footer class="footer"><p>FCI Inc. | Factory of Creative Imagination</p><p>Copyright FCI. All rights reserved. <a href="mailto:fci.window@gmail.com">fci.window@gmail.com</a></p></footer>
+    <footer class="footer"><p>FCI Inc.</p><p>Copyright FCI. All rights reserved. <a href="mailto:fci.window@gmail.com">fci.window@gmail.com</a></p></footer>
   </div>
   <script>
     (() => {
@@ -222,8 +227,8 @@
       let level = 0;
       try { level = Number(localStorage.getItem(storageKey) || 0); } catch (_) {}
       if (level !== 1) level = 0;
-      const labels = ['標準文字', '大きな文字'];
-      const apply = () => { document.body.classList.toggle('large-text-mode', level > 0); document.body.dataset.largeTextLevel = String(level); button.setAttribute('aria-pressed', String(level > 0)); button.setAttribute('aria-label', `現在の設定は${labels[level]}です。クリックすると文字サイズが変わります。`); button.textContent = labels[level]; };
+      const labels = ['文字大小', '大字體'];
+      const apply = () => { document.body.classList.toggle('large-text-mode', level > 0); document.body.dataset.largeTextLevel = String(level); button.setAttribute('aria-pressed', String(level > 0)); button.setAttribute('aria-label', `目前設定：${labels[level]}。點擊以變更文字大小。`); button.textContent = labels[level]; };
       apply();
       button.addEventListener('click', () => { level = (level + 1) % 2; try { localStorage.setItem(storageKey, String(level)); } catch (_) {} apply(); });
     })();

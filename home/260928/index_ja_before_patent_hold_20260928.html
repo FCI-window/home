@@ -83,8 +83,6 @@
     summary:hover { background: rgba(47,91,255,.025); }
     .question-number { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: var(--surface-soft); color: var(--fci); font-size: .72rem; font-weight: 800; }
     details[open] .question-number { color: #fff; background: var(--fci); }
-    .question-list summary { grid-template-columns: 62px minmax(0,1fr) 28px; }
-    .question-icon { width: 42px; height: 42px; border-radius: 11px; object-fit: cover; box-shadow: 0 6px 12px rgba(25,57,141,.12); }
     .question { margin: 0; color: var(--text); font-size: 1.12rem; line-height: 1.32; letter-spacing: -.025em; }
     .tool-line { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 .28em; min-width: 0; margin-top: 3px; }
     .tool-purpose { color: var(--fci-dark); font-size: .72rem; font-weight: 700; }
@@ -170,11 +168,12 @@
     <main>
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-heading">
-          <h1 id="hero-title">「より良い」のための問いから<br>新しいツールをつくります。</h1>
+          <h1 id="hero-title"><span class="hero-emphasis">より良い日常</span>のための問いから<br>新しいツールをつくります。</h1>
         </div>
-        <p class="hero-copy">FCIは、まだ十分ではない日常を見つめて問いかけます。下のツールも、それぞれ異なる問いから生まれました。</p>
+        <p class="hero-copy">FCIは、日常をより良くするために何ができるかを問い、その問いを実際に使えるアプリケーションに変えていきます。</p>
         <a class="hero-note" href="../fci/index_ja.html" aria-label="FCIストーリーを見る">
-          <p>「なぜ？」と「どのように？」を繰り返し問いかけ、まだ世の中にない方法を、実際に使えるツールにしていきます。</p>
+          <strong>私たちは、答えを知った上で始めるわけではありません。</strong>
+          <p>「なぜ？」と「どのように？」を繰り返し問いかけ、まだ世の中にないソリューションをつくります。</p>
           <span class="hero-note-link">FCIストーリーを見る →</span>
         </a>
       </section>
@@ -185,31 +184,37 @@
         <div class="question-list">
           <article class="question-card">
             <details>
-              <summary><img class="question-icon" src="../images/Logo_RAB.png" alt="聖書音読録音のアイコン"><div><p class="question">聖書は、本来、声に出して読むものではないでしょうか？</p><span class="tool-line"><span class="tool-purpose">より良い信仰</span><span class="tool-name">聖書音読録音</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
-              <div class="answer"><div class="answer-copy"><p>一節ずつ指で追いながら、「ピッ」という音に合わせて、聖書の言葉に集中してみてください。あなた自身の声で読んだ聖書の記録を残すことができます。</p><ul><li>聖書を一節ずつ読み上げて録音</li><li>聖書の読書進捗を記録</li><li>みんなで聖書を読む機能</li><li>Google Driveによる録音ファイルのバックアップと復元</li><li>韓国特許第10-2322160号</li></ul><div class="answer-actions"><a class="mini-button" href="../rab/index_ja.html">ストーリーを見る</a><a class="mini-button" href="https://apps.apple.com/app/id1554443046" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=life.fci.recordaloudbible" target="_blank" rel="noopener">Google Play</a></div></div></div>
+              <summary><span class="question-number">01</span><div><p class="question">聖書は、本来、声に出して読むものではないでしょうか？</p><span class="tool-line"><span class="tool-purpose">より良い信仰</span><span class="tool-name">聖書音読録音</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
+              <div class="answer"><div class="answer-copy"><p>一節ずつ指で追いながら、「ピッ」という音に合わせて、聖書の言葉に集中してみてください。あなた自身の声で読んだ聖書の記録を残すことができます。</p><ul><li>聖書を一節ずつ読み上げて録音</li><li>聖書の読書進捗を記録</li><li>みんなで聖書を読む機能</li><li>Google Driveによる録音ファイルのバックアップと復元</li><li>韓国特許第10-2322160号</li></ul><div class="answer-actions"><a class="mini-button" href="../rab/index_ja.html">ストーリーを見る</a><a class="mini-button" href="https://apps.apple.com/app/id1554443046" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=life.fci.recordaloudbible" target="_blank" rel="noopener">Google Play</a></div></div><img class="app-icon" src="../images/Logo_RAB.png" alt="聖書音読録音のアイコン"></div>
             </details>
           </article>
 
           <article class="question-card">
             <details>
-              <summary><img class="question-icon" src="../images/Logo_ROHD.png" alt="ROHDのアイコン"><div><p class="question">何かを100日間、続けたことはありますか？</p><span class="tool-line"><span class="tool-purpose">より良い歩み</span><span class="tool-name">ROHD：100日間の記録</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
-              <div class="answer"><div class="answer-copy"><p>良い習慣をつくるための100日間。赤ちゃんの成長、植物の変化、旅行の思い出、家族の日常まで…。残しておきたい100日間を、写真や短いメモで記録してみましょう。積み重ねた記録は、カレンダーや写真モザイクとして振り返ることができ、ひとつの動画として保存・共有できます。</p><ul><li>100件の記録スケジュールを作成</li><li>記録ごとに写真またはメモを追加</li><li>BGM付きの動画を作成して共有</li><li>Google Driveによる記録のバックアップと復元</li><li>韓国特許第10-2612589号</li></ul><div class="answer-actions"><a class="mini-button" href="../rohd/index_ja.html">ストーリーを見る</a><a class="mini-button" href="https://apps.apple.com/app/id6446820972" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=life.fci.ROHD" target="_blank" rel="noopener">Google Play</a></div></div></div>
+              <summary><span class="question-number">02</span><div><p class="question">何かを100日間、続けたことはありますか？</p><span class="tool-line"><span class="tool-purpose">より良い歩み</span><span class="tool-name">ROHD：100日間の記録</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
+              <div class="answer"><div class="answer-copy"><p>良い習慣をつくるための100日間。赤ちゃんの成長、植物の変化、旅行の思い出、家族の日常まで…。残しておきたい100日間を、写真や短いメモで記録してみましょう。積み重ねた記録は、カレンダーや写真モザイクとして振り返ることができ、ひとつの動画として保存・共有できます。</p><ul><li>100件の記録スケジュールを作成</li><li>記録ごとに写真またはメモを追加</li><li>BGM付きの動画を作成して共有</li><li>Google Driveによる記録のバックアップと復元</li><li>韓国特許第10-2612589号</li></ul><div class="answer-actions"><a class="mini-button" href="../rohd/index_ja.html">ストーリーを見る</a><a class="mini-button" href="https://apps.apple.com/app/id6446820972" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=life.fci.ROHD" target="_blank" rel="noopener">Google Play</a></div></div><img class="app-icon" src="../images/Logo_ROHD.png" alt="ROHDのアイコン"></div>
             </details>
           </article>
 
           <article class="question-card">
             <details>
-              <summary><img class="question-icon" src="../images/DREAM_trans.png" alt="DRE&amp;Mのアイコン"><div><p class="question">今日も、良い習慣を続けられましたか？</p><span class="tool-line"><span class="tool-purpose">より良い習慣</span><span class="tool-name">DRE&amp;M：習慣をつくる小さな記録</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
-              <div class="answer"><div class="answer-copy"><p>より豊かな毎日のために、4つの習慣を記録してみましょう。<br>日記、読書、運動、そして小さな習慣。<br>短いメモや写真を残すだけで、毎日の行動が少しずつ習慣になっていきます。</p><ul><li>日記・読書・運動・小さな習慣をひとつのアプリで記録</li><li>写真や短いメモで毎日の記録を作成</li><li>7日間・30日間の進捗を確認</li><li>スコア、グループ、ランキング、応援機能</li><li>Google Driveによる記録のバックアップと復元</li></ul><div class="answer-actions"><a class="mini-button" href="../dream/index_ja.html">ストーリーを見る</a><a class="mini-button" href="https://apps.apple.com/app/id6775331954" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=com.fciapp.dream" target="_blank" rel="noopener">Google Play</a></div></div></div>
+              <summary><span class="question-number">03</span><div><p class="question">今日も、良い習慣を続けられましたか？</p><span class="tool-line"><span class="tool-purpose">より良い習慣</span><span class="tool-name">DRE&amp;M：習慣をつくる小さな記録</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
+              <div class="answer"><div class="answer-copy"><p>より豊かな毎日のために、4つの習慣を記録してみましょう。<br>日記、読書、運動、そして小さな習慣。<br>短いメモや写真を残すだけで、毎日の行動が少しずつ習慣になっていきます。</p><ul><li>日記・読書・運動・小さな習慣をひとつのアプリで記録</li><li>写真や短いメモで毎日の記録を作成</li><li>7日間・30日間の進捗を確認</li><li>スコア、グループ、ランキング、応援機能</li><li>Google Driveによる記録のバックアップと復元</li></ul><div class="answer-actions"><a class="mini-button" href="../dream/index_ja.html">ストーリーを見る</a><a class="mini-button" href="https://apps.apple.com/app/id6775331954" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=com.fciapp.dream" target="_blank" rel="noopener">Google Play</a></div></div><img class="app-icon" src="../images/DREAM_trans.png" alt="DRE&amp;Mのアイコン"></div>
             </details>
           </article>
 
+          <article class="question-card">
+            <details>
+              <summary><span class="question-number">04</span><div><p class="question">私たちの組織の評価は、公正でしょうか？</p><span class="tool-line"><span class="tool-purpose">より良い組織</span><span class="tool-name">PeerStat：より公正な評価のための新しい方法</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
+              <div class="answer"><div class="answer-copy"><p>組織にとって成果は重要です。しかし、その成果を生み出すメンバーにとっては、公正な評価が重要です。</p><p>PeerStatは、助け合い、積極性、勤務効率を基準に、自分自身を含むメンバー全員の順位を決める相互評価サービスです。</p><ul><li>全員が簡単に評価に参加</li><li>個別の回答は公開しない</li><li>集団の平均と分布による意味のある結果</li><li>デモコード000000で、評価グループ作成から順位評価、結果グラフまで体験</li></ul><div class="answer-actions"><a class="mini-button" href="../peerstat/index_en.html">ストーリーを見る</a><span class="status-badge">開発中</span></div></div><img class="app-icon" src="../peerstat/images/peerstat-app-icon.png" alt="PeerStatのアイコン"></div>
+            </details>
+          </article>
         </div>
       </section>
 
       <section class="manifesto" aria-labelledby="manifesto-title">
         <div><p class="section-eyebrow" style="color:#bfcfff">WHY FCI</p><h2 id="manifesto-title">問いは続きます。</h2></div>
-        <div><p>FCIは、これまでにつくってきたツールだけにとどまりません。より良いもののために何が必要かを問い続け、新しい問いが生まれるたびに、新しいツールをつくっていきます。</p></div>
+        <div><p>FCIは、これまでにつくってきた製品だけにとどまりません。より良いもののために何が必要かを問い続け、新しい問いが生まれるたびに、新しいツールをつくっていきます。</p></div>
       </section>
     </main>
 

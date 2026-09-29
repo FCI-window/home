@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="FCIは、より良い日常のための問いから、新しいツールをつくっています。">
-  <meta property="og:title" content="FCI | 質問から生まれる新しいツール">
-  <meta property="og:description" content="FCIは、より良い日常のための問いから、新しいツールをつくっています。">
+  <meta name="description" content="FCI creates applications that make everyday life better.">
+  <meta property="og:title" content="FCI | New tools, born from questions">
+  <meta property="og:description" content="FCI creates applications that make everyday life better.">
   <meta property="og:image" content="https://fciapp.com/images/FCILOGOwithText.png">
-  <title>FCI | 質問から生まれる新しいツール</title>
+  <title>FCI | New tools, born from questions</title>
   <link rel="shortcut icon" href="../images/favicon_FCILOGO_W.ico" type="image/x-icon">
   <link rel="stylesheet" href="../assets/fci-large-text.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -83,8 +83,6 @@
     summary:hover { background: rgba(47,91,255,.025); }
     .question-number { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: var(--surface-soft); color: var(--fci); font-size: .72rem; font-weight: 800; }
     details[open] .question-number { color: #fff; background: var(--fci); }
-    .question-list summary { grid-template-columns: 62px minmax(0,1fr) 28px; }
-    .question-icon { width: 42px; height: 42px; border-radius: 11px; object-fit: cover; box-shadow: 0 6px 12px rgba(25,57,141,.12); }
     .question { margin: 0; color: var(--text); font-size: 1.12rem; line-height: 1.32; letter-spacing: -.025em; }
     .tool-line { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 .28em; min-width: 0; margin-top: 3px; }
     .tool-purpose { color: var(--fci-dark); font-size: .72rem; font-weight: 700; }
@@ -149,10 +147,10 @@
 <body>
   <div class="page">
     <header class="topbar">
-      <a class="brand" href="./index_ja.html" aria-label="FCIホーム"><img src="../images/FCILOGOwithText.png" alt="FCI Factory of Creative Imagination"></a>
+      <a class="brand" href="./index_en.html" aria-label="FCI home"><img src="../images/FCILOGOwithText.png" alt="FCI Factory of Creative Imagination"></a>
       <div class="top-actions">
-        <a class="top-link" href="../fci/index_ja.html">FCIストーリーを見る</a>
-        <button class="font-size-button large-text-button" type="button" aria-pressed="false">文字サイズ</button>
+        <a class="top-link" href="../fci/index_en.html">Read the FCI Story</a>
+        <button class="font-size-button large-text-button" type="button" aria-pressed="false">Text size</button>
         <div class="language-menu">
           <button class="language-button" type="button" aria-expanded="false" aria-controls="language-options">Language</button>
           <div class="language-options" id="language-options" hidden>
@@ -170,50 +168,57 @@
     <main>
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-heading">
-          <h1 id="hero-title">「より良い」のための問いから<br>新しいツールをつくります。</h1>
+          <h1 id="hero-title">We create new tools from questions<br>about how to live a <span class="hero-emphasis">better life</span>.</h1>
         </div>
-        <p class="hero-copy">FCIは、まだ十分ではない日常を見つめて問いかけます。下のツールも、それぞれ異なる問いから生まれました。</p>
-        <a class="hero-note" href="../fci/index_ja.html" aria-label="FCIストーリーを見る">
-          <p>「なぜ？」と「どのように？」を繰り返し問いかけ、まだ世の中にない方法を、実際に使えるツールにしていきます。</p>
-          <span class="hero-note-link">FCIストーリーを見る →</span>
+        <p class="hero-copy">FCI asks what could make everyday life better, then turns those questions into applications people can use.</p>
+        <a class="hero-note" href="../fci/index_en.html" aria-label="Read the FCI Story">
+          <strong>We do not start with all the answers.</strong>
+          <p>We keep asking “Why?” and “How?” and create solutions that did not exist before.</p>
+          <span class="hero-note-link">Read the FCI Story →</span>
         </a>
       </section>
 
       <section class="section" id="questions" aria-labelledby="questions-title">
-        <h2 id="questions-title" class="visually-hidden">問いから生まれたツール</h2>
+        <h2 id="questions-title" class="visually-hidden">Tools born from questions</h2>
 
         <div class="question-list">
           <article class="question-card">
             <details>
-              <summary><img class="question-icon" src="../images/Logo_RAB.png" alt="聖書音読録音のアイコン"><div><p class="question">聖書は、本来、声に出して読むものではないでしょうか？</p><span class="tool-line"><span class="tool-purpose">より良い信仰</span><span class="tool-name">聖書音読録音</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
-              <div class="answer"><div class="answer-copy"><p>一節ずつ指で追いながら、「ピッ」という音に合わせて、聖書の言葉に集中してみてください。あなた自身の声で読んだ聖書の記録を残すことができます。</p><ul><li>聖書を一節ずつ読み上げて録音</li><li>聖書の読書進捗を記録</li><li>みんなで聖書を読む機能</li><li>Google Driveによる録音ファイルのバックアップと復元</li><li>韓国特許第10-2322160号</li></ul><div class="answer-actions"><a class="mini-button" href="../rab/index_ja.html">ストーリーを見る</a><a class="mini-button" href="https://apps.apple.com/app/id1554443046" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=life.fci.recordaloudbible" target="_blank" rel="noopener">Google Play</a></div></div></div>
+              <summary><span class="question-number">01</span><div><p class="question">Wasn’t Scripture originally meant to be read aloud?</p><span class="tool-line"><span class="tool-purpose">Deeper faith</span><span class="tool-name">Record Aloud Bible</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
+              <div class="answer"><div class="answer-copy"><p>Point to each verse as you read, and focus on the words with the “beep” cue. Record the Bible in your own voice and keep it for later listening.</p><ul><li>Bible versions in English, Korean, Japanese, and Chinese</li><li>Save and replay your recordings</li><li>Korean Patent No. 10-2322160</li><li>Newly revised as v2.0.0 in August 2026</li><li>Backup and restore with Google Drive</li></ul><div class="answer-actions"><a class="mini-button" href="../rab/index_en.html">View Story</a><a class="mini-button" href="https://apps.apple.com/app/id1554443046" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=life.fci.recordaloudbible" target="_blank" rel="noopener">Google Play</a></div></div><img class="app-icon" src="../images/Logo_RAB.png" alt="Record Aloud Bible app icon"></div>
             </details>
           </article>
 
           <article class="question-card">
             <details>
-              <summary><img class="question-icon" src="../images/Logo_ROHD.png" alt="ROHDのアイコン"><div><p class="question">何かを100日間、続けたことはありますか？</p><span class="tool-line"><span class="tool-purpose">より良い歩み</span><span class="tool-name">ROHD：100日間の記録</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
-              <div class="answer"><div class="answer-copy"><p>良い習慣をつくるための100日間。赤ちゃんの成長、植物の変化、旅行の思い出、家族の日常まで…。残しておきたい100日間を、写真や短いメモで記録してみましょう。積み重ねた記録は、カレンダーや写真モザイクとして振り返ることができ、ひとつの動画として保存・共有できます。</p><ul><li>100件の記録スケジュールを作成</li><li>記録ごとに写真またはメモを追加</li><li>BGM付きの動画を作成して共有</li><li>Google Driveによる記録のバックアップと復元</li><li>韓国特許第10-2612589号</li></ul><div class="answer-actions"><a class="mini-button" href="../rohd/index_ja.html">ストーリーを見る</a><a class="mini-button" href="https://apps.apple.com/app/id6446820972" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=life.fci.ROHD" target="_blank" rel="noopener">Google Play</a></div></div></div>
+              <summary><span class="question-number">02</span><div><p class="question">Have you ever kept at something for 100 days?</p><span class="tool-line"><span class="tool-purpose">Better 100 Days</span><span class="tool-name">ROHD: Record of 100 Days</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
+              <div class="answer"><div class="answer-copy"><p>100 days to build a good habit,<br>100 days of a baby’s growth,<br>a houseplant slowly growing, memories from a trip, or a family’s everyday life…<br>A 100-day journey worth keeping.<br>Record one photo each day, and ROHD turns it into a 30-second video with a 100-day calendar.</p><ul><li>Record one photo each day</li><li>Create a 100-day calendar and 30-second video</li><li>Backup and restore with Google Drive</li><li>Korean Patent No. 10-2612589</li></ul><div class="answer-actions"><a class="mini-button" href="../rohd/index_en.html">View Story</a><a class="mini-button" href="https://apps.apple.com/app/id6446820972" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=life.fci.ROHD" target="_blank" rel="noopener">Google Play</a></div></div><img class="app-icon" src="../images/Logo_ROHD.png" alt="ROHD app icon"></div>
             </details>
           </article>
 
           <article class="question-card">
             <details>
-              <summary><img class="question-icon" src="../images/DREAM_trans.png" alt="DRE&amp;Mのアイコン"><div><p class="question">今日も、良い習慣を続けられましたか？</p><span class="tool-line"><span class="tool-purpose">より良い習慣</span><span class="tool-name">DRE&amp;M：習慣をつくる小さな記録</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
-              <div class="answer"><div class="answer-copy"><p>より豊かな毎日のために、4つの習慣を記録してみましょう。<br>日記、読書、運動、そして小さな習慣。<br>短いメモや写真を残すだけで、毎日の行動が少しずつ習慣になっていきます。</p><ul><li>日記・読書・運動・小さな習慣をひとつのアプリで記録</li><li>写真や短いメモで毎日の記録を作成</li><li>7日間・30日間の進捗を確認</li><li>スコア、グループ、ランキング、応援機能</li><li>Google Driveによる記録のバックアップと復元</li></ul><div class="answer-actions"><a class="mini-button" href="../dream/index_ja.html">ストーリーを見る</a><a class="mini-button" href="https://apps.apple.com/app/id6775331954" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=com.fciapp.dream" target="_blank" rel="noopener">Google Play</a></div></div></div>
+              <summary><span class="question-number">03</span><div><p class="question">Have you kept up your good habits today?</p><span class="tool-line"><span class="tool-purpose">Better habits</span><span class="tool-name">DRE&amp;M: Small Notes for Habits</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
+              <div class="answer"><div class="answer-copy"><p>Start four habits for a richer life.<br>Diary, Reading, Exercise, and Microhabit.<br>Small, simple records can become lasting habits.</p><ul><li>Keep diary, reading, exercise, and small habits in one place</li><li>Simple records with photos and short notes</li><li>7-day and 30-day progress, rankings, and encouragement</li><li>Backup and restore with Google Drive</li></ul><div class="answer-actions"><a class="mini-button" href="../dream/index_en.html">View Story</a><a class="mini-button" href="https://apps.apple.com/app/id6775331954" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=com.fciapp.dream" target="_blank" rel="noopener">Google Play</a></div></div><img class="app-icon" src="../images/DREAM_trans.png" alt="DRE&amp;M app icon"></div>
             </details>
           </article>
 
+          <article class="question-card">
+            <details>
+              <summary><span class="question-number">04</span><div><p class="question">Has our organization’s evaluation been fair?</p><span class="tool-line"><span class="tool-purpose">Better organizations</span><span class="tool-name">PeerStat: A New Way Toward Fairer Evaluation</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
+              <div class="answer"><div class="answer-copy"><p>Performance matters to every organization. But to create that performance, shouldn’t people receive fair evaluations they can accept?</p><p>PeerStat is a peer-evaluation service where members rank everyone, including themselves, based on helpfulness, initiative, and work efficiency.</p><ul><li>Everyone can evaluate with ease</li><li>Individual responses remain private</li><li>Group averages and distributions reveal meaningful results</li><li>Try creating a group, ranking members, and viewing the result graphs with demo code 000000</li></ul><div class="answer-actions"><a class="mini-button" href="../peerstat/index_en.html">View Story</a><span class="status-badge">In development</span></div></div><img class="app-icon" src="../peerstat/images/peerstat-app-icon.png" alt="PeerStat app icon"></div>
+            </details>
+          </article>
         </div>
       </section>
 
       <section class="manifesto" aria-labelledby="manifesto-title">
-        <div><p class="section-eyebrow" style="color:#bfcfff">WHY FCI</p><h2 id="manifesto-title">問いは続きます。</h2></div>
-        <div><p>FCIは、これまでにつくってきたツールだけにとどまりません。より良いもののために何が必要かを問い続け、新しい問いが生まれるたびに、新しいツールをつくっていきます。</p></div>
+        <div><p class="section-eyebrow" style="color:#bfcfff">WHY FCI</p><h2 id="manifesto-title">The questions continue.</h2></div>
+        <div><p>FCI does not stop with the products we have already made. We keep asking what is needed for something better, and create a new tool whenever a new question emerges.</p></div>
       </section>
     </main>
 
-    <footer class="footer"><p>FCI Inc. | Factory of Creative Imagination</p><p>Copyright FCI. All rights reserved. <a href="mailto:fci.window@gmail.com">fci.window@gmail.com</a></p></footer>
+    <footer class="footer"><p>FCI Inc.</p><p>Copyright FCI. All rights reserved. <a href="mailto:fci.window@gmail.com">fci.window@gmail.com</a></p></footer>
   </div>
   <script>
     (() => {
@@ -222,8 +227,8 @@
       let level = 0;
       try { level = Number(localStorage.getItem(storageKey) || 0); } catch (_) {}
       if (level !== 1) level = 0;
-      const labels = ['標準文字', '大きな文字'];
-      const apply = () => { document.body.classList.toggle('large-text-mode', level > 0); document.body.dataset.largeTextLevel = String(level); button.setAttribute('aria-pressed', String(level > 0)); button.setAttribute('aria-label', `現在の設定は${labels[level]}です。クリックすると文字サイズが変わります。`); button.textContent = labels[level]; };
+      const labels = ['Text size', 'Large text'];
+      const apply = () => { document.body.classList.toggle('large-text-mode', level > 0); document.body.dataset.largeTextLevel = String(level); button.setAttribute('aria-pressed', String(level > 0)); button.setAttribute('aria-label', `Current setting: ${labels[level]}. Click to change text size.`); button.textContent = labels[level]; };
       apply();
       button.addEventListener('click', () => { level = (level + 1) % 2; try { localStorage.setItem(storageKey, String(level)); } catch (_) {} apply(); });
     })();

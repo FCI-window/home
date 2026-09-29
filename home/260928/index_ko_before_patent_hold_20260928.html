@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="ja">
+<html lang="ko">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="FCIは、より良い日常のための問いから、新しいツールをつくっています。">
-  <meta property="og:title" content="FCI | 質問から生まれる新しいツール">
-  <meta property="og:description" content="FCIは、より良い日常のための問いから、新しいツールをつくっています。">
+  <meta name="description" content="FCI는 더 나은 것을 위한 질문에서 새로운 도구를 만들어 갑니다.">
+  <meta property="og:title" content="FCI | 질문에서 시작한 새로운 도구">
+  <meta property="og:description" content="더 나은 것을 위한 질문에서 새로운 도구를 만들어 갑니다.">
   <meta property="og:image" content="https://fciapp.com/images/FCILOGOwithText.png">
-  <title>FCI | 質問から生まれる新しいツール</title>
+  <title>FCI | 질문에서 시작한 새로운 도구</title>
   <link rel="shortcut icon" href="../images/favicon_FCILOGO_W.ico" type="image/x-icon">
   <link rel="stylesheet" href="../assets/fci-large-text.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -83,8 +83,6 @@
     summary:hover { background: rgba(47,91,255,.025); }
     .question-number { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: var(--surface-soft); color: var(--fci); font-size: .72rem; font-weight: 800; }
     details[open] .question-number { color: #fff; background: var(--fci); }
-    .question-list summary { grid-template-columns: 62px minmax(0,1fr) 28px; }
-    .question-icon { width: 42px; height: 42px; border-radius: 11px; object-fit: cover; box-shadow: 0 6px 12px rgba(25,57,141,.12); }
     .question { margin: 0; color: var(--text); font-size: 1.12rem; line-height: 1.32; letter-spacing: -.025em; }
     .tool-line { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 .28em; min-width: 0; margin-top: 3px; }
     .tool-purpose { color: var(--fci-dark); font-size: .72rem; font-weight: 700; }
@@ -149,10 +147,10 @@
 <body>
   <div class="page">
     <header class="topbar">
-      <a class="brand" href="./index_ja.html" aria-label="FCIホーム"><img src="../images/FCILOGOwithText.png" alt="FCI Factory of Creative Imagination"></a>
+      <a class="brand" href="./index_new.html" aria-label="FCI 홈"><img src="../images/FCILOGOwithText.png" alt="FCI Factory of Creative Imagination"></a>
       <div class="top-actions">
-        <a class="top-link" href="../fci/index_ja.html">FCIストーリーを見る</a>
-        <button class="font-size-button large-text-button" type="button" aria-pressed="false">文字サイズ</button>
+        <a class="top-link" href="../fci/index_ko.html">FCI 이야기 보기</a>
+        <button class="font-size-button large-text-button" type="button" aria-pressed="false">글씨 크기</button>
         <div class="language-menu">
           <button class="language-button" type="button" aria-expanded="false" aria-controls="language-options">Language</button>
           <div class="language-options" id="language-options" hidden>
@@ -170,50 +168,71 @@
     <main>
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-heading">
-          <h1 id="hero-title">「より良い」のための問いから<br>新しいツールをつくります。</h1>
+          <h1 id="hero-title"><span class="hero-emphasis">더 나은</span>을 위한 질문에서<br>새로운 도구를 만듭니다.</h1>
         </div>
-        <p class="hero-copy">FCIは、まだ十分ではない日常を見つめて問いかけます。下のツールも、それぞれ異なる問いから生まれました。</p>
-        <a class="hero-note" href="../fci/index_ja.html" aria-label="FCIストーリーを見る">
-          <p>「なぜ？」と「どのように？」を繰り返し問いかけ、まだ世の中にない方法を、実際に使えるツールにしていきます。</p>
-          <span class="hero-note-link">FCIストーリーを見る →</span>
+        <p class="hero-copy">FCI는 아직 충분하지 않은 일상을 바라보며 질문합니다. 그리고 그 질문을 실제로 사용할 수 있는 애플리케이션으로 만들어 갑니다.</p>
+        <a class="hero-note" href="../fci/index_ko.html" aria-label="FCI 스토리 보기">
+          <strong>우리는 답을 알고 시작하지 않습니다.</strong>
+          <p>“왜?”와 “어떻게?”를 반복해서 묻고, 아직 세상에 없던 답을 하나의 도구로 만들어 갑니다.</p>
+          <span class="hero-note-link">FCI 스토리 보기 →</span>
         </a>
       </section>
 
       <section class="section" id="questions" aria-labelledby="questions-title">
-        <h2 id="questions-title" class="visually-hidden">問いから生まれたツール</h2>
+        <h2 id="questions-title" class="visually-hidden">질문에서 만들어진 도구들</h2>
 
         <div class="question-list">
           <article class="question-card">
             <details>
-              <summary><img class="question-icon" src="../images/Logo_RAB.png" alt="聖書音読録音のアイコン"><div><p class="question">聖書は、本来、声に出して読むものではないでしょうか？</p><span class="tool-line"><span class="tool-purpose">より良い信仰</span><span class="tool-name">聖書音読録音</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
-              <div class="answer"><div class="answer-copy"><p>一節ずつ指で追いながら、「ピッ」という音に合わせて、聖書の言葉に集中してみてください。あなた自身の声で読んだ聖書の記録を残すことができます。</p><ul><li>聖書を一節ずつ読み上げて録音</li><li>聖書の読書進捗を記録</li><li>みんなで聖書を読む機能</li><li>Google Driveによる録音ファイルのバックアップと復元</li><li>韓国特許第10-2322160号</li></ul><div class="answer-actions"><a class="mini-button" href="../rab/index_ja.html">ストーリーを見る</a><a class="mini-button" href="https://apps.apple.com/app/id1554443046" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=life.fci.recordaloudbible" target="_blank" rel="noopener">Google Play</a></div></div></div>
+              <summary><span class="question-number">01</span><div><p class="question">성경은 원래 소리 내어 읽는 것이 아니었을까요?</p><span class="tool-line"><span class="tool-purpose">더 나은 신앙을 위한</span><span class="tool-name">성경낭독녹음</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
+              <div class="answer"><div class="answer-copy"><p>한 절 한 절 손으로 집어가면서 &quot;삐빅&quot; 소리에 맞추어 내용에 집중해 보세요. 당신의 목소리로 된 성경 낭독 파일을 남겨 드립니다.</p><ul><li>개역개정, 개역한글, 우리말 성경과 4개언어 버전 제공</li><li>낭독 녹음 파일 저장 및 반복 청취</li><li>특허 제10-2322160호 등록</li><li>GOOD TV(기독교복음방송)의 바이블앱에 탑재</li><li>2026.08 v2.0.0으로 새롭게 개정</li><li>구글드라이브로 백업과복원 가능</li></ul><div class="answer-actions"><a class="mini-button" href="../rab/index_ko.html">이야기 보기</a><a class="mini-button" href="https://apps.apple.com/app/id1554443046" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=life.fci.recordaloudbible" target="_blank" rel="noopener">Google Play</a></div></div><img class="app-icon" src="../images/Logo_RAB.png" alt="성경낭독녹음 앱 아이콘"></div>
             </details>
           </article>
 
           <article class="question-card">
             <details>
-              <summary><img class="question-icon" src="../images/Logo_ROHD.png" alt="ROHDのアイコン"><div><p class="question">何かを100日間、続けたことはありますか？</p><span class="tool-line"><span class="tool-purpose">より良い歩み</span><span class="tool-name">ROHD：100日間の記録</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
-              <div class="answer"><div class="answer-copy"><p>良い習慣をつくるための100日間。赤ちゃんの成長、植物の変化、旅行の思い出、家族の日常まで…。残しておきたい100日間を、写真や短いメモで記録してみましょう。積み重ねた記録は、カレンダーや写真モザイクとして振り返ることができ、ひとつの動画として保存・共有できます。</p><ul><li>100件の記録スケジュールを作成</li><li>記録ごとに写真またはメモを追加</li><li>BGM付きの動画を作成して共有</li><li>Google Driveによる記録のバックアップと復元</li><li>韓国特許第10-2612589号</li></ul><div class="answer-actions"><a class="mini-button" href="../rohd/index_ja.html">ストーリーを見る</a><a class="mini-button" href="https://apps.apple.com/app/id6446820972" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=life.fci.ROHD" target="_blank" rel="noopener">Google Play</a></div></div></div>
+              <summary><span class="question-number">02</span><div><p class="question">무언가를 100일 동안 꾸준히 해 본 적이 있으세요?</p><span class="tool-line"><span class="tool-purpose">더 나은 과정을 위한</span><span class="tool-name">ROHD : 100일의 기록</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
+              <div class="answer"><div class="answer-copy"><p>좋은 습관을 만들기 위한 100일,<br>우리 아기의 사랑스러운 100일,<br>반려식물의 성장, 여행의 추억, 가족의 일상까지…<br>간직하고 싶은 100일의 과정.<br>매일 한 장의 인증샷을 기록해 보세요.<br>100일 캘린더와 함께 30초 동영상으로 만들어 드립니다.</p><ul><li>하루 한 장의 인증샷 기록</li><li>100일 캘린더와 30초 영상 생성</li><li>구글드라이브로 백업과복원 가능</li><li>특허 제10-2612589호 등록</li></ul><div class="answer-actions"><a class="mini-button" href="../rohd/index_ko.html">이야기 보기</a><a class="mini-button" href="https://apps.apple.com/app/id6446820972" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=life.fci.ROHD" target="_blank" rel="noopener">Google Play</a></div></div><img class="app-icon" src="../images/Logo_ROHD.png" alt="ROHD 앱 아이콘"></div>
             </details>
           </article>
 
           <article class="question-card">
             <details>
-              <summary><img class="question-icon" src="../images/DREAM_trans.png" alt="DRE&amp;Mのアイコン"><div><p class="question">今日も、良い習慣を続けられましたか？</p><span class="tool-line"><span class="tool-purpose">より良い習慣</span><span class="tool-name">DRE&amp;M：習慣をつくる小さな記録</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
-              <div class="answer"><div class="answer-copy"><p>より豊かな毎日のために、4つの習慣を記録してみましょう。<br>日記、読書、運動、そして小さな習慣。<br>短いメモや写真を残すだけで、毎日の行動が少しずつ習慣になっていきます。</p><ul><li>日記・読書・運動・小さな習慣をひとつのアプリで記録</li><li>写真や短いメモで毎日の記録を作成</li><li>7日間・30日間の進捗を確認</li><li>スコア、グループ、ランキング、応援機能</li><li>Google Driveによる記録のバックアップと復元</li></ul><div class="answer-actions"><a class="mini-button" href="../dream/index_ja.html">ストーリーを見る</a><a class="mini-button" href="https://apps.apple.com/app/id6775331954" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=com.fciapp.dream" target="_blank" rel="noopener">Google Play</a></div></div></div>
+              <summary><span class="question-number">03</span><div><p class="question">오늘 하루도 좋은 습관을 지키며 지내셨나요?</p><span class="tool-line"><span class="tool-purpose">더 나은 습관을 위한</span><span class="tool-name">DRE&amp;M : 습관을 만드는 작은 기록</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
+              <div class="answer"><div class="answer-copy"><p>더 풍요로운 삶을 살기위한 4가지 습관을 시작해 보세요.<br>Diary, Reading, Exercise &amp; Microhabit<br>짧고 간단한 기록만으로 당신의 습관이 될 수 있습니다.</p><ul><li>일기, 독서, 운동, 작은 습관을 한 번에 기록</li><li>사진과 한 줄 기록 중심의 간단한 사용성</li><li>7일과 30일 단위의 지속, 랭킹, 응원 구조</li><li>구글드라이브로 백업과복원 가능</li></ul><div class="answer-actions"><a class="mini-button" href="../dream/index_ko.html">이야기 보기</a><a class="mini-button" href="https://apps.apple.com/app/id6775331954" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=com.fciapp.dream" target="_blank" rel="noopener">Google Play</a></div></div><img class="app-icon" src="../images/DREAM_trans.png" alt="DRE&amp;M 앱 아이콘"></div>
             </details>
           </article>
 
+          <article class="question-card">
+            <details>
+              <summary><span class="question-number">04</span><div><p class="question">우리 조직의 평가는 공정한가요?</p><span class="tool-line"><span class="tool-purpose">더 나은 조직을 위한</span><span class="tool-name">모두의평가</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
+              <div class="answer"><div class="answer-copy"><p>조직에는 성과가 중요합니다.<br>그러나 그 성과를 만들어가는 구성원에게는 공정한 평가가 중요합니다.</p><p>구성원들이 도움·적극성·근무효율을 기준으로 본인을 포함한 전체 구성원의 순위를 정하는 상대평가 서비스입니다.</p><ul><li>모두가 간편하게 평가하고</li><li>개별 응답은 공개하지 않으며</li><li>집단의 평균과 분포로 의미 있는 결과를 남깁니다.</li><li>데모코드 000000으로 평가그룹 만들기부터 순위 평가와 결과 그래프까지 직접 체험해 보세요.</li></ul><div class="answer-actions"><a class="mini-button" href="../peerstat/index_ko.html">이야기 보기</a><span class="status-badge">개발 중</span></div></div><img class="app-icon" src="../peerstat/images/peerstat-app-icon.png" alt="모두의평가 앱 아이콘"></div>
+            </details>
+          </article>
+
+          <article class="question-card">
+            <details>
+              <summary><span class="question-number">05</span><div><p class="question">남길 수 있는 이야기와, 찾고 싶은 이야기?</p><span class="tool-line"><span class="tool-purpose">더 나은 사회를 위한</span><span class="tool-name">파란 : 그분들의 이야기</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
+              <div class="answer"><div class="answer-copy"><p>우리는 모두 인생을 처음 살아갑니다.<br>하지만, 비슷한 길을 먼저 살아본 사람들은 많습니다.<br><br>시니어에게는 남길 수 있는 삶의 이야기가 있고,<br>주니어에게는 찾고 싶은 이야기가 있습니다.<br><br>파란은 시니어의 삶과 경험을 기록하고,<br>주니어가 그 안에서 자신의 삶에 도움이 될 경험을 찾아볼 수 있도록 돕는<br>세대공감 스토리 플랫폼입니다.</p><ul><li>삶의 선택과 경험을 키워드와 이야기로 기록</li><li>텍스트·음성·컴퓨터로 편하게 작성</li><li>하루 한 장의 사진과 짧은 글로 일상을 나눔</li><li>다른 사람들의 삶과 경험을 찾아보고 공감</li><li>특허 제10-2764519호 등록</li></ul><div class="answer-actions"><a class="mini-button" href="../paran/index.html">이야기 보기</a><a class="mini-button" href="https://apps.apple.com/app/id6760983914" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=com.fciapp.TMOStory" target="_blank" rel="noopener">Google Play</a></div></div><img class="app-icon" src="../images/Paran.jpg" alt="파란 앱 아이콘"></div>
+            </details>
+          </article>
+
+          <article class="question-card">
+            <details>
+              <summary><span class="question-number">06</span><div><p class="question">작가가 의도한 흐름을 생각하면서 책을 읽으시나요?</p><span class="tool-line"><span class="tool-purpose">더 나은 독서를 위한</span><span class="tool-name">ZioBook : Zoom-in&amp;out Book</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
+              <div class="answer"><div class="answer-copy"><p>작가는 큰 흐름을 만들고, 목차를 구성한 뒤 각각의 이야기를 이어 갑니다. 하지만 독자는 책을 읽을수록 전체 구조보다 눈앞의 내용에만 집중하기 쉽습니다. ZioBook은 지금 읽는 부분이 책 전체에서 어디에 놓여 있는지 계속 바라볼 수 있도록 돕습니다.</p><div class="answer-actions"><a class="mini-button" href="../ZioBook/index_ko.html">이야기 보기</a><span class="status-badge">개발 중</span></div></div><div aria-hidden="true"></div></div>
+            </details>
+          </article>
         </div>
       </section>
 
       <section class="manifesto" aria-labelledby="manifesto-title">
-        <div><p class="section-eyebrow" style="color:#bfcfff">WHY FCI</p><h2 id="manifesto-title">問いは続きます。</h2></div>
-        <div><p>FCIは、これまでにつくってきたツールだけにとどまりません。より良いもののために何が必要かを問い続け、新しい問いが生まれるたびに、新しいツールをつくっていきます。</p></div>
+        <div><p class="section-eyebrow" style="color:#bfcfff">WHY FCI</p><h2 id="manifesto-title">질문은 아직 끝나지 않았습니다.</h2></div>
+        <div><p>FCI는 지금 만들어진 제품에 머물지 않습니다. 더 나은 것을 위해 무엇이 필요한지 계속 묻고, 새로운 질문이 생길 때마다 새로운 도구를 만들어 갑니다.</p></div>
       </section>
     </main>
 
-    <footer class="footer"><p>FCI Inc. | Factory of Creative Imagination</p><p>Copyright FCI. All rights reserved. <a href="mailto:fci.window@gmail.com">fci.window@gmail.com</a></p></footer>
+    <footer class="footer"><p>(주)에프씨아이 FCI Inc. | 사업자등록번호 : 355-81-01970</p><p>Copyright FCI. All rights reserved. <a href="mailto:fci.window@gmail.com">fci.window@gmail.com</a></p></footer>
   </div>
   <script>
     (() => {
@@ -222,8 +241,8 @@
       let level = 0;
       try { level = Number(localStorage.getItem(storageKey) || 0); } catch (_) {}
       if (level !== 1) level = 0;
-      const labels = ['標準文字', '大きな文字'];
-      const apply = () => { document.body.classList.toggle('large-text-mode', level > 0); document.body.dataset.largeTextLevel = String(level); button.setAttribute('aria-pressed', String(level > 0)); button.setAttribute('aria-label', `現在の設定は${labels[level]}です。クリックすると文字サイズが変わります。`); button.textContent = labels[level]; };
+      const labels = ['기본 글씨', '큰 글씨 1'];
+      const apply = () => { document.body.classList.toggle('large-text-mode', level > 0); document.body.dataset.largeTextLevel = String(level); button.setAttribute('aria-pressed', String(level > 0)); button.setAttribute('aria-label', `현재 ${labels[level]}. 누르면 글씨 크기가 변경됩니다.`); button.textContent = labels[level]; };
       apply();
       button.addEventListener('click', () => { level = (level + 1) % 2; try { localStorage.setItem(storageKey, String(level)); } catch (_) {} apply(); });
     })();

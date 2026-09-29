@@ -3,932 +3,282 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="FCI는 일상을 위한 애플리케이션을 만들어 갑니다.">
+  <meta name="description" content="FCI는 더 나은 것을 위한 질문에서 새로운 도구를 만들어 갑니다.">
+  <meta property="og:title" content="FC1에서 시작한 새로운 도구">
+  <meta property="og:description" content="더 나은 것을 위한 질문에서 새로운 도구를 만들어 갑니다.">
   <meta property="og:image" content="https://fciapp.com/images/FCILOGOwithText.png">
-  <title>FCI | Factory of Creative Imagination</title>
+  <title>FCI | 질문에서 시작한 새로운 도구</title>
   <link rel="shortcut icon" href="../images/favicon_FCILOGO_W.ico" type="image/x-icon">
   <link rel="stylesheet" href="../assets/fci-large-text.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #202633;
-      --surface: #ffffff;
-      --surface-soft: #f1f4f9;
-      --text: #edf2f8;
-      --muted: #b6c0cf;
-      --line: #e1e6ef;
-      --line-strong: #cfd7e6;
+      --bg: #f7f9fc;
+      --surface: #fff;
+      --surface-soft: #eef4ff;
+      --text: #172033;
+      --muted: #667085;
+      --line: #dce5f1;
       --fci: #2f5bff;
-      --rab: #9a4f32;
-      --rohd: #244c86;
-      --dream: #6d5df6;
-      --paran: #2d9cdb;
-      --shadow: 0 20px 48px rgba(5, 10, 20, 0.24);
+      --fci-dark: #19398d;
+      --shadow: 0 18px 48px rgba(25, 57, 141, .10);
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       color: var(--text);
       background:
-        radial-gradient(circle at 0% 0%, rgba(63, 91, 145, 0.34), transparent 32rem),
-        radial-gradient(circle at 100% 8%, rgba(45, 76, 115, 0.3), transparent 28rem),
+        radial-gradient(circle at 0 0, rgba(47, 91, 255, .11), transparent 34rem),
+        radial-gradient(circle at 100% 20%, rgba(126, 87, 194, .08), transparent 28rem),
         var(--bg);
-      font-family: "Noto Sans KR", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.55;
+      font-family: "Noto Sans KR", system-ui, sans-serif;
+      line-height: 1.65;
       word-break: keep-all;
     }
-
-    a {
-      color: inherit;
-    }
-
-    .page {
-      width: min(1040px, 100%);
-      margin: 0 auto;
-      padding: 28px 18px 40px;
-    }
-
-    .hero {
-      display: grid;
-      gap: 12px;
-      padding: 14px 2px 22px;
-    }
-
-    .top-message {
-      color: #f4f7fb;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      width: fit-content;
-      padding: 0;
-    }
-
-    .brand-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-    }
-
-    .top-message {
-      margin: 0;
-      text-align: right;
-      font-size: clamp(1.08rem, 4.4vw, 1.52rem);
-      line-height: 1.24;
-      letter-spacing: 0;
-      font-weight: 800;
-    }
-
-    .brand img {
-      width: 158px;
-      height: auto;
-      display: block;
-    }
-
-    .hero-title {
-      margin: 0;
-      max-width: 680px;
-      font-size: clamp(1.52rem, 5.4vw, 2.25rem);
-      line-height: 1.22;
-      letter-spacing: 0;
-      font-weight: 800;
-    }
-
-    .hero-title span {
-      display: inline;
-    }
-
-    .hero-copy {
-      max-width: 620px;
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .trust-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 0;
-    }
-
-    .trust-row > * {
-      white-space: nowrap;
-    }
-
-    .trust-pill {
-      display: inline-flex;
-      align-items: center;
-      min-height: 30px;
-      padding: 0 11px;
-      border: 1px solid rgba(201, 215, 238, 0.42);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
-      color: #edf2f8;
-      font-size: 0.78rem;
-      font-weight: 800;
-    }
-
-    .hero-nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-top: 2px;
-    }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 8px;
-      flex: 0 0 auto;
-    }
-
-    .language-menu {
-      position: relative;
-    }
-
-    .language-button,
-    .language-link {
-      display: inline-flex;
-      align-items: center;
-      width: fit-content;
-      min-height: 30px;
-      padding: 0 11px;
-      border: 1px solid var(--line-strong);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.82);
-      color: #344054;
-      font-size: 0.78rem;
-      font-weight: 800;
-      text-decoration: none;
-      white-space: nowrap;
-      cursor: pointer;
-    }
-
-    .language-button:hover,
-    .language-button:focus-visible,
-    .language-link:hover {
-      border-color: var(--fci);
-      color: var(--fci);
-    }
-
-    .language-options {
-      position: absolute;
-      z-index: 5;
-      top: calc(100% + 6px);
-      right: 0;
-      display: grid;
-      min-width: 150px;
-      padding: 6px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: #fff;
-      box-shadow: var(--shadow);
-    }
-
-    .language-options[hidden] {
-      display: none;
-    }
-
-    .language-options a {
-      padding: 7px 9px;
-      border-radius: 7px;
-      color: #344054;
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .language-options a:hover,
-    .language-options a:focus-visible {
-      background: #f1f4f9;
-      color: var(--fci);
-    }
-
-    .app-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      margin-top: 8px;
-    }
-
-    .app-card {
-      --accent: var(--fci);
-      position: relative;
-      overflow: hidden;
-      min-height: 100%;
-      background: rgba(246, 248, 251, 0.96);
-      color: #1f2430;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      box-shadow: var(--shadow);
-    }
-
-    .app-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 5px;
-      background: var(--accent);
-    }
-
-    .app-card::after {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto 5px;
-      height: 86px;
-      background: linear-gradient(110deg, rgba(47, 91, 255, 0.07), transparent 52%);
-      background:
-        linear-gradient(110deg, color-mix(in srgb, var(--accent) 16%, transparent), transparent 52%),
-        radial-gradient(circle at 94% 0%, color-mix(in srgb, var(--accent) 13%, transparent), transparent 42%);
-      pointer-events: none;
-    }
-
-    .app-card.rab { --accent: var(--rab); }
-    .app-card.rohd { --accent: var(--rohd); }
-    .app-card.dream { --accent: var(--dream); }
-    .app-card.peerstat { --accent: #167c80; }
-    .app-card.paran { --accent: var(--paran); }
-
-    details {
-      position: relative;
-      z-index: 1;
-      height: 100%;
-    }
-
-    summary {
-      display: grid;
-      grid-template-columns: 68px 1fr;
-      gap: 15px;
-      align-items: center;
-      min-height: 142px;
-      padding: 20px 18px 18px 22px;
-      cursor: pointer;
-      list-style: none;
-    }
-
-    summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .app-icon {
-      width: 68px;
-      height: 68px;
-      border-radius: 17px;
-      object-fit: cover;
-      box-shadow: 0 12px 26px rgba(31, 36, 48, 0.14);
-      background: #fff;
-    }
-
-    .app-main {
-      min-width: 0;
-    }
-
-    .label-row {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 6px;
-      min-height: 24px;
-      margin-bottom: 6px;
-    }
-
-    .app-kicker {
-      display: inline-flex;
-      align-items: center;
-      min-height: 22px;
-      padding: 2px 8px;
-      border-radius: 999px;
-      background: #f1f4f9;
-      background: color-mix(in srgb, var(--accent) 12%, #ffffff);
-      color: var(--accent);
-      font-size: 0.72rem;
-      font-weight: 800;
-      white-space: nowrap;
-    }
-
-    .patent-chip {
-      display: inline-flex;
-      align-items: center;
-      min-height: 22px;
-      padding: 2px 8px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      border: 1px solid color-mix(in srgb, var(--accent) 25%, #ffffff);
-      background: #fff;
-      color: var(--accent);
-      font-size: 0.68rem;
-      font-weight: 800;
-      vertical-align: top;
-      white-space: nowrap;
-    }
-
-    .app-title {
-      margin: 0 0 5px;
-      font-size: 1.08rem;
-      line-height: 1.28;
-      letter-spacing: 0;
-      font-weight: 800;
-    }
-
-    .app-intro {
-      margin: 0;
-      color: #667085;
-      font-size: 0.89rem;
-      line-height: 1.55;
-    }
-
-    .more {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      margin-top: 10px;
-      color: var(--accent);
-      font-size: 0.82rem;
-      font-weight: 800;
-    }
-
-    .more::after {
-      content: "+";
-      font-size: 1rem;
-      line-height: 1;
-    }
-
-    details[open] .more::after {
-      content: "-";
-    }
-
-    .card-actions {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      margin-top: 10px;
-    }
-
-    .card-actions .more {
-      margin-top: 0;
-    }
-
-    .story-link {
-      display: inline-flex;
-      align-items: center;
-      color: var(--accent);
-      font-size: 0.82rem;
-      font-weight: 800;
-      line-height: 1.2;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .story-link:hover {
-      text-decoration: underline;
-    }
-
-    .font-size-toggle {
-      display: none;
-    }
-
-    .font-size-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 30px;
-      padding: 0 9px;
-      border: 1px solid rgba(201, 215, 238, 0.52);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
-      color: #edf2f8;
-      font: inherit;
-      font-size: 0.72rem;
-      font-weight: 800;
-      white-space: nowrap;
-      cursor: pointer;
-    }
-
-    .font-size-button[aria-pressed="true"] {
-      background: #edf2f8;
-      color: #202633;
-    }
-
-    @media (max-width: 800px) {
-      .hero-nav {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-        align-items: stretch;
-      }
-
-      .font-size-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .trust-row,
-    .header-actions {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 8px;
-      }
-
-      .header-actions {
-        align-items: flex-end;
-      }
-
-      .trust-row > *,
-      .header-actions > * {
-        min-height: 30px;
-      }
-    }
-
-    @media (max-width: 360px) {
-      .hero-nav {
-        grid-template-columns: minmax(0, 1fr) auto;
-        row-gap: 6px;
-      }
-
-      .font-size-toggle {
-        grid-column: 1 / -1;
-        grid-row: 1;
-      }
-
-      .trust-row,
-      .header-actions {
-        grid-row: 2;
-      }
-    }
-
-    @media (max-width: 800px) {
-      body.large-text-mode[data-large-text-level="1"] .app-title {
-        font-size: calc(1.08rem * var(--fci-large-text-scale-1));
-      }
-
-      body.large-text-mode[data-large-text-level="1"] .app-intro {
-        font-size: calc(0.89rem * var(--fci-large-text-scale-1));
-      }
-
-      body.large-text-mode[data-large-text-level="1"] .detail p {
-        font-size: calc(0.92rem * var(--fci-large-text-scale-1));
-      }
-
-      body.large-text-mode[data-large-text-level="1"] .feature-list li {
-        font-size: calc(0.88rem * var(--fci-large-text-scale-1));
-      }
-
-      body.large-text-mode[data-large-text-level="1"] .more,
-      body.large-text-mode[data-large-text-level="1"] .card-actions .story-link,
-      body.large-text-mode[data-large-text-level="1"] .header-actions .story-link {
-        font-size: calc(0.82rem * var(--fci-large-text-scale-1));
-      }
-
-      body.large-text-mode[data-large-text-level="2"] .app-title {
-        font-size: calc(1.08rem * var(--fci-large-text-scale-2));
-      }
-
-      body.large-text-mode[data-large-text-level="2"] .app-intro {
-        font-size: calc(0.89rem * var(--fci-large-text-scale-2));
-      }
-
-      body.large-text-mode[data-large-text-level="2"] .detail p {
-        font-size: calc(0.92rem * var(--fci-large-text-scale-2));
-      }
-
-      body.large-text-mode[data-large-text-level="2"] .feature-list li {
-        font-size: calc(0.88rem * var(--fci-large-text-scale-2));
-      }
-
-      body.large-text-mode[data-large-text-level="2"] .more,
-      body.large-text-mode[data-large-text-level="2"] .card-actions .story-link,
-      body.large-text-mode[data-large-text-level="2"] .header-actions .story-link {
-        font-size: calc(0.82rem * var(--fci-large-text-scale-2));
-      }
-    }
-
-    .header-actions .story-link {
-      color: #f4f7fb;
-    }
-
-    .detail {
-      padding: 0 18px 20px 22px;
-    }
-
-    .detail-inner {
-      display: grid;
-      gap: 14px;
-      padding-top: 16px;
-      border-top: 1px solid var(--line);
-    }
-
-    .detail p {
-      margin: 0;
-      color: #3d4555;
-      font-size: 0.92rem;
-    }
-
-    .feature-list {
-      display: grid;
-      gap: 7px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .feature-list li {
-      position: relative;
-      padding-left: 14px;
-      color: #3d4555;
-      font-size: 0.88rem;
-    }
-
-    .feature-list li::before {
-      content: "";
-      position: absolute;
-      top: 0.67em;
-      left: 0;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-
-    .store-group,
-    .link-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      align-items: center;
-    }
-
-    .store-row {
-      display: grid;
-      gap: 8px;
-    }
-
-    .store-label {
-      color: var(--muted);
-      font-size: 0.76rem;
-      font-weight: 700;
-    }
-
-    .store-badge img {
-      display: block;
-      height: 38px;
-      width: auto;
-    }
-
-    .text-link {
-      display: inline-flex;
-      align-items: center;
-      min-height: 34px;
-      padding: 0 12px;
-      border: 1px solid var(--line-strong);
-      border-radius: 999px;
-      background: #fff;
-      color: #344054;
-      font-size: 0.8rem;
-      font-weight: 800;
-      text-decoration: none;
-      transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-    }
-
-    .text-link:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      transform: translateY(-1px);
-    }
-
-    .footer {
-      margin-top: 28px;
-      padding: 22px 2px 0;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      text-align: center;
-      font-size: 0.78rem;
-    }
-
-    .footer a {
-      color: var(--text);
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .footer a:hover {
-      text-decoration: underline;
-    }
-
-    @media (min-width: 760px) {
-      .page {
-        padding: 48px 28px 50px;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        padding-bottom: 26px;
-      }
-
-      .brand-row {
-        grid-column: auto;
-      }
-
-      .hero-copy {
-        max-width: 390px;
-        text-align: right;
-      }
-
-      .app-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
-      }
-
-      summary {
-        min-height: 156px;
-        padding: 22px 20px 20px 24px;
-      }
-
-      .detail {
-        padding: 0 20px 22px 24px;
-      }
+    a { color: inherit; }
+    .page { width: min(1120px, 100%); margin: 0 auto; padding: 24px 18px 42px; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand { display: block; width: 118px; }
+    .brand img { display: block; width: 100%; height: auto; }
+    .top-actions { display: flex; align-items: center; gap: 8px; }
+    .top-link, .language-button, .font-size-button {
+      display: inline-flex; align-items: center; min-height: 34px; padding: 0 12px;
+      border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.78);
+      color: var(--muted); font: inherit; font-size: .78rem; font-weight: 700; text-decoration: none; cursor: pointer;
+    }
+    .top-link:hover, .language-button:hover, .font-size-button:hover { border-color: var(--fci); color: var(--fci); }
+    .language-menu { position: relative; }
+    .language-options { position: absolute; z-index: 5; top: calc(100% + 7px); right: 0; display: grid; min-width: 145px; padding: 6px; border: 1px solid var(--line); border-radius: 12px; background: #fff; box-shadow: var(--shadow); }
+    .language-options[hidden] { display: none; }
+    .language-options a { padding: 7px 9px; border-radius: 7px; color: var(--muted); font-size: .78rem; font-weight: 700; text-decoration: none; }
+    .language-options a:hover { background: var(--surface-soft); color: var(--fci); }
+    .hero { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(300px, .8fr); gap: 18px 28px; align-items: start; padding: 32px 0 28px; }
+    .hero-heading { min-width: 0; }
+    .eyebrow, .section-eyebrow { margin: 0 0 14px; color: var(--fci); font-size: .83rem; font-weight: 800; letter-spacing: .03em; }
+    h1 { max-width: 720px; margin: 0; color: var(--fci-dark); font-size: clamp(2rem, 4.6vw, 2.95rem); line-height: 1.2; letter-spacing: -.055em; }
+    .hero-emphasis { color: var(--fci); }
+    .hero-copy { grid-column: 1 / -1; margin: 0; color: #4b5870; font-size: .96rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; padding: 0 14px; border-radius: 999px; font-size: .8rem; font-weight: 800; text-decoration: none; }
+    .button-primary { color: #fff; background: var(--fci); box-shadow: 0 10px 20px rgba(47,91,255,.20); }
+    .button-secondary { border: 1px solid var(--line); color: var(--fci-dark); background: #fff; }
+    .hero-note { display: block; grid-column: 2; grid-row: 1; padding: 18px 20px; border: 1px solid rgba(47,91,255,.17); border-radius: 18px; background: rgba(255,255,255,.68); box-shadow: var(--shadow); text-decoration: none; transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
+    .hero-note:hover, .hero-note:focus-visible { border-color: rgba(47,91,255,.45); box-shadow: 0 20px 46px rgba(25,57,141,.14); transform: translateY(-2px); }
+    .hero-note strong { display: block; color: var(--fci-dark); font-size: .98rem; }
+    .hero-note p { margin: 7px 0 0; color: var(--muted); font-size: .83rem; }
+    .hero-note-link { display: flex; justify-content: flex-end; margin-top: 12px; color: var(--fci); font-size: .76rem; font-weight: 800; }
+    .section { padding: 8px 0 22px; }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 14px; }
+    h2 { margin: 0; color: var(--fci-dark); font-size: clamp(1.3rem, 2.6vw, 1.85rem); line-height: 1.25; letter-spacing: -.04em; }
+    .section-intro { max-width: 410px; margin: 0; color: var(--muted); font-size: .82rem; }
+    .question-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+    details { overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: rgba(255,255,255,.84); box-shadow: 0 6px 16px rgba(25,57,141,.03); }
+    details[open] { border-color: rgba(47,91,255,.42); background: #fff; box-shadow: var(--shadow); }
+    summary { display: grid; grid-template-columns: 34px minmax(0,1fr) 28px; gap: 10px; align-items: center; min-height: 76px; padding: 10px 13px; cursor: pointer; list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    summary:hover { background: rgba(47,91,255,.025); }
+    .question-number { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: var(--surface-soft); color: var(--fci); font-size: .72rem; font-weight: 800; }
+    details[open] .question-number { color: #fff; background: var(--fci); }
+    .question-list summary { grid-template-columns: 62px minmax(0,1fr) 28px; }
+    .question-icon { width: 42px; height: 42px; border-radius: 11px; object-fit: cover; box-shadow: 0 6px 12px rgba(25,57,141,.12); }
+    .ziobook-icon { display: grid; place-items: center; padding: 3px; color: #fff; background: linear-gradient(145deg, #3949ab, #7e57c2); font-size: .62rem; font-weight: 800; line-height: 1.05; letter-spacing: -.04em; text-align: center; }
+    .teaser-card { overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: rgba(255,255,255,.84); box-shadow: 0 6px 16px rgba(25,57,141,.03); }
+    .teaser-card-inner { display: grid; grid-template-columns: 62px minmax(0,1fr); gap: 10px; align-items: center; min-height: 76px; padding: 10px 13px; }
+    .question { margin: 0; color: var(--text); font-size: 1.12rem; line-height: 1.32; letter-spacing: -.025em; }
+    .tool-line { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 .28em; min-width: 0; margin-top: 3px; }
+    .tool-purpose { color: var(--fci-dark); font-size: .72rem; font-weight: 700; }
+    .tool-name { color: var(--fci); font-size: .74rem; font-weight: 800; }
+    .toggle { width: 28px; height: 28px; border: 1px solid var(--line); border-radius: 50%; color: var(--fci); font-size: 1.15rem; line-height: 25px; text-align: center; }
+    details[open] .toggle { color: #fff; border-color: var(--fci); background: var(--fci); transform: rotate(45deg); }
+    .answer { display: grid; grid-template-columns: minmax(0,1fr) 84px; gap: 16px; align-items: center; padding: 0 16px 16px 56px; border-top: 1px solid var(--line); }
+    .answer-copy { padding-top: 14px; }
+    .answer-copy p { margin: 0; color: #4b5870; font-size: .82rem; }
+    .answer-copy ul { display: grid; gap: 3px; margin: 9px 0 0; padding-left: 16px; color: #4b5870; font-size: .76rem; }
+    .answer-copy li::marker { color: var(--fci); }
+    .app-icon { width: 76px; height: 76px; border-radius: 18px; object-fit: cover; box-shadow: 0 10px 18px rgba(25,57,141,.13); }
+    .answer-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 11px; }
+    .mini-button { display: inline-flex; align-items: center; min-height: 30px; padding: 0 9px; border: 1px solid var(--line); border-radius: 999px; color: var(--fci-dark); background: #fff; font-size: .7rem; font-weight: 800; text-decoration: none; }
+    .mini-button:hover { border-color: var(--fci); color: var(--fci); }
+    .status-badge { display: inline-flex; align-items: center; min-height: 30px; padding: 0 9px; border: 1px solid #dcd6ff; border-radius: 999px; color: #6d5df6; background: #f4f1ff; font-size: .7rem; font-weight: 800; }
+    .developing .answer-copy p { color: #596073; }
+    .manifesto { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 24px; align-items: center; margin: 30px 0 18px; padding: 20px 24px; border-radius: 18px; color: #fff; background: linear-gradient(125deg, #19398d, #2f5bff); box-shadow: 0 14px 30px rgba(25,57,141,.16); }
+    .manifesto h2 { color: #fff; }
+    .manifesto p { margin: 0; color: rgba(255,255,255,.82); font-size: .82rem; }
+    .manifesto .button-secondary { color: #fff; border-color: rgba(255,255,255,.4); background: rgba(255,255,255,.08); }
+    .footer { display: flex; justify-content: space-between; gap: 18px; margin-top: 28px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted); font-size: .72rem; }
+    .footer p { margin: 0; }
+    .footer a { color: var(--fci-dark); font-weight: 700; text-decoration: none; }
+    .large-text-button[aria-pressed="true"] { color: #fff; border-color: var(--fci); background: var(--fci); }
+    body.large-text-mode[data-large-text-level="1"] { --fci-text-scale: var(--fci-large-text-scale-1); }
+    body.large-text-mode .hero-copy,
+    body.large-text-mode .question { font-size: calc(1em * var(--fci-text-scale)); }
+    body.large-text-mode .hero-note { min-height: 0; padding: 18px 24px; }
+    body.large-text-mode .hero-note strong { font-size: 1.12rem; }
+    body.large-text-mode .hero-note p { font-size: .9rem; }
+    body.large-text-mode .tool-purpose { font-size: .84rem; }
+    body.large-text-mode .tool-name { font-size: .92rem; }
+    body.large-text-mode .answer-copy p,
+    body.large-text-mode .answer-copy li,
+    body.large-text-mode .mini-button,
+    body.large-text-mode .hero-note-link,
+    body.large-text-mode .footer { font-size: calc(1em * var(--fci-text-scale)); }
+    body.large-text-mode .hero-note-link { font-size: .84rem; }
+    @media (min-width: 761px) {
+      body.large-text-mode .hero-note { width: calc(100% + 40px); margin-left: -20px; }
+    }
+    @media (max-width: 760px) {
+      .page { padding-top: 18px; }
+      .top-link { display: none; }
+      .hero { grid-template-columns: 1fr; gap: 18px; padding: 52px 0 44px; }
+      .hero-copy { grid-column: auto; }
+      .hero-note { grid-column: auto; grid-row: auto; }
+      .hero-note { max-width: 520px; }
+      .question-list { grid-template-columns: 1fr; }
+      .section-heading { display: block; }
+      .section-intro { margin-top: 10px; }
+      .answer { grid-template-columns: 1fr; gap: 12px; padding-left: 70px; }
+      .app-icon { width: 72px; height: 72px; }
+      .footer { display: grid; }
+    }
+    @media (max-width: 460px) {
+      .brand { width: 102px; }
+      .font-size-button { padding: 0 9px; }
+      .hero { padding-top: 48px; }
+      h1 { font-size: clamp(2.3rem, 11vw, 3rem); }
+      summary { grid-template-columns: 62px minmax(0,1fr) 28px; gap: 10px; padding: 13px 12px; }
+      .question-number { width: 34px; height: 34px; font-size: .72rem; }
+      .answer { padding-left: 56px; padding-right: 16px; }
+      .manifesto { grid-template-columns: 1fr; margin-top: 44px; padding: 24px; }
     }
   </style>
 </head>
 <body>
   <div class="page">
-    <header class="hero">
-      <div class="brand-row">
-        <div class="brand" aria-label="FCI">
-          <img src="../images/FCILOGOwithTextWhite.png" alt="FCI Factory of Creative Imagination">
-        </div>
-        <p class="top-message">일상을 위한 애플리케이션을<br>만들어 갑니다.</p>
-      </div>
-      <div class="hero-nav">
-        <div class="trust-row" aria-label="FCI 서비스 특징">
-          <span class="trust-pill">특허 기반 서비스</span>
-          <span class="trust-pill">모바일 앱 포트폴리오</span>
-        </div>
-        <div class="font-size-toggle">
-          <button class="font-size-button" type="button" aria-label="글씨 크기 변경" aria-pressed="false">기본 글씨</button>
-        </div>
-        <div class="header-actions">
-          <div class="language-menu">
-            <button class="language-button" type="button" aria-expanded="false" aria-controls="language-options-ko">Language</button>
-            <div class="language-options" id="language-options-ko" hidden>
-              <a href="./index_ko.html" lang="ko" onclick="localStorage.setItem('fci-language', 'ko')">한국어</a>
-              <a href="./index_en.html" lang="en" onclick="localStorage.setItem('fci-language', 'en')">English</a>
-              <a href="./index_ja.html" lang="ja" onclick="localStorage.setItem('fci-language', 'ja')">日本語</a>
-              <a href="./index_zh-CN.html" lang="zh-CN" onclick="localStorage.setItem('fci-language', 'zh-CN')">简体中文</a>
-              <a href="./index_zh-TW.html" lang="zh-TW" onclick="localStorage.setItem('fci-language', 'zh-TW')">繁體中文</a>
-              <a href="./index_es.html" lang="es" onclick="localStorage.setItem('fci-language', 'es')">Español</a>
-            </div>
+    <header class="topbar">
+      <a class="brand" href="./index_new.html" aria-label="FCI 홈"><img src="../images/FCILOGOwithText.png" alt="FCI Factory of Creative Imagination"></a>
+      <div class="top-actions">
+        <a class="top-link" href="../fci/index_ko.html">FCI 이야기 보기</a>
+        <button class="font-size-button large-text-button" type="button" aria-pressed="false">큰글씨</button>
+        <div class="language-menu">
+          <button class="language-button" type="button" aria-expanded="false" aria-controls="language-options">Language</button>
+          <div class="language-options" id="language-options" hidden>
+            <a href="./index_ko.html" lang="ko">한국어</a>
+            <a href="./index_en.html" lang="en">English</a>
+            <a href="./index_ja.html" lang="ja">日本語</a>
+            <a href="./index_zh-CN.html" lang="zh-CN">简体中文</a>
+            <a href="./index_zh-TW.html" lang="zh-TW">繁體中文</a>
+            <a href="./index_es.html" lang="es">Español</a>
           </div>
-          <a class="story-link" href="../fci/index_ko.html">FCI스토리 보기 &gt;</a>
         </div>
       </div>
     </header>
 
-    <main class="app-grid" aria-label="FCI 애플리케이션">
-      <article class="app-card rab">
-        <details>
-          <summary>
-            <img class="app-icon" src="../images/Logo_RAB.png" alt="성경낭독녹음 아이콘">
-            <div class="app-main">
-              <div class="label-row">
-                <span class="app-kicker">Faith</span>
-                <span class="patent-chip">Patent</span>
-              </div>
-              <h2 class="app-title">성경낭독녹음</h2>
-              <p class="app-intro">성경은 원래 소리 내어 읽는 것이 아니었을까요?</p>
-              <div class="card-actions">
-                <span class="more">자세히 보기</span>
-                <a class="story-link" href="../rab/index_ko.html" onclick="event.stopPropagation()">스토리 보기 &gt;</a>
-              </div>
-            </div>
-          </summary>
-          <div class="detail">
-            <div class="detail-inner">
-              <p>한 절 한 절 손으로 집어가면서 "삐빅" 소리에 맞추어 내용에 집중해 보세요. 당신의 목소리로 된 성경 낭독 파일을 남겨 드립니다.</p>
-              <ul class="feature-list">
-                <li>개역개정, 개역한글, 우리말 성경과 4개언어 버전 제공</li>
-                <li>낭독 녹음 파일 저장 및 반복 청취</li>
-                <li>특허 제10-2322160호 기반 서비스</li>
-                <li>GOOD TV(기독교복음방송)의 바이블애플에 탑재</li>
-                <li>2026.08 v2.0.0으로 새롭게 개정</li>
-                <li>구글드라이브로 백업과복원 가능</li>
-              </ul>
-              <div class="store-row">
-                <div class="store-group">
-                  <a class="store-badge" href="https://apps.apple.com/app/id1554443046" target="_blank" rel="noopener"><img src="../images/Download_apple.png" alt="App Store에서 다운로드"></a>
-                  <a class="store-badge" href="https://play.google.com/store/apps/details?id=life.fci.recordaloudbible" target="_blank" rel="noopener"><img src="../images/Download_google.png" alt="Google Play에서 다운로드"></a>
-                </div>
-              </div>
-              <div class="link-group">
-                <a class="text-link" href="../rab/index_ko.html">스토리 보기</a>
-                <a class="text-link" href="../documents/RAB_Privacy_Policy_KR.html">개인정보처리방침</a>
-                <a class="text-link" href="../documents/RAB_TermsandConditions_KR.html">이용약관</a>
-              </div>
-            </div>
-          </div>
-        </details>
-      </article>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-heading">
+          <h1 id="hero-title">&quot;더 나은&quot;을 위한 질문에서<br>새로운 도구를 만듭니다.</h1>
+        </div>
+        <p class="hero-copy">FCI는 아직 충분하지 않은 일상을 바라보며 질문합니다. 아래의 도구들도 서로 다른 질문에서 시작되었습니다.</p>
+        <a class="hero-note" href="../fci/index_ko.html" aria-label="FCI 이야기 보기">
+          <p>“왜?”와 “어떻게?”를 반복해서 묻고, 아직 세상에 없던 방법을 실제로 사용할 수 있는 도구로 만들어 갑니다.</p>
+          <span class="hero-note-link">FCI 이야기 보기 →</span>
+        </a>
+      </section>
 
-      <article class="app-card rohd">
-        <details>
-          <summary>
-            <img class="app-icon" src="../images/Logo_ROHD.png" alt="ROHD 아이콘">
-            <div class="app-main">
-              <div class="label-row">
-                <span class="app-kicker">Record</span>
-                <span class="patent-chip">Patent</span>
-              </div>
-              <h2 class="app-title">ROHD : 100일의 기록</h2>
-              <p class="app-intro">무언가 100일을 꾸준히 해 보신 적이 있으세요?</p>
-              <div class="card-actions">
-                <span class="more">자세히 보기</span>
-                <a class="story-link" href="../rohd/index_ko.html" onclick="event.stopPropagation()">스토리 보기 &gt;</a>
-              </div>
-            </div>
-          </summary>
-          <div class="detail">
-            <div class="detail-inner">
-              <p>좋은 습관을 만들기 위한 100일,<br>우리 아기의 사랑스러운 100일,<br>반려식물의 성장, 여행의 추억, 가족의 일상까지…<br>간직하고 싶은 100일의 과정.<br>매일 한 장의 인증샷을 기록해 보세요.<br>100일 캘린더와 함께 30초 동영상으로 만들어 드립니다.</p>
-              <ul class="feature-list">
-                <li>하루 한 장의 인증샷 기록</li>
-                <li>100일 캘린더와 30초 영상 생성</li>
-                <li>구글드라이브로 백업과복원 가능</li>
-                <li>특허 제10-2612589호 기반 서비스</li>
-              </ul>
-              <div class="store-group">
-                <a class="store-badge" href="https://apps.apple.com/app/id6446820972" target="_blank" rel="noopener"><img src="../images/Download_apple.png" alt="App Store에서 다운로드"></a>
-                <a class="store-badge" href="https://play.google.com/store/apps/details?id=life.fci.ROHD" target="_blank" rel="noopener"><img src="../images/Download_google.png" alt="Google Play에서 다운로드"></a>
-              </div>
-              <div class="link-group">
-                <a class="text-link" href="../rohd/index_ko.html">스토리 보기</a>
-                <a class="text-link" href="../documents/ROHD_Privacy_Policy_KR.html">개인정보처리방침</a>
-                <a class="text-link" href="../documents/ROHD_TermsandConditions_KR.html">이용약관</a>
-              </div>
-            </div>
-          </div>
-        </details>
-      </article>
+      <section class="section" id="questions" aria-labelledby="questions-title">
+        <h2 id="questions-title" class="visually-hidden">질문에서 만들어진 도구들</h2>
 
-      <article class="app-card dream">
-        <details>
-          <summary>
-            <img class="app-icon" src="../images/DREAM_trans.png" alt="DRE&M 아이콘">
-            <div class="app-main">
-              <div class="label-row">
-                <span class="app-kicker">Habit</span>
-              </div>
-              <h2 class="app-title">DRE&amp;M : 습관을 만드는 작은 기록</h2>
-              <p class="app-intro">오늘 하루도 좋은 습관을 지키며 지내셨나요?</p>
-              <div class="card-actions">
-                <span class="more">자세히 보기</span>
-                <a class="story-link" href="../dream/index_ko.html" onclick="event.stopPropagation()">스토리 보기 &gt;</a>
-              </div>
-            </div>
-          </summary>
-          <div class="detail">
-            <div class="detail-inner">
-              <p>더 풍요로운 삶을 살기위한 4가지 습관을 시작해 보세요.<br>Diary, Reading, Exercise &amp; Microhabit<br>짧고 간단한 기록만으로 당신의 습관이 될 수 있습니다.</p>
-              <ul class="feature-list">
-                <li>일기, 독서, 운동, 작은 습관을 한 번에 기록</li>
-                <li>사진과 한 줄 기록 중심의 간단한 사용성</li>
-                <li>7일과 30일 단위의 지속, 랭킹, 응원 구조</li>
-                <li>구글드라이브로 백업과복원 가능</li>
-              </ul>
-              <div class="store-group">
-                <a class="store-badge" href="https://apps.apple.com/app/id6775331954" target="_blank" rel="noopener"><img src="../images/Download_apple.png" alt="App Store에서 다운로드"></a>
-                <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.fciapp.dream" target="_blank" rel="noopener"><img src="../images/Download_google.png" alt="Google Play에서 다운로드"></a>
-              </div>
-              <div class="link-group">
-                <a class="text-link" href="../dream/index_ko.html">스토리 보기</a>
-                <a class="text-link" href="../documents/DREAM_Privacy_Policy_KR.html">개인정보처리방침</a>
-                <a class="text-link" href="../documents/DREAM_TermsandConditions_KR.html">이용약관</a>
-              </div>
-            </div>
-          </div>
-        </details>
-      </article>
+        <div class="question-list">
+          <article class="question-card">
+            <details>
+              <summary><img class="question-icon" src="../images/Logo_RAB.png" alt="성경낭독녹음 앱 아이콘"><div><p class="question">성경은 원래 소리 내어 읽는 것이 아니었을까요?</p><span class="tool-line"><span class="tool-purpose">더 나은 신앙을 위한</span><span class="tool-name">성경낭독녹음</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
+              <div class="answer"><div class="answer-copy"><p>한 절 한 절 손으로 집어가면서 &quot;삐빅&quot; 소리에 맞추어 내용에 집중해 보세요. 당신의 목소리로 된 성경 낭독 파일을 남겨 드립니다.</p><ul><li>개역개정, 개역한글, 우리말 성경과 4개언어 버전 제공</li><li>낭독 녹음 파일 저장 및 반복 청취</li><li>특허 제10-2322160호 등록</li><li>GOOD TV(기독교복음방송)의 바이블앱에 탑재</li><li>2026.08 v2.0.0으로 새롭게 개정</li><li>구글드라이브로 백업과복원 가능</li></ul><div class="answer-actions"><a class="mini-button" href="../rab/index_ko.html">이야기 보기</a><a class="mini-button" href="https://apps.apple.com/app/id1554443046" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=life.fci.recordaloudbible" target="_blank" rel="noopener">Google Play</a></div></div></div>
+            </details>
+          </article>
 
-      <article class="app-card paran">
-        <details>
-          <summary>
-            <img class="app-icon" src="../images/Paran.jpg" alt="파란 아이콘">
-            <div class="app-main">
-              <div class="label-row">
-                <span class="app-kicker">Cross-generation</span>
-                <span class="patent-chip">Patent</span>
-              </div>
-              <h2 class="app-title">파란 : 그분들의 이야기</h2>
-              <p class="app-intro">남길 수 있는 이야기, 찾고 싶은 이야기</p>
-              <div class="card-actions">
-                <span class="more">자세히 보기</span>
-                <a class="story-link" href="../paran/index.html" onclick="event.stopPropagation()">스토리 보기 &gt;</a>
-              </div>
+          <article class="question-card">
+            <details>
+              <summary><img class="question-icon" src="../images/Logo_ROHD.png" alt="ROHD 앱 아이콘"><div><p class="question">무언가를 100일 동안 꾸준히 해 본 적이 있으세요?</p><span class="tool-line"><span class="tool-purpose">더 나은 과정을 위한</span><span class="tool-name">ROHD : 100일의 기록</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
+              <div class="answer"><div class="answer-copy"><p>좋은 습관을 만들기 위한 100일,<br>우리 아기의 사랑스러운 100일,<br>반려식물의 성장, 여행의 추억, 가족의 일상까지…<br>간직하고 싶은 100일의 과정.<br>매일 한 장의 인증샷을 기록해 보세요.<br>100일 캘린더와 함께 30초 동영상으로 만들어 드립니다.</p><ul><li>하루 한 장의 인증샷 기록</li><li>100일 캘린더와 30초 영상 생성</li><li>구글드라이브로 백업과복원 가능</li><li>특허 제10-2612589호 등록</li></ul><div class="answer-actions"><a class="mini-button" href="../rohd/index_ko.html">이야기 보기</a><a class="mini-button" href="https://apps.apple.com/app/id6446820972" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=life.fci.ROHD" target="_blank" rel="noopener">Google Play</a></div></div></div>
+            </details>
+          </article>
+
+          <article class="question-card">
+            <details>
+              <summary><img class="question-icon" src="../images/DREAM_trans.png" alt="DRE&amp;M 앱 아이콘"><div><p class="question">오늘 하루도 좋은 습관을 지키며 지내셨나요?</p><span class="tool-line"><span class="tool-purpose">더 나은 습관을 위한</span><span class="tool-name">DRE&amp;M : 습관을 만드는 작은 기록</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
+              <div class="answer"><div class="answer-copy"><p>더 풍요로운 삶을 살기위한 4가지 습관을 시작해 보세요.<br>Diary, Reading, Exercise &amp; Microhabit<br>짧고 간단한 기록만으로 당신의 습관이 될 수 있습니다.</p><ul><li>일기, 독서, 운동, 작은 습관을 한 번에 기록</li><li>사진과 한 줄 기록 중심의 간단한 사용성</li><li>7일과 30일 단위의 지속, 랭킹, 응원 구조</li><li>구글드라이브로 백업과복원 가능</li></ul><div class="answer-actions"><a class="mini-button" href="../dream/index_ko.html">이야기 보기</a><a class="mini-button" href="https://apps.apple.com/app/id6775331954" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=com.fciapp.dream" target="_blank" rel="noopener">Google Play</a></div></div></div>
+            </details>
+          </article>
+
+          <article class="question-card">
+            <details>
+              <summary><img class="question-icon" src="../images/Paran.jpg" alt="파란 앱 아이콘"><div><p class="question">남길 수 있는 이야기와, 찾고 싶은 이야기?</p><span class="tool-line"><span class="tool-purpose">더 나은 사회를 위한</span><span class="tool-name">파란 : 그분들의 이야기</span></span></div><span class="toggle" aria-hidden="true">+</span></summary>
+              <div class="answer"><div class="answer-copy"><p>우리는 모두 인생을 처음 살아갑니다.<br>하지만, 비슷한 길을 먼저 살아본 사람들은 많습니다.<br><br>시니어에게는 남길 수 있는 삶의 이야기가 있고,<br>주니어에게는 찾고 싶은 이야기가 있습니다.<br><br>파란은 시니어의 삶과 경험을 기록하고, 주니어가 그 안에서 자신의 삶에 도움이 될 경험을 찾아볼 수 있도록 돕는 세대공감 스토리 플랫폼입니다.</p><ul><li>삶의 선택과 경험을 키워드와 이야기로 기록</li><li>텍스트·음성·컴퓨터로 편하게 작성</li><li>하루 한 장의 사진과 짧은 글로 일상을 나눔</li><li>다른 사람들의 삶과 경험을 찾아보고 공감</li><li>특허 제10-2764519호 등록</li></ul><div class="answer-actions"><a class="mini-button" href="../paran/index.html">이야기 보기</a><a class="mini-button" href="https://apps.apple.com/app/id6760983914" target="_blank" rel="noopener">App Store</a><a class="mini-button" href="https://play.google.com/store/apps/details?id=com.fciapp.TMOStory" target="_blank" rel="noopener">Google Play</a></div></div></div>
+            </details>
+          </article>
+
+          <article class="teaser-card" aria-label="모두의평가">
+            <div class="teaser-card-inner">
+              <img class="question-icon" src="../peerstat/images/peerstat-app-icon.png" alt="모두의평가 앱 아이콘">
+              <div><p class="question">우리 조직의 평가는 공정한가요?</p><span class="tool-line"><span class="tool-purpose">더 나은 조직을 위한</span><span class="tool-name">모두의평가</span></span></div>
             </div>
-          </summary>
-          <div class="detail">
-            <div class="detail-inner">
-              <p>60세가 넘으셨나요?<br>당신의 '파란'만장했던 삶의 이야기는 사라지면 안 됩니다. 세대는 달라져도 당신의 경험은 이어져야 합니다. 그리고, 행복의 '파란'새인 오늘을 나누어 보세요.<br><br>60세가 아직 안 되셨나요?<br>먼저 가보신 분들의 경험 속에서 나만의 '파란' 신호등을 찾아보세요.</p>
-              <ul class="feature-list">
-                <li>삶과 경험을 키워드와 짧은 글로 정리하는 기록</li>
-                <li>하루 한 장의 사진으로 나누는 일상의 행복</li>
-                <li>가족과 세대가 함께 읽고 안부를 나누는 공간</li>
-                <li>특허 제10-2764519호 기반 서비스</li>
-              </ul>
-              <div class="store-group">
-                <a class="store-badge" href="https://apps.apple.com/app/id6760983914" target="_blank" rel="noopener"><img src="../images/Download_apple.png" alt="App Store에서 다운로드"></a>
-                <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.fciapp.TMOStory" target="_blank" rel="noopener"><img src="../images/Download_google.png" alt="Google Play에서 다운로드"></a>
-              </div>
-              <div class="link-group">
-                <a class="text-link" href="../paran/index.html">스토리 보기</a>
-                <a class="text-link" href="../documents/PARAN_Privacy_Policy_KR.html">개인정보처리방침</a>
-                <a class="text-link" href="../documents/PARAN_TermsandConditions_KR.html">이용약관</a>
-              </div>
+          </article>
+
+          <article class="teaser-card" aria-label="ZioBook">
+            <div class="teaser-card-inner">
+              <div class="question-icon ziobook-icon" aria-label="ZioBook 앱 아이콘">Zio<br>Book</div>
+              <div><p class="question">작가가 의도한 흐름을 생각하면서 책을 읽으시나요?</p><span class="tool-line"><span class="tool-purpose">더 나은 독서를 위한</span><span class="tool-name">ZioBook : Zoom-in&amp;out Book</span></span></div>
             </div>
-          </div>
-        </details>
-      </article>
+          </article>
+
+        </div>
+      </section>
+
+      <section class="manifesto" aria-labelledby="manifesto-title">
+        <div><p class="section-eyebrow" style="color:#bfcfff">WHY FCI</p><h2 id="manifesto-title">질문은 아직 끝나지 않았습니다.</h2></div>
+        <div><p>FCI는 이미 만든 도구에 머물지 않습니다. 더 나은 것을 위해 무엇이 필요한지 계속 묻고, 새로운 질문이 생길 때마다 새로운 도구를 만들어 갑니다.</p></div>
+      </section>
     </main>
 
-    <footer class="footer">
-      <p>(주)에프씨아이 FCI Inc. | 사업자등록번호 : 355-81-01970</p>
-      <p>Copyright FCI. All rights reserved. <a href="mailto:fci.window@gmail.com">fci.window@gmail.com</a></p>
-    </footer>
+    <footer class="footer"><p>(주)에프씨아이 FCI Inc. | 사업자등록번호 : 355-81-01970</p><p>Copyright FCI. All rights reserved. <a href="mailto:fci.window@gmail.com">fci.window@gmail.com</a></p></footer>
   </div>
   <script>
     (() => {
-      const button = document.querySelector('.font-size-button');
-      if (!button) return;
-
+      const button = document.querySelector('.large-text-button');
       const storageKey = 'fci-large-text-level';
-      const labels = ['기본 글씨', '큰 글씨 1', '큰 글씨 2'];
       let level = 0;
-
-      try {
-        const storedValue = localStorage.getItem(storageKey);
-        if (storedValue !== null) {
-          const storedLevel = Number(storedValue);
-          if (Number.isInteger(storedLevel) && storedLevel >= 0 && storedLevel <= 2) {
-            level = storedLevel;
-          }
-        } else if (localStorage.getItem('fci-large-text') === 'true') {
-          level = 1;
-        }
-      } catch (_) {}
-
-      const applyLargeText = () => {
-        document.body.classList.toggle('large-text-mode', level > 0);
-        document.body.dataset.largeTextLevel = String(level);
-        button.setAttribute('aria-pressed', String(level > 0));
-        button.setAttribute('aria-label', `현재 ${labels[level]}. 누르면 글씨 크기가 변경됩니다.`);
-        button.textContent = labels[level];
-      };
-
-      applyLargeText();
-
-      button.addEventListener('click', () => {
-        level = (level + 1) % labels.length;
-        try {
-          localStorage.setItem(storageKey, String(level));
-        } catch (_) {}
-        applyLargeText();
-      });
+      try { level = Number(localStorage.getItem(storageKey) || 0); } catch (_) {}
+      if (level !== 1) level = 0;
+      const currentLabels = ['기본글씨', '큰글씨'];
+      const actionLabels = ['큰글씨', '기본글씨'];
+      const apply = () => { document.body.classList.toggle('large-text-mode', level > 0); document.body.dataset.largeTextLevel = String(level); button.setAttribute('aria-pressed', String(level > 0)); button.setAttribute('aria-label', `현재 ${currentLabels[level]}입니다. 누르면 ${actionLabels[level]}로 변경됩니다.`); button.textContent = actionLabels[level]; };
+      apply();
+      button.addEventListener('click', () => { level = (level + 1) % 2; try { localStorage.setItem(storageKey, String(level)); } catch (_) {} apply(); });
     })();
-
     (() => {
-      const menu = document.querySelector('.language-menu');
-      const button = menu?.querySelector('.language-button');
-      const options = menu?.querySelector('.language-options');
-      if (!button || !options) return;
+      const menu = document.querySelector('.language-menu'); const button = menu.querySelector('.language-button'); const options = menu.querySelector('.language-options');
+      button.addEventListener('click', () => { const open = button.getAttribute('aria-expanded') === 'true'; button.setAttribute('aria-expanded', String(!open)); options.hidden = open; });
+      document.addEventListener('click', event => { if (!menu.contains(event.target)) { button.setAttribute('aria-expanded', 'false'); options.hidden = true; } });
+    })();
+    (() => {
+      const details = [...document.querySelectorAll('.question-list details')];
+      let syncing = false;
 
-      button.addEventListener('click', () => {
-        const isOpen = button.getAttribute('aria-expanded') === 'true';
-        button.setAttribute('aria-expanded', String(!isOpen));
-        options.hidden = isOpen;
-      });
+      details.forEach((detail, index) => {
+        detail.addEventListener('toggle', () => {
+          if (syncing || !window.matchMedia('(min-width: 761px)').matches) return;
 
-      document.addEventListener('click', (event) => {
-        if (!menu.contains(event.target)) {
-          button.setAttribute('aria-expanded', 'false');
-          options.hidden = true;
-        }
+          const pair = details[index % 2 === 0 ? index + 1 : index - 1];
+          if (!pair) return;
+
+          syncing = true;
+          pair.open = detail.open;
+          syncing = false;
+        });
       });
     })();
   </script>
