@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="모두의평가: 더 공정한 평가를 위한 새로운 방법">
+  <meta name="robots" content="noindex, nofollow, noarchive">
   <title>모두의평가 : 더 공정한 평가를 위한 새로운 방법</title>
   <link rel="shortcut icon" href="../images/favicon_FCILOGO_W.ico" type="image/x-icon">
   <link rel="stylesheet" href="../assets/fci-large-text.css">
@@ -62,7 +63,7 @@
     .steps { display:grid; gap:10px; margin:18px 0 0; padding:0; list-style:none; }
     .steps li { display:grid; grid-template-columns:34px 1fr; gap:10px; align-items:start; }
     .step-no { display:grid; place-items:center; width:28px; height:28px; border-radius:50%; background:var(--soft); color:var(--dark); font-size:.8rem; font-weight:800; }
-    .steps strong { display:block; }
+    .steps strong { display:inline; text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:3px; }
     .privacy-line { margin-top:18px !important; padding:14px 16px; border-left:4px solid var(--primary); background:#f0f8f6; color:var(--dark); font-weight:700; }
     .download-panel { display:flex; align-items:center; justify-content:space-between; gap:20px; margin-top:20px; padding:22px 24px; border-radius:16px; background:linear-gradient(135deg,var(--dark),var(--primary)); color:#fff; box-shadow:var(--shadow); }
     .download-panel h2 { margin:0; font-size:clamp(1.35rem,3vw,2rem); line-height:1.3; }
@@ -108,7 +109,7 @@
 
       <section class="storyline" aria-label="모두의평가 이야기">
         <p class="section-heading">제목을 눌러 모두의평가 이야기를 만나보세요.</p>
-        <details open>
+        <details>
           <summary><span class="number">01</span><h2>우리 조직의 평가는 공정했나요?</h2><span class="toggle" aria-hidden="true">−</span></summary>
           <div class="story-body">
             <div class="story-copy">
@@ -155,10 +156,12 @@
           <div class="story-body">
             <div class="story-copy">
             <ol class="steps">
-              <li><span class="step-no">1</span><div>관리자가 간단하게 평가 그룹을 만들면, 구성원들이 함께 참여합니다.</div></li>
-              <li><span class="step-no">2</span><div>구성원들은 세 가지 핵심 질문에 따라 터치 앤 드래그 방식으로 본인을 포함한 전체 구성원의 순서를 정합니다.</div></li>
-              <li><span class="step-no">3</span><div>평가가 끝나면 개별 평가 내용은 공개하지 않고, 여러 사람의 판단을 모은 평균과 분포만 결과로 제공합니다.</div></li>
+              <li><span class="step-no">1</span><div>관리자가 간단하게 평가 그룹을 만들면, <strong>구성원들이 함께 참여</strong>합니다.</div></li>
+              <li><span class="step-no">2</span><div>구성원들은 세 가지 핵심 질문에 따라 <u>터치 앤 드래그 방식</u>으로 본인을 포함한 전체 구성원의 순서를 정합니다.</div></li>
+              <li><span class="step-no">3</span><div>평가가 끝나면 누가 누구를 어떻게 평가했는지의 <strong>개별 평가 내용은 비공개로 하고</strong>, 여러 사람의 판단을 모은 <strong>평균과 분포만 결과로</strong> 제공합니다.</div></li>
+              <li><span class="step-no">4</span><div>평가는 [모두의평가] 앱에서만 가능하지만, 관리는 앱과 웹(<a href="https://peerstat.fciapp.com" target="_blank" rel="noopener">https://peerstat.fciapp.com</a>) 둘 다 가능합니다. 기본 기능은 무료이며, 회사 로고와 이름 사용, 보고서 다운로드 등 일부 기능만 유료입니다.</div></li>
             </ol>
+            <p>참여코드에 <code>000000</code>을 입력하면 데모 평가와 결과 리포트를 확인할 수 있습니다.</p>
             <p class="privacy-line">함께 일하는 동료들의 개별적인 평가를 모아, 집단의 결과로만 제공합니다.</p>
             </div>
             <figure class="story-image-wrap screen-gallery" aria-label="모두의평가 사용 화면">
