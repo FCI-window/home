@@ -173,7 +173,7 @@
         <details>
           <summary><span class="number">03</span><h2>「Why」と「How」を繰り返す問いから、道具をつくっていきます。</h2><span class="toggle" aria-hidden="true">+</span></summary>
           <div class="story-body story-body-spaced image-body">
-            <p class="answer">会社名のFCIは、<strong>Factory of Creative Imagination</strong>の略称です。<br>会社のロゴは、問いを意味する漢字<strong>「問」</strong>をかたどっています。<br><strong>「なぜ？」</strong>と<strong>「どのように？」</strong>を繰り返し問いかけながら、答えを探していきます。<br>まだ世の中にないソリューションのために…</p>
+            <p class="answer">会社名のFCIは、<strong>Factory of Creative Imagination</strong>の略称です。<br><br>会社のロゴは、問いを意味する漢字<strong>「問」</strong>をかたどっています。<br><br><strong>「なぜ？」</strong>と<strong>「どのように？」</strong>を繰り返し問いかけながら、答えを探していきます。<br><br>まだ世の中にないソリューションのために…</p>
             <img class="story-image" src="./images/fci-question-to-logo.png" alt="漢字『問』からFCIロゴへとつながる変化を示すイラスト" loading="lazy">
           </div>
         </details>
@@ -216,8 +216,13 @@
       if (!solutionsStory) return;
 
       const restoreSolutionsStory = () => {
-        if (sessionStorage.getItem("fci-solutions-story-open") === "true") {
+        const navigation = performance.getEntriesByType("navigation")[0];
+        const returningFromApp = /\/(rab|dream|rohd|paran)\//.test(document.referrer) || navigation?.type === "back_forward";
+        if (returningFromApp && sessionStorage.getItem("fci-solutions-story-open") === "true") {
           solutionsStory.open = true;
+        } else {
+          sessionStorage.removeItem("fci-solutions-story-open");
+          solutionsStory.open = false;
         }
       };
 

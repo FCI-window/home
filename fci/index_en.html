@@ -185,7 +185,7 @@
         <details>
           <summary><span class="number">03</span><h2>We create tools by repeatedly asking “Why?” and “How?”.</h2><span class="toggle" aria-hidden="true">+</span></summary>
           <div class="story-body story-body-spaced image-body">
-            <p class="answer">The company name, FCI, stands for <strong>Factory of Creative Imagination</strong>.<br>Our logo is based on the Chinese character <strong>問</strong>, which means “question.”<br>By repeatedly asking <strong>“Why?”</strong> and <strong>“How?”</strong>, we search for answers.<br>And from those questions, we create solutions that did not exist before...</p>
+            <p class="answer">The company name, FCI, stands for <strong>Factory of Creative Imagination</strong>.<br><br>Our logo is based on the Chinese character <strong>問</strong>, which means “question.”<br><br>By repeatedly asking <strong>“Why?”</strong> and <strong>“How?”</strong>, we search for answers.<br><br>And from those questions, we create solutions that did not exist before...</p>
             <img class="story-image" src="./images/fci-question-to-logo.png" alt="An illustration showing the Chinese character for question becoming the FCI logo" loading="lazy">
           </div>
         </details>
@@ -228,8 +228,13 @@
       if (!solutionsStory) return;
 
       const restoreSolutionsStory = () => {
-        if (sessionStorage.getItem("fci-solutions-story-open") === "true") {
+        const navigation = performance.getEntriesByType("navigation")[0];
+        const returningFromApp = /\/(rab|dream|rohd|paran)\//.test(document.referrer) || navigation?.type === "back_forward";
+        if (returningFromApp && sessionStorage.getItem("fci-solutions-story-open") === "true") {
           solutionsStory.open = true;
+        } else {
+          sessionStorage.removeItem("fci-solutions-story-open");
+          solutionsStory.open = false;
         }
       };
 

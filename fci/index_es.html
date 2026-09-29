@@ -173,7 +173,7 @@
         <details>
           <summary><span class="number">03</span><h2>Creamos herramientas repitiendo las preguntas “Why” y “How”.</h2><span class="toggle" aria-hidden="true">+</span></summary>
           <div class="story-body story-body-spaced image-body">
-            <p class="answer">FCI son las siglas de <strong>Factory of Creative Imagination</strong>.<br>El logotipo de la empresa está inspirado en el carácter chino <strong>“問”</strong>, que significa “pregunta”.<br>Buscamos respuestas repitiendo las preguntas <strong>“¿Por qué?”</strong> y <strong>“¿Cómo?”</strong>.<br>Para crear soluciones que aún no existen en el mundo…</p>
+            <p class="answer">FCI son las siglas de <strong>Factory of Creative Imagination</strong>.<br><br>El logotipo de la empresa está inspirado en el carácter chino <strong>“問”</strong>, que significa “pregunta”.<br><br>Buscamos respuestas repitiendo las preguntas <strong>“¿Por qué?”</strong> y <strong>“¿Cómo?”</strong>.<br><br>Para crear soluciones que aún no existen en el mundo…</p>
             <img class="story-image" src="./images/fci-question-to-logo.png" alt="Ilustración de la transformación del carácter chino “問” en el logotipo de FCI" loading="lazy">
           </div>
         </details>
@@ -214,8 +214,13 @@
       if (!solutionsStory) return;
 
       const restoreSolutionsStory = () => {
-        if (sessionStorage.getItem("fci-solutions-story-open") === "true") {
+        const navigation = performance.getEntriesByType("navigation")[0];
+        const returningFromApp = /\/(rab|dream|rohd|paran)\//.test(document.referrer) || navigation?.type === "back_forward";
+        if (returningFromApp && sessionStorage.getItem("fci-solutions-story-open") === "true") {
           solutionsStory.open = true;
+        } else {
+          sessionStorage.removeItem("fci-solutions-story-open");
+          solutionsStory.open = false;
         }
       };
 

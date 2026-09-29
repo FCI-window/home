@@ -173,7 +173,7 @@
         <details>
           <summary><span class="number">03</span><h2>通过不断追问“Why”和“How”，我们创造工具。</h2><span class="toggle" aria-hidden="true">+</span></summary>
           <div class="story-body story-body-spaced image-body">
-            <p class="answer">FCI是<strong>Factory of Creative Imagination</strong>的缩写。<br>公司的标志以表示提问的汉字<strong>“問”</strong>为原型。<br>通过反复追问<strong>“为什么？”</strong>和<strong>“如何？”</strong>，我们寻找答案。<br>为了创造这个世界上尚不存在的解决方案……</p>
+            <p class="answer">FCI是<strong>Factory of Creative Imagination</strong>的缩写。<br><br>公司的标志以表示提问的汉字<strong>“問”</strong>为原型。<br><br>通过反复追问<strong>“为什么？”</strong>和<strong>“如何？”</strong>，我们寻找答案。<br><br>为了创造这个世界上尚不存在的解决方案……</p>
             <img class="story-image" src="./images/fci-question-to-logo.png" alt="从汉字“問”到FCI标志的变化过程插画" loading="lazy">
           </div>
         </details>
@@ -216,8 +216,13 @@
       if (!solutionsStory) return;
 
       const restoreSolutionsStory = () => {
-        if (sessionStorage.getItem("fci-solutions-story-open") === "true") {
+        const navigation = performance.getEntriesByType("navigation")[0];
+        const returningFromApp = /\/(rab|dream|rohd|paran)\//.test(document.referrer) || navigation?.type === "back_forward";
+        if (returningFromApp && sessionStorage.getItem("fci-solutions-story-open") === "true") {
           solutionsStory.open = true;
+        } else {
+          sessionStorage.removeItem("fci-solutions-story-open");
+          solutionsStory.open = false;
         }
       };
 
