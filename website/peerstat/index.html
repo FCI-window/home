@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PeerStat</title>
+</head>
+<body>
+  <main aria-label="PeerStat loading">
+    <p>Loading PeerStat…</p>
+    <noscript>
+      <p>
+        <a href="./index_ko.html" lang="ko">한국어</a> ·
+        <a href="./index_en.html" lang="en">English</a> ·
+        <a href="./index_ja.html" lang="ja">日本語</a> ·
+        <a href="./index_zh-TW.html" lang="zh-TW">繁體中文</a>
+      </p>
+    </noscript>
+  </main>
+  <script>
+    (() => {
+      const params = new URLSearchParams(location.search);
+      const requested = params.get('lang');
+      const supported = ['ko', 'en', 'ja', 'zh-TW'];
+      const languages = navigator.languages?.length
+        ? navigator.languages
+        : [navigator.language || ''];
+      let savedLanguage = '';
+
+      try {
+        savedLanguage = localStorage.getItem('fci-language') || '';
+      } catch (_) {}
+
+      const browserLanguage = languages.find((value) => {
+        const normalized = value.toLowerCase();
+        return supported.some((code) => {
+          const normalizedCode = code.toLowerCase();
+          return normalized === normalizedCode || normalized.startsWith(`${normalizedCode}-`);
+        });
+      });
+
+      const browserCode = browserLanguage
+        ? supported.find((code) => {
+            const normalized = browserLanguage.toLowerCase();
+            const normalizedCode = code.toLowerCase();
+            return normalized === normalizedCode || normalized.startsWith(`${normalizedCode}-`);
+          })
+        : '';
+
+      const language = supported.includes(requested)
+        ? requested
+        : supported.includes(savedLanguage)
+          ? savedLanguage
+          : browserCode || 'en';
+
+      location.replace(`./index_${language}.html`);
+    })();
+  </script>
+</body>
+</html>
