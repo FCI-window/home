@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">모두의평가 결과 그래프</title>
+  <desc id="desc">도움, 적극성, 근무효율 세 축의 스파이더웹과 일곱 구간 분포도</desc>
+  <rect width="640" height="360" fill="#ffffff"/>
+
+  <!-- Three-axis spiderweb: values 3, 7, 5 on a 10-point scale. -->
+  <g font-family="Noto Sans KR, system-ui, sans-serif" fill="#64777a" font-size="14" text-anchor="middle">
+    <text x="175" y="27">도움</text>
+    <text x="36" y="270">적극성</text>
+    <text x="314" y="270">근무효율</text>
+  </g>
+  <g fill="none" stroke="#c9dcda" stroke-width="1.5">
+    <polygon points="175,65 80,230 270,230"/>
+    <polygon points="175,87 99,219 251,219"/>
+    <polygon points="175,109 118,208 232,208"/>
+    <polygon points="175,131 137,197 213,197"/>
+    <polygon points="175,153 156,186 194,186"/>
+    <line x1="175" y1="175" x2="175" y2="65"/>
+    <line x1="175" y1="175" x2="80" y2="230"/>
+    <line x1="175" y1="175" x2="270" y2="230"/>
+  </g>
+  <polygon points="175,142 108.5,213.5 222.5,202.5" fill="#167c80" fill-opacity=".25" stroke="#167c80" stroke-width="3"/>
+  <g fill="#167c80">
+    <circle cx="175" cy="142" r="5"/>
+    <circle cx="108.5" cy="213.5" r="5"/>
+    <circle cx="222.5" cy="202.5" r="5"/>
+  </g>
+
+  <!-- Distribution: seven bins with values 0, 0, 2, 4, 3, 1, 0. -->
+  <g font-family="Noto Sans KR, system-ui, sans-serif" fill="#64777a" font-size="14" text-anchor="middle">
+    <text x="490" y="27">분포도</text>
+  </g>
+  <g stroke="#d8e7e5" stroke-width="1">
+    <line x1="370" y1="118" x2="610" y2="118"/>
+    <line x1="370" y1="174" x2="610" y2="174"/>
+    <line x1="370" y1="230" x2="610" y2="230"/>
+  </g>
+  <line x1="370" y1="230" x2="610" y2="230" stroke="#64777a" stroke-width="2"/>
+  <g fill="#167c80">
+    <rect x="378" y="230" width="25" height="0" rx="4"/>
+    <rect x="414" y="230" width="25" height="0" rx="4"/>
+    <rect x="450" y="174" width="25" height="56" rx="4"/>
+    <rect x="486" y="118" width="25" height="112" rx="4"/>
+    <rect x="522" y="146" width="25" height="84" rx="4"/>
+    <rect x="558" y="202" width="25" height="28" rx="4"/>
+    <rect x="594" y="230" width="16" height="0" rx="4"/>
+  </g>
+  <g font-family="system-ui, sans-serif" fill="#64777a" font-size="12" text-anchor="middle">
+    <text x="390" y="251">1</text><text x="426" y="251">2</text><text x="462" y="251">3</text>
+    <text x="498" y="251">4</text><text x="534" y="251">5</text><text x="570" y="251">6</text><text x="602" y="251">7</text>
+  </g>
+</svg>

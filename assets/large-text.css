@@ -1,0 +1,6 @@
+body[data-text-size="1"] .text-size-control{border-color:var(--accent,var(--app-accent,var(--gold,#718a50)));color:var(--accent,var(--app-accent,var(--gold,#718a50)))}
+body[data-text-size="1"] .projects-intro{white-space:normal}
+body[data-text-size="1"] .story-hero h1{white-space:normal}
+@media(max-width:900px){body[data-text-size="1"] .hero .headline-first,body[data-text-size="1"] .hero .headline-second{white-space:normal}body[data-text-size="1"] .card-top{grid-template-columns:1fr}}
+
+.fci-header .text-size-control,body[data-text-size="1"] .fci-header .text-size-control{color:#f2f1ed;border-color:#303330}

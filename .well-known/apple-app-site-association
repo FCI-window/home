@@ -1,0 +1,33 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "SN244SX327.life.fci.recordabible"
+        ],
+        "paths": [
+          "/rabLink",
+          "/rabLink/*"
+        ]
+      },
+      {
+        "appIDs": [
+          "SN244SX327.com.fciapp.dream"
+        ],
+        "paths": [
+          "/dreamLink",
+          "/dreamLink/*"
+        ]
+      },
+      {
+        "appIDs": [
+          "SN244SX327.life.fci.ROHD"
+        ],
+        "paths": [
+          "/rohdLink",
+          "/rohdLink/*"
+        ]
+      }
+    ]
+  }
+}

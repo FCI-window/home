@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ROHD는 100일의 기록을 하나의 이야기로 남깁니다.">
+  <meta property="og:title" content="ROHD : 100일의 기록">
+  <meta property="og:description" content="ROHD는 100일의 기록을 하나의 이야기로 남깁니다.">
+  <meta property="og:image" content="https://www.fciapp.com/images/Logo_ROHD.png">
+  <meta property="og:url" content="https://www.fciapp.com/rohd/index_ko.html">
+  <title>ROHD: El registro de 100 días</title>
+  <link rel="shortcut icon" href="../assets/images/favicon_FCILOGO_W.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/assets/fci-large-text.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --surface: #fff;
+      --surface-soft: #f2f5fa;
+      --text: #20283a;
+      --muted: #667085;
+      --line: #dfe5ee;
+      --rohd: #244c86;
+      --rohd-dark: #18355f;
+      --gold: #b48b37;
+      --shadow: 0 18px 44px rgba(31, 42, 64, .09);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--text);
+      background:
+        linear-gradient(135deg, rgba(36,76,134,.12), transparent 34%),
+        linear-gradient(225deg, rgba(180,139,55,.10), transparent 28%), var(--bg);
+      font-family: "Noto Sans KR", system-ui, sans-serif; line-height: 1.62; word-break: keep-all;
+    }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    .page { width: min(1120px, 100%); min-height: 100vh; margin: 0 auto; padding: 26px 18px 36px; }
+    .hero { display: grid; gap: 24px; }
+    .intro { padding: 0; }
+    .brand-row { display: flex; align-items: center; gap: 15px; margin-bottom: 0; }
+    .brand-title { min-width: 0; flex: 1 1 auto; }
+    .brand-fci-home { display: block; flex: 0 0 auto; width: 120px; margin-left: auto; }
+    .brand-fci-home picture { display: block; }
+    .brand-fci-home img { display: block; width: 100%; height: auto; }
+    .app-icon { width: 76px; height: 76px; border-radius: 21px; box-shadow: 0 14px 28px rgba(36,76,134,.18); }
+    .kicker {
+      display: inline-flex; min-height: 26px; align-items: center; padding: 0 10px; border-radius: 999px;
+      background: #edf3fb; color: var(--rohd-dark); font-size: .82rem; font-weight: 800;
+    }
+    h1 { margin: 10px 0 0; font-size: clamp(1.64rem, 4.6vw, 2.64rem); line-height: 1.18; letter-spacing: 0; }
+    .hero-copy { margin: 8px 0 0; color: #48556b; font-size: clamp(1rem, 2vw, 1.16rem); font-weight: 700; }
+    .english { margin: 4px 0 0; color: var(--gold); font-size: .88rem; font-weight: 700; letter-spacing: .06em; }
+    .store-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .store-links a { border-radius: 8px; transition: transform .2s ease; }
+    .store-links a:hover, .store-links a:focus-visible { transform: translateY(-2px); }
+    .store-links img { height: 42px; width: auto; }
+
+    .storyline { display: grid; gap: 9px; }
+    .section-heading { margin: 0 0 13px; color: var(--muted); font-size: .94rem; font-weight: 700; }
+    details { overflow: hidden; background: rgba(255,255,255,.88); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 10px 22px rgba(23,32,51,.045); }
+    details[open] { border-color: rgba(36,76,134,.42); background: var(--surface); box-shadow: var(--shadow); }
+    summary {
+      position: relative; display: grid; grid-template-columns: 44px minmax(0,1fr) 30px; gap: 12px; align-items: center;
+      min-height: 65px; padding: 12px 15px; cursor: pointer; list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary:hover { background: rgba(36,76,134,.035); }
+    summary:focus-visible { outline: 3px solid rgba(36,76,134,.28); outline-offset: -3px; }
+    .number {
+      display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px;
+      color: var(--rohd-dark); background: #edf3fb; border-radius: 50%; font-size: .86rem; font-weight: 800;
+    }
+    details[open] .number { color: #fff; background: var(--rohd); }
+    summary h2 { margin: 0; font-size: clamp(1rem, 1.7vw, 1.14rem); line-height: 1.35; letter-spacing: 0; }
+    .toggle {
+      width: 30px; height: 30px; color: var(--rohd-dark); border: 1px solid var(--line);
+      border-radius: 50%; font-size: 1.32rem; line-height: 26px; text-align: center;
+      transition: transform .25s ease, background .25s ease;
+    }
+    details[open] .toggle { color: #fff; background: var(--rohd); border-color: var(--rohd); transform: rotate(45deg); }
+    .answer-with-image {
+      display: grid; grid-template-columns: minmax(0,1fr) 230px; gap: 18px; align-items: center;
+      border-top: 0;
+    }
+    .answer { margin: 0; padding: 0 20px 18px 71px; color: #42536a; font-size: .98rem; }
+    .answer strong { color: var(--rohd-dark); }
+    .story-image-wrap {
+      position: relative; overflow: hidden; min-height: 210px; margin: 0 18px 18px 0; background: var(--surface-soft);
+      border: 1px solid var(--line); border-radius: 14px;
+    }
+    .story-image { width: 100%; height: 100%; min-height: 210px; object-fit: cover; }
+    .story-image-wrap:not(.gif-stage) { aspect-ratio: 3 / 2; min-height: 0; }
+    .story-image-wrap:not(.gif-stage) .story-image { min-height: 0; }
+    .gif-stage { aspect-ratio: 1 / 1; min-height: 0; background: #fff; }
+    .gif-stage .story-image {
+      position: absolute; inset: 0; width: 100%; height: 100%; min-height: 0; object-fit: contain;
+    }
+    .story-image-wrap.placeholder .story-image { display: none; }
+    .image-placeholder { position: absolute; inset: 0; display: none; place-items: center; padding: 28px; text-align: center; }
+    .placeholder .image-placeholder { display: grid; }
+    .image-placeholder span { display: block; }
+    .image-no { color: var(--rohd); font-weight: 800; letter-spacing: .12em; }
+    .image-direction { margin-top: 9px; color: #39465f; font-size: 18px; font-weight: 700; }
+    .image-file { margin-top: 11px; color: var(--muted); font: 12px ui-monospace, monospace; }
+
+    .download-panel {
+      display: flex; align-items: center; justify-content: space-between; gap: 30px; margin-top: 8px;
+      padding: 30px; color: #fff; background: linear-gradient(125deg, var(--rohd-dark), var(--rohd)); border-radius: 20px; box-shadow: var(--shadow);
+    }
+    .download-panel h2 { margin: 0; font-size: clamp(23px, 3vw, 33px); }
+    .download-panel p { margin: 5px 0 0; color: rgba(255,255,255,.76); }
+    .download-panel .store-links { flex: 0 0 auto; margin-top: 0; }
+    .footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; padding: 26px 4px 0; color: var(--muted); font-size: 13px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 10px 18px; }
+    .footer a { text-decoration: none; }
+    .footer a:hover { color: var(--rohd); text-decoration: underline; }
+
+    @media (max-width: 820px) {
+      .page { padding: 18px 14px 28px; }
+      .brand-row { gap: 12px; margin-bottom: 16px; }
+      .app-icon { width: 64px; height: 64px; border-radius: 18px; }
+      summary { grid-template-columns: 38px minmax(0,1fr) 28px; gap: 10px; min-height: 60px; padding: 11px 12px; }
+      .number { width: 36px; height: 36px; font-size: .8rem; }
+      .answer-with-image { display: block; }
+      .answer { padding: 0 16px 16px 60px; font-size: .94rem; }
+      .story-image-wrap { width: min(240px, calc(100% - 82px)); min-height: 0; margin: 0 auto 16px; }
+      .story-image-wrap:not(.gif-stage) { aspect-ratio: 3 / 2; }
+      .story-image-wrap.gif-stage { width: min(160px, calc(100% - 82px)); aspect-ratio: 1 / 1; }
+      .story-image { width: 100%; height: auto; min-height: 0; object-fit: contain; }
+    }
+    @media (max-width: 640px) {
+      .download-panel {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 12px;
+        padding: 18px 16px;
+        border-radius: 16px;
+      }
+      .download-panel h2 { min-width: 0; margin: 0; font-size: clamp(11px, 3vw, 18px); white-space: nowrap; }
+      .download-panel p { margin: 3px 0 0; font-size: clamp(11px, 2.6vw, .88rem); white-space: nowrap; }
+      .download-panel .store-links { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; margin-top: 0; }
+      .download-panel .store-links img { height: 30px; width: auto; }
+      .brand-fci-home { width: 34px; }
+      .brand-title h1 { white-space: nowrap; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+  /* Shared story heading scale */ h1 { font-size: clamp(1.64rem, 4.6vw, 2.64rem); line-height: 1.18; } .hero-copy { font-size: clamp(1rem, 2vw, 1.16rem); }
+
+    @media (max-width: 820px) {
+      body.large-text-mode[data-large-text-level="1"] h1 {
+        font-size: calc(clamp(1.64rem, 4.6vw, 2.64rem) * var(--fci-large-text-scale-1));
+      }
+
+      body.large-text-mode[data-large-text-level="1"] .hero-copy,
+      body.large-text-mode[data-large-text-level="1"] .english,
+      body.large-text-mode[data-large-text-level="1"] .section-heading,
+      body.large-text-mode[data-large-text-level="1"] .answer,
+      body.large-text-mode[data-large-text-level="1"] .image-direction,
+      body.large-text-mode[data-large-text-level="1"] .closing p {
+        font-size: calc(0.94rem * var(--fci-large-text-scale-1));
+      }
+
+      body.large-text-mode[data-large-text-level="1"] summary h2 {
+        font-size: calc(clamp(1rem, 1.7vw, 1.14rem) * var(--fci-large-text-scale-1));
+      }
+
+      body.large-text-mode[data-large-text-level="2"] h1 {
+        font-size: calc(clamp(1.64rem, 4.6vw, 2.64rem) * var(--fci-large-text-scale-2));
+      }
+
+      body.large-text-mode[data-large-text-level="2"] .hero-copy,
+      body.large-text-mode[data-large-text-level="2"] .english,
+      body.large-text-mode[data-large-text-level="2"] .section-heading,
+      body.large-text-mode[data-large-text-level="2"] .answer,
+      body.large-text-mode[data-large-text-level="2"] .image-direction,
+      body.large-text-mode[data-large-text-level="2"] .closing p {
+        font-size: calc(0.94rem * var(--fci-large-text-scale-2));
+      }
+
+      body.large-text-mode[data-large-text-level="2"] summary h2 {
+        font-size: calc(clamp(1rem, 1.7vw, 1.14rem) * var(--fci-large-text-scale-2));
+      }
+    }
+:root{--app-accent:#18355f}
+
+body{font-family:Arial,"Noto Sans KR","Apple SD Gothic Neo",sans-serif}
+.fci-header{background:#101111;color:#f2f1ed}.fci-header-inner{max-width:1180px;margin:auto;padding:0 40px;height:100px;display:flex;align-items:center;gap:28px}.fci-header img{width:135px;display:block}.back-home{color:#a3a6a1;font-size:13px;text-decoration:none}.fci-controls{margin-left:auto;display:flex;gap:10px}.fci-controls button{background:transparent;color:#d1d7ca;border:1px solid #303330;border-radius:5px;padding:9px 14px;font:inherit;font-size:13px}
+.page{width:min(1180px,100%);padding:0 40px 30px}.hero{gap:0}.intro{padding:65px 0 55px;border-bottom:1px solid var(--line)}.brand-row{gap:22px}.app-icon{width:72px;height:72px;border-radius:16px;box-shadow:none}h1{font-size:clamp(30px,3.8vw,48px);font-weight:500;line-height:1.3;letter-spacing:-1.5px}.hero-copy{font-weight:400;line-height:1.8}
+.storyline{padding-top:40px;gap:0}.section-heading{font-weight:400;margin-bottom:22px}.storyline details{background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;box-shadow:none;margin:0}.storyline details:last-child{border-bottom:1px solid var(--line)}.storyline details[open]{background:transparent;box-shadow:none;border-color:var(--line)}.storyline summary{padding:27px 0;min-height:0;grid-template-columns:55px minmax(0,1fr) 30px;gap:20px}.storyline summary h2{font-size:21px;font-weight:500;line-height:1.6}.storyline .number,.storyline details[open] .number{width:auto;height:auto;background:none;color:var(--app-accent);font-weight:400;letter-spacing:2px}.storyline .toggle,.storyline details[open] .toggle{background:none;border:0;color:var(--app-accent);font-size:25px;font-weight:300;line-height:1;display:grid;place-items:center}.storyline details[open] .toggle{transform:rotate(45deg)}.storyline details[open] summary h2{color:var(--app-accent)}.answer{font-size:17px;line-height:1.95}.footer{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:40px;padding:25px 0;border-top:1px solid var(--line);font-size:11px}.footer-language{background:transparent;border:1px solid var(--line);border-radius:5px;color:var(--muted);font:inherit;font-size:12px;padding:7px 12px;white-space:nowrap}
+@media(max-width:820px){.fci-header-inner{height:82px;padding:0 24px;gap:18px}.fci-header img{width:100px}.fci-controls button{padding:8px 10px;font-size:12px}.page{padding:0 24px 20px}.intro{padding:40px 0 35px}.brand-row{gap:16px}.app-icon{width:56px;height:56px}h1{font-size:30px}.hero-copy{font-size:14px}.storyline{padding-top:28px}.storyline summary{padding:22px 0;grid-template-columns:28px minmax(0,1fr) 22px;gap:12px}.storyline summary h2{font-size:17px}.answer{font-size:16px;line-height:1.9}}
+
+.footer-legal{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-left:auto}.footer-legal a{font-size:12px;text-decoration:none}.footer-legal a:hover{text-decoration:underline}@media(max-width:640px){.footer{flex-wrap:wrap}.footer-legal{margin-left:0}}
+.language-control{position:relative}.language-menu{position:absolute;right:0;bottom:calc(100% + 8px);min-width:140px;padding:6px;background:#fff;border:1px solid var(--line);border-radius:5px;z-index:20}.language-menu[hidden]{display:none}.language-menu a{display:block;padding:9px 12px;font-size:14px}.language-menu a:hover{background:var(--surface-soft,#f5f5f0)}body{word-break:normal}.download-panel p{white-space:normal}.footer-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap}.footer-actions a{font-size:12px;text-decoration:none}.footer-actions a:hover{text-decoration:underline}@media(max-width:640px){.footer{flex-wrap:wrap}.footer-actions{width:100%;gap:16px}.footer-actions .language-control{margin-left:auto}}
+</style>
+<style>
+  .footer { display:block; margin-top:23px; padding:14px 4px 0; border-top:1px solid var(--line); color:var(--muted); font-size:.82rem; text-align:left; }
+.language-control{position:relative}.language-menu{position:absolute;right:0;bottom:calc(100% + 8px);min-width:140px;padding:6px;background:#fff;border:1px solid var(--line);border-radius:5px;z-index:20}.language-menu[hidden]{display:none}.language-menu a{display:block;padding:9px 12px;font-size:14px}.language-menu a:hover{background:var(--surface-soft,#f5f5f0)}body{word-break:normal}.download-panel p{white-space:normal}.footer-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap}.footer-actions a{font-size:12px;text-decoration:none}.footer-actions a:hover{text-decoration:underline}@media(max-width:640px){.footer{flex-wrap:wrap}.footer-actions{width:100%;gap:16px}.footer-actions .language-control{margin-left:auto}}
+
+.footer{display:flex;flex-wrap:nowrap;justify-content:space-between;align-items:center;gap:16px;font-size:11px;padding:25px 0;margin-top:40px}.footer-actions{flex-wrap:nowrap}.footer>span,.footer-actions>a{white-space:nowrap}@media(max-width:640px){.footer{flex-wrap:wrap}.footer-actions{width:100%;flex-wrap:wrap}}
+</style>
+<link rel="stylesheet" href="../assets/large-text.css?v=white-controls1"><link rel="stylesheet" href="../assets/image-viewer.css"></head>
+<body>
+<header class="fci-header"><div class="fci-header-inner"><a href="../index_es.html" aria-label="FCI 홈페이지"><img src="../assets/images/FCILOGOwithTextWhite.png" alt="FCI"></a><a class="back-home" href="../index_es.html">← Inicio</a><div class="fci-controls"><button class="text-size-control" type="button" aria-label="큰 글씨">가+</button></div></div></header>
+  <div class="page">
+    <main class="hero">
+      <section class="intro" aria-label="Sobre ROHD">
+        <div class="brand-row">
+          <img class="app-icon" src="../assets/images/Logo_ROHD.png" alt="Icono de la aplicación ROHD">
+          <div class="brand-title">
+            <span class="kicker">Plataforma de historias de 100 días</span>
+            <h1>ROHD: El registro de 100 días</h1>
+            <p class="hero-copy">Convierte el registro de 100 días en un montaje fotográfico.</p>
+            <p class="english">Record Of One Hundred Days</p>
+          </div>
+          
+        </div>
+      </section>
+      <section class="storyline" aria-label="La historia de ROHD">
+        <p class="section-heading">Toca un título para descubrir cada parte de la historia.</p>
+        <details><summary><span class="number">01</span><h2>¿Alguna vez has hecho algo de forma constante durante 100 días?</h2><span class="toggle" aria-hidden="true">+</span></summary><div class="answer-with-image"><p class="answer">100 días para crear un buen hábito.<br>100 días del crecimiento de un bebé.<br>El crecimiento de una planta, los recuerdos de un viaje, la vida cotidiana de una familia…<br><br>Todos tenemos una<br><strong>historia de 100 días</strong> que queremos conservar durante mucho tiempo.</p><figure class="story-image-wrap"><img class="story-image" src="./images/section-01-intl.png" alt="Diferentes historias de 100 días que merece la pena conservar"></figure></div></details>
+        <details><summary><span class="number">02</span><h2>Pero ¿dónde quedan esos 100 días?</h2><span class="toggle" aria-hidden="true">+</span></summary><div class="answer-with-image"><p class="answer">No los dejamos solo en la memoria;<br>hacemos fotografías.<br><br>Pero con el paso del tiempo,<br>esas fotos terminan enterradas<br>en la galería del teléfono.</p><figure class="story-image-wrap"><img class="story-image" src="./images/section-02-intl.png" alt="Momentos valiosos enterrados en la galería de fotos"></figure></div></details>
+        <details><summary><span class="number">03</span><h2>¿No es más valioso el proceso que el resultado final?</h2><span class="toggle" aria-hidden="true">+</span></summary><div class="answer-with-image"><p class="answer">El resultado final también importa,<br>pero ¿no son aún más valiosos<br><strong>los momentos del camino?</strong></p><figure class="story-image-wrap"><img class="story-image" src="./images/section-03-intl.png" alt="El proceso de un viaje que cambia con el tiempo"></figure></div></details>
+        <details><summary><span class="number">04</span><h2>ROHD convierte esos 100 días en una sola historia.</h2><span class="toggle" aria-hidden="true">+</span></summary><div class="answer-with-image"><p class="answer">Los registros de cada día se reúnen<br><br>para convertirse en un calendario,<br>un mosaico de fotos,<br>y un montaje fotográfico,<br><br><strong>una sola historia.</strong></p><figure class="story-image-wrap gif-stage"><img class="story-image" src="./images/section-04-intl.webp" alt="Una secuencia de fotografías que muestra el paso del tiempo"></figure></div></details>
+        <details><summary><span class="number">05</span><h2>100 días no son el final, sino un nuevo comienzo.</h2><span class="toggle" aria-hidden="true">+</span></summary><div class="answer-with-image"><p class="answer">Cuando termina un periodo de 100 días,<br>comienza otra meta.<br><br>Nuestra vida está formada por<br>innumerables <strong>viajes de 100 días</strong>.<br><br>Con ROHD,<br>conserva tus valiosos 100 días<br><strong>como una sola historia.</strong></p><figure class="story-image-wrap"><img class="story-image" src="./images/section-05-intl.png" alt="Personas que comienzan un nuevo viaje de 100 días"></figure></div></details>
+        <section class="download-panel" aria-label="Descargar ROHD"><div><h2>Convierte el registro de 100 días en una historia.</h2><p>Record Of One Hundred Days</p></div><div class="store-links"><a href="https://apps.apple.com/app/id6446820972" target="_blank" rel="noopener"><img src="../assets/images/Download_apple.png" alt="Descargar en el App Store"></a><a href="https://play.google.com/store/apps/details?id=life.fci.ROHD" target="_blank" rel="noopener"><img src="../assets/images/Download_google.png" alt="Disponible en Google Play"></a></div></section>
+      </section>
+    </main>
+
+    <footer class="footer"><span>© FCI Inc. Factory of Creative Imagination.</span><div class="footer-actions"><a href="/documents/ROHD_Privacy_Policy_ES.html">Política de privacidad</a><a href="/documents/ROHD_TermsandConditions_ES.html">Términos de uso</a><button class="footer-language" type="button" aria-label="Select language">Language ⌄</button></div></footer>
+  </div>
+
+  <script>
+    /* 이미지가 준비되면 rohd/images에 같은 파일명으로 넣기만 하면 됩니다. */
+    document.querySelectorAll(".story-image").forEach((image) => {
+      const usePlaceholder = () => image.closest(".story-image-wrap").classList.add("placeholder");
+      image.addEventListener("error", usePlaceholder);
+      if (image.complete && !image.naturalWidth) usePlaceholder();
+    });
+  </script>
+  
+  <script>
+    function fitBrandTitle() {
+      const title = document.querySelector(".brand-title h1");
+      if (!title || !window.matchMedia("(max-width: 640px)").matches) return;
+      title.style.fontSize = "";
+      let size = parseFloat(getComputedStyle(title).fontSize);
+      while (title.scrollWidth > title.clientWidth && size > 8) {
+        size -= 0.5;
+        title.style.fontSize = `${size}px`;
+      }
+    }
+    fitBrandTitle();
+    window.addEventListener("resize", fitBrandTitle);
+  </script>
+<script src="../assets/large-text.js?v=all-languages2"></script><script>
+(() => {
+const button=document.querySelector('[aria-label="Select language"]');
+const wrapper=document.createElement('div');wrapper.className='language-control';button.before(wrapper);wrapper.append(button);
+const menu=document.createElement('div');menu.className='language-menu';menu.hidden=true;wrapper.append(menu);
+[['ko','한국어'],['en','English'],['ja','日本語'],['zh-CN','简体中文'],['zh-TW','繁體中文'],['es','Español']].forEach(([code,label])=>{
+const link=document.createElement('a');link.href='index_'+code+'.html';link.textContent=label;link.lang=code;
+if(code===document.documentElement.lang)link.setAttribute('aria-current','page');
+link.onclick=()=>{try{localStorage.setItem('fci-language',code)}catch(e){}};menu.append(link);
+});
+button.setAttribute('aria-expanded','false');
+function close(){menu.hidden=true;button.setAttribute('aria-expanded','false')}
+button.onclick=()=>{menu.hidden=!menu.hidden;button.setAttribute('aria-expanded',String(!menu.hidden))};
+document.addEventListener('click',event=>{if(!wrapper.contains(event.target))close()});
+wrapper.addEventListener('keydown',event=>{if(event.key==='Escape'){close();button.focus()}});
+})();
+</script><script src="../assets/image-viewer.js"></script></body>
+</html>
