@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="손가락으로 짚고, 눈으로 보고, 입으로 읽고, 귀로 듣는 성경낭독녹음 이야기">
+  <title>聖經朗讀錄音 | FCI</title>
+  <link rel="icon" href="../assets/images/favicon_FCILOGO_W.ico">
+  <link rel="stylesheet" href="../assets/assets/fci-large-text.css">
+  <style>
+    :root {
+      --ink: #2d261d;
+      --muted: #756a5c;
+      --line: rgba(101, 78, 43, 0.16);
+      --cream: #fffaf0;
+      --paper: rgba(255, 255, 255, 0.84);
+      --gold: #a67424;
+      --gold-deep: #775016;
+      --shadow: 0 20px 60px rgba(86, 58, 19, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      background:
+        radial-gradient(circle at 15% 8%, rgba(225, 189, 112, 0.24), transparent 34rem),
+        radial-gradient(circle at 90% 38%, rgba(237, 216, 164, 0.32), transparent 30rem),
+        linear-gradient(180deg, #fffdf8 0%, #faf1df 100%);
+    }
+    a, button { -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; }
+    .page { width: min(1120px, 100%); min-height: 100vh; margin: 0 auto; padding: 26px 18px 36px; }
+    .hero { display: grid; gap: 24px; }
+    .intro { display: grid; gap: 18px; }
+    .brand-row { display: flex; align-items: center; gap: 15px; }
+    .brand-copy { min-width: 0; flex: 1 1 auto; }
+    .brand-fci-home { display: block; flex: 0 0 auto; width: 120px; margin-left: auto; }
+    .brand-fci-home picture { display: block; }
+    .brand-fci-home img { display: block; width: 100%; height: auto; }
+    .app-icon { width: 76px; height: 76px; object-fit: cover; border-radius: 21px; box-shadow: 0 14px 28px rgba(74, 48, 16, 0.18); }
+    .kicker { display: inline-flex; justify-self: start; min-height: 26px; align-items: center; padding: 0 10px; border-radius: 999px; background: rgba(225, 189, 112, 0.28); color: var(--gold-deep); font-size: 0.82rem; font-weight: 800; }
+    h1 { margin: 0; font-size: clamp(1.64rem, 4.6vw, 2.64rem); line-height: 1.18; }
+    .brand-copy { display: grid; gap: 7px; }
+    .hero-copy { margin: 0; color: var(--gold-deep); font-size: clamp(1rem, 2vw, 1.16rem); font-weight: 800; word-break: keep-all; }
+    .storyline { display: grid; gap: 9px; }
+    .section-heading { margin: 0; color: var(--muted); font-size: 0.94rem; font-weight: 700; word-break: keep-all; }
+    .story-message { margin: 0 0 13px; color: var(--muted); font-size: 0.94rem; font-weight: 650; line-height: 1.6; word-break: keep-all; }
+    .story-message:empty { display: none; }
+    .story-list { display: grid; gap: 9px; }
+    .story-card {
+      overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: var(--paper);
+      box-shadow: 0 10px 22px rgba(84, 59, 25, 0.045);
+    }
+    .story-card[open] { border-color: rgba(166, 116, 36, 0.42); background: #fff; box-shadow: var(--shadow); }
+    .story-card summary {
+      display: grid; grid-template-columns: 44px minmax(0, 1fr) 30px; gap: 12px; align-items: center;
+      min-height: 65px; padding: 12px 15px; cursor: pointer; list-style: none;
+    }
+    .story-card summary::-webkit-details-marker { display: none; }
+    .story-number {
+      display: grid; width: 40px; height: 40px; place-items: center; border-radius: 50%;
+      color: var(--gold-deep); background: rgba(225, 189, 112, 0.28); font-size: 0.78rem; font-weight: 850;
+    }
+    .story-card[open] .story-number { color: #fff; background: var(--gold); }
+    .story-title { margin: 0; font-size: clamp(1rem, 2vw, 1.12rem); line-height: 1.35; }
+    .chevron { color: var(--gold); text-align: center; font-size: 1.28rem; transition: transform 180ms ease; }
+    .story-card[open] .chevron { transform: rotate(45deg); }
+    .story-content { padding: 0 15px 20px; }
+    .story-layout { display: grid; grid-template-columns: minmax(0, 1fr) 230px; gap: 18px; align-items: center; }
+    .story-copy p { margin: 0 0 13px; color: var(--muted); font-size: 0.94rem; line-height: 1.7; word-break: keep-all; }
+    .story-copy p:last-child { margin-bottom: 0; }
+    .story-copy strong { color: var(--ink); }
+    .story-art-wrap { position: relative; width: 230px; height: 210px; overflow: hidden; border-radius: 14px; background: #f7fafc; }
+    .story-art { display: block; width: 100%; height: 100%; object-fit: contain; border-radius: 14px; background: #f7fafc; }
+    .story-art-logo { position: absolute; left: 50%; top: 50%; display: grid; width: 64px; height: 64px; place-items: center; padding: 7px; border-radius: 18px; background: rgba(255, 255, 255, 0.96); box-shadow: 0 8px 20px rgba(23, 43, 77, 0.16); transform: translate(-50%, -50%); }
+    .story-art-logo img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 14px; }
+    .solution-videos { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
+    .solution-videos h3 { margin: 0 0 12px; color: var(--gold-deep); font-size: 1rem; }
+    .video-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .video-card { overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+    .video-frame { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #201a13; }
+    .video-frame iframe { width: 100%; height: 100%; border: 0; }
+    .video-poster { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: 0; cursor: pointer; background-position: center; background-size: cover; }
+    .video-poster::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.3)); }
+    .play { position: absolute; left: 50%; top: 50%; width: 54px; height: 40px; border-radius: 12px; background: #b3261e; transform: translate(-50%, -50%); box-shadow: 0 8px 20px rgba(0,0,0,.24); }
+    .play::after { content: ""; position: absolute; left: 22px; top: 11px; border-top: 9px solid transparent; border-bottom: 9px solid transparent; border-left: 14px solid #fff; }
+    .video-title { margin: 0; padding: 10px 12px 12px; color: var(--ink); font-size: .88rem; font-weight: 750; line-height: 1.4; }
+    .closing {
+      display: flex; align-items: center; justify-content: space-between; gap: 30px; margin-top: 8px; padding: 30px;
+      color: #fff; background: linear-gradient(125deg, var(--gold-deep), var(--gold)); border-radius: 20px; box-shadow: var(--shadow);
+    }
+    .closing p { margin: 0; color: #fff; font-size: clamp(23px, 3vw, 33px); font-weight: 800; line-height: 1.35; word-break: keep-all; }
+    .closing-copy span { display: block; margin-top: 5px; color: rgba(255, 255, 255, 0.78); font-size: 0.96rem; font-weight: 600; }
+    .store-links { display: flex; flex-wrap: wrap; gap: 10px; flex: 0 0 auto; }
+    .store-links a { border-radius: 8px; transition: transform 0.2s ease; }
+    .store-links a:hover, .store-links a:focus-visible { transform: translateY(-2px); }
+    .store-links img { display: block; width: auto; height: 42px; }
+    footer { margin-top: 23px; padding: 14px 20px 34px; border-top: 1px solid var(--line); color: var(--muted); text-align: left; font-size: .82rem; }
+
+    @media (max-width: 820px) {
+      .page { padding: 18px 14px 28px; }
+      .story-layout { display: block; }
+      .story-art-wrap { width: 100%; height: 160px; margin-inline: auto; overflow: visible; background: transparent; }
+      .story-art { display: block; width: auto; height: 160px; max-width: 100%; object-fit: contain; margin-inline: auto; }
+      .story-art-logo { left: 50%; top: 50%; }
+      .video-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .closing {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 12px;
+        padding: 18px 16px;
+        border-radius: 16px;
+      }
+      .closing p { font-size: clamp(11px, 4.4vw, 20px); }
+      .closing-copy span { font-size: clamp(11px, 3vw, .82rem); white-space: nowrap; }
+      .store-links { flex-direction: column; align-items: flex-end; gap: 6px; }
+      .store-links img { height: 30px; }
+      .intro { gap: 12px; }
+      .brand-row { gap: 12px; }
+      .app-icon { width: 64px; height: 64px; border-radius: 18px; }
+      .brand-fci-home { width: 34px; }
+      .brand-copy h1 { white-space: nowrap; }
+      .story-card summary { grid-template-columns: 38px minmax(0, 1fr) 28px; gap: 10px; min-height: 60px; padding: 11px 12px; }
+      .story-number { width: 36px; height: 36px; }
+      .story-content { padding: 0 12px 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+  /* Shared story heading scale */ h1 { font-size: clamp(1.64rem, 4.6vw, 2.64rem); line-height: 1.18; } .hero-copy { font-size: clamp(1rem, 2vw, 1.16rem); }
+
+    @media (max-width: 820px) {
+      body.large-text-mode[data-large-text-level="1"] h1 {
+        font-size: calc(clamp(1.64rem, 4.6vw, 2.64rem) * var(--fci-large-text-scale-1));
+      }
+
+      body.large-text-mode[data-large-text-level="1"] .hero-copy,
+      body.large-text-mode[data-large-text-level="1"] .section-heading,
+      body.large-text-mode[data-large-text-level="1"] .story-copy p,
+      body.large-text-mode[data-large-text-level="1"] .video-title,
+      body.large-text-mode[data-large-text-level="1"] .closing-copy span {
+        font-size: calc(0.94rem * var(--fci-large-text-scale-1));
+      }
+
+      body.large-text-mode[data-large-text-level="1"] .story-title {
+        font-size: calc(1.02rem * var(--fci-large-text-scale-1));
+      }
+
+      body.large-text-mode[data-large-text-level="1"] .closing-copy p {
+        font-size: calc(clamp(11px, 4.4vw, 20px) * var(--fci-large-text-scale-1));
+      }
+
+      body.large-text-mode[data-large-text-level="2"] h1 {
+        font-size: calc(clamp(1.64rem, 4.6vw, 2.64rem) * var(--fci-large-text-scale-2));
+      }
+
+      body.large-text-mode[data-large-text-level="2"] .hero-copy,
+      body.large-text-mode[data-large-text-level="2"] .section-heading,
+      body.large-text-mode[data-large-text-level="2"] .story-copy p,
+      body.large-text-mode[data-large-text-level="2"] .video-title,
+      body.large-text-mode[data-large-text-level="2"] .closing-copy span {
+        font-size: calc(0.94rem * var(--fci-large-text-scale-2));
+      }
+
+      body.large-text-mode[data-large-text-level="2"] .story-title {
+        font-size: calc(1.02rem * var(--fci-large-text-scale-2));
+      }
+
+      body.large-text-mode[data-large-text-level="2"] .closing-copy p {
+        font-size: calc(clamp(11px, 4.4vw, 20px) * var(--fci-large-text-scale-2));
+      }
+    }
+
+:root{--ink:#292c28;--muted:#6a6e65;--line:#dadcd5;--paper:#fff;--shadow:none;--gold:#718a50;--gold-deep:#516837}
+body{background:#f5f5f0;font-family:Arial,"Noto Sans KR","Apple SD Gothic Neo",sans-serif;word-break:keep-all}
+.fci-header{background:#101111;color:#f2f1ed}.fci-header-inner{max-width:1180px;margin:auto;padding:0 40px;height:100px;display:flex;align-items:center;gap:28px}.fci-header img{width:135px;display:block}.back-home{color:#a3a6a1;font-size:13px;text-decoration:none}.fci-controls{margin-left:auto;display:flex;gap:10px}.fci-controls button{background:transparent;color:#d1d7ca;border:1px solid #303330;border-radius:5px;padding:9px 14px;font:inherit;font-size:13px}
+.page{width:min(1180px,100%);padding:0 40px 30px}.hero{gap:0}.intro{padding:65px 0 55px;border-bottom:1px solid var(--line)}.brand-row{gap:22px}.app-icon{width:72px;height:72px;border-radius:16px;box-shadow:none}.brand-copy{gap:14px}h1{font-size:clamp(30px,3.8vw,48px);font-weight:500;letter-spacing:-1.5px;line-height:1.3}.hero-copy{font-weight:400;font-size:17px;line-height:1.8;color:var(--muted)}
+.storyline{padding:40px 0 0;gap:22px}.section-heading{font-weight:400;font-size:14px}.story-list{gap:0}.story-card{border:0;border-top:1px solid var(--line);border-radius:0;background:transparent;box-shadow:none}.story-card:last-child{border-bottom:1px solid var(--line)}.story-card[open]{background:transparent;box-shadow:none;border-color:var(--line)}.story-card summary{min-height:0;padding:27px 0;grid-template-columns:55px minmax(0,1fr) 30px;gap:20px}.story-number{width:auto;height:auto;background:none;border-radius:0;color:var(--gold-deep);font-weight:400;letter-spacing:2px}.story-card[open] .story-number{background:none;color:var(--gold-deep)}.story-title{font-size:21px;font-weight:500;line-height:1.6}.chevron{font-weight:400}.story-content{padding:10px 0 38px 75px}.story-layout{gap:40px}.story-copy p{font-size:17px;line-height:1.95;margin-bottom:20px}.story-art-wrap,.story-art{border-radius:8px}.closing{margin-top:60px;padding:40px 0;border:0;border-top:1px solid var(--line);border-radius:0;background:transparent;box-shadow:none}.closing-copy p{font-weight:500;color:var(--ink)}.closing-copy span{font-weight:400;color:var(--muted)}footer{margin-top:25px;padding:25px 0;font-size:11px}
+@media(max-width:820px){.fci-header-inner{height:82px;padding:0 24px;gap:18px}.fci-header img{width:100px}.fci-controls{gap:8px}.fci-controls button{padding:8px 10px;font-size:12px}.page{padding:0 24px 20px}.intro{padding:40px 0 35px}.brand-row{gap:16px}.app-icon{width:56px;height:56px}.hero-copy{font-size:14px;line-height:1.7}h1{font-size:30px}.storyline{padding-top:28px;gap:18px}.story-card summary{padding:22px 0;grid-template-columns:28px minmax(0,1fr) 22px;gap:12px}.story-title{font-size:17px}.story-content{padding:8px 0 28px}.story-copy p{font-size:16px;line-height:1.9}.story-layout{gap:24px}.closing{margin-top:40px;padding:30px 0}}
+.chevron{font-size:25px;font-weight:300;line-height:1;text-align:center;display:block}
+
+:root{--ink:#2d261d;--muted:#756a5c;--line:rgba(101,78,43,.16);--gold:#a67424;--gold-deep:#775016}
+body{background:radial-gradient(circle at 15% 8%,rgba(225,189,112,.24),transparent 34rem),radial-gradient(circle at 90% 38%,rgba(237,216,164,.32),transparent 30rem),linear-gradient(180deg,#fffdf8 0%,#faf1df 100%)}
+.story-card[open] .story-title{color:var(--gold-deep)}
+footer{display:flex;justify-content:space-between;align-items:center;gap:16px}.footer-language{background:transparent;border:1px solid var(--line);border-radius:5px;color:var(--muted);font:inherit;font-size:12px;padding:7px 12px;white-space:nowrap}
+.footer-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap}.footer-actions a{font-size:12px;text-decoration:none}.footer-actions a:hover{text-decoration:underline}@media(max-width:640px){footer{flex-wrap:wrap}.footer-actions{width:100%;gap:16px}.footer-language{margin-left:auto}}
+.language-control{position:relative}.language-menu{position:absolute;right:0;bottom:calc(100% + 8px);min-width:140px;padding:6px;background:#fffdf8;border:1px solid var(--line);border-radius:5px;z-index:20}.language-menu[hidden]{display:none}.language-menu a{display:block;padding:9px 12px;font-size:14px}.language-menu a:hover{background:#faf1df}.footer-actions{position:relative}body{word-break:normal}.closing-copy span{white-space:normal}.story-card summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px}</style>
+<link rel="stylesheet" href="../assets/large-text.css?v=white-controls1"><link rel="stylesheet" href="../assets/image-viewer.css"></head>
+<body>
+<header class="fci-header"><div class="fci-header-inner"><a href="../index_zh-TW.html" aria-label="FCI 홈페이지"><img src="../assets/images/FCILOGOwithTextWhite.png" alt="FCI"></a><a class="back-home" href="../index_zh-TW.html">← 首頁</a><div class="fci-controls"><button class="text-size-control" type="button" aria-label="큰 글씨">가+</button></div></div></header>
+  <div class="page">
+    <main class="hero">
+    <section class="intro" aria-label="聖經朗讀錄音介紹"><div class="brand-row"><img class="app-icon" src="../assets/images/Logo_RAB.png" alt="聖經朗讀錄音 App 圖示"><div class="brand-copy"><h1>聖經朗讀錄音</h1><p class="hero-copy">用手指逐節指讀，用眼看、用口讀、用耳聽的聖經</p></div></div></section>
+    <section class="storyline" aria-label="聖經朗讀錄音故事"><p class="section-heading">點選下面的標題，了解聖經朗讀錄音的故事。</p><div class="story-list">
+      <details class="story-card"><summary><span class="story-number">01</span><h2 class="story-title">你讀過聖經嗎？</h2><span class="chevron" aria-hidden="true">+</span></summary><div class="story-content"><div class="story-layout"><div class="story-copy"><p>你是否不只是用眼睛讀、用耳朵聽，也曾用自己的聲音把聖經讀出來？</p><p>聖經，原本不就是應該大聲讀出來的嗎？</p></div><div class="story-art-wrap"><img class="story-art" src="assets/rab-index2-01.png" alt="閉合的聖經上方有一個問號"></div></div></div></details>
+      <details class="story-card"><summary><span class="story-number">02</span><h2 class="story-title">讀聖經，並不容易，對嗎？</h2><span class="chevron" aria-hidden="true">+</span></summary><div class="story-content"><div class="story-layout"><div class="story-copy"><p>眼睛看著聖經，思緒卻不知不覺飄到別處，你也有過這樣的經歷嗎？</p><p>闔上聖經後，連剛剛讀過的內容都想不起來，你是否也有過這樣的時候呢？</p><p>神的話語還沒來得及觸動你的心，就彷彿從眼前一閃而過，你是否也有過這樣的感覺？</p></div><div class="story-art-wrap"><img class="story-art" src="assets/rab-index2-02.png" alt="一位男子在翻開的聖經前思考"></div></div></div></details>
+      <details class="story-card"><summary><span class="story-number">03</span><h2 class="story-title">聖經朗讀錄音，是閱讀聖經的新方式。</h2><span class="chevron" aria-hidden="true">+</span></summary><div class="story-content"><div class="story-layout"><div class="story-copy"><p>一節一節用手指指著讀，用眼看、用口讀、用耳聽，就能全心專注在神的話語上。</p><p>每天即使只有3分鐘，也為神和自己留出一段時間，試試聖經朗讀錄音吧。</p><p>重要的不只是留下錄音檔案，更是留下一段專心讀神話語的時間。</p><p>即使有人聽見而覺得有些尷尬，也可以說：「我正在錄音。」對方會理解的。</p></div><div class="story-art-wrap"><img class="story-art" src="assets/rab-index2-03.png" alt="一位女性拿著手機，指著其中一節經文朗讀"></div></div></div></details>
+      <details class="story-card"><summary><span class="story-number">04</span><h2 class="story-title">今天，就從一節開始。</h2><span class="chevron" aria-hidden="true">+</span></summary><div class="story-content"><div class="story-layout"><div class="story-copy"><p>讀過的經文會用你的聲音錄下並保存。</p><p>透過 Google Drive 備份與還原錄音，即使更換手機，也能保存珍貴的記錄。</p><p>教會和團契可以一起讀經，舉辦讀經挑戰，彼此鼓勵。</p><p>一節一節匯成一章，一章一章匯成一卷，成為神今天賜給我的話語。</p></div><div class="story-art-wrap"><img class="story-art" src="assets/rab-index2-04.png" alt="人們用手機一起閱讀聖經"><span class="story-art-logo"><img src="../assets/images/Logo_RAB.png" alt="聖經朗讀錄音標誌"></span></div></div></div></details>
+    </div></section>
+    <section class="closing" aria-label="聖經朗讀錄音下載"><div class="closing-copy"><p>專心於一節經文，<br>用手、眼、口、耳，全心投入。</p><span>從觀看、聆聽聖經，到親口讀出聖經。</span></div><div class="store-links"><a href="https://apps.apple.com/app/id1554443046" target="_blank" rel="noopener"><img src="../assets/images/Download_apple.png" alt="從 App Store 下載"></a><a href="https://play.google.com/store/apps/details?id=life.fci.recordaloudbible" target="_blank" rel="noopener"><img src="../assets/images/Download_google.png" alt="在 Google Play 取得"></a></div></section>
+  </main>
+    <footer><span>© FCI Inc. Factory of Creative Imagination.</span><div class="footer-actions"><a href="/documents/RAB_Privacy_Policy_ZH-TW.html">隱私權政策</a><a href="/documents/RAB_TermsandConditions_ZH-TW.html">使用條款</a><button class="footer-language" type="button" aria-label="Select language">Language ⌄</button></div></footer>
+  </div>
+  <!-- 다국어 버전 제작 시 위 영상 블록과 함께 아래 영상 재생 스크립트도 제거합니다. -->
+  
+  <script>
+    document.querySelectorAll(".video-poster").forEach(function (poster) {
+      poster.addEventListener("click", function () {
+        var iframe = document.createElement("iframe");
+        iframe.src = "https://www.youtube-nocookie.com/embed/" + poster.dataset.videoId + "?autoplay=1&rel=0";
+        iframe.title = poster.getAttribute("aria-label").replace(" 영상 재생", "");
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.allowFullscreen = true;
+        poster.parentNode.replaceChildren(iframe);
+      });
+    });
+  </script>
+  <script>
+    function fitBrandTitle() {
+      const title = document.querySelector(".brand-copy h1");
+      if (!title || !window.matchMedia("(max-width: 640px)").matches) return;
+      title.style.fontSize = "";
+      let size = parseFloat(getComputedStyle(title).fontSize);
+      while (title.scrollWidth > title.clientWidth && size > 8) {
+        size -= 0.5;
+        title.style.fontSize = `${size}px`;
+      }
+    }
+    fitBrandTitle();
+    window.addEventListener("resize", fitBrandTitle);
+  </script>
+<script src="../assets/large-text.js?v=rab-languages1"></script><script>
+(() => {
+const button=document.querySelector('[aria-label="Select language"]');
+const wrapper=document.createElement('div');wrapper.className='language-control';button.before(wrapper);wrapper.append(button);
+const menu=document.createElement('div');menu.className='language-menu';menu.hidden=true;wrapper.append(menu);
+[['ko','한국어'],['en','English'],['ja','日本語'],['zh-CN','简体中文'],['zh-TW','繁體中文']].forEach(([code,label])=>{
+const link=document.createElement('a');link.href='index_'+code+'.html';link.textContent=label;link.lang=code;
+if(code===document.documentElement.lang)link.setAttribute('aria-current','page');
+link.onclick=()=>{try{localStorage.setItem('fci-language',code)}catch(e){}};menu.append(link);
+});
+button.setAttribute('aria-expanded','false');
+function close(){menu.hidden=true;button.setAttribute('aria-expanded','false')}
+button.onclick=()=>{menu.hidden=!menu.hidden;button.setAttribute('aria-expanded',String(!menu.hidden))};
+document.addEventListener('click',event=>{if(!wrapper.contains(event.target))close()});
+wrapper.addEventListener('keydown',event=>{if(event.key==='Escape'){close();button.focus()}});
+})();
+</script><script src="../assets/image-viewer.js"></script></body>
+</html>
