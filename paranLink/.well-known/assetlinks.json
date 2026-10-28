@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.fciapp.TMOStory",
+      "sha256_cert_fingerprints": ["1A:9B:FA:43:4B:C0:0F:94:C4:B2:D0:39:86:43:56:41:3A:E7:56:0E:0A:00:43:3D:48:50:32:A8:01:29:77:18"]
+    }
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["SN244SX327.com.fciapp.TMOStory"],
+        "components": [
+          { "/": "/u/*" },
+          { "/": "/u" }
+        ]
+      }
+    ]
+  }
+}
