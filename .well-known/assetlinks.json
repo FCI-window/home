@@ -35,5 +35,17 @@
         "75:D6:BF:A0:25:0E:CB:E0:1F:2F:94:66:36:D5:43:75:C9:CA:49:BE:26:FB:07:FD:FB:28:8A:52:00:84:F5:8C"
       ]
     }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.fciapp.TMOStory",
+      "sha256_cert_fingerprints": [
+        "1A:9B:FA:43:4B:C0:0F:94:C4:B2:D0:39:86:43:56:41:3A:E7:56:0E:0A:00:43:3D:48:50:32:A8:01:29:77:18"
+      ]
+    }
   }
 ]

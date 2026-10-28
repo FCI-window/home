@@ -27,6 +27,15 @@
           "/rohdLink",
           "/rohdLink/*"
         ]
+      },
+      {
+        "appIDs": [
+          "SN244SX327.com.fciapp.TMOStory"
+        ],
+        "paths": [
+          "/paranLink/u",
+          "/paranLink/u/*"
+        ]
       }
     ]
   }
