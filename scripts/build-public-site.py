@@ -25,4 +25,7 @@ for page in (out/'home').glob('index*.html'):
  name=page.name
  if (out/name).exists():
   page.write_text('<!doctype html><meta charset="utf-8"><script>location.replace("../'+name+'"+location.search+location.hash)</script>')
+# PeerStat is Korea-only for now: keep other languages and old drafts out of publication.
+for name in ('index_en','index_ja','index_zh-TW','index_ko_before_fairness'):
+ (out/'peerstat'/(name+'.html')).unlink(missing_ok=True)
 print(out)
