@@ -192,17 +192,17 @@
 
         <section class="download-panel" aria-label="모두의평가 다운로드">
           <div><h2>모두가 평가하고, 집단의 평균과 분포만 남깁니다.</h2><p>함께 일한 사람들의 시선을 모아, 평가의 근거를 넓힙니다.</p></div>
-          <div class="store-links"><img src="../assets/images/Download_apple.png" alt="App Store에서 다운로드"><img src="../assets/images/Download_google.png" alt="Google Play에서 다운로드"></div>
+          <div class="store-links"><a href="https://apps.apple.com/kr/app/id6813710044" target="_blank" rel="noopener"><img src="../assets/images/Download_apple.png" alt="App Store에서 다운로드"></a><a href="https://play.google.com/store/apps/details?id=com.fciapp.peerstat" target="_blank" rel="noopener"><img src="../assets/images/Download_google.png" alt="Google Play에서 다운로드"></a></div>
         </section>
       </section>
     </main>
-    <footer class="footer"><span>© FCI Inc. Factory of Creative Imagination.</span><div class="footer-actions"><a href="/documents/PeerStat_Privacy_Policy_KR.html">개인정보처리방침</a><a href="/documents/PeerStat_Terms_and_Conditions_KR.html">이용약관</a><button class="footer-language" type="button" aria-label="Select language">Language ⌄</button></div></footer>
+    <footer class="footer"><span>© FCI Inc. Factory of Creative Imagination.</span><div class="footer-actions"><a href="/documents/PeerStat_Privacy_Policy_KR.html">개인정보처리방침</a><a href="/documents/PeerStat_Terms_and_Conditions_KR.html">이용약관</a></div></footer>
   </div>
   
   
 <script src="../assets/large-text.js"></script><script src="../assets/image-viewer.js"></script><script>
 (() => {
-const button=document.querySelector('[aria-label="Select language"]');
+const button=document.querySelector('[aria-label="Select language"]');if(!button)return;
 const wrapper=document.createElement('div');wrapper.className='language-control';button.before(wrapper);wrapper.append(button);
 const menu=document.createElement('div');menu.className='language-menu';menu.hidden=true;wrapper.append(menu);
 [['ko','한국어'],['en','English'],['ja','日本語'],['zh-TW','繁體中文']].forEach(([code,label])=>{
