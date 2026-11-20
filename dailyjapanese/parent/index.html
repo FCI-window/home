@@ -25,7 +25,7 @@ main{max-width:850px;margin:0 auto;padding:16px 16px 48px}
 svg.line{width:100%;height:auto;display:block;margin-top:8px}svg.line text{font-family:inherit}
 .cols{display:block}@media(min-width:760px){main{max-width:1000px}.cols{display:grid;grid-template-columns:1fr 1fr;column-gap:16px;align-items:start}.cols .card{margin-top:0}.cols .col>.card+.card{margin-top:16px}}
 table{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}td,th{padding:6px 4px;border-bottom:1px solid var(--tint);text-align:left}th{color:var(--textMuted);font-weight:700}td.n,th.n{text-align:right}
-table.dt th.c,table.dt td.n{text-align:center}table.dt tr.click{cursor:pointer}table.dt tr.today td{background:var(--tintSoft)}table.dt td.z{color:#b7a9c4}
+table.dt th{white-space:nowrap;font-size:12px}@media(max-width:420px){table.dt th{font-size:10.5px}table.dt th,table.dt td{padding:6px 2px}}table.dt th.c,table.dt td.n{text-align:center}table.dt tr.click{cursor:pointer}table.dt tr.today td{background:var(--tintSoft)}table.dt td.z{color:#b7a9c4}
 table.dt tr.avg td{font-weight:700;border-top:2px solid var(--tint)}table.dt tr.all td{background:var(--tintStrong);font-weight:800;border-bottom:0}table.dt tr.all td.v{text-align:right;font-size:17px}
 #pop{position:fixed;inset:0;background:#0006;display:flex;align-items:center;justify-content:center;padding:20px;z-index:10}
 #pop .box{background:var(--bg);border-radius:16px;padding:18px;width:100%;max-width:420px}#pop h3{font-size:17px;color:var(--ink)}
@@ -193,7 +193,7 @@ function dash(has, v) { return has ? String(Math.round(v || 0)) : '-'; }
 function scoreCard(r, parts) {
   var s = r.scores; if (!s) return null;
   var a = s.average, period = s.rows.length - 1, c = card('日付別記録 · 날짜별 기록 (%)'), t = el('table', null, 'dt'), h = el('tr');
-  ['日付', '達成', parts.read, parts.solve, parts.memorize].forEach(function (x, i) { h.appendChild(el('th', x, i ? 'c' : null)); }); t.appendChild(h);
+  [['日付', '날짜'], ['達成', '완료'], [parts.read, '읽기'], [parts.solve, '풀이'], [parts.memorize, '단어']].forEach(function (x, i) { var th = el('th', x[0] + ' ', i ? 'c' : null), ko = el('span', x[1]); ko.style.fontWeight = '400'; th.appendChild(ko); h.appendChild(th); }); t.appendChild(h);
   function cells(tr, d) {
     [[d.active, d.att], [d.reCount > 0, d.re], [d.soTotal > 0, d.so], [d.meKnown + d.meStudied > 0, d.me]].forEach(function (x) { var v = dash(x[0], x[1]); tr.appendChild(el('td', v, 'n' + (v === '-' ? ' z' : ''))); });
   }
