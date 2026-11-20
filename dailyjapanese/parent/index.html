@@ -131,7 +131,9 @@ function render(period) {
   function box(cls, title, value, unit, detail, sub) { var m = metric(title, value, unit, false, sub); m.className += ' ' + cls; if (detail) m.appendChild(el('div', detail, 'n')); boxes.appendChild(m); }
   // First box: CR (the average daily completion, same as Period Avg below) and how many days had at least one thing done.
   var through = data.through || data.today, cr = r.scores && r.scores.average ? r.scores.average.days : 0;
-  box('d', shortDay(r.rangeFirst) + ' ~ ' + shortDay(through), p0(cr), null, (r.practiced != null ? r.practiced : 0) + ' / ' + r.days + '日 学習');
+  // No study before today yet (the server sends no period average): say so instead of a one-day range at 0%.
+  if (r.scores && r.scores.average) box('d', shortDay(r.rangeFirst) + ' ~ ' + shortDay(through), p0(cr), null, (r.practiced != null ? r.practiced : 0) + ' / ' + r.days + '日 学習');
+  else box('d', '기록 없음', '—', null, '어제까지의 기록이 아직 없어요');
   box('l', 'レベル', r.level != null ? Number(r.level).toFixed(1) : '—', null, null, '레벨');
   box('r', parts.read, r.readAloud && r.readAloud.score != null ? r.readAloud.score + '%' : '—', null, passages ? '글 ' + passages + '개' : '', '소리 내어 읽기');
   box('s', parts.solve, pct(all.correct, all.total), null, all.total ? all.correct + ' / ' + all.total : '', '문제 풀이');
