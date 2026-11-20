@@ -36,6 +36,15 @@
           "/paranLink/u",
           "/paranLink/u/*"
         ]
+      },
+      {
+        "appIDs": [
+          "SN244SX327.com.fciapp.dailyjapanese"
+        ],
+        "paths": [
+          "/dailyjapanese/join",
+          "/dailyjapanese/join/*"
+        ]
       }
     ]
   }
