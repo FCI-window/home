@@ -233,7 +233,7 @@ function scoreCard(r, parts) {
     }
     function pctCell(v) { return hasData ? Math.round(v || 0) + '%' : '-'; }
     endRow('acc', '정확도 평균', ['', pctCell(a.re), pctCell(a.so), pctCell(a.me)], [1, 2, 3]);
-    endRow('per', '기간 평균', [hasData ? String(Math.round(total)) : '-', '÷ ' + period + '日', hasData ? '= ' + Math.round(a.days) + '%' : '-', ''], [0, 2]);
+    endRow('per', '기간 평균', [hasData ? String(Math.round(total)) : '-', '/ ' + period + '日', hasData ? '= ' + Math.round(a.days) + '%' : '-', ''], [0, 2]);
   }
   c.appendChild(t); return c;
 }
