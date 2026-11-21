@@ -26,7 +26,7 @@ svg.line{width:100%;height:auto;display:block;margin-top:8px}svg.line text{font-
 .cols{display:block}@media(min-width:760px){main{max-width:1000px}.cols{display:grid;grid-template-columns:1fr 1fr;column-gap:16px;align-items:start}.cols .card{margin-top:0}.cols .col>.card+.card{margin-top:16px}}
 table{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}td,th{padding:6px 4px;border-bottom:1px solid var(--tint);text-align:left}th{color:var(--textMuted);font-weight:700}td.n,th.n{text-align:right}
 table.dt th{white-space:nowrap;font-size:12px}@media(max-width:420px){table.dt th{font-size:10.5px}table.dt th,table.dt td{padding:6px 2px}}table.dt th.c,table.dt td.n{text-align:center}table.dt tr.click{cursor:pointer}table.dt tr.today td{background:var(--tintSoft)}table.dt td.z{color:#b7a9c4}
-table.dt tr.avg td{font-weight:700;border-top:2px solid var(--tint)}table.dt tr.all td{background:var(--tintStrong);font-weight:800;border-bottom:0}table.dt tr.all td.v{text-align:right;font-size:17px}
+table.dt tr.avg td{font-weight:700;border-top:2px solid var(--tint)}table.dt tr.avg.per td{border-top:0}table.dt tr.avg td.w{font-weight:400}table.dt tr.all td{background:var(--tintStrong);font-weight:800;border-bottom:0}table.dt tr.all td.v{text-align:right;font-size:17px}
 #pop{position:fixed;inset:0;background:#0006;display:flex;align-items:center;justify-content:center;padding:20px;z-index:10}
 #pop .box{background:var(--bg);border-radius:16px;padding:18px;width:100%;max-width:420px}#pop h3{font-size:17px;color:var(--ink)}
 #pop .eq{display:flex;margin-top:6px;font-size:16px;line-height:1.5}#pop .eq b{width:44px}#pop .eq i{width:22px;font-style:normal}#pop .eq span{flex:1}
@@ -157,7 +157,15 @@ function render(period) {
   });
   // Memorizing words
   var memo = null;
-  if (r.memorize) { memo = card(parts.memorize + ' · 단어 외우기'); if (r.words.empty) memo.appendChild(el('div', '아직 단어 기록이 없어요.', 'empty')); else memo.appendChild(stackedBars(r.words)); }
+  if (r.memorize) {
+    memo = card(parts.memorize + ' · 단어 외우기');
+    // The rate at the right of the title with the words it comes from underneath: (known / (studied + known)).
+    if (known + studied > 0) {
+      var mh = memo.firstChild, mhead = el('div', null, 'head'), mleft = el('div'), msum = el('div', null, 'sum');
+      memo.removeChild(mh); mleft.appendChild(mh); msum.appendChild(el('b', pct(known, known + studied))); msum.appendChild(el('span', '(' + known + ' / (' + studied + ' + ' + known + '))'));
+      mhead.appendChild(mleft); mhead.appendChild(msum); memo.insertBefore(mhead, memo.firstChild);
+    }
+    if (r.words.empty) memo.appendChild(el('div', '아직 단어 기록이 없어요.', 'empty')); else memo.appendChild(stackedBars(r.words)); }
   var wide = !!(mq && mq.matches);
   if (wide) {
     var cols = el('div', null, 'cols'), left = el('div', null, 'col'), right = el('div', null, 'col');
@@ -205,25 +213,27 @@ function scoreCard(r, parts) {
   });
   if (a) {
     var hasData = s.rows.slice(1).some(function (d) { return d.active; });
-    var overallName = '지난 ' + period + '일간 전체 평균';
-    var avg = el('tr', null, 'click avg'); avg.appendChild(el('td', '기간 평균'));
-    [[hasData, a.days], [hasData, a.re], [hasData, a.so], [hasData, a.me]].forEach(function (x) { var v = dash(x[0], x[1]); avg.appendChild(el('td', v, 'n' + (v === '-' ? ' z' : ''))); });
     var rangeText = shortDay(r.rangeFirst) + ' ~ ' + shortDay(data.through || data.today);
-    avg.onclick = function () {
-      popup('기간 평균', [
-        ['완료', '완료율 ' + p0(a.days)], ['', a.attendDays + ' ÷ ' + period + '일'],
-        ['읽기', '읽기 ' + p0(a.re)], ['', a.reCount ? '글 ' + a.reCount + '개의 평균' : '읽은 기록 없음'],
-        ['풀이', '풀이 ' + p0(a.so)], ['', a.soTotal ? a.soCorrect + ' ÷ ' + a.soTotal + ' 정답' : '푼 문제 없음'],
-        ['단어', '단어 ' + p0(a.me)], ['', a.meKnown + a.meStudied ? '아는 단어 ÷ (아는 단어 + 공부한 단어)' : '단어 기록 없음']
-      ].concat(a.meKnown + a.meStudied ? [['', a.meKnown + ' ÷ (' + a.meKnown + ' + ' + a.meStudied + ')']] : []),
-        ['완료율은 기간 동안 하루 완료율의 평균이에요(공부하지 않은 날은 0%). 읽기·풀이·단어는 그 기간에 한 것을 모두 합쳐 계산해요.'], rangeText + ' · ' + period + '일 · 오늘 제외');
-    };
-    t.appendChild(avg);
-    var all = el('tr', null, 'click all'); var lab = el('td', overallName); lab.colSpan = 4; all.appendChild(lab); all.appendChild(el('td', hasData ? p0(a.total) : '-', 'v'));
-    all.onclick = function () {
-      popup(overallName + ' ' + p0(a.total), [['', '(완료 + 읽기 + 풀이 + 단어) ÷ 4'], ['', '(' + Math.round(a.days) + ' + ' + Math.round(a.re) + ' + ' + Math.round(a.so) + ' + ' + Math.round(a.me) + ') ÷ 4']], [], rangeText + ' · 오늘 제외');
-    };
-    t.appendChild(all);
+    // The end of the table, each part under its column: the accuracy (the results of the period), then the period average of the
+    // completion (the day completions added up, divided by the days of the period). Tapping a row explains the numbers.
+    var total = s.rows.slice(1).reduce(function (sum, d) { return sum + (d.att || 0); }, 0);
+    function endRow(cls, label, parts4, bold) {
+      var tr = el('tr', null, 'click avg ' + cls); tr.appendChild(el('td', label));
+      parts4.forEach(function (text, i) { tr.appendChild(el('td', text, 'n' + (bold.indexOf(i) >= 0 ? '' : ' w'))); });
+      tr.onclick = function () {
+        popup('기간 평균', [
+          ['완료', '완료율 ' + p0(a.days)], ['', total + ' ÷ ' + period + '일'],
+          ['읽기', '읽기 ' + p0(a.re)], ['', a.reCount ? '글 ' + a.reCount + '개의 평균' : '읽은 기록 없음'],
+          ['풀이', '풀이 ' + p0(a.so)], ['', a.soTotal ? a.soCorrect + ' ÷ ' + a.soTotal + ' 정답' : '푼 문제 없음'],
+          ['단어', '단어 ' + p0(a.me)], ['', a.meKnown + a.meStudied ? '아는 단어 ÷ (아는 단어 + 공부한 단어)' : '단어 기록 없음']
+        ].concat(a.meKnown + a.meStudied ? [['', a.meKnown + ' ÷ (' + a.meKnown + ' + ' + a.meStudied + ')']] : []),
+          ['완료는 기간 일수의 평균이고, 정확도는 학습 결과의 평균입니다.'], rangeText + ' · ' + period + '일 · 오늘 제외');
+      };
+      t.appendChild(tr);
+    }
+    function pctCell(v) { return hasData ? Math.round(v || 0) + '%' : '-'; }
+    endRow('acc', '정확도 평균', ['', pctCell(a.re), pctCell(a.so), pctCell(a.me)], [1, 2, 3]);
+    endRow('per', '기간 평균', [hasData ? String(Math.round(total)) : '-', '÷ ' + period + '日', hasData ? '= ' + Math.round(a.days) + '%' : '-', ''], [0, 2]);
   }
   c.appendChild(t); return c;
 }
