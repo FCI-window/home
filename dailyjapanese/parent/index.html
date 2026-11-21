@@ -188,14 +188,15 @@ function dayPopup(d, isToday) {
     ['', d.meKnown + d.meStudied ? '아는 단어 ÷ (아는 단어 + 공부한 단어)' : '단어 기록 없음']
   ].concat(d.meKnown + d.meStudied ? [['', d.meKnown + ' ÷ (' + d.meKnown + ' + ' + d.meStudied + ')']] : []), notes);
 }
-// A number when there is data, "-" when there is none (nothing done that day, no passage read, no question answered, no word handled).
+// A number when there is data, "-" when there is none: a day with nothing at all (the period row: no record in the whole period).
 function dash(has, v) { return has ? String(Math.round(v || 0)) : '-'; }
 function scoreCard(r, parts) {
   var s = r.scores; if (!s) return null;
   var a = s.average, period = s.rows.length - 1, c = card('日付別記録 · 날짜별 기록 (%)'), t = el('table', null, 'dt'), h = el('tr');
   [['日付', '날짜'], ['達成', '완료'], [parts.read, '읽기'], [parts.solve, '풀이'], [parts.memorize, '단어']].forEach(function (x, i) { var th = el('th', x[0] + ' ', i ? 'c' : null), ko = el('span', x[1]); ko.style.fontWeight = '400'; th.appendChild(ko); h.appendChild(th); }); t.appendChild(h);
   function cells(tr, d) {
-    [[d.active, d.att], [d.reCount > 0, d.re], [d.soTotal > 0, d.so], [d.meKnown + d.meStudied > 0, d.me]].forEach(function (x) { var v = dash(x[0], x[1]); tr.appendChild(el('td', v, 'n' + (v === '-' ? ' z' : ''))); });
+    var has = d.active; // any record that day: a number in every column (0 for what was not done); only an empty day shows dashes
+    [[has, d.att], [has, d.re], [has, d.so], [has, d.me]].forEach(function (x) { var v = dash(x[0], x[1]); tr.appendChild(el('td', v, 'n' + (v === '-' ? ' z' : ''))); });
   }
   s.rows.forEach(function (d, i) {
     var tr = el('tr', null, 'click' + (i === 0 ? ' today' : '')); tr.appendChild(el('td', tableDay(d.day)));
@@ -206,7 +207,7 @@ function scoreCard(r, parts) {
     var hasData = s.rows.slice(1).some(function (d) { return d.active; });
     var overallName = '지난 ' + period + '일간 전체 평균';
     var avg = el('tr', null, 'click avg'); avg.appendChild(el('td', '기간 평균'));
-    [[hasData, a.days], [a.reCount > 0, a.re], [a.soTotal > 0, a.so], [a.meKnown + a.meStudied > 0, a.me]].forEach(function (x) { var v = dash(x[0], x[1]); avg.appendChild(el('td', v, 'n' + (v === '-' ? ' z' : ''))); });
+    [[hasData, a.days], [hasData, a.re], [hasData, a.so], [hasData, a.me]].forEach(function (x) { var v = dash(x[0], x[1]); avg.appendChild(el('td', v, 'n' + (v === '-' ? ' z' : ''))); });
     var rangeText = shortDay(r.rangeFirst) + ' ~ ' + shortDay(data.through || data.today);
     avg.onclick = function () {
       popup('기간 평균', [
