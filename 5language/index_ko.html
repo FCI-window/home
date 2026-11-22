@@ -60,6 +60,8 @@
     .criterion { display:block; padding:15px 17px; border:1px solid var(--line); border-radius:12px; background:#f8fbf9; }
     .criterion h3 { margin:0; color:var(--dark); font-size:1rem; }
     .criterion p { margin:4px 0 0 !important; font-size:.94rem; }
+    .criteria.when { margin:0 0 14px; }
+    .criterion.focus { border-color:rgba(46,158,79,.5); background:#edf7f0; }
     .steps { display:grid; gap:12px; margin:4px 0 0; padding:0; list-style:none; }
     .steps li { display:grid; grid-template-columns:34px 1fr; gap:10px; align-items:start; }
     .step-no { display:grid; place-items:center; width:28px; height:28px; border-radius:50%; background:var(--soft); color:var(--dark); font-size:.8rem; font-weight:800; }
@@ -164,6 +166,11 @@
             <div class="story-copy">
               <p class="story-lead">짧게 소리 내어 읽고, 5문제를 풀고, 새 단어 5개를 외웁니다. 매일.</p>
               <p>짧은 동영상 한 편 볼 시간이면 충분합니다.</p>
+              <div class="criteria when">
+                <article class="criterion"><h3>혼자 있을 때는</h3><p>소리 내어 듣기와 말하기를 연습하세요.</p></article>
+                <article class="criterion"><h3>책상 앞에서는</h3><p>긴 글 독해를 연습하세요.</p></article>
+                <article class="criterion focus"><h3>짧은 틈새 시간에는</h3><p>5Language로 단어와 짧은 문제를 풀어 보세요.</p></article>
+              </div>
               <p class="note-line">언어는 달라도, 기본기를 쌓는 방법은 같습니다.</p>
             </div>
             <figure class="story-image-wrap"><img class="story-image" src="./images/5language-story-03.png" alt="휴대폰을 든 학생 주위에 읽기, 문제 풀기, 단어 외우기 아이콘과 매일 체크된 달력, 5 팻말을 든 흰 고양이" loading="lazy"></figure>
