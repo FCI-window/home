@@ -42,8 +42,10 @@
           "SN244SX327.com.fciapp.dailyjapanese"
         ],
         "paths": [
-          "/dailyjapanese/join",
-          "/dailyjapanese/join/*"
+          "/5language/japanese/open",
+          "/5language/japanese/open/*",
+          "/5language/japanese/join",
+          "/5language/japanese/join/*"
         ]
       }
     ]
