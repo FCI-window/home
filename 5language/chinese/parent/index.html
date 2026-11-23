@@ -29,7 +29,7 @@ table.dt th{white-space:nowrap;font-size:12px}@media(max-width:420px){table.dt t
 table.dt tr.avg td{font-weight:700;border-top:2px solid var(--tint)}table.dt tr.avg.per td{border-top:0}table.dt tr.avg td.w{font-weight:400}table.dt tr.all td{background:var(--tintStrong);font-weight:800;border-bottom:0}table.dt tr.all td.v{text-align:right;font-size:17px}
 #pop{position:fixed;inset:0;background:#0006;display:flex;align-items:center;justify-content:center;padding:20px;z-index:10}
 #pop .box{background:var(--bg);border-radius:16px;padding:18px;width:100%;max-width:420px}#pop h3{font-size:17px;color:var(--ink)}
-#pop .eq{display:flex;margin-top:6px;font-size:16px;line-height:1.5}#pop .eq b{width:44px}#pop .eq i{width:22px;font-style:normal}#pop .eq span{flex:1;white-space:pre-line}
+#pop .eq{display:flex;margin-top:6px;font-size:16px;line-height:1.5}#pop .eq b{width:44px}#pop .eq i{width:22px;font-style:normal}#pop .eq span{flex:1}#pop .eqr{text-align:right;font-size:16px;line-height:1.5}
 #pop .note{margin-top:10px}#pop button{display:block;margin:14px 0 0 auto;border:0;background:none;color:var(--ink);font-weight:700;font-size:15px;padding:6px 10px}
 #msg{text-align:center;padding:60px 16px;color:var(--textMuted)}
 ruby{ruby-position:over}rt{font-size:.6em;font-weight:400;color:var(--textMuted);letter-spacing:0}
@@ -189,11 +189,14 @@ function p0(v) { return Math.round(v || 0) + '%'; }
 function popup(title, lines, notes, sub) {
   var old = $('pop'); if (old) old.remove();
   var o = el('div'); o.id = 'pop'; var box = el('div', null, 'box'); box.appendChild(el('h3', title)); if (sub) box.appendChild(el('div', sub, 'note'));
-  lines.forEach(function (l) { var row = el('div', null, 'eq'); row.appendChild(el('b', l[0])); row.appendChild(el('i', '=')); row.appendChild(el('span', l[1])); box.appendChild(row); });
+  // a { right: text } line sits under the line above at the right edge (the divisor of the 단어 formula)
+  lines.forEach(function (l) { if (l.right) { box.appendChild(el('div', l.right, 'eqr')); return; } var row = el('div', null, 'eq'); row.appendChild(el('b', l[0])); row.appendChild(el('i', '=')); row.appendChild(el('span', l[1])); box.appendChild(row); });
   (notes || []).forEach(function (n) { box.appendChild(el('div', n, 'note')); });
   var close = el('button', '닫기'); close.onclick = function () { o.remove(); }; box.appendChild(close);
   o.onclick = function (e) { if (e.target === o) o.remove(); }; o.appendChild(box); document.body.appendChild(o);
 }
+// The 단어 row: "40% = 아는 단어 23 ÷" on one line, the divisor under it at the right edge.
+function wordsLines(rate, known, studied) { return known + studied ? [['단어', p0(rate) + ' = 아는 단어 ' + known + ' ÷'], { right: '(아는 단어 ' + known + ' + 공부한 단어 ' + studied + ')' }] : [['단어', p0(rate) + ' (단어 기록 없음)']]; }
 function dayPopup(d, isToday) {
   var notes = [];
   if (d.reReadable > 0 && d.reRead > 0 && d.parts.read === 0) notes.push('모든 글을 읽어야 완료율에 읽기가 들어가요.');
@@ -203,9 +206,7 @@ function dayPopup(d, isToday) {
     ['', '읽기 ' + d.parts.read + '% + 풀이 ' + d.parts.solve + '% + 단어 ' + d.parts.words + '%'],
     ['읽기', d.reRead ? p0(d.re) + ' = 글 ' + d.reRead + '개의 일치율 평균' : p0(d.re) + ' (읽은 기록 없음)'],
     ['풀이', d.soTotal ? p0(d.so) + ' = 정답 ' + d.soCorrect + ' ÷ 전체 문제 ' + d.soTotal : p0(d.so) + ' (푼 문제 없음)'],
-    ['단어', p0(d.me)],
-    ['', d.meKnown + d.meStudied ? '아는 단어 ' + d.meKnown + ' ÷\n(아는 단어 ' + d.meKnown + ' + 공부한 단어 ' + d.meStudied + ')' : '단어 기록 없음']
-  ], notes);
+  ].concat(wordsLines(d.me, d.meKnown, d.meStudied)), notes);
 }
 // A number when there is data, "-" when there is none: a day with nothing at all (the period row: no record in the whole period).
 function dash(has, v) { return has ? String(Math.round(v || 0)) : '-'; }
@@ -236,8 +237,7 @@ function scoreCard(r, parts) {
           ['완료', p0(a.days)], ['', total + ' ÷ ' + period + '일'],
           ['읽기', a.reCount ? p0(a.re) + ' = 글 ' + a.reCount + '개의 일치율 평균' : p0(a.re) + ' (읽은 기록 없음)'],
           ['풀이', a.soTotal ? p0(a.so) + ' = 정답 ' + a.soCorrect + ' ÷ 전체 문제 ' + a.soTotal : p0(a.so) + ' (푼 문제 없음)'],
-          ['단어', p0(a.me)], ['', a.meKnown + a.meStudied ? '아는 단어 ' + a.meKnown + ' ÷\n(아는 단어 ' + a.meKnown + ' + 공부한 단어 ' + a.meStudied + ')' : '단어 기록 없음']
-        ],
+        ].concat(wordsLines(a.me, a.meKnown, a.meStudied)),
           ['완료는 기간 일수의 평균이고, 정확도는 학습 결과의 평균입니다.'], rangeText + ' · ' + period + '일 · 오늘 제외');
       };
       t.appendChild(tr);
