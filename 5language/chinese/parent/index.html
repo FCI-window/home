@@ -128,7 +128,8 @@ function render(period) {
   var r = data.reports[period], app = $('app'); app.textContent = '';
   var course = data.course || {}; applyTheme(course.id); var parts = partsOf(course.id);
   var top = el('div', null, 'top'), img = el('img'); img.src = '/5language/images/dujieji-192.png'; img.alt = ''; top.appendChild(img);
-  var tt = el('div', null, 't'); tt.appendChild(el('h1', '5中文 · ' + (course.name || course.shortName || '')));
+  var tt = el('div', null, 't'); // Parents read Korean: the course name is shown with 급 (the app writes HSK 1级; the server sends the app's name).
+  tt.appendChild(el('h1', '5中文 · ' + String(course.name || course.shortName || '').replace(/级/g, '급')));
   var gen = new Date(data.generatedAt), z = function (n) { return String(n).padStart(2, '0'); };
   tt.appendChild(el('div', (data.student ? '학생 ' + data.student + ' · ' : '') + gen.getFullYear() + '.' + z(gen.getMonth() + 1) + '.' + z(gen.getDate()) + ' ' + z(gen.getHours()) + ':' + z(gen.getMinutes()), 'sub'));
   top.appendChild(tt); app.appendChild(top);
