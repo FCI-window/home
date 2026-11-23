@@ -29,7 +29,7 @@ table.dt th{white-space:nowrap;font-size:12px}@media(max-width:420px){table.dt t
 table.dt tr.avg td{font-weight:700;border-top:2px solid var(--tint)}table.dt tr.avg.per td{border-top:0}table.dt tr.avg td.w{font-weight:400}table.dt tr.all td{background:var(--tintStrong);font-weight:800;border-bottom:0}table.dt tr.all td.v{text-align:right;font-size:17px}
 #pop{position:fixed;inset:0;background:#0006;display:flex;align-items:center;justify-content:center;padding:20px;z-index:10}
 #pop .box{background:var(--bg);border-radius:16px;padding:18px;width:100%;max-width:420px}#pop h3{font-size:17px;color:var(--ink)}
-#pop .eq{display:flex;margin-top:6px;font-size:16px;line-height:1.5}#pop .eq b{width:44px}#pop .eq i{width:22px;font-style:normal}#pop .eq span{flex:1}
+#pop .eq{display:flex;margin-top:6px;font-size:16px;line-height:1.5}#pop .eq b{width:44px}#pop .eq i{width:22px;font-style:normal}#pop .eq span{flex:1;white-space:pre-line}
 #pop .note{margin-top:10px}#pop button{display:block;margin:14px 0 0 auto;border:0;background:none;color:var(--ink);font-weight:700;font-size:15px;padding:6px 10px}
 #msg{text-align:center;padding:60px 16px;color:var(--textMuted)}
 ruby{ruby-position:over}rt{font-size:.6em;font-weight:400;color:var(--textMuted);letter-spacing:0}
@@ -199,13 +199,13 @@ function dayPopup(d, isToday) {
   if (d.reReadable > 0 && d.reRead > 0 && d.parts.read === 0) notes.push('모든 글을 읽어야 완료율에 읽기가 들어가요.');
   if (d.meKnown + d.meStudied > 0 && d.parts.words === 0) notes.push('그날의 단어를 끝내야 완료율에 단어가 들어가요.');
   popup(tableDay(d.day) + (isToday ? ' (오늘)' : ''), [
-    ['완료', '완료율 ' + p0(d.att)],
+    ['완료', p0(d.att)],
     ['', '읽기 ' + d.parts.read + '% + 풀이 ' + d.parts.solve + '% + 단어 ' + d.parts.words + '%'],
-    ['읽기', '읽기 ' + p0(d.re) + (d.reRead ? '  (글 ' + d.reReadable + '개 중 ' + d.reRead + '개 읽음)' : '  (읽은 기록 없음)')],
-    ['풀이', '풀이 ' + p0(d.so) + (d.soTotal ? '  (정답 ' + d.soCorrect + ' / ' + d.soTotal + ')' : '  (푼 문제 없음)')],
-    ['단어', '단어 ' + p0(d.me)],
-    ['', d.meKnown + d.meStudied ? '아는 단어 ÷ (아는 단어 + 공부한 단어)' : '단어 기록 없음']
-  ].concat(d.meKnown + d.meStudied ? [['', d.meKnown + ' ÷ (' + d.meKnown + ' + ' + d.meStudied + ')']] : []), notes);
+    ['읽기', d.reRead ? p0(d.re) + ' = 글 ' + d.reRead + '개의 일치율 평균' : p0(d.re) + ' (읽은 기록 없음)'],
+    ['풀이', d.soTotal ? p0(d.so) + ' = 정답 ' + d.soCorrect + ' ÷ 전체 문제 ' + d.soTotal : p0(d.so) + ' (푼 문제 없음)'],
+    ['단어', p0(d.me)],
+    ['', d.meKnown + d.meStudied ? '아는 단어 ' + d.meKnown + ' ÷\n(아는 단어 ' + d.meKnown + ' + 공부한 단어 ' + d.meStudied + ')' : '단어 기록 없음']
+  ], notes);
 }
 // A number when there is data, "-" when there is none: a day with nothing at all (the period row: no record in the whole period).
 function dash(has, v) { return has ? String(Math.round(v || 0)) : '-'; }
@@ -233,11 +233,11 @@ function scoreCard(r, parts) {
       parts4.forEach(function (text, i) { tr.appendChild(el('td', text, 'n' + (bold.indexOf(i) >= 0 ? '' : ' w'))); });
       tr.onclick = function () {
         popup('기간 평균', [
-          ['완료', '완료율 ' + p0(a.days)], ['', total + ' ÷ ' + period + '일'],
-          ['읽기', '읽기 ' + p0(a.re)], ['', a.reCount ? '글 ' + a.reCount + '개의 평균' : '읽은 기록 없음'],
-          ['풀이', '풀이 ' + p0(a.so)], ['', a.soTotal ? a.soCorrect + ' ÷ ' + a.soTotal + ' 정답' : '푼 문제 없음'],
-          ['단어', '단어 ' + p0(a.me)], ['', a.meKnown + a.meStudied ? '아는 단어 ÷ (아는 단어 + 공부한 단어)' : '단어 기록 없음']
-        ].concat(a.meKnown + a.meStudied ? [['', a.meKnown + ' ÷ (' + a.meKnown + ' + ' + a.meStudied + ')']] : []),
+          ['완료', p0(a.days)], ['', total + ' ÷ ' + period + '일'],
+          ['읽기', a.reCount ? p0(a.re) + ' = 글 ' + a.reCount + '개의 일치율 평균' : p0(a.re) + ' (읽은 기록 없음)'],
+          ['풀이', a.soTotal ? p0(a.so) + ' = 정답 ' + a.soCorrect + ' ÷ 전체 문제 ' + a.soTotal : p0(a.so) + ' (푼 문제 없음)'],
+          ['단어', p0(a.me)], ['', a.meKnown + a.meStudied ? '아는 단어 ' + a.meKnown + ' ÷\n(아는 단어 ' + a.meKnown + ' + 공부한 단어 ' + a.meStudied + ')' : '단어 기록 없음']
+        ],
           ['완료는 기간 일수의 평균이고, 정확도는 학습 결과의 평균입니다.'], rangeText + ' · ' + period + '일 · 오늘 제외');
       };
       t.appendChild(tr);
