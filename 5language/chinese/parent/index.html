@@ -203,7 +203,7 @@ function dayPopup(d, isToday) {
   if (d.meKnown + d.meStudied > 0 && d.parts.words === 0) notes.push('그날의 단어를 끝내야 완료율에 단어가 들어가요.');
   popup(tableDay(d.day) + (isToday ? ' (오늘)' : ''), [
     ['완료', p0(d.att)],
-    ['', '읽기 ' + d.parts.read + '% + 풀이 ' + d.parts.solve + '% + 단어 ' + d.parts.words + '%'],
+    { right: '= 읽기 ' + d.parts.read + '% + 풀이 ' + d.parts.solve + '% + 단어 ' + d.parts.words + '%' },
     ['읽기', d.reRead ? p0(d.re) + ' = 글 ' + d.reRead + '개의 일치율 평균' : p0(d.re) + ' (읽은 기록 없음)'],
     ['풀이', d.soTotal ? p0(d.so) + ' = 정답 ' + d.soCorrect + ' ÷ 전체 문제 ' + d.soTotal : p0(d.so) + ' (푼 문제 없음)'],
   ].concat(wordsLines(d.me, d.meKnown, d.meStudied)), notes);
@@ -234,7 +234,7 @@ function scoreCard(r, parts) {
       parts4.forEach(function (text, i) { tr.appendChild(el('td', text, 'n' + (bold.indexOf(i) >= 0 ? '' : ' w'))); });
       tr.onclick = function () {
         popup('기간 평균', [
-          ['완료', p0(a.days)], ['', total + ' ÷ ' + period + '일'],
+          ['완료', p0(a.days) + ' = ' + Math.round(total) + ' ÷ ' + period + '일'],
           ['읽기', a.reCount ? p0(a.re) + ' = 글 ' + a.reCount + '개의 일치율 평균' : p0(a.re) + ' (읽은 기록 없음)'],
           ['풀이', a.soTotal ? p0(a.so) + ' = 정답 ' + a.soCorrect + ' ÷ 전체 문제 ' + a.soTotal : p0(a.so) + ' (푼 문제 없음)'],
         ].concat(wordsLines(a.me, a.meKnown, a.meStudied)),
