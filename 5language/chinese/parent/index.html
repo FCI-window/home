@@ -29,7 +29,7 @@ table.dt th{white-space:nowrap;font-size:12px}@media(max-width:420px){table.dt t
 table.dt tr.avg td{font-weight:700;border-top:2px solid var(--tint)}table.dt tr.avg.per td{border-top:0}table.dt tr.avg td.w{font-weight:400}table.dt tr.all td{background:var(--tintStrong);font-weight:800;border-bottom:0}table.dt tr.all td.v{text-align:right;font-size:17px}
 #pop{position:fixed;inset:0;background:#0006;display:flex;align-items:center;justify-content:center;padding:20px;z-index:10}
 #pop .box{background:var(--bg);border-radius:16px;padding:18px;width:100%;max-width:420px}#pop h3{font-size:17px;color:var(--ink)}
-#pop .eq{display:flex;margin-top:6px;font-size:16px;line-height:1.5}#pop .eq b{width:44px}#pop .eq i{width:22px;font-style:normal}#pop .eq span{flex:1}#pop .eqr{text-align:right;font-size:16px;line-height:1.5}
+#pop .eq{display:flex;margin-top:6px;font-size:16px;line-height:1.5}#pop .eq b{width:58px}#pop .eq i{width:22px;font-style:normal}#pop .eq span{flex:1}#pop .eqr{text-align:right;font-size:16px;line-height:1.5}
 #pop .note{margin-top:10px}#pop button{display:block;margin:14px 0 0 auto;border:0;background:none;color:var(--ink);font-weight:700;font-size:15px;padding:6px 10px}
 #msg{text-align:center;padding:60px 16px;color:var(--textMuted)}
 ruby{ruby-position:over}rt{font-size:.6em;font-weight:400;color:var(--textMuted);letter-spacing:0}
@@ -199,10 +199,10 @@ function popup(title, lines, notes, sub) {
 function wordsLines(rate, known, studied) { return known + studied ? [['단어', p0(rate) + ' = 아는 단어 ' + known + ' ÷'], { right: '(아는 단어 ' + known + ' + 공부한 단어 ' + studied + ')' }] : [['단어', p0(rate) + ' (단어 기록 없음)']]; }
 function dayPopup(d, isToday) {
   var notes = [];
-  if (d.reReadable > 0 && d.reRead > 0 && d.parts.read === 0) notes.push('모든 글을 읽어야 완료율에 읽기가 들어가요.');
-  if (d.meKnown + d.meStudied > 0 && d.parts.words === 0) notes.push('그날의 단어를 끝내야 완료율에 단어가 들어가요.');
+  if (d.reReadable > 0 && d.reRead > 0 && d.parts.read === 0) notes.push('모든 글을 읽어야 완성률에 읽기가 들어가요.');
+  if (d.meKnown + d.meStudied > 0 && d.parts.words === 0) notes.push('그날의 단어를 끝내야 완성률에 단어가 들어가요.');
   popup(tableDay(d.day) + (isToday ? ' (오늘)' : ''), [
-    ['완료', p0(d.att)],
+    ['완성률', p0(d.att)],
     { right: '= 읽기 ' + d.parts.read + '% + 풀이 ' + d.parts.solve + '% + 단어 ' + d.parts.words + '%' },
     ['읽기', d.reRead ? p0(d.re) + ' = 글 ' + d.reRead + '개의 일치율 평균' : p0(d.re) + ' (읽은 기록 없음)'],
     ['풀이', d.soTotal ? p0(d.so) + ' = 정답 ' + d.soCorrect + ' ÷ 전체 문제 ' + d.soTotal : p0(d.so) + ' (푼 문제 없음)'],
@@ -213,7 +213,7 @@ function dash(has, v) { return has ? String(Math.round(v || 0)) : '-'; }
 function scoreCard(r, parts) {
   var s = r.scores; if (!s) return null;
   var a = s.average, period = s.rows.length - 1, c = card([zh('每日记录', 'měi rì jì lù'), ' · 날짜별 기록 (%)']), t = el('table', null, 'dt'), h = el('tr');
-  [[zh('日期', 'rì qī'), '날짜'], [zh('完成', 'wán chéng'), '완료'], [parts.read(), '읽기'], [parts.solve(), '풀이'], [parts.memorize(), '단어']].forEach(function (x, i) { var th = line([x[0], ' '], i ? 'c' : null, 'th'), ko = el('span', x[1]); ko.style.fontWeight = '400'; th.appendChild(ko); h.appendChild(th); }); t.appendChild(h);
+  [[zh('日期', 'rì qī'), '날짜'], [zh('完成率', 'wán chéng lǜ'), '완성률'], [parts.read(), '읽기'], [parts.solve(), '풀이'], [parts.memorize(), '단어']].forEach(function (x, i) { var th = line([x[0], ' '], i ? 'c' : null, 'th'), ko = el('span', x[1]); ko.style.fontWeight = '400'; th.appendChild(ko); h.appendChild(th); }); t.appendChild(h);
   function cells(tr, d) {
     var has = d.active; // any record that day: a number in every column (0 for what was not done); only an empty day shows dashes
     [[has, d.att], [has, d.re], [has, d.so], [has, d.me]].forEach(function (x) { var v = dash(x[0], x[1]); tr.appendChild(el('td', v, 'n' + (v === '-' ? ' z' : ''))); });
@@ -234,11 +234,11 @@ function scoreCard(r, parts) {
       parts4.forEach(function (text, i) { tr.appendChild(el('td', text, 'n' + (bold.indexOf(i) >= 0 ? '' : ' w'))); });
       tr.onclick = function () {
         popup('기간 평균', [
-          ['완료', p0(a.days) + ' = ' + Math.round(total) + ' ÷ ' + period + '일'],
+          ['완성률', p0(a.days) + ' = ' + Math.round(total) + ' ÷ ' + period + '일'],
           ['읽기', a.reCount ? p0(a.re) + ' = 글 ' + a.reCount + '개의 일치율 평균' : p0(a.re) + ' (읽은 기록 없음)'],
           ['풀이', a.soTotal ? p0(a.so) + ' = 정답 ' + a.soCorrect + ' ÷ 전체 문제 ' + a.soTotal : p0(a.so) + ' (푼 문제 없음)'],
         ].concat(wordsLines(a.me, a.meKnown, a.meStudied)),
-          ['완료는 기간 일수의 평균이고, 정확도는 학습 결과의 평균입니다.'], rangeText + ' · ' + period + '일 · 오늘 제외');
+          ['완성률은 기간 일수의 평균이고, 정확도는 학습 결과의 평균입니다.'], rangeText + ' · ' + period + '일 · 오늘 제외');
       };
       t.appendChild(tr);
     }
