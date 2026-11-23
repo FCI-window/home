@@ -1,0 +1,35 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5中文</title><meta name="robots" content="noindex">
+<link rel="icon" type="image/png" sizes="32x32" href="/dailyjapanese/images/yotobo-32.png">
+<meta property="og:image" content="https://www.fciapp.com/dailyjapanese/images/yotobo-180.png">
+<style>
+  body { font-family: -apple-system, "Hiragino Sans", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; background: #F5F4ED; color: #3A2F5C; margin: 0; padding: 24px; text-align: center; }
+  main { max-width: 420px; margin: 40px auto; }
+  img { width: 84px; height: 84px; border-radius: 18px; }
+  h1 { font-size: 24px; margin: 14px 0 6px; }
+  p { line-height: 1.6; }
+</style></head><body><main>
+<img src="/dailyjapanese/images/yotobo-180.png" alt="">
+<h1>5中文</h1>
+<p id="message">앱은 곧 App Store와 Google Play에 나와요.</p>
+<script>
+  // 앱이 설치되어 있으면 이 페이지는 뜨지 않고 앱이 바로 열립니다 (apple-app-site-association / assetlinks.json).
+  // 출시 후 스토어 주소를 채우면 휴대폰에서 해당 스토어로 자동 이동합니다.
+  var IOS_URL = "";      // 예: "https://apps.apple.com/app/id0000000000"
+  var ANDROID_URL = "";  // 예: "https://play.google.com/store/apps/details?id=com.fciapp.dailychinese"
+  var PC_URL = "/5language/index_ko.html";
+
+  var ua = navigator.userAgent || navigator.vendor || "";
+  var isAndroid = /android/i.test(ua);
+  var isIOS = /iPhone|iPad|iPod/i.test(ua) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+  if (isAndroid) {
+    if (ANDROID_URL) { document.getElementById("message").textContent = "Google Play로 이동하고 있어요…"; location.replace(ANDROID_URL); }
+  } else if (isIOS) {
+    if (IOS_URL) { document.getElementById("message").textContent = "App Store로 이동하고 있어요…"; location.replace(IOS_URL); }
+  } else {
+    location.replace(PC_URL);
+  }
+</script>
+</main></body></html>
