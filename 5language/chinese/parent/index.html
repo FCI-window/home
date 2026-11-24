@@ -1,0 +1,281 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer">
+<title>5中文 学习报告 · 학습 리포트</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/5language/images/dujieji-32.png"><link rel="icon" type="image/png" sizes="192x192" href="/5language/images/dujieji-192.png"><link rel="apple-touch-icon" href="/5language/images/dujieji-180.png">
+<style>
+:root{--bg:#F5F4ED;--ink:#4A3410;--inkSoft:#43382A;--textMuted:#7A6B55;--textFaint:#8C806E;--accentStrong:#7E530E;--accent:#946618;--accentLight:#D9B77A;--borderStrong:#E6D6B5;--border:#ECE0C6;--tint:#F8F1E2;--tintStrong:#F4EAD5;--tintSoft:#FBF6EC}
+*{box-sizing:border-box;margin:0}body{font-family:-apple-system,"PingFang SC","Apple SD Gothic Neo","Noto Sans SC","Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;font-size:16px}
+header{background:var(--ink);color:#fff;padding:12px 20px;font-weight:700}
+main{max-width:850px;margin:0 auto;padding:16px 16px 48px}
+.top{display:flex;align-items:center;gap:12px;margin:8px 0 16px}.top img{width:48px;height:48px;border-radius:11px}.top .t{flex:1;text-align:center}.top h1{font-size:20px;color:var(--ink)}.top .sub{color:var(--textMuted);font-size:13px}
+.tabs{display:flex;gap:8px;margin:0 0 16px}.tabs button{flex:1;padding:8px 6px;border:1.5px solid var(--borderStrong);border-radius:12px;background:#fff;color:var(--ink);font-size:15px;cursor:pointer;line-height:1.3}.tabs button small{display:block;font-size:11px;color:var(--textMuted)}.tabs button.on{background:var(--tintStrong);border-color:var(--accent)}
+.metrics{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:12px}.metric{grid-column:span 2;background:var(--tint);border-radius:18px;padding:14px 8px;text-align:center;min-width:0}.metric.d,.metric.l{grid-column:span 3}
+@media(min-width:760px){.metric{grid-column:span 1}.metric.d{grid-column:span 2}.metric.l{grid-column:span 1}}
+.metric .n{font-size:13px;color:var(--textMuted)}.metric .big{font-size:25px;font-weight:700;color:var(--ink);margin-top:6px}.metric .big small{font-size:14px;font-weight:600;color:var(--textMuted)}
+.pair{display:flex;margin-top:6px}.pair div{flex:1}.pair b{display:block;font-size:25px;color:var(--ink)}.pair span{font-size:12px;color:var(--textMuted)}
+.card{background:#fff;border-radius:20px;padding:16px 22px;margin:16px 0;border:1px solid var(--border)}.card h2{font-size:17px;color:var(--ink)}.card h2 small{font-size:12px;font-weight:400;color:var(--textMuted);margin-left:6px}
+.head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.head .sum{text-align:right}.head .sum b{display:block;font-size:22px;line-height:26px;color:var(--ink)}.head .sum span{font-size:12px;color:var(--textMuted)}
+.note{font-size:12px;color:var(--textMuted);line-height:1.6}.sub2{font-size:13px;font-weight:700;color:var(--textMuted);margin:10px 0 2px}.empty{color:var(--textMuted);padding:12px 0}
+.bar{margin:10px 0}.bar .row{display:flex;justify-content:space-between;font-size:13px;color:var(--inkSoft);gap:8px}.track{height:8px;background:var(--tint);border-radius:4px;overflow:hidden;margin-top:4px}.track i{display:block;height:100%;background:var(--accent);border-radius:4px}
+.eval{margin-top:14px;border-top:1px solid var(--border);padding-top:12px}.eval b{font-size:13px;color:var(--inkSoft)}
+.legend{display:flex;gap:16px;justify-content:flex-end;font-size:13px;font-weight:600;margin-top:8px}.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px}
+.stack{position:relative;height:130px;display:flex;align-items:flex-end;border-bottom:1px solid var(--border);margin-top:6px}.stack .slot{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center}.stack .b{width:65%;max-width:28px;border-radius:8px 8px 3px 3px;overflow:hidden;display:flex;flex-direction:column}
+.goal{position:absolute;left:0;right:0;height:0;border-top:1px dashed var(--textFaint);pointer-events:none}.goal span{position:absolute;right:0;top:-14px;font-size:10px;color:var(--textMuted)}
+.axisx{display:flex;font-size:11px;color:var(--ink);margin:4px 0 2px}.axisx span{flex:1;text-align:center}.axisx.ends{justify-content:space-between}.axisx.ends span{flex:none}
+svg.line{width:100%;height:auto;display:block;margin-top:8px}svg.line text{font-family:inherit}
+.cols{display:block}@media(min-width:760px){main{max-width:1000px}.cols{display:grid;grid-template-columns:1fr 1fr;column-gap:16px;align-items:start}.cols .card{margin-top:0}.cols .col>.card+.card{margin-top:16px}}
+table{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}td,th{padding:6px 4px;border-bottom:1px solid var(--tint);text-align:left}th{color:var(--textMuted);font-weight:700}td.n,th.n{text-align:right}
+table.dt th{white-space:nowrap;font-size:12px}@media(max-width:420px){table.dt th{font-size:10.5px}table.dt th,table.dt td{padding:6px 2px}}table.dt th.c,table.dt td.n{text-align:center}table.dt tr.click{cursor:pointer}table.dt tr.today td{background:var(--tintSoft)}table.dt td.z{color:#b7a9c4}
+table.dt tr.avg td{font-weight:700;border-top:2px solid var(--tint)}table.dt tr.avg.per td{border-top:0}table.dt tr.avg td.w{font-weight:400}table.dt tr.all td{background:var(--tintStrong);font-weight:800;border-bottom:0}table.dt tr.all td.v{text-align:right;font-size:17px}
+#pop{position:fixed;inset:0;background:#0006;display:flex;align-items:center;justify-content:center;padding:20px;z-index:10}
+#pop .box{background:var(--bg);border-radius:16px;padding:18px;width:100%;max-width:420px}#pop h3{font-size:17px;color:var(--ink)}
+#pop .eq{display:flex;margin-top:6px;font-size:16px;line-height:1.5}#pop .eq b{width:58px}#pop .eq i{width:22px;font-style:normal}#pop .eq span{flex:1}#pop .eqr{text-align:right;font-size:16px;line-height:1.5}
+#pop .note{margin-top:10px}#pop button{display:block;margin:14px 0 0 auto;border:0;background:none;color:var(--ink);font-weight:700;font-size:15px;padding:6px 10px}
+#msg{text-align:center;padding:60px 16px;color:var(--textMuted)}
+ruby{ruby-position:over}rt{font-size:.6em;font-weight:400;color:var(--textMuted);letter-spacing:0}
+</style></head><body>
+<header>5中文</header>
+<main><div id="msg">리포트를 불러오는 중입니다…</div><div id="app" hidden></div></main>
+<script>
+// Set to the deployed getParentReport address (Cloud Functions, asia-northeast3).
+var ENDPOINT = 'https://asia-northeast3-dailychinese00.cloudfunctions.net/getParentReport';
+var $ = function (id) { return document.getElementById(id); };
+function el(tag, text, cls) { var e = document.createElement(tag); if (text != null) e.textContent = text; if (cls) e.className = cls; return e; }
+var SVGNS = 'http://www.w3.org/2000/svg';
+function svg(tag, attrs, text) { var e = document.createElementNS(SVGNS, tag); Object.keys(attrs || {}).forEach(function (k) { e.setAttribute(k, attrs[k]); }); if (text != null) e.textContent = text; return e; }
+// The report looks like the app's: the same colours per course, the same cards and charts.
+var PAL = {
+  // HSK 1 杏黄, HSK 2 天青, HSK 3 紫檀 (DailyChinese src/ui/theme.js)
+  hsk1: { ink: '#4A3410', inkSoft: '#43382A', textMuted: '#7A6B55', textFaint: '#8C806E', accentStrong: '#7E530E', accent: '#946618', accentLight: '#D9B77A', borderStrong: '#E6D6B5', border: '#ECE0C6', tint: '#F8F1E2', tintStrong: '#F4EAD5', tintSoft: '#FBF6EC' },
+  hsk2: { ink: '#1F4A48', inkSoft: '#2E4544', textMuted: '#566E6C', textFaint: '#788B89', accentStrong: '#2A6C66', accent: '#357D76', accentLight: '#9CCAC4', borderStrong: '#C9E0DC', border: '#D5E8E5', tint: '#EBF5F3', tintStrong: '#E2F0ED', tintSoft: '#F3F9F8' },
+  hsk3: { ink: '#4A1E3A', inkSoft: '#43303D', textMuted: '#77606E', textFaint: '#887784', accentStrong: '#7A2E5E', accent: '#8E4372', accentLight: '#C79AB6', borderStrong: '#E3CCDA', border: '#EBD8E3', tint: '#F7EDF3', tintStrong: '#F2E4EC', tintSoft: '#FAF4F8' }
+};
+function applyTheme(id) { var p = PAL[id] || PAL.hsk1, root = document.documentElement; if (!root || !root.style) return; Object.keys(p).forEach(function (k) { root.style.setProperty('--' + k, p[k]); }); }
+var WEEK = ['日', '一', '二', '三', '四', '五', '六'];
+function shortDay(d) { return Number(d.slice(5, 7)) + '/' + Number(d.slice(8)); } // 11/14
+// Table dates: two digits so the rows line up, e.g. 11/03(二).
+function tableDay(d) { return d.slice(5, 7) + '/' + d.slice(8) + '(' + weekday(d) + ')'; }
+// Chinese with its pinyin above (as in the app). A node can be placed once, so each call makes a new one.
+function zh(text, py) {
+  var chars = text.split(''), syl = py.split(' '), r = document.createElement('ruby');
+  // one syllable over each character when the counts match (so a long reading does not spread the word apart)
+  (syl.length === chars.length ? chars : [text]).forEach(function (c, i) { var rt = document.createElement('rt'); r.appendChild(document.createTextNode(c)); rt.textContent = syl.length === chars.length ? syl[i] : py; r.appendChild(rt); });
+  return r;
+}
+// An element from a list of strings and nodes, e.g. line(['读', ' · 소리 내어 읽기'], 'n').
+function line(items, cls, tag) { var e = el(tag || 'div', null, cls); items.forEach(function (x) { e.appendChild(typeof x === 'string' ? document.createTextNode(x) : x); }); return e; }
+// The three parts of a day, the same in every course: 读 解 记 (the mascot's name 读解记).
+function partsOf() { return { read: function () { return zh('读', 'dú'); }, solve: function () { return zh('解', 'jiě'); }, memorize: function () { return zh('记', 'jì'); } }; }
+function weekday(d) { var p = d.split('-').map(Number); return WEEK[new Date(p[0], p[1] - 1, p[2]).getDay()]; }
+function pct(c, t) { return t ? Math.round(100 * c / t) + '%' : '—'; }
+function fmtDays(v) { return v % 1 === 0 ? String(v) : v.toFixed(1); }
+function comma(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+var data = null;
+function card(title, sub) { var c = el('div', null, 'card'), h = typeof title === 'string' ? el('h2', title) : line(title, null, 'h2'); if (sub) h.appendChild(el('small', sub)); c.appendChild(h); return c; }
+function bar(title, correct, total) { var b = el('div', null, 'bar'), row = el('div', null, 'row'), tr = el('div', null, 'track'), i = el('i'); row.appendChild(el('span', title)); row.appendChild(el('span', pct(correct, total) + ' · ' + correct + '/' + total)); i.style.width = total ? (correct * 100 / total) + '%' : '0%'; tr.appendChild(i); b.appendChild(row); b.appendChild(tr); return b; }
+// Line chart of the daily read-aloud accuracy (0-100): the range starts just under the lowest result, a week shows each value and weekday, a longer period the first and last date.
+function chartMin(values) {
+  var rec = values.filter(function (v) { return v !== null && v !== undefined; });
+  if (!rec.length) return 0;
+  return Math.min(60, Math.max(0, Math.floor((Math.min.apply(null, rec) - 5) / 20) * 20));
+}
+function lineChart(points) {
+  var W = 600, H = 140, PAD = 16, n = points.length, min = chartMin(points.map(function (p) { return p.value; }));
+  var x = function (i) { return PAD + (n > 1 ? (W - 2 * PAD) * i / (n - 1) : (W - 2 * PAD) / 2); };
+  var y = function (v) { return PAD + (H - 2 * PAD) * (1 - (v - min) / (100 - min)); };
+  var rec = []; points.forEach(function (p, i) { if (p.value !== null && p.value !== undefined) rec.push({ i: i, day: p.day, v: p.value, px: x(i), py: y(p.value) }); });
+  var week = n <= 7, s = svg('svg', { 'class': 'line', viewBox: '0 0 ' + W + ' ' + (H + 22), role: 'img' });
+  for (var t = min; t <= 100; t += 20) { s.appendChild(svg('line', { x1: 0, x2: W, y1: y(t), y2: y(t), stroke: 'var(--tint)', 'stroke-width': 1 })); s.appendChild(svg('text', { x: W, y: y(t) - 3, 'text-anchor': 'end', 'font-size': 10, fill: 'var(--textFaint)' }, t + '%')); }
+  if (rec.length > 1) {
+    var d = 'M' + rec[0].px + ' ' + rec[0].py;
+    for (var k = 1; k < rec.length; k++) { var a = rec[k - 1], b = rec[k], cx = (a.px + b.px) / 2; d += ' C' + cx + ' ' + a.py + ',' + cx + ' ' + b.py + ',' + b.px + ' ' + b.py; }
+    var base = y(min);
+    s.appendChild(svg('path', { d: d + ' L' + rec[rec.length - 1].px + ' ' + base + ' L' + rec[0].px + ' ' + base + ' Z', fill: 'var(--tintStrong)' }));
+    s.appendChild(svg('path', { d: d, fill: 'none', stroke: 'var(--accent)', 'stroke-width': 3, 'stroke-linecap': 'round' }));
+  }
+  if (n <= 31) rec.forEach(function (p) { s.appendChild(svg('circle', { cx: p.px, cy: p.py, r: 5, fill: 'var(--accent)', stroke: '#fff', 'stroke-width': 2 })); });
+  if (week) rec.forEach(function (p) { s.appendChild(svg('text', { x: p.px, y: p.py + 19, 'text-anchor': 'middle', 'font-size': 11, 'font-weight': 700, fill: 'var(--ink)' }, String(p.v))); });
+  if (week) points.forEach(function (p, i) { s.appendChild(svg('text', { x: x(i), y: H + 14, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--ink)', opacity: p.value === null ? 0.45 : 1 }, weekday(p.day))); });
+  else { s.appendChild(svg('text', { x: 0, y: H + 14, 'font-size': 11, fill: 'var(--ink)' }, shortDay(points[0].day))); s.appendChild(svg('text', { x: W, y: H + 14, 'text-anchor': 'end', 'font-size': 11, fill: 'var(--ink)' }, shortDay(points[n - 1].day))); }
+  return s;
+}
+function stackedBars(w) {
+  var wrap = el('div'), lg = el('div', null, 'legend'), l1 = el('span'), l2 = el('span'), sw1 = el('i'), sw2 = el('i');
+  sw1.style.background = 'var(--accent)'; sw2.style.background = 'var(--accentLight)';
+  l1.appendChild(sw1); l1.appendChild(document.createTextNode('공부한 단어 ' + comma(w.totals.studied))); l2.appendChild(sw2); l2.appendChild(document.createTextNode('아는 단어 ' + comma(w.totals.known)));
+  lg.appendChild(l1); lg.appendChild(l2); wrap.appendChild(lg);
+  var plot = el('div', null, 'stack'), unit = 130 / w.max;
+  w.bars.forEach(function (b) {
+    var slot = el('div', null, 'slot'), bar = el('div', null, 'b'), total = b.studied + b.known;
+    bar.style.height = Math.max(total > 0 ? 2 : 0, total * unit) + 'px';
+    if (b.known > 0) { var k = el('div'); k.style.flex = b.known; k.style.background = 'var(--accentLight)'; bar.appendChild(k); }
+    if (b.studied > 0) { var s = el('div'); s.style.flex = b.studied; s.style.background = 'var(--accent)'; bar.appendChild(s); }
+    slot.appendChild(bar); plot.appendChild(slot);
+  });
+  // a thin dashed line at 5 words (the daily Studied target) shows the size of each bar
+  var goal = el('div', null, 'goal'); goal.style.bottom = (5 * unit) + 'px'; goal.appendChild(el('span', '5')); plot.appendChild(goal);
+  wrap.appendChild(plot);
+  var ax = el('div', null, 'axisx' + (w.bars.length <= 7 ? '' : ' ends'));
+  if (w.bars.length <= 7) w.bars.forEach(function (b) { ax.appendChild(el('span', weekday(b.day))); }); else { ax.appendChild(el('span', shortDay(w.bars[0].day))); ax.appendChild(el('span', shortDay(w.bars[w.bars.length - 1].day))); }
+  wrap.appendChild(ax); return wrap;
+}
+function metric(title, value, unit, wide, sub) { var m = el('div', null, 'metric' + (wide ? ' wide' : '')); m.appendChild(typeof title === 'string' ? el('div', title, 'n') : line([title], 'n')); if (sub) m.appendChild(el('div', sub, 'n')); var b = el('div', value, 'big'); if (unit) b.appendChild(el('small', unit)); m.appendChild(b); return m; }
+var shown = 7, mq = window.matchMedia ? window.matchMedia('(min-width:760px)') : null;
+// The card layout (two columns on wide screens) is built in JavaScript, so it is rebuilt when the window crosses the width limit.
+if (mq && mq.addEventListener) mq.addEventListener('change', function () { if (data) render(shown); });
+function render(period) {
+  shown = period;
+  var r = data.reports[period], app = $('app'); app.textContent = '';
+  var course = data.course || {}; applyTheme(course.id); var parts = partsOf(course.id);
+  var top = el('div', null, 'top'), img = el('img'); img.src = '/5language/images/dujieji-192.png'; img.alt = ''; top.appendChild(img);
+  var tt = el('div', null, 't'); // Parents read Korean: the course name is shown with 급 (the app writes HSK 1级; the server sends the app's name).
+  tt.appendChild(el('h1', '5中文 · ' + String(course.name || course.shortName || '').replace(/级/g, '급')));
+  var gen = new Date(data.generatedAt), z = function (n) { return String(n).padStart(2, '0'); };
+  tt.appendChild(el('div', (data.student ? '학생 ' + data.student + ' · ' : '') + gen.getFullYear() + '.' + z(gen.getMonth() + 1) + '.' + z(gen.getDate()) + ' ' + z(gen.getHours()) + ':' + z(gen.getMinutes()), 'sub'));
+  top.appendChild(tt); app.appendChild(top);
+  var tabs = el('div', null, 'tabs');
+  [7, 30].forEach(function (p) { var b = el('button', '최근 ' + p + '일'); b.appendChild(el('small', shortDay(data.reports[p].tabFirst || data.reports[p].rangeFirst) + ' ~ ' + shortDay(data.through || data.today))); if (p === period) b.className = 'on'; b.onclick = function () { render(p); }; tabs.appendChild(b); });
+  app.appendChild(tabs);
+  var t = r.totals, all = { correct: t.new.correct + t.review.correct + t.sample.correct, total: t.new.total + t.review.total + t.sample.total };
+  // Every box answers one question: how much did I do, what is my level, how accurate was reading, how many questions right, how many words known.
+  var passages = r.readAloud && r.readAloud.read ? r.readAloud.read : 0, known = r.words ? r.words.totals.known : 0, studied = r.words ? r.words.totals.studied : 0;
+  var boxes = el('div', null, 'metrics');
+  function box(cls, title, value, unit, detail, sub) { var m = metric(title, value, unit, false, sub); m.className += ' ' + cls; if (detail) m.appendChild(el('div', detail, 'n')); boxes.appendChild(m); }
+  // First box: CR (the average daily completion, same as Period Avg below) and how many days had at least one thing done.
+  var through = data.through || data.today, cr = r.scores && r.scores.average ? r.scores.average.days : 0;
+  // No study before today yet (the server sends no period average): say so instead of a one-day range at 0%.
+  if (r.scores && r.scores.average) box('d', shortDay(r.rangeFirst) + ' ~ ' + shortDay(through), p0(cr), null, (r.practiced != null ? r.practiced : 0) + ' / ' + r.days + '일 학습');
+  else box('d', '기록 없음', '—', null, '어제까지의 기록이 아직 없어요');
+  box('l', zh('阶段', 'jiē duàn'), r.level != null ? Number(r.level).toFixed(1) : '—', null, null, '단계');
+  box('r', parts.read(), r.readAloud && r.readAloud.score != null ? r.readAloud.score + '%' : '—', null, passages ? '글 ' + passages + '개' : '', '소리 내어 읽기');
+  box('s', parts.solve(), pct(all.correct, all.total), null, all.total ? all.correct + ' / ' + all.total : '', '문제 풀이');
+  box('m', parts.memorize(), r.memorize && known + studied ? pct(known, known + studied) : '—', null, r.memorize && known + studied ? known + ' / ' + (known + studied) : '', '단어 외우기');
+  app.appendChild(boxes);
+
+  // Reading passage
+  var reading = card([parts.read(), ' · 소리 내어 읽기']);
+  reading.appendChild(el('div', (r.readPoints.length < r.daily.length ? '주별' : '하루') + ' 평균 일치율' + (r.readAloud && r.readAloud.score != null ? ' · 평균 ' + r.readAloud.score + '%' : ''), 'note'));
+  if (r.readPoints.some(function (p) { return p.value !== null && p.value !== undefined; })) reading.appendChild(lineChart(r.readPoints)); else reading.appendChild(el('div', '아직 소리 내어 읽은 기록이 없어요.', 'empty'));
+  // Solving question
+  var solve = card([parts.solve(), ' · 문제 풀이']), hd = solve.firstChild; hd.className = ''; solve.removeChild(hd);
+  var head = el('div', null, 'head'), hl = el('div'); hl.appendChild(hd); var sm = el('div', null, 'sum'); sm.appendChild(el('b', pct(all.correct, all.total))); sm.appendChild(el('span', '(' + all.correct + ' / ' + all.total + ')')); head.appendChild(hl); head.appendChild(sm); solve.insertBefore(head, solve.firstChild);
+  solve.appendChild(el('div', '영역별 정답률', 'sub2'));
+  Object.keys(r.domains).forEach(function (k) { solve.appendChild(bar((course.domainLabels && course.domainLabels[k]) || k, r.domains[k].correct, r.domains[k].total)); });
+  solve.appendChild(el('div', '단계별 정답률', 'sub2'));
+  Object.keys(r.levels).forEach(function (k) { solve.appendChild(bar('阶段 ' + k, r.levels[k].correct, r.levels[k].total)); });
+  (r.evaluations || []).filter(function (e) { return e.before !== e.after; }).forEach(function (e) {
+    var ev = el('div', null, 'eval'); ev.appendChild(el('b', '단계 ' + Number(e.before).toFixed(1) + ' → ' + Number(e.after).toFixed(1)));
+    ev.appendChild(el('div', e.day + ' · ' + (e.type === 'chose' ? '직접 조정' : e.correct + '/30 (' + pct(e.correct, 30) + ') · ' + (e.after > e.before ? '단계 올라감' : '단계 내려감')), 'note')); solve.appendChild(ev);
+  });
+  // Memorizing words
+  var memo = null;
+  if (r.memorize) {
+    memo = card([parts.memorize(), ' · 단어 외우기']);
+    // The rate at the right of the title with the words it comes from underneath: (known / (studied + known)).
+    if (known + studied > 0) {
+      var mh = memo.firstChild, mhead = el('div', null, 'head'), mleft = el('div'), msum = el('div', null, 'sum');
+      memo.removeChild(mh); mleft.appendChild(mh); msum.appendChild(el('b', pct(known, known + studied))); msum.appendChild(el('span', '(' + known + ' / (' + studied + ' + ' + known + '))'));
+      mhead.appendChild(mleft); mhead.appendChild(msum); memo.insertBefore(mhead, memo.firstChild);
+    }
+    if (r.words.empty) memo.appendChild(el('div', '아직 단어 기록이 없어요.', 'empty')); else memo.appendChild(stackedBars(r.words)); }
+  var wide = !!(mq && mq.matches);
+  if (wide) {
+    var cols = el('div', null, 'cols'), left = el('div', null, 'col'), right = el('div', null, 'col');
+    left.appendChild(reading); if (memo) left.appendChild(memo); right.appendChild(solve); cols.appendChild(left); cols.appendChild(right); app.appendChild(cols);
+  } else { app.appendChild(reading); app.appendChild(solve); if (memo) app.appendChild(memo); }
+  var sc = scoreCard(r, parts); if (sc) app.appendChild(sc);
+}
+function p0(v) { return Math.round(v || 0) + '%'; }
+// One calculation line: abbreviation, "=" and what it stands for (an empty label continues the line above).
+function popup(title, lines, notes, sub) {
+  var old = $('pop'); if (old) old.remove();
+  var o = el('div'); o.id = 'pop'; var box = el('div', null, 'box'); box.appendChild(el('h3', title)); if (sub) box.appendChild(el('div', sub, 'note'));
+  // a { right: text } line sits under the line above at the right edge (the divisor of the 단어 formula)
+  lines.forEach(function (l) { if (l.right) { box.appendChild(el('div', l.right, 'eqr')); return; } var row = el('div', null, 'eq'); row.appendChild(el('b', l[0])); row.appendChild(el('i', '=')); row.appendChild(el('span', l[1])); box.appendChild(row); });
+  (notes || []).forEach(function (n) { box.appendChild(el('div', n, 'note')); });
+  var close = el('button', '닫기'); close.onclick = function () { o.remove(); }; box.appendChild(close);
+  o.onclick = function (e) { if (e.target === o) o.remove(); }; o.appendChild(box); document.body.appendChild(o);
+}
+// The 단어 row: "40% = 아는 단어 23 ÷" on one line, the divisor under it at the right edge.
+function wordsLines(rate, known, studied) { return known + studied ? [['단어', p0(rate) + ' = 아는 단어 ' + known + ' ÷'], { right: '(아는 단어 ' + known + ' + 공부한 단어 ' + studied + ')' }] : [['단어', p0(rate) + ' (단어 기록 없음)']]; }
+function dayPopup(d, isToday) {
+  var notes = [];
+  if (d.reReadable > 0 && d.reRead > 0 && d.parts.read === 0) notes.push('모든 글을 읽어야 완성률에 읽기가 들어가요.');
+  if (d.meKnown + d.meStudied > 0 && d.parts.words === 0) notes.push('그날의 단어를 끝내야 완성률에 단어가 들어가요.');
+  popup(tableDay(d.day) + (isToday ? ' (오늘)' : ''), [
+    ['완성률', p0(d.att)],
+    { right: '= 읽기 ' + d.parts.read + '% + 풀이 ' + d.parts.solve + '% + 단어 ' + d.parts.words + '%' },
+    ['읽기', d.reRead ? p0(d.re) + ' = 글 ' + d.reRead + '개의 일치율 평균' : p0(d.re) + ' (읽은 기록 없음)'],
+    ['풀이', d.soTotal ? p0(d.so) + ' = 정답 ' + d.soCorrect + ' ÷ 전체 문제 ' + d.soTotal : p0(d.so) + ' (푼 문제 없음)'],
+  ].concat(wordsLines(d.me, d.meKnown, d.meStudied)), notes);
+}
+// A number when there is data, "-" when there is none: a day with nothing at all (the period row: no record in the whole period).
+function dash(has, v) { return has ? String(Math.round(v || 0)) : '-'; }
+function scoreCard(r, parts) {
+  var s = r.scores; if (!s) return null;
+  var a = s.average, period = s.rows.length - 1, c = card([zh('每日记录', 'měi rì jì lù'), ' · 날짜별 기록 (%)']), t = el('table', null, 'dt'), h = el('tr');
+  [[zh('日期', 'rì qī'), '날짜'], [zh('完成率', 'wán chéng lǜ'), '완성률'], [parts.read(), '읽기'], [parts.solve(), '풀이'], [parts.memorize(), '단어']].forEach(function (x, i) { var th = line([x[0], ' '], i ? 'c' : null, 'th'), ko = el('span', x[1]); ko.style.fontWeight = '400'; th.appendChild(ko); h.appendChild(th); }); t.appendChild(h);
+  function cells(tr, d) {
+    var has = d.active; // any record that day: a number in every column (0 for what was not done); only an empty day shows dashes
+    [[has, d.att], [has, d.re], [has, d.so], [has, d.me]].forEach(function (x) { var v = dash(x[0], x[1]); tr.appendChild(el('td', v, 'n' + (v === '-' ? ' z' : ''))); });
+  }
+  s.rows.forEach(function (d, i) {
+    var tr = el('tr', null, 'click' + (i === 0 ? ' today' : '')); tr.appendChild(el('td', tableDay(d.day)));
+    cells(tr, d);
+    tr.onclick = function () { dayPopup(d, i === 0); }; t.appendChild(tr);
+  });
+  if (a) {
+    var hasData = s.rows.slice(1).some(function (d) { return d.active; });
+    var rangeText = shortDay(r.rangeFirst) + ' ~ ' + shortDay(data.through || data.today);
+    // The end of the table, each part under its column: the accuracy (the results of the period), then the period average of the
+    // completion (the day completions added up, divided by the days of the period). Tapping a row explains the numbers.
+    var total = s.rows.slice(1).reduce(function (sum, d) { return sum + (d.att || 0); }, 0);
+    function endRow(cls, label, parts4, bold) {
+      var tr = el('tr', null, 'click avg ' + cls); tr.appendChild(el('td', label));
+      parts4.forEach(function (text, i) { tr.appendChild(el('td', text, 'n' + (bold.indexOf(i) >= 0 ? '' : ' w'))); });
+      tr.onclick = function () {
+        popup('기간 평균', [
+          ['완성률', p0(a.days) + ' = ' + Math.round(total) + ' ÷ ' + period + '일'],
+          ['읽기', a.reCount ? p0(a.re) + ' = 글 ' + a.reCount + '개의 일치율 평균' : p0(a.re) + ' (읽은 기록 없음)'],
+          ['풀이', a.soTotal ? p0(a.so) + ' = 정답 ' + a.soCorrect + ' ÷ 전체 문제 ' + a.soTotal : p0(a.so) + ' (푼 문제 없음)'],
+        ].concat(wordsLines(a.me, a.meKnown, a.meStudied)),
+          ['완성률은 기간 일수의 평균이고, 정확도는 학습 결과의 평균입니다.'], rangeText + ' · ' + period + '일 · 오늘 제외');
+      };
+      t.appendChild(tr);
+    }
+    function pctCell(v) { return hasData ? Math.round(v || 0) + '%' : '-'; }
+    endRow('acc', '정확도 평균', ['', pctCell(a.re), pctCell(a.so), pctCell(a.me)], [1, 2, 3]);
+    endRow('per', '기간 평균', [hasData ? String(Math.round(total)) : '-', '/ ' + period + '天', hasData ? '= ' + Math.round(a.days) + '%' : '-', ''], [0, 2]);
+  }
+  c.appendChild(t); return c;
+}
+function fail(text, retry) {
+  var m = $('msg'); m.textContent = text; m.hidden = false; $('app').hidden = true;
+  if (retry) { var b = el('button', '다시 시도'); b.style.cssText = 'display:block;margin:16px auto 0;padding:10px 20px;border:0;border-radius:10px;background:var(--ink);color:#fff;font-weight:700;font-size:15px'; b.onclick = load; m.appendChild(b); }
+}
+var KEY = 'parentToken';
+function readToken() {
+  var t = (location.hash || '').slice(1);
+  try { if (t) { sessionStorage.setItem(KEY, t); } else { t = sessionStorage.getItem(KEY) || ''; } } catch (e) {}
+  if (location.hash) history.replaceState(null, '', location.pathname);
+  return t;
+}
+function load() {
+  var token = readToken();
+  $('msg').textContent = '리포트를 불러오는 중입니다…'; $('msg').hidden = false; $('app').hidden = true;
+  if (!token) { fail('링크 주소가 없습니다. 받으신 링크를 그대로 열어 주세요.'); return; }
+  if (!/^[A-Za-z0-9_-]{22}$/.test(token)) { try { sessionStorage.removeItem(KEY); } catch (e) {} fail('유효하지 않은 링크입니다.'); return; }
+  fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ token: token }), referrerPolicy: 'no-referrer' })
+    .then(function (res) { if (res.status === 404) throw new Error('gone'); if (!res.ok) throw new Error('fail'); return res.json(); })
+    .then(function (j) {
+      data = j; render(7);
+      $('msg').hidden = true; $('app').hidden = false;
+    })
+    .catch(function (e) {
+      if (e.message === 'gone') { try { sessionStorage.removeItem(KEY); } catch (x) {} fail('이 링크는 더 이상 사용할 수 없습니다. 공유가 중단되었거나 만료되었습니다.'); }
+      else fail('리포트를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.', true);
+    });
+}
+window.addEventListener('hashchange', function () { if (location.hash) load(); });
+load();
+</script></body></html>

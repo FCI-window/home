@@ -47,6 +47,17 @@
           "/5language/japanese/join",
           "/5language/japanese/join/*"
         ]
+      },
+      {
+        "appIDs": [
+          "SN244SX327.com.fciapp.dailychinese"
+        ],
+        "paths": [
+          "/5language/chinese/open",
+          "/5language/chinese/open/*",
+          "/5language/chinese/join",
+          "/5language/chinese/join/*"
+        ]
       }
     ]
   }
