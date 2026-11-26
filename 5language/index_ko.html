@@ -73,6 +73,11 @@
     .steps-boxed li:nth-child(3) { grid-column:1; grid-row:5 / span 2; }
     .steps-boxed li:nth-child(4) { grid-column:2; grid-row:1 / span 3; }
     .steps-boxed li:nth-child(5) { grid-column:2; grid-row:4 / span 3; }
+    .systems { grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+    .systems li { align-content:start; margin:0; padding:17px; border:1px solid var(--line); border-radius:12px; background:#f8fbf9; }
+    .systems li.focus { border-color:rgba(46,158,79,.55); background:#edf7f0; }
+    .systems li.focus .step-no { background:var(--primary); color:#fff; }
+    .systems-note { margin:14px 0 0 !important; color:var(--muted); font-size:.92rem; }
     .apps { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:4px 0 16px; }
     .app-card { display:grid; gap:8px; align-content:start; padding:18px 16px; border:1px solid var(--line); border-radius:14px; background:#f8fbf9; text-align:center; }
     .app-card.soon { opacity:.72; }
@@ -83,6 +88,10 @@
     .app-card .level { margin:0 !important; color:var(--muted); font-size:.9rem; font-weight:700; }
     .app-card .store-links { justify-content:center; flex-wrap:wrap; margin-top:4px; }
     .app-card .store-links img { height:32px; }
+    .app-card .mascot { margin:2px 0 0 !important; color:var(--text); font-size:.88rem; line-height:1.5; }
+    .app-card .mascot strong { color:var(--dark); }
+    .app-card .mascot span { color:var(--muted); font-size:.82rem; }
+    .app-card .soon-tag { justify-self:center; }
     .soon-tag { display:inline-block; margin-top:4px; padding:4px 10px; border-radius:999px; background:var(--soft); color:var(--dark); font-size:.82rem; font-weight:800; }
     .note-line { margin-top:6px !important; padding:14px 16px; border-left:4px solid var(--primary); background:#edf7f0; color:var(--dark); font-weight:700; }
     .download-panel { display:flex; align-items:center; justify-content:space-between; gap:20px; margin-top:20px; padding:22px 24px; border-radius:16px; background:linear-gradient(135deg,var(--dark),var(--primary)); color:#fff; box-shadow:var(--shadow); }
@@ -104,11 +113,13 @@
       .placeholder { min-height:140px; }
       .story-image { width:min(280px,100%); }
       .apps { grid-template-columns:1fr; }
+      .systems { grid-template-columns:1fr; }
       .steps-boxed { grid-template-columns:1fr; }
       .steps-boxed li:nth-child(n) { grid-column:auto; grid-row:auto; }
       .app-card { grid-template-columns:64px 1fr; text-align:left; align-items:center; column-gap:14px; }
-      .lang-badge { grid-row:span 3; margin:0; }
+      .lang-badge { grid-row:span 4; margin:0; }
       .app-card .store-links { justify-content:flex-start; }
+      .app-card .soon-tag { justify-self:start; }
       .download-panel { padding:18px 16px; gap:12px; }
       .download-panel h2 { font-size:clamp(1rem,4.6vw,1.3rem); }
       .download-panel p { font-size:.86rem; }
@@ -153,7 +164,7 @@
                 <article class="criterion"><h3>매일</h3><p>많이보다 매일이 중요합니다.</p></article>
                 <article class="criterion"><h3>언제 어디서나</h3><p>책상 앞이 아니어도, 조용한 곳이 아니어도, 휴대폰만 슬쩍 꺼내 할 수 있어야 합니다.</p></article>
                 <article class="criterion"><h3>내 레벨, 그리고 한 단계 위</h3><p>쉬우면 지루하고, 어려우면 포기합니다.</p></article>
-                <article class="criterion"><h3>틀린 것만 다시</h3><p>맞힐 때까지 다시 만나야 합니다.</p></article>
+                <article class="criterion"><h3>모르는 문제에 집중</h3><p>맞힐 때까지 다시 만나야 합니다.</p></article>
               </div>
             </div>
             <figure class="story-image-wrap"><img class="story-image" src="./images/5language-story-02.png" alt=""아!" 하고 손가락을 든 학생 위로 매일, 언제 어디서나, 한 단계 위, 다시 풀기를 뜻하는 아이콘 네 개와 전구를 든 흰 고양이" loading="lazy"></figure>
@@ -161,13 +172,13 @@
         </details>
 
         <details>
-          <summary><span class="number">03</span><h2>하루 5문제, 5단어. 5Language입니다.</h2><span class="toggle" aria-hidden="true">+</span></summary>
+          <summary><span class="number">03</span><h2>틈날 때마다, 하루 5문제, 5단어.</h2><span class="toggle" aria-hidden="true">+</span></summary>
           <div class="story-body">
             <div class="story-copy">
               <p class="story-lead">짧게 소리 내어 읽고, 5문제를 풀고, 새 단어 5개를 외웁니다. 매일.</p>
-              <p>짧은 동영상 한 편 볼 시간이면 충분합니다.</p>
+              <p>언어 학습의 기본 방법인 읽고·풀고·외우기를 한 앱에서. 짧은 동영상 한 편 볼 시간이면 충분합니다.</p>
               <div class="criteria when">
-                <article class="criterion"><h3>혼자 있을 때는</h3><p>전문앱으로 소리 내어 듣기와 말하기를 연습하세요.</p></article>
+                <article class="criterion"><h3>혼자 있을 때는</h3><p>전문 회화앱으로 듣기와 말하기를 연습하세요.</p></article>
                 <article class="criterion"><h3>책상 앞에서는</h3><p>전문 교재와 강의로 문법과 긴 글 독해를 연습하세요.</p></article>
                 <article class="criterion focus"><h3>짧은 틈새 시간에</h3><p>5Language로 단어와 짧은 문제를 풀어 보세요.</p></article>
               </div>
@@ -181,13 +192,12 @@
           <summary><span class="number">04</span><h2>5Language는 이렇게 함께합니다.</h2><span class="toggle" aria-hidden="true">+</span></summary>
           <div class="story-body full">
             <div class="story-copy">
-              <ol class="steps steps-boxed">
-                <li><span class="step-no">1</span><div><strong>엄선된 문제은행</strong><br>8단계 이상 검수를 거친 문제만 출제됩니다.</div></li>
-                <li><span class="step-no">2</span><div><strong>읽고, 풀고, 외우기</strong><br>앱을 열면 바로 오늘의 공부가 시작됩니다.</div></li>
-                <li><span class="step-no">3</span><div><strong>모임으로 함께</strong><br>마음 맞는 사람끼리 같이 하면 더 즐겁습니다.</div></li>
-                <li><span class="step-no">4</span><div><strong>레벨 자동 조정</strong><br>자동으로 조정되는 내 레벨의 문제와 한 단계 위 문제가 섞여 나옵니다.</div></li>
-                <li><span class="step-no">5</span><div><strong>반복 복습</strong><br>틀린 문제와 단어는 일정한 시간이 지난 뒤 다시 나옵니다. 답을 기억해서가 아니라, 다시 풀어서 맞히도록.</div></li>
+              <ol class="steps systems">
+                <li><span class="step-no">1</span><div><strong>8단계 이상 검수 시스템</strong><br>8단계 이상 검수를 거친 문제만 출제됩니다.</div></li>
+                <li><span class="step-no">2</span><div><strong>레벨 자동 조정 시스템</strong><br>누적 30문제마다 레벨이 자동 조정되고, 내 레벨과 한 단계 위 레벨의 문제가 함께 나옵니다.</div></li>
+                <li class="focus"><span class="step-no">3</span><div><strong>오답 관리 시스템</strong><br>모르는 문제에 집중해요. 틀린 문제나 '잘 모르겠어요'를 누른 문제는 맞힐 때까지 3일 간격으로, 맞히면 7일 뒤에 한 번 더 나와서, <strong>완전히 알 때까지 반복</strong>됩니다.</div></li>
               </ol>
+              <p class="systems-note">모임: 친구, 가족과 모임을 만들어 함께 공부할 수 있어요.</p>
             </div>
           </div>
         </details>
@@ -197,26 +207,29 @@
           <div class="story-body full">
             <div class="story-copy">
               <div class="apps">
-                <article class="app-card">
-                  <img class="lang-badge lang-icon" src="./images/5english-icon.png" alt="5English 앱 아이콘">
-                  <h3>5English</h3>
-                  <p class="level">PSAT · SAT · 중학영어</p>
-                  <div class="store-links"><a href="#"><img src="../images/Download_apple.png" alt="5English App Store에서 다운로드"></a><a href="#"><img src="../images/Download_google.png" alt="5English Google Play에서 다운로드"></a></div>
+                <article class="app-card soon">
+                  <img class="lang-badge lang-icon" src="./images/5english-icon.png" alt="5영어 앱 아이콘">
+                  <h3>5영어</h3>
+                  <p class="level">TOEIC Part 5 · Part 6</p>
+                  <p class="mascot">마스코트 <strong>ReSoMe</strong><br><span>Read · Solve · Memorize</span></p>
+                  <span class="soon-tag">준비 중</span>
                 </article>
                 <article class="app-card">
                   <img class="lang-badge lang-icon" src="./images/5japanese-icon.png" alt="5일본어 앱 아이콘">
                   <h3>5일본어</h3>
                   <p class="level">JLPT N5 · N4 · N3</p>
+                  <p class="mascot">마스코트 <strong>요토보 ヨトボ</strong><br><span>読む · 解く · 覚える</span></p>
                   <div class="store-links"><a href="#"><img src="../images/Download_apple.png" alt="5일본어 App Store에서 다운로드"></a><a href="#"><img src="../images/Download_google.png" alt="5일본어 Google Play에서 다운로드"></a></div>
                 </article>
-                <article class="app-card soon">
-                  <span class="lang-badge lang-zh" aria-hidden="true">中</span>
+                <article class="app-card">
+                  <img class="lang-badge lang-icon" src="./images/5chinese-icon.png" alt="5중국어 앱 아이콘">
                   <h3>5중국어</h3>
-                  <p class="level">준비 중</p>
+                  <p class="level">HSK 1 · HSK 2 · HSK 3</p>
+                  <p class="mascot">마스코트 <strong>두지에지 读解记</strong><br><span>读 · 解 · 记</span></p>
                   <div class="store-links"><a href="#"><img src="../images/Download_apple.png" alt="5중국어 App Store에서 다운로드"></a><a href="#"><img src="../images/Download_google.png" alt="5중국어 Google Play에서 다운로드"></a></div>
                 </article>
               </div>
-              <p class="note-line">같은 방법, 다른 언어.</p>
+              <p class="note-line">세 마스코트 모두 읽고, 풀고, 외우기에서 이름을 따왔어요. 같은 방법, 다른 언어.</p>
             </div>
           </div>
         </details>
